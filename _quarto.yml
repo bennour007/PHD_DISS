@@ -1,0 +1,49 @@
+project:
+  type: book
+
+book:
+  title: "THESIS"
+  author: "BENNOUR MOHAMED HSIN"
+  date: "12/3/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - lit_rev.qmd
+    - ML_relatedness.qmd
+    - potential.qmd
+    - tech_space.qmd
+    - div_coh_space.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    lot: true
+    lof: true
+    embed-resources: true
+    mermaid:
+      theme: default
+  pdf:
+    documentclass: scrreprt
+    fontsize: 12pt
+    linestretch: 1.5
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=3cm
+      - right=2.5cm
+    mainfont: "Times New Roman"
+    lot: true
+    lof: true
+    include-in-header: 
+      text: |
+        \usepackage{tikz}
+        \usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+        \usepackage{fontspec}
+        \setmainfont{Times New Roman}
+
+
+

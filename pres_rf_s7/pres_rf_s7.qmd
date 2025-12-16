@@ -1,0 +1,82 @@
+---
+title: "Reporting progress"
+editor: visual
+author: "BENNOUR Mohamed Hsin"
+format: 
+  revealjs:
+    embed-resources: true
+    self-contained: true
+---
+
+## Agenda
+
+-   Topic
+-   Updates on requirements
+-   Updates on the THESIS
+-   Next steps
+
+
+## Topic (Contextualising diversification and the technology space)
+
+- Focus on Relatedness and Economic Complexity.
+- Knowledge diversification in European region.
+- The contribution is methodological mainly 
+  - Relatedness measure, technology space.
+- Methodological also:
+  - Coherence, Entrepreneurial, and space contexts.
+  
+
+  
+## Updates on requirements
+
+::: {style="font-size: 0.8em;"}
+| Paper | Journal | Status |
+|-----------------------------------------|------------------|------------------|
+| Efficiency of Eastern European schools and the role of their context | Society and Economy | Published (2025) |
+| Regional Potential and Friction for technological diversification: A Machine Learning Frontier approach | Journal of Physics: Complexity | Revised |
+| The role of collaboration patterns in shaping the technological and commercial value of patents in Europe | Regional Statistic | Under review |
+| Structural Challenges and the GVC Positions in FDI-Dependent Regional Economies: Evidence from Central Eastern Europe | Spatial Economic Analysis | Final version ready Pending submission |
+:::
+
+## Updates on the THESIS
+
+-   All empirical work is done.
+-   In the process of drafting the dissertation.
+-   ETA for first draft: End of January 2026.
+
+::::::: columns
+:::: {.column width="50%"}
+::: {style="text-align: center;"}
+![**THIS IS HARD!**](get-out-of-my-head-meme.gif){width="40%"}
+:::
+::::
+
+:::: {.column width="50%"}
+::: {style="text-align: center;"}
+![**THIS IS TOO HARD!**](crying-vaughn-chat.gif){width="40%"}
+:::
+::::
+:::::::
+
+## Next steps
+
+-   GEOINNO 2026
+
+::: {style="font-size: 1.5em; text-align: center;"}
+**WRITING THE DISSERTATION!**
+:::
+
+# One more thing
+
+## PLEASE
+
+-   THIS IS REALLY HARD.
+-   FOCUS ON THE THINGS YOU CAN CONTROL.
+-   PRIORITIZE REQUIREMENTS.
+-   TALK AND COMMUNICATE.
+-   TAKE CARE OF YOUR MENTAL HEALTH.
+-   IF YOU EVER NEED HELP, REACH OUT, OR:
+    -   THE PSYCHIATRY CLINIC.
+    -   THE PSYCHOLOGY DEPARTMENT IN THE HUMANITIES FACULTY.
+
+# THANK YOU

@@ -1,0 +1,41 @@
+# Technological potential
+
+## Methodology
+
+Our multi-phase approach builds on different methods in the literature. In the first phase we model the relationship between the technologies[^3] using multiple random forest algorithm models ([@RF2001]). From these models we obtain probabilities that denote the chance that a given region will develop expertise in a given technology conditional on its past capacity in all other technologies[^4]. With this we have two elements: the first is the actual current observed capacity of a region($\mathbf{R}^{(y)}$); the second is the current potential that a region will develop expertise based on its past technological capacity. We call that measure regional technological potential. We leverage these two elements in constructing the second phase. Essentially we estimate the distance between the (hypothetical) potential of region and its actual observed capacity in developing expertise in a given technology. After countless iterations, we decided that a Stochastic Frontier Analysis (hereafter SFA) approach is adequate for this phase ([@afriat1972; @aigner1977]). This distance is an in/efficiency estimate that quantifies what we call the regional friction. We define regional friction as the effort needed for a region to leverage it's past technical capacities to develop new current capacities. This means that the most efficient regions are the closest to their estimated potential. When a region's observed expertise is close to its potential it means that its capable to absorb knowledge and internalise expertise in its economic fabric. In a final stage we regress the estimates of regional frictions via OLS to model and test the influence of diverse socio-economic factors that relate mainly to knowledge, infra-structure, among other economic factors that we will elaborate on in the coming section.
+
+[^3]: based on their measures of RCA
+
+[^4]: The different phases of this study rely on smaller portions of this data. In the first stage we take the patent data as is, in the second stage remove the outliers and the regions/countries with more than 2 years of missing data points, then for the regression we had to shrink the data further because of the unavailability of the data for 4 years and for many regions despite our attempts to impute the missing values with a regression tree
+
+### Regional technological potential
+
+We follow the methodology proposed by [@albora2023product] for trade data. The methodology named product progression, is based on a machine learning approach that enables researchers to unravel novel aspects of their RCA data. In our case that would be the non-linear dependence between technologies. Our Objective from this phase is to eventually predict whether a region will develop an expertise in a given technology. For reasons of data availability in other data bases that we will use in the next stages, we opted to limit these predictions to an 11 years interval spanning from 2008 to 2018 using data from 4 years ago for each prediction. These predicted probabilities are precisely the regional technological potential. They denote a hypothetical situation that describe for each region, the technologies it has potential to develop expertise in given the relationships that we already modeled.
+
+The modeling of the Random Forest algorithm is not intuitive in this proposed methodology. In fact the novelty of the approach proposed by [@albora2023product] is not the use of a tree-based algorithm, but rather to model each technology separately. The idea is to construct a model for every technology in $\mathbf{R}^{(y)}$ matrix such that the target technology $i, i\in \mathcal{T}$ is the outcome and the features are all other technologies different than $i$. The trick here is to binarise the outcome and leave the features as they are for every model we train such that:
+
+$$
+z_{r,t,y}
+\;=\;
+\begin{cases}
+1 & \text{if }\mathrm{RCA}_{r,t,y}\ge1 \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+The $z_{r,t,y}$ term reflect the capacity of region $r$ at year $y$ for technology $t$. In here capacity means that a region has an advantage/specialised in that specific technology relative to the other regions. Additionally we include a 4 year lag, or a fixed horizon we call delta, $\delta=4$ in the features since the entire idea is to assess the capacity of the current outcomes based on the past features. This aligns with instincts in the literature in which studies like [@andreoni2019political] posit that past capacities predict future diversification. Eventually the predicted outcomes describe what technology is possible to develop expertise in, given the observed capacity $\delta$ years ago. However, as stated in @albora2023product choosing the value of $\delta$ is challenging since increasing it decrease the performance of the models. Our choice here, relies on this observation and is the most optimal decision since we train the models for different years instead of just one, thus we need to have for each model at each year of prediction enough observations.
+
+The training and testing sets are constructed consequently:
+
+We use a fixed horizon ($\delta=4$) years to predict future expertise. Let years run from $y = y_0...y_f$, where $y_0 = 1978$ and $y_f = 2018$, let's also consider the target year of prediction $y_t \in \{2008,..., 2018\}$. We then have:
+
+$$
+X_{\text{train}} = \{ \mathrm{RCA}_{r,t,y} | y \in [y_0, y_t - 2\delta]\},\quad Y_{\text{train}} = {z}_{r,t',y} | y \in [y_0 + \delta,  y_t - \delta] \}
+$$
+
+$$
+X_{\text{test}} =  \{ \mathrm{RCA}_{r,t,y} |y_t - \delta\},\quad 
+Y_{\text{test}} = \{ z_{r,t,y} |y_t\}
+$$ Given the complexity of computations, which would require infeasible timing, we conducted cross validation on a random sample of models targeting G06G (Analog computers for data processing), B67B (Closing bottles, jars, or similar containers), D02J (Mechanical finishing or refining of yarns), and C08J (Working-up plastics-processing, recovery, or treatment of waste). Then we chose the parameter values with the most frequency and used them for the rest of the models specifically: mtry = 139, trees = 100, min_n = 38. For our case and computational constraints, this was the only feasible approach. The training was conducted in R using the Ranger package [@wright2017ranger], with targets [@landau2021targets] as a pipeline orchestrator and the tidymodels framework.
+
+Once we train our models one for each technology for each of the 11 years (7051 models in total) we obtain at each year, and for each technology, the probability that a region develops expertise. We define this set of probabilities as $P(\mathrm{RCA}_{r,t,y} \geq 1)$ which we write simply as $p_{r,t,y}$ and we will refer to these probabilities as the regional technological potential. When we aggregate these probabilities regionally, we obtain the (average) regional potential $p_{r,y} = \frac{\sum_{t} p_{r,y,t}}{n_t}$, with $n_t$ the corresponding number of observations.

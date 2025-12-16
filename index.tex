@@ -1,0 +1,1195 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Times New Roman}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\usepackage{pdflscape}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={THESIS},
+  pdfauthor={BENNOUR MOHAMED HSIN},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{THESIS}
+\author{BENNOUR MOHAMED HSIN}
+\date{2025-12-03}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\listoffigures
+\listoftables
+
+\setstretch{1.5}
+\bookmarksetup{startatroot}
+
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{Preface}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit
+\url{https://quarto.org/docs/books}.
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+\section{General background}\label{general-background}
+
+The Covid 19 pandemic showed structural challenges of national economies
+all over the world, specifically the fragility of neoliberal policies in
+times of crisis and the lack of industrial and economic resilience. Six
+years after the fact, our societies are now confronted with inevitable
+novel challenges and looming shocks. We are already witnessing the
+consequences of AI development as it paves the way for a new
+technological revolution that would render most local economies obsolete
+and cause massive unemployment in white collar sectors. Sadly, that
+doesn't seem to be the end of the shocks the world has seen recently as
+the war in Ukraine, Gaza, Iran, and most importantly the current,
+chaotic trade wars, seem to foster ever increasing uncertainties. Facing
+all this, policy makers are confronted with a simple choice; strategise
+and plan for more resilient local economies. In different streams of
+literature, resilience is directly related to diversification/variety,
+whether in portfolio management in finance, trade partnerships/linkages,
+industrial activities, or in terms of knowledge as well. Thus we can
+equivalently say that resilience is the capacity to resist and/or adapt
+to external shocks by relying on exiting internal capabilities that
+evolve in the face of such shocks. This means that for an economy to
+survive uncertainties, it needs to evolve, change, and innovate its way
+to the other end of the bleak challenges it's confronted with. However,
+to evolve, change and innovate, a baseline of knowledge should be
+leveraged since the consensus is that variety is a buffer against
+external shocks and shields uncertainties. This chain of thoughts, takes
+us back to the conceptual basics of sustainable economic development and
+growth; the knowledge fabric is what facilitate any long term strategy,
+and has been shown in the literature as clear catalyst for societal
+prosperity and economic resilience. For this reason the study of
+knowledge is detrimental for policy making, and understanding how to
+increase its diversity is more relevant than ever before.
+
+Knowledge is a set of information that covers one or many topics, and
+its characteristics are contingent on the different forms it can take or
+how it was created, generally speaking, academia and businesses are the
+main knowledge creators in any economy through research and patents.
+Essentially, knowledge can be codified (accessible by anyone through any
+medium), or tacit (personal information based on social connections,
+intuition, experience, etc, that's hard to share with others). The
+consensus in the literature is that the main driver of competitive
+advantage for firms is the tacit form of knowledge, which is also widely
+acknowledged that it's space dependent. However, the knowledge produced
+by firms can be reliably seen in patents, although they capture codified
+information, they also reveal tacit knowledge and its geographic
+footprint in space. This means that its detrimental to assess the
+knowledge in patenting activities (we refer to this knowledge as
+technologies), and more so to focus on the local aspect of these
+activities i.e: sub-national regions.
+
+This framing, however, is not at all new or novel. In fact, this is the
+entire aim of the literature of the geography of innovation; to study
+how innovation is created and diffused to different actors in different
+geographical contexts. Specifically, relatedness and economic complexity
+(REC) is one of the main streams of literature that focus on the
+relationships between activities and geographies. The conceptual and
+methodological framework that REC provides is widely used and adopted in
+academia and among policy practitioners and was one of the main
+contributors to the smart specialisation policy literature. The ideas
+embedded in this framework, to put it simply, rely on the premise of
+spatial dependence of tacit knowledge in local/regional
+economies/geographies and focus on simplifying these relationships using
+network science to model the relationships between knowledge and
+regions. Albeit these simplifications provide valuable scope for
+analysis and interpretation, the cost from the loss of granular
+information implies that there's much more conceptual, methodological,
+and empirical work needed. The reason for this is because the loss of
+information bias the empirical interpretation in the sense that we end
+up with a homogeneous implication with weak regards to the regional and
+national contexts as well as the technological characteristics. This
+work is motivated by this gap and aims to simply contextualise the study
+of knowledge diversification using the same granular information
+publicly available and commonly used in the REC literature. The idea is
+simple, account for endogenous and exogenous contexts using granular
+data and understand the contexts and contingencies that drives regional
+diversification.
+
+\section{Problem statement}\label{problem-statement}
+
+The main problem that this works aims to solve is directly embedded in
+the methodological and empirical framework of REC. REC models
+diversification through network aggregation based on co-location and
+co-occurrence patterns. Using these patterns, different aggregations are
+used to quantify relatedness (the frequency of observing a pair of
+activities in the same region), and relatedness density (how much of the
+activities frequently observed together a region has). However, these
+measures are often interpreted not as aggregations of frequent
+observations but rather as relationship models. Empirically,
+diversification is studied using these constructs as predictors of
+entry, that is a region's entry to a new specialisation in a new
+technology, often considered as a binary outcome. In here we briefly
+outline the big picture in the REC methodological and empirical
+framework, its conceptual issues, its empirical consequences, and
+highlight the research gap.
+
+\subsection{Relatedness, relatedness density, and
+diversification}\label{relatedness-relatedness-density-and-diversification}
+
+Relatedness and relatedness density are essentially measures of
+proximity. In a sense they describe how close two technologies are close
+to each other, or how close a given technology is to a region given its
+portfolio of technologies. To further decompose the problem here, we
+will first establish the methodological constructs for proximity
+measures. For relatedness that's co-occurrence, and for relatedness
+density that's the linear aggregation of relatedness.
+
+First, co-occurrence is essentially the frequency of observing two
+activities together. In the REC literature, this frequency describes the
+strength of the relationship. Activities frequently observed together
+are more related than the pairs rarely observed together.
+
+Second, linear aggregation of relatedness essentially measures the
+percentage of co-located technologies in a region that are related to a
+reference technology. Thus, we can think about relatedness density as
+the link between related technologies and co-located technologies. The
+idea in the REC literature states that relative to a given technology,
+the more related technologies a region has, the more likely that it can
+develop that technology.
+
+These two constructs are used together to predict the probability that a
+region will enter a new technology. The REC literature shows that
+relatedness density is consistently associated with higher probabilities
+in almost all studies. These results among others were one of the major
+latent contributors to smart specialisation strategy (S3) policy. Thus
+the consensus in the literature was clear: In order to diversify into
+new technologies with the highest likelihood of success, regions must
+prioritise investment in related technologies.
+
+\subsection{Empirical consequences}\label{empirical-consequences}
+
+The idea of resilience is not a main focus for the REC literature nor it
+is ours. However, falling back to this concept allows us to further
+assess the empirical consequences of the mainstream interpretation of
+relatedness and relatedness density. The idea is that in order to be
+resilient to external shocks and subsequent uncertainties
+diversification is key. But what kind of diversification is required and
+feasible and how to achieve it is the focus here. The REC literature
+tells us that the most likely successful diversification strategy is the
+one that targets related capacity in the regions, often referred to as
+related variety. However, generalising this recommendation is not that
+straight forward. Aggregate regional capacities and their national and
+broader geographic contexts differ significantly. The initial landscape
+of the regional technological portfolio is detrimental here because this
+strategy could favour regions with already diverse portfolio but it's
+questionable that regions with limited portfolios would equally benefit.
+This is aligned with the concept of path dependency, related variety
+without context enforces that dependency and locks regions within their
+limited capacities. This brings us back to the core focus of in this
+work; context is key. However, context on its own here might not be
+enough since path dependency of related variety is a direct result of
+how relatedness and relatedness density is calculated and interpreted.
+The constructs that enable these measures (co-occurrence and linear
+aggregation) are the core problem that we're highlighting here. The
+reason behind this specific focus relied on the implicit assumptions
+embedded in these methodological constructs.
+
+Co-occurrence assumes that technologies frequently observed together are
+likely related. Although this is within the boundaries of common sense,
+it's highly unlikely that's actually the case. A frequency measure is
+only informative when we have more observations than items---that is,
+more geographies than technologies. Almost always, we will have more
+technologies than geographies, this means that relatedness is at best
+noisy. Additionally, relatedness as interpreted in the literature
+quantifies the relationship between pairs of technologies. However, as
+it stands, there's no differentiation in the direction of that
+relationship thus, assuming that the relationship between two
+technologies is symmetrical. Albeit this assumption in itself is not
+problematic, it exacerbates the linearity issue when we measure
+relatedness density as we loose information in co-occurrence, symmetry,
+and linear aggregations. This takes us to the final issue we would like
+to highlight; relatedness density. Simply put, relatedness density
+measures the sum of technologies related to a reference technology
+present in a given region. The implicit assumption in here is that
+technologies are linked through linear combinations, and those
+combinations predict the likelihood of successful diversification.
+However, relatedness density is often interpreted as a value that
+quantifies the existing requirements a region has relative to a
+technology, whereas the sum of existing related technologies do not
+inform us on the actual requirements.
+
+In summary, relatedness and relatedness density measures suffer from
+diverse methodological issues embedded in the implicit assumptions in
+their core constructs. Co-occurrence and linear aggregation of observed
+frequency are misinterpreted, accrues information loss, and poorly
+handles the granular data often used. This means that the empirical and
+methodological work ahead must account for these issues to further
+contextualise the study of diversification strategies.
+
+\subsection{Research problem}\label{research-problem}
+
+In the light of all the mentioned in this section, we fall back again on
+the core idea that we started this text with; How can we contextualise
+diversification strategies? The answer to this question is multi-layered
+and complex. In this section we started by outlining the importance of
+diversification strategies for regions into new technologies via
+patenting activities. We explained that the REC literature provides
+interesting methodological and conceptual framework of analysis and
+showed that despite their usefulness they suffer from structural issues
+that limit the advantages of the used granular data, thus limit the
+incorporation of a broader context empirically. Essentially, the
+research problem we focus on here, is both methodological and empirical
+in nature. We highlighted the structural methodological issues as the
+research gap which will be the focus of our methodological and empirical
+contribution.
+
+\begin{landscape}
+
+\scalebox{0.75}{%
+\begin{tikzpicture}[
+    node distance=12mm,
+    every node/.style={font=\small},
+    box/.style={rectangle, rounded corners, draw, align=center, inner sep=4pt},
+    oval/.style={ellipse, draw, align=center, inner sep=3pt},
+    arrow/.style={-{Stealth[length=2.5mm]}, thick}
+]
+
+% --- TOP LEVEL ---
+\node[oval] (world) {the world \\ (uncertainty shocks)};
+\node[oval, right=20mm of world] (relevance) {The need for resilience};
+\node[oval, above right=20mm of relevance] (capacity) {local capacity \\ (shock absorption)};
+\node[oval, below right=20mm of relevance] (change) {change \&\\ adaptation};
+\node[oval, right=20mm of change] (innovation) {Innovation};
+\node[box, below=15mm of innovation] (combine) {Combine existing\\ knowledge in new\\ configurations to\\ create new knowledge};
+
+\draw[arrow] (world) -- (relevance);
+\draw[arrow] (relevance) --  (capacity);
+\draw[arrow] (relevance) --  (change);
+\draw[arrow] (change) --  (innovation);
+\draw[arrow] (capacity) --  (innovation);
+\draw[arrow] (innovation) -- node[left]{how?} (combine);
+
+% --- FROM RELEVANCE DOWN ---
+\node[oval, below=18mm of relevance] (diversification) {Diversification / variety};
+\draw[arrow] (relevance) -- (diversification);
+
+% --- RELATEDNESS + GEO OF INNOVATION ---
+\node[oval, below=10mm of diversification] (relatedness) {Geography\\ of innovation: \\ Relatedness};
+
+
+\draw[arrow] (diversification) -- (relatedness);
+
+\node[box, left=10mm of relatedness] (whyrel) {Why?\\
+• reliable framework to model tech relations\\
+• relations between regions \& technologies};
+
+\draw[arrow] (whyrel) -- (relatedness);
+
+
+% --- KNOWLEDGE FOOTPRINT ---
+\node[box, right=20mm of combine] (footprint) {Footprint of\\ tacit knowledge};
+\node[oval, below=6mm of footprint] (local) {Local\\ (space-dependent)};
+\node[oval, below=6mm of local] (products) {patents \& technologies};
+
+\draw[arrow] (combine) -- (footprint);
+\draw[arrow] (footprint) -- (local);
+\draw[arrow] (local) -- (products);
+
+% --- FOCUS ON REGIONS ---
+\node[box, below=12mm of products] (focusregions) {That's why we focus on\\ patents-technologies in regions};
+
+\draw[arrow] (products) -- (focusregions);
+
+\node[oval, below=12mm of focusregions] (regionexist) {regions exist in\\ national + broader geographic contexts};
+
+\draw[arrow] (focusregions) -- (regionexist);
+
+% --- METHOD PROBLEMS ---
+\node[oval, below=22mm of relatedness] (cooccur) {co-occurrence\\ linear aggregates};
+
+% place oneocc above-left
+\node[oval, above left=6mm and 20mm of cooccur] (oneocc) {naive\\ assumptions};
+
+% place twoocc below-left
+\node[oval, below left=6mm and 20mm of cooccur] (twoocc) {lose\\ granular information};
+
+\draw[arrow] (cooccur) -- (oneocc);
+\draw[arrow] (cooccur) -- (twoocc);
+
+\node[oval, right=15mm of cooccur] (suffer) {Suffers from\\ structural \\ methodological issues};
+\draw[arrow] (relatedness) -- (suffer);
+\draw[arrow] (suffer) -- (cooccur);
+
+% --- LOSS OF CONTEXT ---
+\node[box, below left=10mm of twoocc] (loss) {loss of context\\ when measuring relationships};
+\draw[arrow] (twoocc) -- (loss);
+\draw[arrow] (oneocc) -- (loss);
+
+% --- MAIN THESIS BOX ---
+\node[box, below=25mm of cooccur, text width=9cm] (thesis) 
+{That's why the thesis focuses  on studying how regions can diversify their technological profiles by leveraging granular data that relaxes relatedness assumptions and accounts for broader exogenous contexts.};
+
+\draw[arrow] (loss) -- (thesis);
+\draw[arrow] (suffer) -- (thesis);
+\draw[arrow] (regionexist) -- (thesis);
+
+% --- CONTRIBUTIONS ---
+\node[box, below=20mm of thesis] (contrib) {methodological contribution: \\ relatedness\\[3pt]
+empirical contribution: \\ exogenous contexts};
+
+\draw[arrow] (thesis) -- (contrib);
+
+\end{tikzpicture}
+}
+
+\end{landscape}
+
+\section{Objective}\label{objective}
+
+The objective from this work is to extend the methodological framework
+of relatedness starting from the structural issues it suffers from. In
+order to show how our methodological contribution benefit the study of
+regional technological diversification we rely on an empirical study
+that shows how broader context can be included and how such context
+inform granular policy insights. The broader context we aim to include
+empirically relied on relaxing the implicit relatedness assumptions,
+explicitly include the ndogenous characteristics of the technologies and
+regions contingent on the regional knowledge infrastructure while
+simultaneously account for the characteristics of the national
+ecosystems. With such an approach we end up accounting for more
+contextual layers than the mainstream approach.
+
+\section{Research questions and
+hypothesis}\label{research-questions-and-hypothesis}
+
+\textbf{RQ1: How to further contextualise diversification strategy based
+on the relatedness framework?}
+
+\begin{itemize}
+\tightlist
+\item
+  H1a: Asymmetric relatedness measures better predict technology entry
+  than symmetric measures.
+\end{itemize}
+
+\textbf{RQ2: Is successful diversification contingent on regional
+knowledge infrastructure?}
+
+\begin{itemize}
+\item
+  H2a: Technology-specific characteristics has different impact on
+  diversification contingent on the regional knowledge coherence.
+\item
+  H2b: Technology-specific characteristics has different impact on
+  diversification contingent on the regional knowledge stock.
+\end{itemize}
+
+\textbf{RQ3: Does the national ecosystem influence diversification?}
+
+\begin{itemize}
+\tightlist
+\item
+  H3a: National Entrepreneurial Ecosystem characteristics positively
+  affects regional entry into new technologies.
+\end{itemize}
+
+\textbf{RQ4: What role does space have? Do neighbouring regions
+influence diversification?}
+
+\begin{itemize}
+\tightlist
+\item
+  H4a: Spatial spillovers of outcome from neighbouring regions
+  positively affect technology entry.
+\item
+  H4b: Neighbouring regions' technological characteristics influence
+  focal region diversification outcomes.
+\item
+  H4c: Geographic proximity to regions with coherent knowledge
+  infrastructure increases entry probability.
+\end{itemize}
+
+\section{Structure}\label{structure}
+
+\section{Relatedness(?)}\label{relatedness}
+
+\bookmarksetup{startatroot}
+
+\chapter{Literature review}\label{literature-review}
+
+\bookmarksetup{startatroot}
+
+\chapter{Relatedness in the era of Machine
+Learning}\label{relatedness-in-the-era-of-machine-learning}
+
+When two technologies (or products, activities, etc) share similar sets
+of input requirements (knowledge, resources, etc), we qualify them as
+related (Hausmann and Hidalgo 2011). This empirical observation has been
+confirmed in many areas in different streams of literature and
+formalised in the Principle of Relatedness(PoR) (Hidalgo et al. 2018).
+However, deriving concrete policy implications from this principle has
+proven far from straightforward (Hidalgo 2023; Li and Neffke 2024). The
+PoR is essentially a framework that formalises a qualitative intuition
+that's been present in various streams of literature: The industrial
+fabric in a geographic location matters (Hidalgo 2021; Hidalgo and
+Hausmann 2009). This framework enables researchers to derive different
+metrics that quantify path dependency and, therefore, infer more
+granular and pragmatic policy recommendations (Li and Neffke 2024).
+However, we often find in the literature that many studies refrain from
+investigating beyond the identification of path dependencies(Hidalgo
+2023). Although such identification may prove interesting at times, the
+entire idea of the PoR is to be used to break free from the path
+dependency curse and focus on unique regional paths that promote
+diversification (Imbs and Wacziarg 2003). Diversification is the
+endpoint because it creates different sets of non-fungible tacit and
+non-tacit knowledge/capacity (Collins 1974) that can be compounded over
+time and across industries to create value that drives regional growth
+and development (Dosi 1982; Weitzman 1998). Knowledge, in all its forms,
+is the driver of the PoR policy implications (P.-A. Balland and Boschma
+2022; P.-A. Balland et al. 2019). And although identifying promising
+areas of knowledge(related or unrelated) is a useful exercise. Figuring
+out the unique elements that dictate the dynamics of knowledge flows is
+at the heart of the industrial policies in this context (Nomaler and
+Verspagen 2024). Moreover, the PoR is also complemented by the Economic
+Complexity paradigm(EC) pioneered for the first time in (Hidalgo and
+Hausmann 2009). EC is a methodological framework that builds on the PoR
+and frames economies as complex systems. The idea is simple: an economy,
+regardless of its scale, is a complex system that might be impossible to
+determine the entirety of its components. But if we quantify the
+interactions between different systems and their different components,
+then we can estimate indices and metrics that capture most of the
+variation. In this sense, the PoR quantifies path dependency
+patterns(via metrics like relatedness and proximity), and EC quantifies
+the sophistication of specialisation patterns(via metrics like
+complexity and fitness)\footnote{We will use the terms relatedness and
+  complexity to refer to these two dimensions moving forward following
+  the literature nomenclature}. One can also describe relatedness as a
+variation of a recommendation system and complexity as a dimensionality
+reduction exercise. However, there's still no general consensus on the
+reliability of any given methodology for both exercises, regardless of
+the popularity of one or the other. What there's a consensus on,
+however, is that these frameworks and the toolbox they provide can be
+improved further as stated in C. Pinheiro (2025). Regardless, EC and PoR
+were adopted in many policy papers such as Zaccaria et al. (2018), E and
+A (2021) and G, D, and L (2025).
+
+In this context, the literature provides more threads of ideas that
+target a deeper understanding and analysis of complex economic systems.
+For instance, investigations and studies regarding unrelated
+diversification (Flávio L. Pinheiro et al. 2022; Boschma et al. 2023),
+geographic inequalities (Flavio L. Pinheiro et al. 2025; Hartmann et al.
+2017), emerging industries/technologies (C. Lee et al. 2018; Fessina et
+al. 2024), and diversification strategies (Alshamsi, Pinheiro, and
+Hidalgo 2018), among others, are pioneering the effort to bridge
+different gaps in theory, policy implications, and methodology. These
+ideas, among others, suggest that investing in unrelated activities can
+yield greater value and help break free from the path‐dependency
+curse---a phenomenon the literature shows exacerbates regional
+inequalities. Thus, one of the challenges is to quantify how to expand
+related activities beyond path dependency(strategy), which
+activity/sector to aim for(target), and the requirements for such an
+investment to be fruitful(condition). The scope of our study is
+expanding ideas around diversification strategies and conditions.
+
+Policy makers often face a difficult choice when deciding on industrial
+upgrading. The first is to take advantage of existing local capacity and
+knowledge(related diversification). This choice is presumably the
+easiest one, since the local economy already has what it takes for the
+implementation (Boschma 2017). The second is to invest in building new
+capacity/knowledge(unrelated diversification) with all the risks that
+such a gamble accommodates (Coniglio et al. 2021). These choices have
+been at the centre of different theories in development economics(big
+push, forward/backward linkages (Rosenstein-Rodan 1943; Hirschman 1958),
+etc). However, we argue on the side of (C. Pinheiro 2025) that the basis
+of this narrative is incomplete since it contains an implicit assumption
+that is often overlooked: it's easier for an economic system to
+diversify into a related activity than an unrelated one. But how do we
+assess the ease of diversification, accounting for its level of
+relatedness?
+
+In this paper, we propose a measure that quantifies the ease of
+diversification of an economic system agnostic to the level of
+relatedness of an activity. We believe that our approach accommodates
+this assumption explicitly and capture all possible diversification
+paths be it related or unrelated. Additionally, we extend our
+contribution by assessing how different classical socio-economic factors
+influence the ease of diversification. The remainder of the paper is
+organised as follows: we first introduce the data, then we present the
+methodology for each phase of our work. Then we present our results, and
+we conclude this work with a discussion.
+
+K. Lee and Malerba (2017) show that for every stage of industrial
+maturity different level of diversity among other ``initial-conditions''
+is needed. The main idea is that local capacities are necessary but
+insufficient condition for related diversification. This has been
+formalised explicitly in (Hausmann and Hidalgo 2011). where the authors
+define the ``quiescence trap'', which can be observed when a country
+with few capabilities face low incentive to accumulate new ones.
+Additionally, in a broader policy context, and even if we assume that
+these initial conditions are met locally, and related diversification is
+feasible, it may simply exacerbate the regional disadvantages. Indeed
+related diversification has been observed to increase the gaps between
+locations (Mealy and Coyle 2022; Flavio L. Pinheiro et al. 2025).
+Essentially, if we have two locations, one already has a range of
+complex capacities, the other doesn't. If policy only backs what each
+location already does well, the complex location keeps getting ever more
+complex, drawing more investment and talent, while the other one falls
+further behind exacerbating inequality. Moreover, there's no consensus
+on one way to quantify relatedness. The literature usually relies on the
+co-occurrence matrix to construct the relatedness between
+products/technologies etc. (Coniglio et al. 2021) point out that most
+studies in this context do not differentiate between random
+co-occurrences, and co-occurrences that are due to related capacities
+and proposes a test to investigate these significance of these
+relationships. Similarly, the proposed methodology in (Albora et al.
+2023) responds to the same criticism and argue that the number of
+products/technologies almost always outnumber that of regions/locations,
+therefore the information extracted from the co-occurrence matrix is at
+best a random walk.
+
+We use Data from the European Patent Office, which contains details on
+patent applications from 1978 to 2021. The EPO provides a rigorous and
+detailed classification of each patent application up to 8 or more
+digits. In our case, we consider the IPC classifications, but since
+these classifications are extremely granular and are considerably larger
+than the regions observed (at 8000+ classes), we limit our data to the
+4th digit of the IPC classification. These 4 digits contain 3 layers of
+information with which we can define a given technology, a section
+denoted by a letter, a class denoted by two digits, and a subclass
+denoted by another letter. Thus, an IPC class/technology such as F16H is
+structured hierarchically: Section F covers Mechanical engineering
+(including lighting, heating, weapons, and blasting), Class 16 pertains
+to engineering elements and general methods for producing and
+transmitting mechanical power, and Subclass H specifically addresses
+gears, shaft connections, and gearing for conveying rotary motion. With
+such a subset, we ended up with 641 distinct technologies. Additionally,
+the same data also provides details on where the applications were made,
+we capture these details at the NUTS2 level\footnote{With the exception
+  of Belgium and the United Kingdom who were included at NUTS1 level}
+for 34 European countries within and outside the European Union,
+spanning across 345 regions. Additionally we also use data from the
+Eurostat database to incorporate regional level socio-economic factors
+which are detailed further in section \textbf{?@sec-factors} and
+summarised in \textbf{?@tbl-sum}.
+
+Furthermore, we quantify regions' specialisation by means of the
+Revealed Comparative Advantage(RCA) (Balassa 1965). In our context, the
+RCA measures the region's relative specialization level in a given
+technology, which enables us to capture both expertise and diversity
+when we aggregate all the technologies for each region. This measure,
+also known as the Balassa index, proved useful in determining complex
+and non-linear relationships between products/activities. Although the
+RCA is mainly designed for use with international trade data, it has
+also been adopted in the literature on the geography of innovation.
+Simply put, the RCA quantifies simultaneously the relative level and the
+quality of co-occurrence, which reduces the noise in the data. Although
+some papers criticise the use of the RCA with patent classes (P. Balland
+and Boschma 2019; Diodato et al. 2023), we think it fits our objective
+in capturing meaningful relationships between technologies. We compute
+these RCA measures to obtain, for each year, a matrix denoting the
+regions in its rows and the technologies in its columns. We formalize it
+as follows: Let \(X_{r,t,y}\) be the measure of activity (patent counts)
+of region \(r\) in technology \(t\) during year \(y\). Where
+\(\mathcal{T}\) is the set of technologies, \(\mathcal{Y}\) is the set
+of years, \(\mathcal{R}\) is the set of regions, and \(\mathcal{C}\) is
+the set of countries, such that:
+
+\[
+\mathcal{T} = \{\,t : 1 \le t \le N_T\},\quad
+\mathcal{Y} = \{\,y : 1 \le y \le N_Y\},\quad
+\mathcal{R} = \{\,r : 1 \le r \le N_R\},\quad
+\mathcal{C} = \{\,c : 1 \le c \le N_C\}.
+\]
+
+And \(N_T, N_Y, N_R, N_C\) are the total counts of technologies, years,
+regions and countries.
+
+The RCA of region \(r\) in technology \(t\) in year \(y\) is
+
+\[
+\mathrm{RCA}_{r,t,y}
+= \frac{\displaystyle\frac{X_{r,t,y}}{\sum_{t'} X_{r,t',y}}}
+       {\displaystyle\frac{\sum_{r'} X_{r',t,y}}{\sum_{r',t'} X_{r',t',y}}}
+= \frac{X_{r,t,y}\,\sum_{r',t'}X_{r',t',y}}
+       {\bigl(\sum_{t'}X_{r,t',y}\bigr)\,\bigl(\sum_{r'}X_{r',t,y}\bigr)}
+\]
+
+For each year \(y\), we then assemble the \textbf{RCA matrix}
+\(\mathbf{R}^{(y)}\) whose \((r,t)\)-entry is \(\mathrm{RCA}_{r,t,y}\):
+
+\[
+\mathbf{R}^{(y)}
+= \bigl[\mathrm{RCA}_{r,t,y}\bigr]_{r=1,\dots,N_{R}}^{t=1,\dots,N_{T}}
+\]
+
+These yearly measures are essential for us, since our entire approach
+depends on different manipulations around these stacked matrices.
+
+\section{Methodology}\label{methodology}
+
+Our multi-phase approach builds on different methods in the literature.
+In the first phase we model the relationship between the
+technologies\footnote{based on their measures of RCA} using multiple
+random forest algorithm models ((Breiman 2001)). From these models we
+obtain probabilities that denote the chance that a given region will
+develop expertise in a given technology conditional on its past capacity
+in all other technologies\footnote{The different phases of this study
+  rely on smaller portions of this data. In the first stage we take the
+  patent data as is, in the second stage remove the outliers and the
+  regions/countries with more than 2 years of missing data points, then
+  for the regression we had to shrink the data further because of the
+  unavailability of the data for 4 years and for many regions despite
+  our attempts to impute the missing values with a regression tree}.
+With this we have two elements: the first is the actual current observed
+capacity of a region(\(\mathbf{R}^{(y)}\)); the second is the current
+potential that a region will develop expertise based on its past
+technological capacity. We call that measure regional technological
+potential. We leverage these two elements in constructing the second
+phase. Essentially we estimate the distance between the (hypothetical)
+potential of region and its actual observed capacity in developing
+expertise in a given technology. After countless iterations, we decided
+that a Stochastic Frontier Analysis (hereafter SFA) approach is adequate
+for this phase ((Afriat 1972; Aigner, Lovell, and Schmidt 1977)). This
+distance is an in/efficiency estimate that quantifies what we call the
+regional friction. We define regional friction as the effort needed for
+a region to leverage it's past technical capacities to develop new
+current capacities. This means that the most efficient regions are the
+closest to their estimated potential. When a region's observed expertise
+is close to its potential it means that its capable to absorb knowledge
+and internalise expertise in its economic fabric. In a final stage we
+regress the estimates of regional frictions via OLS to model and test
+the influence of diverse socio-economic factors that relate mainly to
+knowledge, infra-structure, among other economic factors that we will
+elaborate on in the coming section.
+
+\subsection{Regional technological
+potential}\label{regional-technological-potential}
+
+We follow the methodology proposed by (Albora et al. 2023) for trade
+data. The methodology named product progression, is based on a machine
+learning approach that enables researchers to unravel novel aspects of
+their RCA data. In our case that would be the non-linear dependence
+between technologies. Our Objective from this phase is to eventually
+predict whether a region will develop an expertise in a given
+technology. For reasons of data availability in other data bases that we
+will use in the next stages, we opted to limit these predictions to an
+11 years interval spanning from 2008 to 2018 using data from 4 years ago
+for each prediction. These predicted probabilities are precisely the
+regional technological potential. They denote a hypothetical situation
+that describe for each region, the technologies it has potential to
+develop expertise in given the relationships that we already modeled.
+
+The modeling of the Random Forest algorithm is not intuitive in this
+proposed methodology. In fact the novelty of the approach proposed by
+(Albora et al. 2023) is not the use of a tree-based algorithm, but
+rather to model each technology separately. The idea is to construct a
+model for every technology in \(\mathbf{R}^{(y)}\) matrix such that the
+target technology \(i, i\in \mathcal{T}\) is the outcome and the
+features are all other technologies different than \(i\). The trick here
+is to binarise the outcome and leave the features as they are for every
+model we train such that:
+
+\[
+z_{r,t,y}
+\;=\;
+\begin{cases}
+1 & \text{if }\mathrm{RCA}_{r,t,y}\ge1 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+The \(z_{r,t,y}\) term reflect the capacity of region \(r\) at year
+\(y\) for technology \(t\). In here capacity means that a region has an
+advantage/specialised in that specific technology relative to the other
+regions. Additionally we include a 4 year lag, or a fixed horizon we
+call delta, \(\delta=4\) in the features since the entire idea is to
+assess the capacity of the current outcomes based on the past features.
+This aligns with instincts in the literature in which studies like
+(Andreoni and Chang 2019) posit that past capacities predict future
+diversification. Eventually the predicted outcomes describe what
+technology is possible to develop expertise in, given the observed
+capacity \(\delta\) years ago. However, as stated in Albora et al.
+(2023) choosing the value of \(\delta\) is challenging since increasing
+it decrease the performance of the models. Our choice here, relies on
+this observation and is the most optimal decision since we train the
+models for different years instead of just one, thus we need to have for
+each model at each year of prediction enough observations.
+
+The training and testing sets are constructed consequently:
+
+We use a fixed horizon (\(\delta=4\)) years to predict future expertise.
+Let years run from \(y = y_0...y_f\), where \(y_0 = 1978\) and
+\(y_f = 2018\), let's also consider the target year of prediction
+\(y_t \in \{2008,..., 2018\}\). We then have:
+
+\[
+X_{\text{train}} = \{ \mathrm{RCA}_{r,t,y} | y \in [y_0, y_t - 2\delta]\},\quad Y_{\text{train}} = {z}_{r,t',y} | y \in [y_0 + \delta,  y_t - \delta] \}
+\]
+
+\[
+X_{\text{test}} =  \{ \mathrm{RCA}_{r,t,y} |y_t - \delta\},\quad 
+Y_{\text{test}} = \{ z_{r,t,y} |y_t\}
+\] Given the complexity of computations, which would require infeasible
+timing, we conducted cross validation on a random sample of models
+targeting G06G (Analog computers for data processing), B67B (Closing
+bottles, jars, or similar containers), D02J (Mechanical finishing or
+refining of yarns), and C08J (Working-up plastics-processing, recovery,
+or treatment of waste). Then we chose the parameter values with the most
+frequency and used them for the rest of the models specifically: mtry =
+139, trees = 100, min\_n = 38. For our case and computational
+constraints, this was the only feasible approach. The training was
+conducted in R using the Ranger package (Wright and Ziegler 2017), with
+targets (Landau 2021) as a pipeline orchestrator and the tidymodels
+framework.
+
+Once we train our models one for each technology for each of the 11
+years (7051 models in total) we obtain at each year, and for each
+technology, the probability that a region develops expertise. We define
+this set of probabilities as \(P(\mathrm{RCA}_{r,t,y} \geq 1)\) which we
+write simply as \(p_{r,t,y}\) and we will refer to these probabilities
+as the regional technological potential. When we aggregate these
+probabilities regionally, we obtain the (average) regional potential
+\(p_{r,y} = \frac{\sum_{t} p_{r,y,t}}{n_t}\), with \(n_t\) the
+corresponding number of observations.
+
+\bookmarksetup{startatroot}
+
+\chapter{Technological potential}\label{technological-potential}
+
+\bookmarksetup{startatroot}
+
+\chapter{Technology space}\label{technology-space}
+
+\bookmarksetup{startatroot}
+
+\chapter{Diversification, coherence, and the role of
+space}\label{diversification-coherence-and-the-role-of-space}
+
+\bookmarksetup{startatroot}
+
+\chapter{Summary}\label{summary}
+
+In summary, this book has no content whatsoever.
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-afriat1972}
+Afriat, Sidney N. 1972. {``Efficiency Estimation of Production
+Functions.''} \emph{International Economic Review}, 568--98.
+
+\bibitem[\citeproctext]{ref-aigner1977}
+Aigner, Dennis, CA Knox Lovell, and Peter Schmidt. 1977. {``Formulation
+and Estimation of Stochastic Frontier Production Function Models.''}
+\emph{Journal of Econometrics} 6 (1): 21--37.
+
+\bibitem[\citeproctext]{ref-albora2023product}
+Albora, Giambattista, Luciano Pietronero, Andrea Tacchella, and Andrea
+Zaccaria. 2023. {``Product Progression: A Machine Learning Approach to
+Forecasting Industrial Upgrading.''} \emph{Scientific Reports} 13 (1):
+1481.
+
+\bibitem[\citeproctext]{ref-alshamsi2018optimal}
+Alshamsi, Aamena, Flávio L Pinheiro, and Cesar A Hidalgo. 2018.
+{``Optimal Diversification Strategies in the Networks of Related
+Products and of Related Research Areas.''} \emph{Nature Communications}
+9 (1): 1328.
+
+\bibitem[\citeproctext]{ref-andreoni2019political}
+Andreoni, Antonio, and Ha-Joon Chang. 2019. {``The Political Economy of
+Industrial Policy: Structural Interdependencies, Policy Alignment and
+Conflict Management.''} \emph{Structural Change and Economic Dynamics}
+48: 136--50.
+
+\bibitem[\citeproctext]{ref-balassa1965rca}
+Balassa, Bela. 1965. {``Trade Liberalisation and {`Revealed'}
+Comparative Advantage 1.''} \emph{The Manchester School} 33 (2):
+99--123.
+
+\bibitem[\citeproctext]{ref-balland2019beyond}
+Balland, PA, and R Boschma. 2019. {``Smart Specialization: Beyond
+Patents.''} \emph{European Commission: Brussels, Belgium}.
+
+\bibitem[\citeproctext]{ref-balland2022scientific}
+Balland, Pierre-Alexandre, and Ron Boschma. 2022. {``Do Scientific
+Capabilities in Specific Domains Matter for Technological
+Diversification in European Regions?''} \emph{Research Policy} 51 (10):
+104594.
+
+\bibitem[\citeproctext]{ref-balland2019smart}
+Balland, Pierre-Alexandre, Ron Boschma, Joan Crespo, and David L Rigby.
+2019. {``Smart Specialization Policy in the European Union: Relatedness,
+Knowledge Complexity and Regional Diversification.''} \emph{Regional
+Studies} 53 (9): 1252--68.
+
+\bibitem[\citeproctext]{ref-boschma2017relatedness}
+Boschma, Ron. 2017. {``Relatedness as Driver of Regional
+Diversification: A Research Agenda.''} \emph{Regional Studies} 51 (3):
+351--64.
+
+\bibitem[\citeproctext]{ref-boschma2023role}
+Boschma, Ron, Ernest Miguelez, Rosina Moreno, and Diego B
+Ocampo-Corrales. 2023. {``The Role of Relatedness and Unrelatedness for
+the Geography of Technological Breakthroughs in Europe.''}
+\emph{Economic Geography} 99 (2): 117--39.
+
+\bibitem[\citeproctext]{ref-RF2001}
+Breiman, Leo. 2001. {``Random Forests.''} \emph{Machine Learning} 45:
+5--32.
+
+\bibitem[\citeproctext]{ref-collins1974tea}
+Collins, Harry M. 1974. {``The TEA Set: Tacit Knowledge and Scientific
+Networks.''} \emph{Science Studies} 4 (2): 165--85.
+
+\bibitem[\citeproctext]{ref-coniglio2021evolution}
+Coniglio, Nicola D, Davide Vurchio, Nicola Cantore, and Michele Clara.
+2021. {``On the Evolution of Comparative Advantage: Path-Dependent
+Versus Path-Defying Changes.''} \emph{Journal of International
+Economics} 133: 103522.
+
+\bibitem[\citeproctext]{ref-diodato2023economic}
+Diodato, Dario, Lorenzo Napolitano, Emanuele Pugliese, and Andrea
+Tacchella. 2023. {``Economic Complexity for Regional Industrial
+Strategies.''} Joint Research Centre.
+
+\bibitem[\citeproctext]{ref-dosi1982technological}
+Dosi, Giovanni. 1982. {``Technological Paradigms and Technological
+Trajectories: A Suggested Interpretation of the Determinants and
+Directions of Technical Change.''} \emph{Research Policy} 11 (3):
+147--62.
+
+\bibitem[\citeproctext]{ref-albora2021economic}
+E, Pugliese, and Tacchella A. 2021. {``Economic Complexity Analytics:
+Country Factsheets.''} \url{https://doi.org/10.2760/368138}.
+
+\bibitem[\citeproctext]{ref-fessina2024identifying}
+Fessina, Massimiliano, Giambattista Albora, Andrea Tacchella, and Andrea
+Zaccaria. 2024. {``Identifying Key Products to Trigger New Exports: An
+Explainable Machine Learning Approach.''} \emph{Journal of Physics:
+Complexity} 5 (2): 025003.
+
+\bibitem[\citeproctext]{ref-albora2025economic}
+G, Albora, Diodato D, and Napolitano L. 2025. {``Economic Complexity
+Analytics: Country Factsheets 2024.''}
+\url{https://doi.org/10.2760/9201933}.
+
+\bibitem[\citeproctext]{ref-hartmann2017linking}
+Hartmann, Dominik, Miguel R Guevara, Cristian Jara-Figueroa, Manuel
+Aristarán, and César A Hidalgo. 2017. {``Linking Economic Complexity,
+Institutions, and Income Inequality.''} \emph{World Development} 93:
+75--93.
+
+\bibitem[\citeproctext]{ref-hausmann2011network}
+Hausmann, Ricardo, and César A Hidalgo. 2011. {``The Network Structure
+of Economic Output.''} \emph{Journal of Economic Growth} 16: 309--42.
+
+\bibitem[\citeproctext]{ref-hidalgo2021economic}
+Hidalgo, César A. 2021. {``Economic Complexity Theory and
+Applications.''} \emph{Nature Reviews Physics} 3 (2): 92--113.
+
+\bibitem[\citeproctext]{ref-hidalgo2023policy}
+---------. 2023. {``The Policy Implications of Economic Complexity.''}
+\emph{Research Policy} 52 (9): 104863.
+
+\bibitem[\citeproctext]{ref-hidalgo2018principle}
+Hidalgo, César A, Pierre-Alexandre Balland, Ron Boschma, Mercedes
+Delgado, Maryann Feldman, Koen Frenken, Edward Glaeser, et al. 2018.
+{``The Principle of Relatedness.''} In \emph{Unifying Themes in Complex
+Systems IX: Proceedings of the Ninth International Conference on Complex
+Systems 9}, 451--57. Springer.
+
+\bibitem[\citeproctext]{ref-hidalgo2009building}
+Hidalgo, César A, and Ricardo Hausmann. 2009. {``The Building Blocks of
+Economic Complexity.''} \emph{Proceedings of the National Academy of
+Sciences} 106 (26): 10570--75.
+
+\bibitem[\citeproctext]{ref-hirschman1958strategy}
+Hirschman, Albert O. 1958. {``The Strategy of Economic Development.''}
+
+\bibitem[\citeproctext]{ref-imbs2003stages}
+Imbs, Jean, and Romain Wacziarg. 2003. {``Stages of Diversification.''}
+\emph{American Economic Review} 93 (1): 63--86.
+
+\bibitem[\citeproctext]{ref-landau2021targets}
+Landau, William Michael. 2021. {``The Targets r Package: A Dynamic
+Make-Like Function-Oriented Pipeline Toolkit for Reproducibility and
+High-Performance Computing.''} \emph{Journal of Open Source Software} 6
+(57): 2959.
+
+\bibitem[\citeproctext]{ref-lee2018early}
+Lee, Changyong, Ohjin Kwon, Myeongjung Kim, and Daeil Kwon. 2018.
+{``Early Identification of Emerging Technologies: A Machine Learning
+Approach Using Multiple Patent Indicators.''} \emph{Technological
+Forecasting and Social Change} 127: 291--303.
+
+\bibitem[\citeproctext]{ref-lee2017catch}
+Lee, Keun, and Franco Malerba. 2017. {``Catch-up Cycles and Changes in
+Industrial Leadership: Windows of Opportunity and Responses of Firms and
+Countries in the Evolution of Sectoral Systems.''} \emph{Research
+Policy} 46 (2): 338--51.
+
+\bibitem[\citeproctext]{ref-li2024evaluating}
+Li, Yang, and Frank MH Neffke. 2024. {``Evaluating the Principle of
+Relatedness: Estimation, Drivers and Implications for Policy.''}
+\emph{Research Policy} 53 (3): 104952.
+
+\bibitem[\citeproctext]{ref-mealy2022them}
+Mealy, Penny, and Diane Coyle. 2022. {``To Them That Hath: Economic
+Complexity and Local Industrial Strategy in the UK.''}
+\emph{International Tax and Public Finance} 29 (2): 358--77.
+
+\bibitem[\citeproctext]{ref-nomaler2024related}
+Nomaler, Önder, and Bart Verspagen. 2024. {``Related or Unrelated
+Diversification: What Is Smart Specialization?''} \emph{Structural
+Change and Economic Dynamics} 70: 503--15.
+
+\bibitem[\citeproctext]{ref-pinheiro2025}
+Pinheiro, Cristina. 2025. {``Relatedness and Economic Complexity as
+Tools for Industrial Policy: Insights and Limitations.''}
+\emph{Structural Change and Economic Dynamics} 72: 1--10.
+
+\bibitem[\citeproctext]{ref-pinheiro2025dark}
+Pinheiro, Flavio L, Pierre-Alexandre Balland, Ron Boschma, and Dominik
+Hartmann. 2025. {``The Dark Side of the Geography of Innovation:
+Relatedness, Complexity and Regional Inequality in Europe.''}
+\emph{Regional Studies} 59 (1): 2106362.
+
+\bibitem[\citeproctext]{ref-pinheiro2022time}
+Pinheiro, Flávio L, Dominik Hartmann, Ron Boschma, and César A Hidalgo.
+2022. {``The Time and Frequency of Unrelated Diversification.''}
+\emph{Research Policy} 51 (8): 104323.
+
+\bibitem[\citeproctext]{ref-rosenstein1943problems}
+Rosenstein-Rodan, Paul N. 1943. {``Problems of Industrialisation of
+Eastern and South-Eastern Europe.''} \emph{The Economic Journal} 53
+(210-211): 202--11.
+
+\bibitem[\citeproctext]{ref-weitzman1998recombinant}
+Weitzman, Martin L. 1998. {``Recombinant Growth.''} \emph{The Quarterly
+Journal of Economics} 113 (2): 331--60.
+
+\bibitem[\citeproctext]{ref-wright2017ranger}
+Wright, Marvin N, and Andreas Ziegler. 2017. {``Ranger: A Fast
+Implementation of Random Forests for High Dimensional Data in c++ and
+r.''} \emph{Journal of Statistical Software} 77: 1--17.
+
+\bibitem[\citeproctext]{ref-zaccaria2018integrating}
+Zaccaria, Andrea, Saurabh Mishra, Masud Z Cader, and Luciano Pietronero.
+2018. {``Integrating Services in the Economic Fitness Approach.''}
+\emph{World Bank Policy Research Working Paper}, no. 8485.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
