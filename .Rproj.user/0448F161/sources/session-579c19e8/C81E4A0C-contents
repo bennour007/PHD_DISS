@@ -8,15 +8,9 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - part: "Literature Review"
-      chapters:
-        - lit_rev.qmd
-    - part: "Research Design"
-      chapters:
-        - potential.qmd
-    - part: "Results and Discussion"
-      chapters:
-        - results.qmd
+    - lit_rev.qmd
+    - potential.qmd
+    - results.qmd
     - summary.qmd
     - references.qmd
 
