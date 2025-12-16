@@ -38,7 +38,7 @@ In summary, relatedness and relatedness density measures suffer from diverse met
 
 In the light of all the mentioned in this section, we fall back again on the core idea that we started this text with; How can we contextualise diversification strategies? The answer to this question is multi-layered and complex. In this section we started by outlining the importance of diversification strategies for regions into new technologies via patenting activities. We explained that the REC literature provides interesting methodological and conceptual framework of analysis and showed that despite their usefulness they suffer from structural issues that limit the advantages of the used granular data, thus limit the incorporation of a broader context empirically. Essentially, the research problem we focus on here, is both methodological and empirical in nature. We highlighted the structural methodological issues as the research gap which will be the focus of our methodological and empirical contribution. 
 
-
+<!---
 ::: {.landscape}
 
 
@@ -141,6 +141,7 @@ empirical contribution: \\ exogenous contexts};
 
 ::: 
 
+--->
 
 
 ```{mermaid}

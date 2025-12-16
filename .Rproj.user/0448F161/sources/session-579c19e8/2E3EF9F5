@@ -3,7 +3,7 @@
     "path": "~/Research/POTENTIAL/writing/THESIS/tech_space.qmd",
     "project_path": "tech_space.qmd",
     "type": "quarto_markdown",
-    "hash": "4291065261",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1764764414804.0,
@@ -22,11 +22,11 @@
         "rmdVisualModeLocation": "2:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1765879591,
+    "lastKnownWriteTime": 1765880877,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1765879591419,
+    "last_content_update": 1765880877,
     "read_only": false,
     "read_only_alternatives": []
 }
