@@ -23,8 +23,10 @@ format:
     theme: cosmo
     lot: true
     lof: true
-    gfm:
-      mermaid-format: png
+    fontsize: 12pt
+    linestretch: 1.5
+    mermaid:
+      theme: default
   pdf:
     documentclass: scrreprt
     fontsize: 12pt

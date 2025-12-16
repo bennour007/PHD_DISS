@@ -145,7 +145,7 @@ empirical contribution: \\ exogenous contexts};
 
 
 ```{mermaid}
-%%| fig-format: png
+
 %%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
 graph TB
     world[the world<br/>uncertainty shocks]
