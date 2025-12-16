@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; General Framework – THESIS</title>
+<title>3&nbsp; The interconnectedness between regions and technologies – THESIS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,6 +89,10 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -131,7 +135,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./potential.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">General Framework</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./potential.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The interconnectedness between regions and technologies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,7 +181,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./potential.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">General Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The interconnectedness between regions and technologies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -208,13 +212,44 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#random-forest" id="toc-random-forest" class="nav-link active" data-scroll-target="#random-forest"><span class="header-section-number">4</span> Random forest</a></li>
-  <li><a href="#technological-potential-and-feature-importance-technology-space" id="toc-technological-potential-and-feature-importance-technology-space" class="nav-link" data-scroll-target="#technological-potential-and-feature-importance-technology-space"><span class="header-section-number">5</span> Technological potential And Feature Importance Technology Space</a>
+  <li><a href="#methodological-motivation" id="toc-methodological-motivation" class="nav-link active" data-scroll-target="#methodological-motivation"><span class="header-section-number">3.1</span> Methodological Motivation</a></li>
+  <li><a href="#notation-and-data-structure" id="toc-notation-and-data-structure" class="nav-link" data-scroll-target="#notation-and-data-structure"><span class="header-section-number">3.2</span> Notation and Data Structure</a></li>
+  <li><a href="#revealed-technological-advantage" id="toc-revealed-technological-advantage" class="nav-link" data-scroll-target="#revealed-technological-advantage"><span class="header-section-number">3.3</span> Revealed Technological Advantage</a></li>
+  <li><a href="#random-forest-algorithm" id="toc-random-forest-algorithm" class="nav-link" data-scroll-target="#random-forest-algorithm"><span class="header-section-number">3.4</span> Random Forest Algorithm</a>
   <ul class="collapse">
-  <li><a href="#technological-potential" id="toc-technological-potential" class="nav-link" data-scroll-target="#technological-potential"><span class="header-section-number">5.1</span> Technological Potential</a></li>
-  <li><a href="#feature-importance-technology-space" id="toc-feature-importance-technology-space" class="nav-link" data-scroll-target="#feature-importance-technology-space"><span class="header-section-number">5.2</span> Feature Importance Technology Space</a></li>
+  <li><a href="#algorithm-structure" id="toc-algorithm-structure" class="nav-link" data-scroll-target="#algorithm-structure"><span class="header-section-number">3.4.1</span> Algorithm Structure</a></li>
+  <li><a href="#tree-construction-via-recursive-partitioning" id="toc-tree-construction-via-recursive-partitioning" class="nav-link" data-scroll-target="#tree-construction-via-recursive-partitioning"><span class="header-section-number">3.4.2</span> Tree Construction via Recursive Partitioning</a></li>
+  <li><a href="#gini-impurity-as-split-criterion" id="toc-gini-impurity-as-split-criterion" class="nav-link" data-scroll-target="#gini-impurity-as-split-criterion"><span class="header-section-number">3.4.3</span> Gini Impurity as Split Criterion</a></li>
+  <li><a href="#termination-and-class-assignment" id="toc-termination-and-class-assignment" class="nav-link" data-scroll-target="#termination-and-class-assignment"><span class="header-section-number">3.4.4</span> Termination and Class Assignment</a></li>
+  <li><a href="#ensemble-prediction" id="toc-ensemble-prediction" class="nav-link" data-scroll-target="#ensemble-prediction"><span class="header-section-number">3.4.5</span> Ensemble Prediction</a></li>
+  <li><a href="#variance-reduction-mechanism" id="toc-variance-reduction-mechanism" class="nav-link" data-scroll-target="#variance-reduction-mechanism"><span class="header-section-number">3.4.6</span> Variance Reduction Mechanism</a></li>
+  <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance"><span class="header-section-number">3.4.7</span> Feature Importance</a></li>
   </ul></li>
-  <li><a href="#diversification-coherence-and-the-role-of-space" id="toc-diversification-coherence-and-the-role-of-space" class="nav-link" data-scroll-target="#diversification-coherence-and-the-role-of-space"><span class="header-section-number">6</span> Diversification, coherence, and the role of space</a></li>
+  <li><a href="#connecting-random-forest-to-the-relatedness-framework" id="toc-connecting-random-forest-to-the-relatedness-framework" class="nav-link" data-scroll-target="#connecting-random-forest-to-the-relatedness-framework"><span class="header-section-number">3.5</span> Connecting Random Forest to the Relatedness Framework</a></li>
+  <li><a href="#technological-potential" id="toc-technological-potential" class="nav-link" data-scroll-target="#technological-potential"><span class="header-section-number">3.6</span> Technological Potential</a>
+  <ul class="collapse">
+  <li><a href="#training-procedure" id="toc-training-procedure" class="nav-link" data-scroll-target="#training-procedure"><span class="header-section-number">3.6.1</span> Training Procedure</a></li>
+  <li><a href="#output-regional-technological-potential" id="toc-output-regional-technological-potential" class="nav-link" data-scroll-target="#output-regional-technological-potential"><span class="header-section-number">3.6.2</span> Output: Regional Technological Potential</a></li>
+  <li><a href="#conceptual-interpretation" id="toc-conceptual-interpretation" class="nav-link" data-scroll-target="#conceptual-interpretation"><span class="header-section-number">3.6.3</span> Conceptual Interpretation</a></li>
+  <li><a href="#empirical-implications" id="toc-empirical-implications" class="nav-link" data-scroll-target="#empirical-implications"><span class="header-section-number">3.6.4</span> Empirical Implications</a></li>
+  </ul></li>
+  <li><a href="#feature-importance-technology-space-fits" id="toc-feature-importance-technology-space-fits" class="nav-link" data-scroll-target="#feature-importance-technology-space-fits"><span class="header-section-number">3.7</span> Feature Importance Technology Space (FITS)</a>
+  <ul class="collapse">
+  <li><a href="#fits-construction" id="toc-fits-construction" class="nav-link" data-scroll-target="#fits-construction"><span class="header-section-number">3.7.1</span> FITS Construction</a></li>
+  <li><a href="#mathematical-formulation" id="toc-mathematical-formulation" class="nav-link" data-scroll-target="#mathematical-formulation"><span class="header-section-number">3.7.2</span> Mathematical Formulation</a></li>
+  <li><a href="#asymmetry-and-hierarchy" id="toc-asymmetry-and-hierarchy" class="nav-link" data-scroll-target="#asymmetry-and-hierarchy"><span class="header-section-number">3.7.3</span> Asymmetry and Hierarchy</a></li>
+  <li><a href="#conceptual-interpretation-1" id="toc-conceptual-interpretation-1" class="nav-link" data-scroll-target="#conceptual-interpretation-1"><span class="header-section-number">3.7.4</span> Conceptual Interpretation</a></li>
+  <li><a href="#empirical-implications-1" id="toc-empirical-implications-1" class="nav-link" data-scroll-target="#empirical-implications-1"><span class="header-section-number">3.7.5</span> Empirical Implications</a></li>
+  <li><a href="#network-visualization" id="toc-network-visualization" class="nav-link" data-scroll-target="#network-visualization"><span class="header-section-number">3.7.6</span> Network Visualization</a></li>
+  </ul></li>
+  <li><a href="#coherence-bridging-technology-networks-and-regional-portfolios" id="toc-coherence-bridging-technology-networks-and-regional-portfolios" class="nav-link" data-scroll-target="#coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.8</span> Coherence: Bridging Technology Networks and Regional Portfolios</a>
+  <ul class="collapse">
+  <li><a href="#conceptual-motivation" id="toc-conceptual-motivation" class="nav-link" data-scroll-target="#conceptual-motivation"><span class="header-section-number">3.8.1</span> Conceptual Motivation</a></li>
+  <li><a href="#mathematical-construction" id="toc-mathematical-construction" class="nav-link" data-scroll-target="#mathematical-construction"><span class="header-section-number">3.8.2</span> Mathematical Construction</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">3.8.3</span> Interpretation</a></li>
+  <li><a href="#empirical-application" id="toc-empirical-application" class="nav-link" data-scroll-target="#empirical-application"><span class="header-section-number">3.8.4</span> Empirical Application</a></li>
+  </ul></li>
+  <li><a href="#summary-of-methodological-framework" id="toc-summary-of-methodological-framework" class="nav-link" data-scroll-target="#summary-of-methodological-framework"><span class="header-section-number">4</span> Summary of Methodological Framework</a></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +258,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">General Framework</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The interconnectedness between regions and technologies</span></h1>
 </div>
 
 
@@ -240,177 +275,291 @@ window.Quarto = {
 </header>
 
 
-<section id="random-forest" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Random forest</h1>
-<p><strong>Algorithmic Framework</strong></p>
-<p>Random Forest constructs an ensemble of <span class="math inline">\(B\)</span> decision trees through bootstrap aggregating (bagging) with random feature subsampling. For binary classification where <span class="math inline">\(y_i \in \{0,1\}\)</span>, each tree <span class="math inline">\(T_b\)</span> is built on a bootstrap sample <span class="math inline">\(\mathcal{D}_b^*\)</span> drawn with replacement from the original dataset.</p>
-<p><strong>Tree Construction via Recursive Partitioning</strong></p>
-<p>Each tree recursively partitions the feature space through binary splits. At node <span class="math inline">\(t\)</span>, we randomly select <span class="math inline">\(m\)</span> features (typically <span class="math inline">\(m = \sqrt{p}\)</span>) and evaluate all possible splits within this subset. For feature <span class="math inline">\(j\)</span> and threshold <span class="math inline">\(\tau\)</span>, the split creates two child nodes: <span class="math inline">\(t_L = \{i : x_{ij} \leq \tau\}\)</span> and <span class="math inline">\(t_R = \{i : x_{ij} &gt; \tau\}\)</span>.</p>
-<p><strong>Gini Impurity as Split Criterion</strong></p>
-<p>Split quality is assessed via Gini impurity, defined as:</p>
-<p><span class="math display">\[G(t) = 1 - \sum_{k=0}^{1} p_k^2(t) = 2p_0(t)p_1(t)\]</span></p>
-<p>where <span class="math inline">\(p_k(t) = n_k(t)/n(t)\)</span> represents the proportion of class <span class="math inline">\(k\)</span> observations at node <span class="math inline">\(t\)</span>. Gini impurity quantifies node heterogeneity: <span class="math inline">\(G=0\)</span> indicates perfect purity (homogeneous class), while <span class="math inline">\(G=0.5\)</span> indicates maximum impurity (equal class distribution). The optimal split maximizes the weighted impurity reduction:</p>
-<p><span class="math display">\[\Delta G(j, \tau) = G(t) - \left[\frac{n(t_L)}{n(t)} G(t_L) + \frac{n(t_R)}{n(t)} G(t_R)\right]\]</span></p>
-<p>The weighting by relative node size prevents trivial splits that isolate single observations into pure but uninformative leaves.</p>
-<p><strong>Termination and Class Assignment</strong></p>
-<p>Recursive splitting continues until predefined stopping criteria are met: node purity (<span class="math inline">\(G=0\)</span>), minimum node size threshold, or maximum tree depth. Terminal nodes are assigned the majority class of their constituent observations.</p>
-<p><strong>Ensemble Prediction</strong></p>
-<p>For prediction, observation <span class="math inline">\(\mathbf{x}\)</span> traverses all <span class="math inline">\(B\)</span> trees. The final classification aggregates individual tree predictions via majority voting:</p>
-<p><span class="math display">\[\hat{y}(\mathbf{x}) = \text{mode}\{\hat{y}_1(\mathbf{x}), \ldots, \hat{y}_B(\mathbf{x})\}\]</span></p>
-<p>Class probabilities are estimated as the proportion of trees predicting each class:</p>
-<p><span class="math display">\[\hat{P}(y=1|\mathbf{x}) = B^{-1}\sum_{b=1}^{B} \mathbb{I}[\hat{y}_b(\mathbf{x})=1]\]</span></p>
-<p><strong>Interpreting Probability Estimates</strong></p>
-<p>This probability represents the empirical vote share across trees. Values near 1 indicate strong consensus for class 1 (high confidence), while values near 0.5 reflect uncertainty with divided predictions. Unlike parametric models, these are purely data-driven vote proportions rather than model-based probability estimates. Practitioners can adjust classification thresholds based on asymmetric misclassification costs.</p>
-<p><strong>Variance Reduction Mechanism</strong></p>
-<p>The algorithm’s effectiveness stems from variance reduction through decorrelated predictions. Bootstrap sampling and random feature selection reduce inter-tree correlation <span class="math inline">\(\rho\)</span>, yielding ensemble variance:</p>
-<p><span class="math display">\[\text{Var}(\bar{y}) = \rho\sigma^2 + \frac{1-\rho}{B}\sigma^2\]</span></p>
-<p>As <span class="math inline">\(B\)</span> increases and <span class="math inline">\(\rho\)</span> decreases, ensemble variance diminishes while maintaining the low bias of flexible tree models.</p>
-<p><strong>Feature Importance</strong></p>
-<p>Feature importance quantifies each predictor’s contribution by aggregating Gini impurity reductions:</p>
-<p><span class="math display">\[I(j) = \frac{1}{B}\sum_{b=1}^{B} \sum_{t \in T_b : v(t)=j} \Delta G(t)\]</span></p>
-<p>where the sum runs over all nodes using feature <span class="math inline">\(j\)</span> for splitting. Higher values indicate features consistently creating purer partitions. However, importance measures predictive association rather than causal effect, and suffer from bias toward high-cardinality features and correlated predictor sets. They serve to rank predictive relevance but require caution in causal interpretation.</p>
+<section id="methodological-motivation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="methodological-motivation"><span class="header-section-number">3.1</span> Methodological Motivation</h2>
+<p>Traditional relatedness frameworks model diversification through symmetric co-occurrence matrices and linear aggregation of relatedness density <span class="citation" data-cites="hausmann2011network">(<a href="references.html#ref-hausmann2011network" role="doc-biblioref">Hausmann and Hidalgo 2011</a>)</span>. However, as established in our problem statement, these constructs suffer from three structural limitations: (1) symmetry assumptions that obscure directional dependencies between technologies, (2) linear aggregation that loses granular information about technology-specific requirements, and (3) noise when technologies outnumber regions.</p>
+<p>We address these limitations by replacing traditional measures with machine learning-derived alternatives. Specifically, we use Random Forest models to generate: (1) <strong>asymmetric feature importance networks (FITS)</strong> that capture directional, hierarchical technology relationships, replacing symmetric relatedness measures; and (2) <strong>predicted probabilities (technological potential)</strong> that estimate region-specific feasibility of technology adoption, replacing linear relatedness density. This approach enables the contextualization of diversification strategies by accounting for technology-specific characteristics, regional knowledge infrastructure, and broader spatial dynamics—elements that traditional measures cannot adequately capture.</p>
+<p>Before detailing our methodology, we briefly situate this approach within the broader literature. The Principle of Relatedness (PoR) formalizes the empirical observation that shared input requirements (knowledge, resources, capabilities) determine diversification feasibility <span class="citation" data-cites="hidalgo2018principle hidalgo2021economic">(<a href="references.html#ref-hidalgo2018principle" role="doc-biblioref">Hidalgo et al. 2018</a>; <a href="references.html#ref-hidalgo2021economic" role="doc-biblioref">Hidalgo 2021</a>)</span>. Economic Complexity (EC) complements this by quantifying sophistication patterns <span class="citation" data-cites="hidalgo2009building">(<a href="references.html#ref-hidalgo2009building" role="doc-biblioref">Hidalgo and Hausmann 2009</a>)</span>. While these frameworks have proven valuable for policy <span class="citation" data-cites="zaccaria2018integrating albora2021economic">(<a href="references.html#ref-zaccaria2018integrating" role="doc-biblioref">Zaccaria et al. 2018</a>; <a href="references.html#ref-albora2021economic" role="doc-biblioref">E and A 2021</a>)</span>, deriving granular, context-specific implications remains challenging <span class="citation" data-cites="hidalgo2023policy li2024evaluating">(<a href="references.html#ref-hidalgo2023policy" role="doc-biblioref">Hidalgo 2023</a>; <a href="references.html#ref-li2024evaluating" role="doc-biblioref">Li and Neffke 2024</a>)</span>. Recent work on unrelated diversification <span class="citation" data-cites="pinheiro2022time boschma2023role">(<a href="references.html#ref-pinheiro2022time" role="doc-biblioref">Flávio L. Pinheiro et al. 2022</a>; <a href="references.html#ref-boschma2023role" role="doc-biblioref">Boschma et al. 2023</a>)</span>, geographic inequalities <span class="citation" data-cites="pinheiro2025dark hartmann2017linking">(<a href="references.html#ref-pinheiro2025dark" role="doc-biblioref">Flavio L. Pinheiro et al. 2025</a>; <a href="references.html#ref-hartmann2017linking" role="doc-biblioref">Hartmann et al. 2017</a>)</span>, and emerging technologies <span class="citation" data-cites="lee2018early fessina2024identifying">(<a href="references.html#ref-lee2018early" role="doc-biblioref">Lee et al. 2018</a>; <a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span> highlights the need for methodologies that capture contextual nuances beyond path dependency identification.</p>
+<p>Our approach responds to this need by modeling technology relationships and regional capabilities in ways that explicitly incorporate heterogeneity. The following sections establish our notation system, describe the Random Forest algorithm, and detail how we construct and interpret technological potential, FITS, and coherence measures.</p>
 </section>
-<section id="technological-potential-and-feature-importance-technology-space" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Technological potential And Feature Importance Technology Space</h1>
-<p>When two technologies (or products, activities, etc) share similar sets of input requirements (knowledge, resources, etc), we qualify them as related <span class="citation" data-cites="hausmann2011network">(<a href="references.html#ref-hausmann2011network" role="doc-biblioref">Hausmann and Hidalgo 2011</a>)</span>. This empirical observation has been confirmed in many areas in different streams of literature and formalised in the Principle of Relatedness(PoR) <span class="citation" data-cites="hidalgo2018principle">(<a href="references.html#ref-hidalgo2018principle" role="doc-biblioref">Hidalgo et al. 2018</a>)</span>. However, deriving concrete policy implications from this principle has proven far from straightforward <span class="citation" data-cites="hidalgo2023policy li2024evaluating">(<a href="references.html#ref-hidalgo2023policy" role="doc-biblioref">Hidalgo 2023</a>; <a href="references.html#ref-li2024evaluating" role="doc-biblioref">Li and Neffke 2024</a>)</span>. The PoR is essentially a framework that formalises a qualitative intuition that’s been present in various streams of literature: The industrial fabric in a geographic location matters <span class="citation" data-cites="hidalgo2021economic hidalgo2009building">(<a href="references.html#ref-hidalgo2021economic" role="doc-biblioref">Hidalgo 2021</a>; <a href="references.html#ref-hidalgo2009building" role="doc-biblioref">Hidalgo and Hausmann 2009</a>)</span>. This framework enables researchers to derive different metrics that quantify path dependency and, therefore, infer more granular and pragmatic policy recommendations <span class="citation" data-cites="li2024evaluating">(<a href="references.html#ref-li2024evaluating" role="doc-biblioref">Li and Neffke 2024</a>)</span>. However, we often find in the literature that many studies refrain from investigating beyond the identification of path dependencies<span class="citation" data-cites="hidalgo2023policy">(<a href="references.html#ref-hidalgo2023policy" role="doc-biblioref">Hidalgo 2023</a>)</span>. Although such identification may prove interesting at times, the entire idea of the PoR is to be used to break free from the path dependency curse and focus on unique regional paths that promote diversification <span class="citation" data-cites="imbs2003stages">(<a href="references.html#ref-imbs2003stages" role="doc-biblioref">Imbs and Wacziarg 2003</a>)</span>. Diversification is the endpoint because it creates different sets of non-fungible tacit and non-tacit knowledge/capacity <span class="citation" data-cites="collins1974tea">(<a href="references.html#ref-collins1974tea" role="doc-biblioref">Collins 1974</a>)</span> that can be compounded over time and across industries to create value that drives regional growth and development <span class="citation" data-cites="dosi1982technological weitzman1998recombinant">(<a href="references.html#ref-dosi1982technological" role="doc-biblioref">Dosi 1982</a>; <a href="references.html#ref-weitzman1998recombinant" role="doc-biblioref">Weitzman 1998</a>)</span>. Knowledge, in all its forms, is the driver of the PoR policy implications <span class="citation" data-cites="balland2022scientific balland2019smart">(<a href="references.html#ref-balland2022scientific" role="doc-biblioref">P.-A. Balland and Boschma 2022</a>; <a href="references.html#ref-balland2019smart" role="doc-biblioref">P.-A. Balland et al. 2019</a>)</span>. And although identifying promising areas of knowledge(related or unrelated) is a useful exercise. Figuring out the unique elements that dictate the dynamics of knowledge flows is at the heart of the industrial policies in this context <span class="citation" data-cites="nomaler2024related">(<a href="references.html#ref-nomaler2024related" role="doc-biblioref">Nomaler and Verspagen 2024</a>)</span>. Moreover, the PoR is also complemented by the Economic Complexity paradigm(EC) pioneered for the first time in <span class="citation" data-cites="hidalgo2009building">(<a href="references.html#ref-hidalgo2009building" role="doc-biblioref">Hidalgo and Hausmann 2009</a>)</span>. EC is a methodological framework that builds on the PoR and frames economies as complex systems. The idea is simple: an economy, regardless of its scale, is a complex system that might be impossible to determine the entirety of its components. But if we quantify the interactions between different systems and their different components, then we can estimate indices and metrics that capture most of the variation. In this sense, the PoR quantifies path dependency patterns(via metrics like relatedness and proximity), and EC quantifies the sophistication of specialisation patterns(via metrics like complexity and fitness)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. One can also describe relatedness as a variation of a recommendation system and complexity as a dimensionality reduction exercise. However, there’s still no general consensus on the reliability of any given methodology for both exercises, regardless of the popularity of one or the other. What there’s a consensus on, however, is that these frameworks and the toolbox they provide can be improved further as stated in <span class="citation" data-cites="pinheiro2025">C. Pinheiro (<a href="references.html#ref-pinheiro2025" role="doc-biblioref">2025</a>)</span>. Regardless, EC and PoR were adopted in many policy papers such as <span class="citation" data-cites="zaccaria2018integrating">Zaccaria et al. (<a href="references.html#ref-zaccaria2018integrating" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="albora2021economic">E and A (<a href="references.html#ref-albora2021economic" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="albora2025economic">G, D, and L (<a href="references.html#ref-albora2025economic" role="doc-biblioref">2025</a>)</span>.</p>
-<p>In this context, the literature provides more threads of ideas that target a deeper understanding and analysis of complex economic systems. For instance, investigations and studies regarding unrelated diversification <span class="citation" data-cites="pinheiro2022time boschma2023role">(<a href="references.html#ref-pinheiro2022time" role="doc-biblioref">Flávio L. Pinheiro et al. 2022</a>; <a href="references.html#ref-boschma2023role" role="doc-biblioref">Boschma et al. 2023</a>)</span>, geographic inequalities <span class="citation" data-cites="pinheiro2025dark hartmann2017linking">(<a href="references.html#ref-pinheiro2025dark" role="doc-biblioref">Flavio L. Pinheiro et al. 2025</a>; <a href="references.html#ref-hartmann2017linking" role="doc-biblioref">Hartmann et al. 2017</a>)</span>, emerging industries/technologies <span class="citation" data-cites="lee2018early fessina2024identifying">(<a href="references.html#ref-lee2018early" role="doc-biblioref">C. Lee et al. 2018</a>; <a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>, and diversification strategies <span class="citation" data-cites="alshamsi2018optimal">(<a href="references.html#ref-alshamsi2018optimal" role="doc-biblioref">Alshamsi, Pinheiro, and Hidalgo 2018</a>)</span>, among others, are pioneering the effort to bridge different gaps in theory, policy implications, and methodology. These ideas, among others, suggest that investing in unrelated activities can yield greater value and help break free from the path‐dependency curse—a phenomenon the literature shows exacerbates regional inequalities. Thus, one of the challenges is to quantify how to expand related activities beyond path dependency(strategy), which activity/sector to aim for(target), and the requirements for such an investment to be fruitful(condition). The scope of our study is expanding ideas around diversification strategies and conditions.</p>
-<p>Policy makers often face a difficult choice when deciding on industrial upgrading. The first is to take advantage of existing local capacity and knowledge(related diversification). This choice is presumably the easiest one, since the local economy already has what it takes for the implementation <span class="citation" data-cites="boschma2017relatedness">(<a href="references.html#ref-boschma2017relatedness" role="doc-biblioref">Boschma 2017</a>)</span>. The second is to invest in building new capacity/knowledge(unrelated diversification) with all the risks that such a gamble accommodates <span class="citation" data-cites="coniglio2021evolution">(<a href="references.html#ref-coniglio2021evolution" role="doc-biblioref">Coniglio et al. 2021</a>)</span>. These choices have been at the centre of different theories in development economics(big push, forward/backward linkages <span class="citation" data-cites="rosenstein1943problems hirschman1958strategy">(<a href="references.html#ref-rosenstein1943problems" role="doc-biblioref">Rosenstein-Rodan 1943</a>; <a href="references.html#ref-hirschman1958strategy" role="doc-biblioref">Hirschman 1958</a>)</span>, etc). However, we argue on the side of <span class="citation" data-cites="pinheiro2025">(<a href="references.html#ref-pinheiro2025" role="doc-biblioref">C. Pinheiro 2025</a>)</span> that the basis of this narrative is incomplete since it contains an implicit assumption that is often overlooked: it’s easier for an economic system to diversify into a related activity than an unrelated one. But how do we assess the ease of diversification, accounting for its level of relatedness?</p>
-<p><span class="citation" data-cites="lee2017catch">K. Lee and Malerba (<a href="references.html#ref-lee2017catch" role="doc-biblioref">2017</a>)</span> show that for every stage of industrial maturity different level of diversity among other “initial-conditions” is needed. The main idea is that local capacities are necessary but insufficient condition for related diversification. This has been formalised explicitly in <span class="citation" data-cites="hausmann2011network">(<a href="references.html#ref-hausmann2011network" role="doc-biblioref">Hausmann and Hidalgo 2011</a>)</span>. where the authors define the “quiescence trap”, which can be observed when a country with few capabilities face low incentive to accumulate new ones. Additionally, in a broader policy context, and even if we assume that these initial conditions are met locally, and related diversification is feasible, it may simply exacerbate the regional disadvantages. Indeed related diversification has been observed to increase the gaps between locations <span class="citation" data-cites="mealy2022them pinheiro2025dark">(<a href="references.html#ref-mealy2022them" role="doc-biblioref">Mealy and Coyle 2022</a>; <a href="references.html#ref-pinheiro2025dark" role="doc-biblioref">Flavio L. Pinheiro et al. 2025</a>)</span>. Essentially, if we have two locations, one already has a range of complex capacities, the other doesn’t. If policy only backs what each location already does well, the complex location keeps getting ever more complex, drawing more investment and talent, while the other one falls further behind exacerbating inequality. Moreover, there’s no consensus on one way to quantify relatedness. The literature usually relies on the co-occurrence matrix to construct the relatedness between products/technologies etc. <span class="citation" data-cites="coniglio2021evolution">(<a href="references.html#ref-coniglio2021evolution" role="doc-biblioref">Coniglio et al. 2021</a>)</span> point out that most studies in this context do not differentiate between random co-occurrences, and co-occurrences that are due to related capacities and proposes a test to investigate these significance of these relationships. Similarly, the proposed methodology in <span class="citation" data-cites="albora2023product">(<a href="references.html#ref-albora2023product" role="doc-biblioref">Albora et al. 2023</a>)</span> responds to the same criticism and argue that the number of products/technologies almost always outnumber that of regions/locations, therefore the information extracted from the co-occurrence matrix is at best a random walk.</p>
-<section id="technological-potential" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="technological-potential"><span class="header-section-number">5.1</span> Technological Potential</h2>
-<p>We follow the methodology proposed by <span class="citation" data-cites="albora2023product">(<a href="references.html#ref-albora2023product" role="doc-biblioref">Albora et al. 2023</a>)</span> for trade data. The methodology named product progression, is based on a machine learning approach that enables researchers to unravel novel aspects of their RCA data. In our case that would be the non-linear dependence between technologies. Our Objective from this phase is to eventually predict whether a region will develop an expertise in a given technology. For reasons of data availability in other data bases that we will use in the next stages, we opted to limit these predictions to an 11 years interval spanning from 2008 to 2018 using data from 4 years ago for each prediction. These predicted probabilities are precisely the regional technological potential. They denote a hypothetical situation that describe for each region, the technologies it has potential to develop expertise in given the relationships that we already modeled.</p>
-<p>We use Data from the European Patent Office, which contains details on patent applications from 1978 to 2021. The EPO provides a rigorous and detailed classification of each patent application up to 8 or more digits. In our case, we consider the IPC classifications, but since these classifications are extremely granular and are considerably larger than the regions observed (at 8000+ classes), we limit our data to the 4th digit of the IPC classification. These 4 digits contain 3 layers of information with which we can define a given technology, a section denoted by a letter, a class denoted by two digits, and a subclass denoted by another letter. Thus, an IPC class/technology such as F16H is structured hierarchically: Section F covers Mechanical engineering (including lighting, heating, weapons, and blasting), Class 16 pertains to engineering elements and general methods for producing and transmitting mechanical power, and Subclass H specifically addresses gears, shaft connections, and gearing for conveying rotary motion. With such a subset, we ended up with 641 distinct technologies. Additionally, the same data also provides details on where the applications were made, we capture these details at the NUTS2 level<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> for 34 European countries within and outside the European Union, spanning across 345 regions. Additionally we also use data from the Eurostat database to incorporate regional level socio-economic factors which are detailed further in section <span class="quarto-unresolved-ref">?sec-factors</span> and summarised in <span class="quarto-unresolved-ref">?tbl-sum</span>.</p>
-<p>Furthermore, we quantify regions’ specialisation by means of the Revealed Comparative Advantage(RCA) <span class="citation" data-cites="balassa1965rca">(<a href="references.html#ref-balassa1965rca" role="doc-biblioref">Balassa 1965</a>)</span>. In our context, the RCA measures the region’s relative specialization level in a given technology, which enables us to capture both expertise and diversity when we aggregate all the technologies for each region. This measure, also known as the Balassa index, proved useful in determining complex and non-linear relationships between products/activities. Although the RCA is mainly designed for use with international trade data, it has also been adopted in the literature on the geography of innovation. Simply put, the RCA quantifies simultaneously the relative level and the quality of co-occurrence, which reduces the noise in the data. Although some papers criticise the use of the RCA with patent classes <span class="citation" data-cites="balland2019beyond diodato2023economic">(<a href="references.html#ref-balland2019beyond" role="doc-biblioref">P. Balland and Boschma 2019</a>; <a href="references.html#ref-diodato2023economic" role="doc-biblioref">Diodato et al. 2023</a>)</span>, we think it fits our objective in capturing meaningful relationships between technologies. We compute these RCA measures to obtain, for each year, a matrix denoting the regions in its rows and the technologies in its columns. We formalize it as follows: Let <span class="math inline">\(X_{r,t,y}\)</span> be the measure of activity (patent counts) of region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span>. Where <span class="math inline">\(\mathcal{T}\)</span> is the set of technologies, <span class="math inline">\(\mathcal{Y}\)</span> is the set of years, <span class="math inline">\(\mathcal{R}\)</span> is the set of regions, and <span class="math inline">\(\mathcal{C}\)</span> is the set of countries, such that:</p>
+<section id="notation-and-data-structure" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="notation-and-data-structure"><span class="header-section-number">3.2</span> Notation and Data Structure</h2>
+<p>We establish consistent notation used throughout:</p>
+<p><strong>Sets:</strong> - <span class="math inline">\(\mathcal{T} = \{t : 1 \le t \le N_T\}\)</span>: set of technologies - <span class="math inline">\(\mathcal{R} = \{r : 1 \le r \le N_R\}\)</span>: set of regions<br>
+- <span class="math inline">\(\mathcal{Y} = \{y : 1 \le y \le N_Y\}\)</span>: set of years - <span class="math inline">\(\mathcal{C} = \{c : 1 \le c \le N_C\}\)</span>: set of technology categories</p>
+<p><strong>Variables:</strong> - <span class="math inline">\(X_{r,t,y}\)</span>: patent count for region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span> - <span class="math inline">\(\text{RTA}_{r,t,y}\)</span>: Revealed Comparative Advantage (later referred to as RTA for patents) - <span class="math inline">\(z_{r,t,y} \in \{0,1\}\)</span>: binary indicator of technological capacity (specialization) - <span class="math inline">\(p_{r,t,y} \in [0,1]\)</span>: predicted probability of future specialization (technological potential) - <span class="math inline">\(I_{t \to t'}\)</span>: feature importance weight, directed relationship from technology <span class="math inline">\(t\)</span> to <span class="math inline">\(t'\)</span></p>
+<p>We use European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.</p>
+</section>
+<section id="revealed-technological-advantage" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="revealed-technological-advantage"><span class="header-section-number">3.3</span> Revealed Technological Advantage</h2>
+<p>We quantify regional specialization using the Revealed Comparative Advantage <span class="citation" data-cites="balassa1965RTA">(<a href="references.html#ref-balassa1965RTA" role="doc-biblioref"><strong>balassa1965RTA?</strong></a>)</span>. Although originally designed for trade data, this metric has been widely adopted in innovation geography literature. Following <span class="citation" data-cites="balland2017geography">(<a href="references.html#ref-balland2017geography" role="doc-biblioref"><strong>balland2017geography?</strong></a>)</span>, we refer to it as Revealed Technological Advantage (RTA) in our patent context. The RTA measures relative specialization, enabling simultaneous capture of expertise depth and portfolio diversity while reducing co-occurrence noise <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. Despite critiques regarding patent-based applications <span class="citation" data-cites="balland2019beyond diodato2023economic">(<a href="references.html#ref-balland2019beyond" role="doc-biblioref">Balland and Boschma 2019</a>; <a href="references.html#ref-diodato2023economic" role="doc-biblioref">Diodato et al. 2023</a>)</span>, RTA aligns with our objective of capturing meaningful technology relationships through machine learning rather than raw co-occurrence.</p>
+<p>The RTA for region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span> is:</p>
 <p><span class="math display">\[
-\mathcal{T} = \{\,t : 1 \le t \le N_T\},\quad
-\mathcal{Y} = \{\,y : 1 \le y \le N_Y\},\quad
-\mathcal{R} = \{\,r : 1 \le r \le N_R\},\quad
-\mathcal{C} = \{\,c : 1 \le c \le N_C\}.
-\]</span></p>
-<p>And <span class="math inline">\(N_T, N_Y, N_R, N_C\)</span> are the total counts of technologies, years, regions and countries.</p>
-<p>The RCA of region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> in year <span class="math inline">\(y\)</span> is</p>
-<p><span class="math display">\[
-\mathrm{RCA}_{r,t,y}
+\text{RTA}_{r,t,y}
 = \frac{\displaystyle\frac{X_{r,t,y}}{\sum_{t'} X_{r,t',y}}}
        {\displaystyle\frac{\sum_{r'} X_{r',t,y}}{\sum_{r',t'} X_{r',t',y}}}
 = \frac{X_{r,t,y}\,\sum_{r',t'}X_{r',t',y}}
        {\bigl(\sum_{t'}X_{r,t',y}\bigr)\,\bigl(\sum_{r'}X_{r',t,y}\bigr)}
 \]</span></p>
-<p>For each year <span class="math inline">\(y\)</span>, we then assemble the <strong>RCA matrix</strong> <span class="math inline">\(\mathbf{R}^{(y)}\)</span> whose <span class="math inline">\((r,t)\)</span>-entry is <span class="math inline">\(\mathrm{RCA}_{r,t,y}\)</span>:</p>
+<p>For each year <span class="math inline">\(y\)</span>, we construct the RTA matrix <span class="math inline">\(\mathbf{R}^{(y)}\)</span> with entries <span class="math inline">\(\text{RTA}_{r,t,y}\)</span>:</p>
 <p><span class="math display">\[
 \mathbf{R}^{(y)}
-= \bigl[\mathrm{RCA}_{r,t,y}\bigr]_{r=1,\dots,N_{R}}^{t=1,\dots,N_{T}}
+= \bigl[\text{RTA}_{r,t,y}\bigr]_{r=1,\dots,N_{R}}^{t=1,\dots,N_{T}}
 \]</span></p>
-<p>These yearly measures are essential for us, since our entire approach depends on different manipulations around these stacked matrices.</p>
-<p>The modeling of the Random Forest algorithm is not intuitive in this proposed methodology. In fact the novelty of the approach proposed by <span class="citation" data-cites="albora2023product">(<a href="references.html#ref-albora2023product" role="doc-biblioref">Albora et al. 2023</a>)</span> is not the use of a tree-based algorithm, but rather to model each technology separately. The idea is to construct a model for every technology in <span class="math inline">\(\mathbf{R}^{(y)}\)</span> matrix such that the target technology <span class="math inline">\(i, i\in \mathcal{T}\)</span> is the outcome and the features are all other technologies different than <span class="math inline">\(i\)</span>. The trick here is to binarise the outcome and leave the features as they are for every model we train such that:</p>
+<p>These yearly matrices form the foundation for all subsequent modeling. We binarize specialization for classification tasks:</p>
 <p><span class="math display">\[
 z_{r,t,y}
 \;=\;
 \begin{cases}
-1 &amp; \text{if }\mathrm{RCA}_{r,t,y}\ge1 \\
+1 &amp; \text{if }\text{RTA}_{r,t,y}\ge1 \\
 0 &amp; \text{otherwise}
 \end{cases}
 \]</span></p>
-<p>The <span class="math inline">\(z_{r,t,y}\)</span> term reflect the capacity of region <span class="math inline">\(r\)</span> at year <span class="math inline">\(y\)</span> for technology <span class="math inline">\(t\)</span>. In here capacity means that a region has an advantage/specialised in that specific technology relative to the other regions. Additionally we include a 4 year lag, or a fixed horizon we call delta, <span class="math inline">\(\delta=4\)</span> in the features since the entire idea is to assess the capacity of the current outcomes based on the past features. This aligns with instincts in the literature in which studies like <span class="citation" data-cites="andreoni2019political">(<a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span> posit that past capacities predict future diversification. Eventually the predicted outcomes describe what technology is possible to develop expertise in, given the observed capacity <span class="math inline">\(\delta\)</span> years ago. However, as stated in <span class="citation" data-cites="albora2023product">Albora et al. (<a href="references.html#ref-albora2023product" role="doc-biblioref">2023</a>)</span> choosing the value of <span class="math inline">\(\delta\)</span> is challenging since increasing it decrease the performance of the models. Our choice here, relies on this observation and is the most optimal decision since we train the models for different years instead of just one, thus we need to have for each model at each year of prediction enough observations.</p>
-<p>The training and testing sets are constructed consequently:</p>
-<p>We use a fixed horizon (<span class="math inline">\(\delta=4\)</span>) years to predict future expertise. Let years run from <span class="math inline">\(y = y_0...y_f\)</span>, where <span class="math inline">\(y_0 = 1978\)</span> and <span class="math inline">\(y_f = 2018\)</span>, let’s also consider the target year of prediction <span class="math inline">\(y_t \in \{2008,..., 2018\}\)</span>. We then have:</p>
-<p><span class="math display">\[
-X_{\text{train}} = \{ \mathrm{RCA}_{r,t,y} | y \in [y_0, y_t - 2\delta]\},\quad Y_{\text{train}} = {z}_{r,t',y} | y \in [y_0 + \delta,  y_t - \delta] \}
-\]</span></p>
-<p><span class="math display">\[
-X_{\text{test}} =  \{ \mathrm{RCA}_{r,t,y} |y_t - \delta\},\quad
-Y_{\text{test}} = \{ z_{r,t,y} |y_t\}
-\]</span> Given the complexity of computations, which would require infeasible timing, we conducted cross validation on a random sample of models targeting G06G (Analog computers for data processing), B67B (Closing bottles, jars, or similar containers), D02J (Mechanical finishing or refining of yarns), and C08J (Working-up plastics-processing, recovery, or treatment of waste). Then we chose the parameter values with the most frequency and used them for the rest of the models specifically: mtry = 139, trees = 100, min_n = 38. For our case and computational constraints, this was the only feasible approach. The training was conducted in R using the Ranger package <span class="citation" data-cites="wright2017ranger">(<a href="references.html#ref-wright2017ranger" role="doc-biblioref">Wright and Ziegler 2017</a>)</span>, with targets <span class="citation" data-cites="landau2021targets">(<a href="references.html#ref-landau2021targets" role="doc-biblioref">Landau 2021</a>)</span> as a pipeline orchestrator and the tidymodels framework.</p>
-<p>Once we train our models one for each technology for each of the 11 years (7051 models in total) we obtain at each year, and for each technology, the probability that a region develops expertise. We define this set of probabilities as <span class="math inline">\(P(\mathrm{RCA}_{r,t,y} \geq 1)\)</span> which we write simply as <span class="math inline">\(p_{r,t,y}\)</span> and we will refer to these probabilities as the regional technological potential. When we aggregate these probabilities regionally, we obtain the (average) regional potential <span class="math inline">\(p_{r,y} = \frac{\sum_{t} p_{r,y,t}}{n_t}\)</span>, with <span class="math inline">\(n_t\)</span> the corresponding number of observations.</p>
+<p>where <span class="math inline">\(z_{r,t,y} = 1\)</span> indicates region <span class="math inline">\(r\)</span> has comparative advantage (specialization) in technology <span class="math inline">\(t\)</span> at year <span class="math inline">\(y\)</span>.</p>
 </section>
-<section id="feature-importance-technology-space" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="feature-importance-technology-space"><span class="header-section-number">5.2</span> Feature Importance Technology Space</h2>
-<p>A natural approach to constructing technology networks would be to use patent citation data: if Patent A cites Patent B, and they contain different technologies, this reveals a relationship between those technology domains. However, this approach presents three critical limitations for our purposes. First, EPO citations include examiner-added citations that may not reflect actual knowledge flows between inventors. Second, aggregating patent-level citations to technology-level relationships relies on co-occurrence patterns that obscure the directionality of knowledge dependencies—whether technology A enables B or vice versa. Third, citation networks are inherently backward-looking, reflecting past relationships rather than predicting future technological trajectories.</p>
-<p>To address these limitations, we adopt the Feature Importance Product Space (FIPS) methodology <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. Rather than inferring relationships from citation co-occurrence, FIPS uses machine learning to identify which existing technology specializations predict future specialization in other technologies. Specifically, we train random forest models where the current presence of regional expertise in technology T is predicted by past expertise patterns across all other technologies. The resulting feature importance scores reveal directional, predictive relationships: if expertise in technology A strongly predicts future expertise in B, this indicates A is a “stepping stone” toward B, even if the reverse is not true. This asymmetric structure captures hierarchical technological dependencies that symmetric co-occurrence measures would miss, and its forward-looking nature aligns with our focus on how current network positions influence future patent value.</p>
+<section id="random-forest-algorithm" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="random-forest-algorithm"><span class="header-section-number">3.4</span> Random Forest Algorithm</h2>
+<p>Before detailing our applications, we provide comprehensive context on the Random Forest algorithm, which fuels our entire methodological approach. We focus on binary classification where <span class="math inline">\(y_i \in \{0,1\}\)</span>.</p>
+<section id="algorithm-structure" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="algorithm-structure"><span class="header-section-number">3.4.1</span> Algorithm Structure</h3>
+<p>Random Forest constructs an ensemble of <span class="math inline">\(B\)</span> decision trees through bootstrap aggregating (bagging) with random feature subsampling. Each tree <span class="math inline">\(T_b\)</span> is built on a bootstrap sample <span class="math inline">\(\mathcal{D}_b^*\)</span> drawn with replacement from the original dataset.</p>
+</section>
+<section id="tree-construction-via-recursive-partitioning" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="tree-construction-via-recursive-partitioning"><span class="header-section-number">3.4.2</span> Tree Construction via Recursive Partitioning</h3>
+<p>Each tree recursively partitions the feature space through binary splits. At node <span class="math inline">\(t\)</span>, we randomly select <span class="math inline">\(m\)</span> features (typically <span class="math inline">\(m = \sqrt{p}\)</span>) and evaluate all possible splits within this subset. For feature <span class="math inline">\(j\)</span> and threshold <span class="math inline">\(\tau\)</span>, the split creates two child nodes: <span class="math inline">\(t_L = \{i : x_{ij} \leq \tau\}\)</span> and <span class="math inline">\(t_R = \{i : x_{ij} &gt; \tau\}\)</span>.</p>
+</section>
+<section id="gini-impurity-as-split-criterion" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="gini-impurity-as-split-criterion"><span class="header-section-number">3.4.3</span> Gini Impurity as Split Criterion</h3>
+<p>Split quality is assessed via Gini impurity:</p>
+<p><span class="math display">\[G(t) = 1 - \sum_{k=0}^{1} p_k^2(t) = 2p_0(t)p_1(t)\]</span></p>
+<p>where <span class="math inline">\(p_k(t) = n_k(t)/n(t)\)</span> represents the proportion of class <span class="math inline">\(k\)</span> observations at node <span class="math inline">\(t\)</span>. Gini impurity quantifies node heterogeneity: <span class="math inline">\(G=0\)</span> indicates perfect purity (homogeneous class), while <span class="math inline">\(G=0.5\)</span> indicates maximum impurity (equal class distribution). The optimal split maximizes weighted impurity reduction:</p>
+<p><span class="math display">\[\Delta G(j, \tau) = G(t) - \left[\frac{n(t_L)}{n(t)} G(t_L) + \frac{n(t_R)}{n(t)} G(t_R)\right]\]</span></p>
+<p>Weighting by relative node size prevents trivial splits that isolate single observations into pure but uninformative leaves.</p>
+</section>
+<section id="termination-and-class-assignment" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="termination-and-class-assignment"><span class="header-section-number">3.4.4</span> Termination and Class Assignment</h3>
+<p>Recursive splitting continues until predefined stopping criteria: node purity (<span class="math inline">\(G=0\)</span>), minimum node size threshold, or maximum tree depth. Terminal nodes are assigned the majority class of their constituent observations.</p>
+</section>
+<section id="ensemble-prediction" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="ensemble-prediction"><span class="header-section-number">3.4.5</span> Ensemble Prediction</h3>
+<p>For prediction, observation <span class="math inline">\(\mathbf{x}\)</span> traverses all <span class="math inline">\(B\)</span> trees. Final classification aggregates individual tree predictions via majority voting:</p>
+<p><span class="math display">\[\hat{y}(\mathbf{x}) = \text{mode}\{\hat{y}_1(\mathbf{x}), \ldots, \hat{y}_B(\mathbf{x})\}\]</span></p>
+<p>Class probabilities are estimated as the proportion of trees predicting each class:</p>
+<p><span class="math display">\[\hat{P}(y=1|\mathbf{x}) = B^{-1}\sum_{b=1}^{B} \mathbb{I}[\hat{y}_b(\mathbf{x})=1]\]</span></p>
+<p>This probability represents empirical vote share across trees. Values near 1 indicate strong consensus for class 1 (high confidence), while values near 0.5 reflect uncertainty. Unlike parametric models, these are data-driven vote proportions rather than model-based probability estimates.</p>
+</section>
+<section id="variance-reduction-mechanism" class="level3" data-number="3.4.6">
+<h3 data-number="3.4.6" class="anchored" data-anchor-id="variance-reduction-mechanism"><span class="header-section-number">3.4.6</span> Variance Reduction Mechanism</h3>
+<p>The algorithm’s effectiveness stems from variance reduction through decorrelated predictions. Bootstrap sampling and random feature selection reduce inter-tree correlation <span class="math inline">\(\rho\)</span>, yielding ensemble variance:</p>
+<p><span class="math display">\[\text{Var}(\bar{y}) = \rho\sigma^2 + \frac{1-\rho}{B}\sigma^2\]</span></p>
+<p>As <span class="math inline">\(B\)</span> increases and <span class="math inline">\(\rho\)</span> decreases, ensemble variance diminishes while maintaining the low bias of flexible tree models.</p>
+</section>
+<section id="feature-importance" class="level3" data-number="3.4.7">
+<h3 data-number="3.4.7" class="anchored" data-anchor-id="feature-importance"><span class="header-section-number">3.4.7</span> Feature Importance</h3>
+<p>Feature importance quantifies each predictor’s contribution by aggregating Gini impurity reductions:</p>
+<p><span class="math display">\[I(j) = \frac{1}{B}\sum_{b=1}^{B} \sum_{t \in T_b : v(t)=j} \Delta G(t)\]</span></p>
+<p>where the sum runs over all nodes using feature <span class="math inline">\(j\)</span> for splitting. Higher values indicate features consistently creating purer partitions. Feature importance measures predictive association rather than causal effect, and suffers from bias toward high-cardinality features and correlated predictor sets. It ranks predictive relevance but requires caution in causal interpretation.</p>
+</section>
+</section>
+<section id="connecting-random-forest-to-the-relatedness-framework" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="connecting-random-forest-to-the-relatedness-framework"><span class="header-section-number">3.5</span> Connecting Random Forest to the Relatedness Framework</h2>
+<p>We apply Random Forest in two complementary ways that replace traditional relatedness constructs:</p>
+<p><strong>A. Technological Potential</strong> estimates <span class="math inline">\(p_{r,t,y}\)</span> = probability of future specialization in technology <span class="math inline">\(t\)</span> for region <span class="math inline">\(r\)</span>. This replaces <strong>relatedness density</strong>—instead of linearly aggregating symmetric co-occurrence frequencies, we predict region-specific feasibility using past technology portfolios. This captures non-linear interactions and regional heterogeneity that linear measures miss.</p>
+<p><strong>B. Feature Importance Technology Space (FITS)</strong> extracts <span class="math inline">\(I_{t \to t'}\)</span> = directional dependencies between technologies. This replaces <strong>symmetric relatedness</strong>—instead of co-occurrence frequencies, we identify which technologies predict others’ future adoption. Asymmetry reveals hierarchical structures: if <span class="math inline">\(I_{t \to t'} \gg I_{t' \to t}\)</span>, technology <span class="math inline">\(t\)</span> is a prerequisite or “stepping stone” toward <span class="math inline">\(t'\)</span>.</p>
+<p>Together, these measures enable contextualized diversification analysis: FITS reveals technology-level hierarchies, Potential quantifies region-specific feasibility, and their combination allows testing how regional infrastructure, national ecosystems, and spatial factors moderate technology adoption patterns.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TB
+    A[Input: RCA values&lt;br/&gt;for all technologies&lt;br/&gt;except target] --&gt; B[Tree 1]
+    A --&gt; C[Tree 2]
+    A --&gt; D[Tree 3]
+    A --&gt; E[...]
+    A --&gt; F[Tree B]
+    
+    B --&gt; G[Vote: 1]
+    C --&gt; H[Vote: 0]
+    D --&gt; I[Vote: 1]
+    E --&gt; J[Vote: 1]
+    F --&gt; K[Vote: 1]
+    
+    G --&gt; L[Aggregate Votes]
+    H --&gt; L
+    I --&gt; L
+    J --&gt; L
+    K --&gt; L
+    
+    L --&gt; M[Probability = 4/5 = 0.80&lt;br/&gt;Region will specialize&lt;br/&gt;in target technology]
+    
+    style A fill:#e1f5ff
+    style M fill:#ffe1e1
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="technological-potential" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="technological-potential"><span class="header-section-number">3.6</span> Technological Potential</h2>
+<p>We follow the methodology of <span class="citation" data-cites="albora2023product">Albora et al. (<a href="references.html#ref-albora2023product" role="doc-biblioref">2023</a>)</span>, originally developed for trade data. The innovation lies in modeling each technology separately rather than constructing a single global model. For every technology <span class="math inline">\(i \in \mathcal{T}\)</span>, we train a binary classification model where:</p>
+<ul>
+<li><strong>Outcome</strong>: <span class="math inline">\(z_{r,i,y}\)</span> (whether region <span class="math inline">\(r\)</span> specializes in technology <span class="math inline">\(i\)</span> at year <span class="math inline">\(y\)</span>)</li>
+<li><strong>Features</strong>: <span class="math inline">\(\{\text{RTA}_{r,t,y-\delta} : t \in \mathcal{T}, t \neq i\}\)</span> (RTA values for all other technologies <span class="math inline">\(\delta\)</span> years prior)</li>
+</ul>
+<p>This technology-specific approach enables each model to learn unique dependency patterns. Setting <span class="math inline">\(\delta = 4\)</span> years balances predictive performance with data availability <span class="citation" data-cites="andreoni2019political">(<a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>.</p>
+<section id="training-procedure" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="training-procedure"><span class="header-section-number">3.6.1</span> Training Procedure</h3>
+<p>We predict specialization for target years <span class="math inline">\(y_t \in \{2008, \ldots, 2018\}\)</span> using data from 1978 onward. For each target year <span class="math inline">\(y_t\)</span> and technology <span class="math inline">\(i\)</span>:</p>
+<p><strong>Training set:</strong> <span class="math display">\[
+X_{\text{train}} = \{ \text{RTA}_{r,t,y} \mid y \in [1978, y_t - 2\delta], t \neq i\}
+\]</span> <span class="math display">\[
+Y_{\text{train}} = \{z_{r,i,y} \mid y \in [1978 + \delta,  y_t - \delta]\}
+\]</span></p>
+<p><strong>Test set:</strong> <span class="math display">\[
+X_{\text{test}} = \{ \text{RTA}_{r,t,y_t-\delta} \mid t \neq i\}
+\]</span> <span class="math display">\[
+Y_{\text{test}} = \{z_{r,i,y_t}\}
+\]</span></p>
+<p>This produces 7,051 models (641 technologies × 11 years). Given computational constraints, we performed cross-validation on a random sample of four technologies (G06G, B67B, D02J, C08J) and applied the most frequent optimal parameters across all models: <code>mtry = 139</code>, <code>trees = 100</code>, <code>min_n = 38</code>. Training was conducted in R using the Ranger package <span class="citation" data-cites="wright2017ranger">(<a href="references.html#ref-wright2017ranger" role="doc-biblioref">Wright and Ziegler 2017</a>)</span>, orchestrated via the targets pipeline <span class="citation" data-cites="landau2021targets">(<a href="references.html#ref-landau2021targets" role="doc-biblioref">Landau 2021</a>)</span> within the tidymodels framework.</p>
+</section>
+<section id="output-regional-technological-potential" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="output-regional-technological-potential"><span class="header-section-number">3.6.2</span> Output: Regional Technological Potential</h3>
+<p>Each model produces probabilities <span class="math inline">\(p_{r,i,y} = P(z_{r,i,y} = 1 \mid \text{RTA}_{r,\cdot,y-\delta})\)</span> representing the likelihood that region <span class="math inline">\(r\)</span> develops specialization in technology <span class="math inline">\(i\)</span> at year <span class="math inline">\(y\)</span> given its past portfolio. These probabilities constitute <strong>regional technological potential</strong>—a forward-looking, region-specific measure of diversification feasibility.</p>
+<p>Aggregating across technologies yields average regional potential:</p>
+<p><span class="math display">\[p_{r,y} = \frac{\sum_{t} p_{r,t,y}}{N_T}\]</span></p>
+</section>
+<section id="conceptual-interpretation" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="conceptual-interpretation"><span class="header-section-number">3.6.3</span> Conceptual Interpretation</h3>
+<p>Technological potential differs fundamentally from relatedness density. While relatedness density assumes technologies combine linearly and symmetrically, potential: 1. Captures <strong>non-linear interactions</strong> between technologies through Random Forest’s decision tree structure 2. Allows <strong>asymmetric dependencies</strong> where technology <span class="math inline">\(t\)</span> may enable <span class="math inline">\(t'\)</span> but not vice versa 3. Produces <strong>region-specific estimates</strong> rather than universal technology-pair relationships 4. Reflects <strong>time-varying dynamics</strong> by training on expanding windows of historical data</p>
+</section>
+<section id="empirical-implications" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="empirical-implications"><span class="header-section-number">3.6.4</span> Empirical Implications</h3>
+<p>High potential (<span class="math inline">\(p_{r,t,y} \approx 1\)</span>) indicates a region’s existing portfolio strongly predicts future specialization in technology <span class="math inline">\(t\)</span>—the region likely possesses necessary complementary capabilities. Low potential (<span class="math inline">\(p_{r,t,y} \approx 0\)</span>) suggests capability gaps despite potential relatedness. Crucially, potential varies across regions for the same technology, enabling analysis of how regional knowledge infrastructure, national ecosystems, and spatial factors moderate diversification feasibility—our core research questions.</p>
+</section>
+</section>
+<section id="feature-importance-technology-space-fits" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="feature-importance-technology-space-fits"><span class="header-section-number">3.7</span> Feature Importance Technology Space (FITS)</h2>
+<p>Traditional technology networks use patent citations or co-occurrence patterns. Citations suffer from three limitations: (1) examiner-added citations may not reflect actual knowledge flows, (2) aggregating patent-level citations to technology-level relationships obscures directionality, and (3) citation networks are backward-looking rather than predictive <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. Co-occurrence networks face the issues outlined in our problem statement: symmetry, noise, and linear assumptions.</p>
+<p>FITS addresses these limitations by constructing asymmetric, predictive networks from machine learning. Rather than inferring relationships from co-occurrence, FITS extracts directional dependencies from the feature importance scores of our Technological Potential models.</p>
+<section id="fits-construction" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="fits-construction"><span class="header-section-number">3.7.1</span> FITS Construction</h3>
+<p>Recall that for each technology <span class="math inline">\(i\)</span>, we trained a Random Forest model predicting <span class="math inline">\(z_{r,i,y}\)</span> using <span class="math inline">\(\{\text{RTA}_{r,t,y-\delta} : t \neq i\}\)</span> as features. The feature importance <span class="math inline">\(I_i(t)\)</span> quantifies how much technology <span class="math inline">\(t\)</span> contributes to predicting future specialization in technology <span class="math inline">\(i\)</span> across all regions and time periods in the training data.</p>
+<p>We formalize FITS as a directed, weighted network <span class="math inline">\(G = (V, E, W)\)</span> where: - <strong>Nodes</strong> <span class="math inline">\(V = \mathcal{T}\)</span>: the set of technologies - <strong>Edges</strong> <span class="math inline">\(E\)</span>: directed connections <span class="math inline">\((t \to i)\)</span> for all <span class="math inline">\(t, i \in \mathcal{T}, t \neq i\)</span> - <strong>Weights</strong> <span class="math inline">\(W_{t \to i} = I_i(t)\)</span>: feature importance of technology <span class="math inline">\(t\)</span> in model predicting technology <span class="math inline">\(i\)</span></p>
+<p>We normalize weights within each target technology’s model:</p>
+<p><span class="math display">\[
+W_{t \to i} = \frac{I_i(t)}{\sum_{t' \neq i} I_i(t')}
+\]</span></p>
+<p>ensuring that for each technology <span class="math inline">\(i\)</span>, incoming edge weights sum to 1: <span class="math inline">\(\sum_{t \neq i} W_{t \to i} = 1\)</span>.</p>
+</section>
+<section id="mathematical-formulation" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="mathematical-formulation"><span class="header-section-number">3.7.2</span> Mathematical Formulation</h3>
+<p>From the Random Forest algorithm, feature importance for technology <span class="math inline">\(t\)</span> in model <span class="math inline">\(M_i\)</span> (predicting technology <span class="math inline">\(i\)</span>) is:</p>
+<p><span class="math display">\[
+I_i(t) = \frac{1}{B}\sum_{b=1}^{B} \sum_{n \in T_b : v(n)=t} \Delta G(n)
+\]</span></p>
+<p>where the sum runs over all nodes <span class="math inline">\(n\)</span> in all trees <span class="math inline">\(T_b\)</span> that split on feature <span class="math inline">\(t\)</span>, and <span class="math inline">\(\Delta G(n)\)</span> is the Gini impurity reduction at node <span class="math inline">\(n\)</span>. Technologies that consistently create purer partitions when predicting <span class="math inline">\(i\)</span> receive higher importance scores.</p>
+<p>The full FITS network aggregates these relationships across all 641 technologies, producing a <span class="math inline">\(641 \times 641\)</span> weighted adjacency matrix (excluding self-loops).</p>
+</section>
+<section id="asymmetry-and-hierarchy" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="asymmetry-and-hierarchy"><span class="header-section-number">3.7.3</span> Asymmetry and Hierarchy</h3>
+<p>Crucially, FITS is <strong>asymmetric</strong>: <span class="math inline">\(W_{t \to i} \neq W_{i \to t}\)</span> in general. This asymmetry captures hierarchical technological dependencies:</p>
+<ul>
+<li>If <span class="math inline">\(W_{t \to i} \gg W_{i \to t}\)</span>, technology <span class="math inline">\(t\)</span> is a <strong>prerequisite</strong> or <strong>stepping stone</strong> toward <span class="math inline">\(i\)</span> (expertise in <span class="math inline">\(t\)</span> predicts future <span class="math inline">\(i\)</span>, but not vice versa)</li>
+<li>If <span class="math inline">\(W_{t \to i} \approx W_{i \to t}\)</span>, technologies are <strong>complementary peers</strong> (mutual predictive relationships)</li>
+<li>If <span class="math inline">\(W_{t \to i} \ll W_{i \to t}\)</span>, technology <span class="math inline">\(i\)</span> is a prerequisite toward <span class="math inline">\(t\)</span></li>
+</ul>
+<p>This hierarchical structure is invisible to symmetric co-occurrence measures and reveals technological trajectories: regions can identify which current capabilities enable paths toward desired future technologies.</p>
+</section>
+<section id="conceptual-interpretation-1" class="level3" data-number="3.7.4">
+<h3 data-number="3.7.4" class="anchored" data-anchor-id="conceptual-interpretation-1"><span class="header-section-number">3.7.4</span> Conceptual Interpretation</h3>
+<p>FITS edges represent <strong>predictive dependencies</strong> based on historical diversification patterns across all European regions. A strong edge <span class="math inline">\(t \to i\)</span> indicates that regions with RTA in technology <span class="math inline">\(t\)</span> at time <span class="math inline">\(y-\delta\)</span> frequently developed RTA in technology <span class="math inline">\(i\)</span> by time <span class="math inline">\(y\)</span>, even after controlling for all other technologies. This is fundamentally different from co-occurrence (which measures simultaneous presence) or citations (which measure backward-looking knowledge flows).</p>
+</section>
+<section id="empirical-implications-1" class="level3" data-number="3.7.5">
+<h3 data-number="3.7.5" class="anchored" data-anchor-id="empirical-implications-1"><span class="header-section-number">3.7.5</span> Empirical Implications</h3>
+<p>FITS enables novel analyses of technological landscapes: 1. <strong>Path identification</strong>: For a target technology <span class="math inline">\(i\)</span>, examine incoming edge weights to identify strong predictors (prerequisites) 2. <strong>Branching points</strong>: High out-degree nodes represent foundational technologies enabling diverse future specializations 3. <strong>Category structure</strong>: Aggregating edges by IPC categories reveals cross-domain dependencies (e.g., mechanical engineering → electronics) 4. <strong>Regional positioning</strong>: Comparing a region’s current portfolio against FITS edge patterns reveals strategic opportunities and gaps</p>
+<p>In our empirical analysis, FITS allows testing whether technology-specific characteristics (position in the network hierarchy, in/out-degree patterns, category embeddings) moderate diversification outcomes—aspects traditional relatedness measures cannot capture.</p>
+</section>
+<section id="network-visualization" class="level3" data-number="3.7.6">
+<h3 data-number="3.7.6" class="anchored" data-anchor-id="network-visualization"><span class="header-section-number">3.7.6</span> Network Visualization</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/technology_network.png" class="img-fluid figure-img"></p>
-<figcaption>Technology Network(based on 2018 patent data)</figcaption>
+<figcaption>Technology Network (based on 2018 patent data)</figcaption>
 </figure>
 </div>
-<p>Following <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>, we quantify specialization patterns by means of the Revealed Comparative Advantage(RCA) <span class="citation" data-cites="balassa1965rca">(<a href="references.html#ref-balassa1965rca" role="doc-biblioref">Balassa 1965</a>)</span>. Although the RCA is mainly designed for use with international trade data, it has also been adopted in the literature of the geography of innovation following the Balland nomenclature <span class="citation" data-cites="balland2017geography">(<a href="references.html#ref-balland2017geography" role="doc-biblioref"><strong>balland2017geography?</strong></a>)</span> we will refer to this metric as the Revealed Technological Advantage(RTA) instead. The RTA measures a location’s relative specialization level in a given technology which enables us to capture both expertise and diversity when we aggregate all the technologies for each location. This measure, proved useful in determining complex and non-linear relationships between products/activities. Simply put, the RTA quantifies simultaneously the relative level and the quality of co-occurrence, which reduces the noise in the network data. Although some papers criticise the use of the RCA/RTA with patents classes [pinheiro2025], we think it fits our objective in capturing meaningful relationships between technologies when we use them in the framework of <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. We compute these measures to obtain for each year a matrix denoting the regions in its rows and the technologies in its columns. We formalize it as follows: Let <span class="math inline">\(X_{r,t,y}\)</span> be the measure of activity (patent counts) of region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span>. Where <span class="math inline">\(\mathcal{T}\)</span> is the set of technologies, <span class="math inline">\(\mathcal{Y}\)</span> is the set of years, and <span class="math inline">\(\mathcal{R}\)</span> is the set of regions.</p>
+<p>The figure displays the FITS network with nodes colored by IPC category, sized by total degree, and transparency reflecting eigenvector centrality. Labels appear for high-centrality technologies. The structure reveals dense within-category connections and sparse but critical between-category bridges.</p>
 </section>
 </section>
-<section id="diversification-coherence-and-the-role-of-space" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Diversification, coherence, and the role of space</h1>
-<p>Coherence measures the alignment between a technology’s directional embedding in the network (incoming vs.&nbsp;outgoing edge strengths to different categories) and the regional average embedding pattern for specialized technologies in that category.</p>
-<p>We construct this metric using cosine similarity which ranges from -1 to 1. Values near 1 indicate (high coherence) indicate the technology’s network position matches the region’s technological profile; values near 0 (neutral coherence) suggest misalignment between the technology’s relational structure and regional specialization patterns; whereas values near -1 suggest a complete mismatch.</p>
-<p>For each region-technology-category-year combination, defined as :</p>
-<p><span class="math inline">\(\mathcal{T}\)</span> is the set of technologies, <span class="math inline">\(\mathcal{Y}\)</span> is the set of years, <span class="math inline">\(\mathcal{R}\)</span> is the set of regions, and <span class="math inline">\(\mathcal{C}\)</span> is the set of categories, such that:</p>
+<section id="coherence-bridging-technology-networks-and-regional-portfolios" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.8</span> Coherence: Bridging Technology Networks and Regional Portfolios</h2>
+<p>FITS identifies technology-to-technology relationships. Technological Potential quantifies regional diversification feasibility. <strong>Coherence</strong> bridges these levels by measuring the alignment between a technology’s position in the FITS network and a region’s existing specialization structure.</p>
+<section id="conceptual-motivation" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="conceptual-motivation"><span class="header-section-number">3.8.1</span> Conceptual Motivation</h3>
+<p>Consider two regions, both lacking specialization in technology <span class="math inline">\(i\)</span>, both having similar potential <span class="math inline">\(p_{r,i,y}\)</span>. However, Region A specializes in technologies that are strong predictors of <span class="math inline">\(i\)</span> (high incoming FITS edges), while Region B specializes in technologies unrelated to <span class="math inline">\(i\)</span> in the network. Coherence captures this difference: Region A has high coherence with <span class="math inline">\(i\)</span> (its portfolio aligns with <span class="math inline">\(i\)</span>’s network prerequisites), while Region B has low coherence (misalignment).</p>
+<p>This metric operationalizes the “knowledge coherence” and “cognitive proximity” concepts from innovation literature <span class="citation" data-cites="neffke2011how boschma2015towards">(<a href="references.html#ref-neffke2011how" role="doc-biblioref"><strong>neffke2011how?</strong></a>; <a href="references.html#ref-boschma2015towards" role="doc-biblioref"><strong>boschma2015towards?</strong></a>)</span> using our directional network structure. It enables testing whether diversification success depends not just on potential (predicted feasibility) but on the structural fit between regional portfolios and technology network positions.</p>
+</section>
+<section id="mathematical-construction" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="mathematical-construction"><span class="header-section-number">3.8.2</span> Mathematical Construction</h3>
+<p>For each region <span class="math inline">\(r\)</span>, technology <span class="math inline">\(i\)</span>, and IPC category <span class="math inline">\(c\)</span>, we construct two embedding vectors capturing <span class="math inline">\(i\)</span>’s directional network position and compare them to <span class="math inline">\(r\)</span>’s average embeddings for technologies in category <span class="math inline">\(c\)</span>.</p>
+<p><strong>Technology embeddings</strong> (individual technology <span class="math inline">\(i\)</span>): - Incoming: <span class="math inline">\(\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} &gt; 0\}|}\)</span> (average FITS weight from category <span class="math inline">\(c\)</span> to technology <span class="math inline">\(i\)</span>) - Outgoing: <span class="math inline">\(\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} &gt; 0\}|}\)</span> (average FITS weight from technology <span class="math inline">\(i\)</span> to category <span class="math inline">\(c\)</span>)</p>
+<p><strong>Regional average embeddings</strong> (region <span class="math inline">\(r\)</span>, category <span class="math inline">\(c\)</span>): - Incoming: <span class="math inline">\(\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}\)</span> where <span class="math inline">\(S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}\)</span> - Outgoing: <span class="math inline">\(\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}\)</span></p>
+<p><strong>Coherence</strong> is the cosine similarity between technology <span class="math inline">\(i\)</span>’s directional embeddings and region <span class="math inline">\(r\)</span>’s average directional embeddings for category <span class="math inline">\(c\)</span>:</p>
 <p><span class="math display">\[
-\mathcal{T} = \{\,t : 1 \le t \le N_T\},\quad
-\mathcal{Y} = \{\,y : 1 \le y \le N_Y\},\quad
-\mathcal{R} = \{\,r : 1 \le r \le N_R\},\quad
-\mathcal{C} = \{\,c : 1 \le c \le N_C\}.
+\text{Coherence}_{r,i,c,y} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}
 \]</span></p>
-<p>And <span class="math inline">\(N_T, N_Y, N_R, N_C\)</span> are the total counts of technologies, years, regions and categories</p>
-<p>we measure the following cosine similarity:</p>
-<p><span class="math display">\[\text{Coherence}_{r,i,t} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}\]</span></p>
-<p>where:</p>
+<p>where: - <span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]\)</span> - <span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]\)</span></p>
+</section>
+<section id="interpretation" class="level3" data-number="3.8.3">
+<h3 data-number="3.8.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.8.3</span> Interpretation</h3>
+<p>Coherence ranges from -1 to 1: - <strong>High coherence</strong> (<span class="math inline">\(\approx 1\)</span>): Technology <span class="math inline">\(i\)</span>’s FITS network position (both incoming and outgoing connections to category <span class="math inline">\(c\)</span>) closely matches the average network position of technologies in which region <span class="math inline">\(r\)</span> specializes within category <span class="math inline">\(c\)</span>. The region’s existing capabilities align with the structural prerequisites and consequences of technology <span class="math inline">\(i\)</span>. - <strong>Neutral coherence</strong> (<span class="math inline">\(\approx 0\)</span>): Misalignment between technology <span class="math inline">\(i\)</span>’s relational structure and regional specialization patterns. - <strong>Negative coherence</strong> (<span class="math inline">\(\approx -1\)</span>): Technology <span class="math inline">\(i\)</span>’s network position is opposite to the region’s specialization structure (e.g., <span class="math inline">\(i\)</span> receives inputs from categories where the region sends outputs).</p>
+</section>
+<section id="empirical-application" class="level3" data-number="3.8.4">
+<h3 data-number="3.8.4" class="anchored" data-anchor-id="empirical-application"><span class="header-section-number">3.8.4</span> Empirical Application</h3>
+<p>Coherence serves two roles in our empirical analysis:</p>
+<ol type="1">
+<li><p><strong>Interaction with Potential</strong>: Test whether high potential translates to actual diversification only when coherence is also high (H2a: technology-specific characteristics moderated by regional knowledge coherence)</p></li>
+<li><p><strong>Regional Infrastructure Measure</strong>: Aggregate coherence across a region’s non-specialized technologies indicates how well the regional portfolio is “positioned” in the FITS network for future diversification (captures knowledge infrastructure quality)</p></li>
+</ol>
+<p>By incorporating coherence, we test whether successful diversification requires not just predicted feasibility (potential) and related capabilities (traditional relatedness), but also structural alignment between regional portfolios and network prerequisites—a form of contextualization that traditional measures cannot capture.</p>
+</section>
+</section>
+<section id="summary-of-methodological-framework" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Summary of Methodological Framework</h1>
+<p>Our approach replaces traditional relatedness constructs with machine learning-derived measures that enable contextualized diversification analysis:</p>
 <ul>
-<li><p><span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i}, \overline{\text{embcat\_to}}_{r,c}]\)</span> captures incoming edge patterns</p></li>
-<li><p><span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i}, \overline{\text{embcat\_from}}_{r,c}]\)</span> captures outgoing edge patterns</p></li>
-<li><p><span class="math inline">\(\text{embcat\_to}_{i} = \frac{\sum \text{weights\_to}_{i,c}}{\text{count(incoming edges)}_{i,c}}\)</span> measures average incoming edge weight from category <span class="math inline">\(c\)</span> to technology <span class="math inline">\(i\)</span></p></li>
-<li><p><span class="math inline">\(\text{embcat\_from}_{i} = \frac{\sum \text{weights\_from}_{i,c}}{\text{count(outgoing edges)}_{i,c}}\)</span> measures average outgoing edge weight from technology <span class="math inline">\(i\)</span> to category <span class="math inline">\(c\)</span></p></li>
-<li><p>weights = Normalised Feature Importance values denoting connection strength between technology pairs.</p></li>
-<li><p><span class="math inline">\(\overline{\text{embcat\_to}}_{r,c}\)</span> = regional average of incoming embeddesdness for technologies with RCA≥1 in category <span class="math inline">\(c\)</span> within region <span class="math inline">\(r\)</span></p></li>
-<li><p><span class="math inline">\(\overline{\text{embcat\_from}}_{r,c}\)</span> = regional average of outgoing embeddesdness for technologies with RCA≥1 in category <span class="math inline">\(c\)</span> within region <span class="math inline">\(r\)</span></p></li>
+<li><strong>Technological Potential</strong> (<span class="math inline">\(p_{r,t,y}\)</span>): Region-specific, non-linear, time-varying probabilities replace linear relatedness density</li>
+<li><strong>FITS Network</strong> (<span class="math inline">\(W_{t \to t'}\)</span>): Asymmetric, predictive dependencies replace symmetric co-occurrence-based relatedness<br>
+</li>
+<li><strong>Coherence</strong> (<span class="math inline">\(\text{Coherence}_{r,t,c,y}\)</span>): Structural alignment between regional portfolios and technology network positions captures knowledge infrastructure quality</li>
 </ul>
+<p>Together, these measures allow testing how diversification is contingent on regional knowledge infrastructure (RQ2), national ecosystem characteristics (RQ3), and spatial factors (RQ4) in ways that traditional relatedness frameworks cannot—addressing the core problem of contextualizing diversification strategies beyond path dependency identification.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-albora2023product" class="csl-entry" role="listitem">
 Albora, Giambattista, Luciano Pietronero, Andrea Tacchella, and Andrea Zaccaria. 2023. <span>“Product Progression: A Machine Learning Approach to Forecasting Industrial Upgrading.”</span> <em>Scientific Reports</em> 13 (1): 1481.
 </div>
-<div id="ref-alshamsi2018optimal" class="csl-entry" role="listitem">
-Alshamsi, Aamena, Flávio L Pinheiro, and Cesar A Hidalgo. 2018. <span>“Optimal Diversification Strategies in the Networks of Related Products and of Related Research Areas.”</span> <em>Nature Communications</em> 9 (1): 1328.
-</div>
 <div id="ref-andreoni2019political" class="csl-entry" role="listitem">
 Andreoni, Antonio, and Ha-Joon Chang. 2019. <span>“The Political Economy of Industrial Policy: Structural Interdependencies, Policy Alignment and Conflict Management.”</span> <em>Structural Change and Economic Dynamics</em> 48: 136–50.
-</div>
-<div id="ref-balassa1965rca" class="csl-entry" role="listitem">
-Balassa, Bela. 1965. <span>“Trade Liberalisation and <span>‘Revealed’</span> Comparative Advantage 1.”</span> <em>The Manchester School</em> 33 (2): 99–123.
 </div>
 <div id="ref-balland2019beyond" class="csl-entry" role="listitem">
 Balland, PA, and R Boschma. 2019. <span>“Smart Specialization: Beyond Patents.”</span> <em>European Commission: Brussels, Belgium</em>.
 </div>
-<div id="ref-balland2022scientific" class="csl-entry" role="listitem">
-Balland, Pierre-Alexandre, and Ron Boschma. 2022. <span>“Do Scientific Capabilities in Specific Domains Matter for Technological Diversification in European Regions?”</span> <em>Research Policy</em> 51 (10): 104594.
-</div>
-<div id="ref-balland2019smart" class="csl-entry" role="listitem">
-Balland, Pierre-Alexandre, Ron Boschma, Joan Crespo, and David L Rigby. 2019. <span>“Smart Specialization Policy in the European Union: Relatedness, Knowledge Complexity and Regional Diversification.”</span> <em>Regional Studies</em> 53 (9): 1252–68.
-</div>
-<div id="ref-boschma2017relatedness" class="csl-entry" role="listitem">
-Boschma, Ron. 2017. <span>“Relatedness as Driver of Regional Diversification: A Research Agenda.”</span> <em>Regional Studies</em> 51 (3): 351–64.
-</div>
 <div id="ref-boschma2023role" class="csl-entry" role="listitem">
 Boschma, Ron, Ernest Miguelez, Rosina Moreno, and Diego B Ocampo-Corrales. 2023. <span>“The Role of Relatedness and Unrelatedness for the Geography of Technological Breakthroughs in Europe.”</span> <em>Economic Geography</em> 99 (2): 117–39.
 </div>
-<div id="ref-collins1974tea" class="csl-entry" role="listitem">
-Collins, Harry M. 1974. <span>“The TEA Set: Tacit Knowledge and Scientific Networks.”</span> <em>Science Studies</em> 4 (2): 165–85.
-</div>
-<div id="ref-coniglio2021evolution" class="csl-entry" role="listitem">
-Coniglio, Nicola D, Davide Vurchio, Nicola Cantore, and Michele Clara. 2021. <span>“On the Evolution of Comparative Advantage: Path-Dependent Versus Path-Defying Changes.”</span> <em>Journal of International Economics</em> 133: 103522.
-</div>
 <div id="ref-diodato2023economic" class="csl-entry" role="listitem">
 Diodato, Dario, Lorenzo Napolitano, Emanuele Pugliese, and Andrea Tacchella. 2023. <span>“Economic Complexity for Regional Industrial Strategies.”</span> Joint Research Centre.
-</div>
-<div id="ref-dosi1982technological" class="csl-entry" role="listitem">
-Dosi, Giovanni. 1982. <span>“Technological Paradigms and Technological Trajectories: A Suggested Interpretation of the Determinants and Directions of Technical Change.”</span> <em>Research Policy</em> 11 (3): 147–62.
 </div>
 <div id="ref-albora2021economic" class="csl-entry" role="listitem">
 E, Pugliese, and Tacchella A. 2021. <span>“Economic Complexity Analytics: Country Factsheets.”</span> <a href="https://doi.org/10.2760/368138">https://doi.org/10.2760/368138</a>.
 </div>
 <div id="ref-fessina2024identifying" class="csl-entry" role="listitem">
 Fessina, Massimiliano, Giambattista Albora, Andrea Tacchella, and Andrea Zaccaria. 2024. <span>“Identifying Key Products to Trigger New Exports: An Explainable Machine Learning Approach.”</span> <em>Journal of Physics: Complexity</em> 5 (2): 025003.
-</div>
-<div id="ref-albora2025economic" class="csl-entry" role="listitem">
-G, Albora, Diodato D, and Napolitano L. 2025. <span>“Economic Complexity Analytics: Country Factsheets 2024.”</span> <a href="https://doi.org/10.2760/9201933">https://doi.org/10.2760/9201933</a>.
 </div>
 <div id="ref-hartmann2017linking" class="csl-entry" role="listitem">
 Hartmann, Dominik, Miguel R Guevara, Cristian Jara-Figueroa, Manuel Aristarán, and César A Hidalgo. 2017. <span>“Linking Economic Complexity, Institutions, and Income Inequality.”</span> <em>World Development</em> 93: 75–93.
@@ -430,44 +579,20 @@ Hidalgo, César A, Pierre-Alexandre Balland, Ron Boschma, Mercedes Delgado, Mary
 <div id="ref-hidalgo2009building" class="csl-entry" role="listitem">
 Hidalgo, César A, and Ricardo Hausmann. 2009. <span>“The Building Blocks of Economic Complexity.”</span> <em>Proceedings of the National Academy of Sciences</em> 106 (26): 10570–75.
 </div>
-<div id="ref-hirschman1958strategy" class="csl-entry" role="listitem">
-Hirschman, Albert O. 1958. <span>“The Strategy of Economic Development.”</span>
-</div>
-<div id="ref-imbs2003stages" class="csl-entry" role="listitem">
-Imbs, Jean, and Romain Wacziarg. 2003. <span>“Stages of Diversification.”</span> <em>American Economic Review</em> 93 (1): 63–86.
-</div>
 <div id="ref-landau2021targets" class="csl-entry" role="listitem">
 Landau, William Michael. 2021. <span>“The Targets r Package: A Dynamic Make-Like Function-Oriented Pipeline Toolkit for Reproducibility and High-Performance Computing.”</span> <em>Journal of Open Source Software</em> 6 (57): 2959.
 </div>
 <div id="ref-lee2018early" class="csl-entry" role="listitem">
 Lee, Changyong, Ohjin Kwon, Myeongjung Kim, and Daeil Kwon. 2018. <span>“Early Identification of Emerging Technologies: A Machine Learning Approach Using Multiple Patent Indicators.”</span> <em>Technological Forecasting and Social Change</em> 127: 291–303.
 </div>
-<div id="ref-lee2017catch" class="csl-entry" role="listitem">
-Lee, Keun, and Franco Malerba. 2017. <span>“Catch-up Cycles and Changes in Industrial Leadership: Windows of Opportunity and Responses of Firms and Countries in the Evolution of Sectoral Systems.”</span> <em>Research Policy</em> 46 (2): 338–51.
-</div>
 <div id="ref-li2024evaluating" class="csl-entry" role="listitem">
 Li, Yang, and Frank MH Neffke. 2024. <span>“Evaluating the Principle of Relatedness: Estimation, Drivers and Implications for Policy.”</span> <em>Research Policy</em> 53 (3): 104952.
-</div>
-<div id="ref-mealy2022them" class="csl-entry" role="listitem">
-Mealy, Penny, and Diane Coyle. 2022. <span>“To Them That Hath: Economic Complexity and Local Industrial Strategy in the UK.”</span> <em>International Tax and Public Finance</em> 29 (2): 358–77.
-</div>
-<div id="ref-nomaler2024related" class="csl-entry" role="listitem">
-Nomaler, Önder, and Bart Verspagen. 2024. <span>“Related or Unrelated Diversification: What Is Smart Specialization?”</span> <em>Structural Change and Economic Dynamics</em> 70: 503–15.
-</div>
-<div id="ref-pinheiro2025" class="csl-entry" role="listitem">
-Pinheiro, Cristina. 2025. <span>“Relatedness and Economic Complexity as Tools for Industrial Policy: Insights and Limitations.”</span> <em>Structural Change and Economic Dynamics</em> 72: 1–10.
 </div>
 <div id="ref-pinheiro2025dark" class="csl-entry" role="listitem">
 Pinheiro, Flavio L, Pierre-Alexandre Balland, Ron Boschma, and Dominik Hartmann. 2025. <span>“The Dark Side of the Geography of Innovation: Relatedness, Complexity and Regional Inequality in Europe.”</span> <em>Regional Studies</em> 59 (1): 2106362.
 </div>
 <div id="ref-pinheiro2022time" class="csl-entry" role="listitem">
 Pinheiro, Flávio L, Dominik Hartmann, Ron Boschma, and César A Hidalgo. 2022. <span>“The Time and Frequency of Unrelated Diversification.”</span> <em>Research Policy</em> 51 (8): 104323.
-</div>
-<div id="ref-rosenstein1943problems" class="csl-entry" role="listitem">
-Rosenstein-Rodan, Paul N. 1943. <span>“Problems of Industrialisation of Eastern and South-Eastern Europe.”</span> <em>The Economic Journal</em> 53 (210-211): 202–11.
-</div>
-<div id="ref-weitzman1998recombinant" class="csl-entry" role="listitem">
-Weitzman, Martin L. 1998. <span>“Recombinant Growth.”</span> <em>The Quarterly Journal of Economics</em> 113 (2): 331–60.
 </div>
 <div id="ref-wright2017ranger" class="csl-entry" role="listitem">
 Wright, Marvin N, and Andreas Ziegler. 2017. <span>“Ranger: A Fast Implementation of Random Forests for High Dimensional Data in c++ and r.”</span> <em>Journal of Statistical Software</em> 77: 1–17.
@@ -476,13 +601,6 @@ Wright, Marvin N, and Andreas Ziegler. 2017. <span>“Ranger: A Fast Implementat
 Zaccaria, Andrea, Saurabh Mishra, Masud Z Cader, and Luciano Pietronero. 2018. <span>“Integrating Services in the Economic Fitness Approach.”</span> <em>World Bank Policy Research Working Paper</em>, no. 8485.
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>We will use the terms relatedness and complexity to refer to these two dimensions moving forward following the literature nomenclature<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>With the exception of Belgium and the United Kingdom who were included at NUTS1 level<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
