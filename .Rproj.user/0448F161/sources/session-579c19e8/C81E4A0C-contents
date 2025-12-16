@@ -23,7 +23,7 @@ format:
     theme: cosmo
     lot: true
     lof: true
-    embed-resources: true
+    fig-format: png
     mermaid:
       theme: default
   pdf:
