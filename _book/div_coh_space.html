@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -191,6 +220,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Coherence measures the alignment between a technology’s directional embedding in the network (incoming vs.&nbsp;outgoing edge strengths to different categories) and the regional average embedding pattern for specialized technologies in that category. High coherence indicates the technology’s network position matches the region’s technological profile; low coherence suggests misalignment between the technology’s relational structure and regional specialization patterns.</p>
+<p>For each region-technology-year combination:</p>
+<p><span class="math display">\[\text{Coherence}_{r,i,t} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}\]</span></p>
+<p>where: - <span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i}, \bar{\text{embcat\_to}}_{r,c}]\)</span> - <span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i}, \bar{\text{embcat\_from}}_{r,c}]\)</span> - <span class="math inline">\(\text{embcat\_to}_{i} = \frac{\sum \text{weights\_to}_{i,c}}{\text{count(incoming edges)}_{i,c}}\)</span> (average incoming edge weight from category <span class="math inline">\(c\)</span>) - <span class="math inline">\(\text{embcat\_from}_{i} = \frac{\sum \text{weights\_from}_{i,c}}{\text{count(outgoing edges)}_{i,c}}\)</span> (average outgoing edge weight to category <span class="math inline">\(c\)</span>) - <span class="math inline">\(\bar{\text{embcat}}_{r,c}\)</span> = regional average of embcat for technologies with RCA≥1 in category <span class="math inline">\(c\)</span></p>
 
 
 
