@@ -285,10 +285,16 @@ window.Quarto = {
 <section id="notation-and-data-structure" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="notation-and-data-structure"><span class="header-section-number">3.2</span> Notation and Data Structure</h2>
 <p>We establish consistent notation used throughout:</p>
-<p><strong>Sets:</strong> - <span class="math inline">\(\mathcal{T} = \{t : 1 \le t \le N_T\}\)</span>: set of technologies - <span class="math inline">\(\mathcal{R} = \{r : 1 \le r \le N_R\}\)</span>: set of regions<br>
-- <span class="math inline">\(\mathcal{Y} = \{y : 1 \le y \le N_Y\}\)</span>: set of years - <span class="math inline">\(\mathcal{C} = \{c : 1 \le c \le N_C\}\)</span>: set of technology categories</p>
-<p><strong>Variables:</strong> - <span class="math inline">\(X_{r,t,y}\)</span>: patent count for region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span> - <span class="math inline">\(\text{RTA}_{r,t,y}\)</span>: Revealed Comparative Advantage (later referred to as RTA for patents) - <span class="math inline">\(z_{r,t,y} \in \{0,1\}\)</span>: binary indicator of technological capacity (specialization) - <span class="math inline">\(p_{r,t,y} \in [0,1]\)</span>: predicted probability of future specialization (technological potential) - <span class="math inline">\(I_{t \to t'}\)</span>: feature importance weight, directed relationship from technology <span class="math inline">\(t\)</span> to <span class="math inline">\(t'\)</span></p>
-<p>We use European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.</p>
+<p><strong>Sets:</strong></p>
+<ul>
+<li><span class="math inline">\(\mathcal{T} = \{t : 1 \le t \le N_T\}\)</span>: set of technologies</li>
+<li><span class="math inline">\(\mathcal{R} = \{r : 1 \le r \le N_R\}\)</span>: set of regions<br>
+</li>
+<li><span class="math inline">\(\mathcal{Y} = \{y : 1 \le y \le N_Y\}\)</span>: set of years</li>
+<li><span class="math inline">\(\mathcal{C} = \{c : 1 \le c \le N_C\}\)</span>: set of technology categories</li>
+<li><span class="math inline">\(\mathcal{K} = \{\kappa : 1 \le \kappa \le N_{\kappa}\}\)</span>: set of countries</li>
+</ul>
+<p>We use European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter, we also refer to this as categories), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.</p>
 </section>
 <section id="revealed-technological-advantage" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="revealed-technological-advantage"><span class="header-section-number">3.3</span> Revealed Technological Advantage</h2>
@@ -300,13 +306,13 @@ window.Quarto = {
        {\displaystyle\frac{\sum_{r'} X_{r',t,y}}{\sum_{r',t'} X_{r',t',y}}}
 = \frac{X_{r,t,y}\,\sum_{r',t'}X_{r',t',y}}
        {\bigl(\sum_{t'}X_{r,t',y}\bigr)\,\bigl(\sum_{r'}X_{r',t,y}\bigr)}
-\]</span></p>
+\]</span> Where, <span class="math inline">\(X_{r,t,y}\)</span>: patent count for region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span></p>
 <p>For each year <span class="math inline">\(y\)</span>, we construct the RTA matrix <span class="math inline">\(\mathbf{R}^{(y)}\)</span> with entries <span class="math inline">\(\text{RTA}_{r,t,y}\)</span>:</p>
 <p><span class="math display">\[
 \mathbf{R}^{(y)}
 = \bigl[\text{RTA}_{r,t,y}\bigr]_{r=1,\dots,N_{R}}^{t=1,\dots,N_{T}}
 \]</span></p>
-<p>These yearly matrices form the foundation for all subsequent modeling. We binarize specialization for classification tasks:</p>
+<p>These yearly matrices form the foundation for all subsequent modeling. We then binarize specialization for classification tasks:</p>
 <p><span class="math display">\[
 z_{r,t,y}
 \;=\;
@@ -410,7 +416,7 @@ z_{r,t,y}
 <li><strong>Outcome</strong>: <span class="math inline">\(z_{r,i,y}\)</span> (whether region <span class="math inline">\(r\)</span> specializes in technology <span class="math inline">\(i\)</span> at year <span class="math inline">\(y\)</span>)</li>
 <li><strong>Features</strong>: <span class="math inline">\(\{\text{RTA}_{r,t,y-\delta} : t \in \mathcal{T}, t \neq i\}\)</span> (RTA values for all other technologies <span class="math inline">\(\delta\)</span> years prior)</li>
 </ul>
-<p>This technology-specific approach enables each model to learn unique dependency patterns. Setting <span class="math inline">\(\delta = 4\)</span> years balances predictive performance with data availability <span class="citation" data-cites="andreoni2019political">(<a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>.</p>
+<p>This technology-specific approach enables each model to learn unique dependency patterns. Setting <span class="math inline">\(\delta = 4\)</span> years balances predictive performance with data availability such that current capacity predict future ones <span class="citation" data-cites="andreoni2019political">(<a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>.</p>
 <section id="training-procedure" class="level3" data-number="3.6.1">
 <h3 data-number="3.6.1" class="anchored" data-anchor-id="training-procedure"><span class="header-section-number">3.6.1</span> Training Procedure</h3>
 <p>We predict specialization for target years <span class="math inline">\(y_t \in \{2008, \ldots, 2018\}\)</span> using data from 1978 onward. For each target year <span class="math inline">\(y_t\)</span> and technology <span class="math inline">\(i\)</span>:</p>
@@ -434,7 +440,13 @@ Y_{\text{test}} = \{z_{r,i,y_t}\}
 </section>
 <section id="conceptual-interpretation" class="level3" data-number="3.6.3">
 <h3 data-number="3.6.3" class="anchored" data-anchor-id="conceptual-interpretation"><span class="header-section-number">3.6.3</span> Conceptual Interpretation</h3>
-<p>Technological potential differs fundamentally from relatedness density. While relatedness density assumes technologies combine linearly and symmetrically, potential: 1. Captures <strong>non-linear interactions</strong> between technologies through Random Forest’s decision tree structure 2. Allows <strong>asymmetric dependencies</strong> where technology <span class="math inline">\(t\)</span> may enable <span class="math inline">\(t'\)</span> but not vice versa 3. Produces <strong>region-specific estimates</strong> rather than universal technology-pair relationships 4. Reflects <strong>time-varying dynamics</strong> by training on expanding windows of historical data</p>
+<p>Technological potential differs fundamentally from relatedness density. While relatedness density assumes technologies combine linearly and symmetrically, potential:</p>
+<ol type="1">
+<li>Captures <strong>non-linear interactions</strong> between technologies through Random Forest’s decision tree structure</li>
+<li>Allows <strong>asymmetric dependencies</strong> where technology <span class="math inline">\(t\)</span> may enable <span class="math inline">\(t'\)</span> but not vice versa</li>
+<li>Produces <strong>region-specific estimates</strong> rather than universal technology-pair relationships</li>
+<li>Reflects <strong>time-varying dynamics</strong> by training on expanding windows of historical data</li>
+</ol>
 </section>
 <section id="empirical-implications" class="level3" data-number="3.6.4">
 <h3 data-number="3.6.4" class="anchored" data-anchor-id="empirical-implications"><span class="header-section-number">3.6.4</span> Empirical Implications</h3>
@@ -448,7 +460,12 @@ Y_{\text{test}} = \{z_{r,i,y_t}\}
 <section id="fits-construction" class="level3" data-number="3.7.1">
 <h3 data-number="3.7.1" class="anchored" data-anchor-id="fits-construction"><span class="header-section-number">3.7.1</span> FITS Construction</h3>
 <p>Recall that for each technology <span class="math inline">\(i\)</span>, we trained a Random Forest model predicting <span class="math inline">\(z_{r,i,y}\)</span> using <span class="math inline">\(\{\text{RTA}_{r,t,y-\delta} : t \neq i\}\)</span> as features. The feature importance <span class="math inline">\(I_i(t)\)</span> quantifies how much technology <span class="math inline">\(t\)</span> contributes to predicting future specialization in technology <span class="math inline">\(i\)</span> across all regions and time periods in the training data.</p>
-<p>We formalize FITS as a directed, weighted network <span class="math inline">\(G = (V, E, W)\)</span> where: - <strong>Nodes</strong> <span class="math inline">\(V = \mathcal{T}\)</span>: the set of technologies - <strong>Edges</strong> <span class="math inline">\(E\)</span>: directed connections <span class="math inline">\((t \to i)\)</span> for all <span class="math inline">\(t, i \in \mathcal{T}, t \neq i\)</span> - <strong>Weights</strong> <span class="math inline">\(W_{t \to i} = I_i(t)\)</span>: feature importance of technology <span class="math inline">\(t\)</span> in model predicting technology <span class="math inline">\(i\)</span></p>
+<p>We formalize FITS as a directed, weighted network <span class="math inline">\(G = (V, E, W)\)</span> where:</p>
+<ul>
+<li><strong>Nodes</strong> <span class="math inline">\(V = \mathcal{T}\)</span>: the set of technologies</li>
+<li><strong>Edges</strong> <span class="math inline">\(E\)</span>: directed connections <span class="math inline">\((t \to i)\)</span> for all <span class="math inline">\(t, i \in \mathcal{T}, t \neq i\)</span></li>
+<li><strong>Weights</strong> <span class="math inline">\(W_{t \to i} = I_i(t)\)</span>: feature importance of technology <span class="math inline">\(t\)</span> in model predicting technology <span class="math inline">\(i\)</span></li>
+</ul>
 <p>We normalize weights within each target technology’s model:</p>
 <p><span class="math display">\[
 W_{t \to i} = \frac{I_i(t)}{\sum_{t' \neq i} I_i(t')}
@@ -480,7 +497,13 @@ I_i(t) = \frac{1}{B}\sum_{b=1}^{B} \sum_{n \in T_b : v(n)=t} \Delta G(n)
 </section>
 <section id="empirical-implications-1" class="level3" data-number="3.7.5">
 <h3 data-number="3.7.5" class="anchored" data-anchor-id="empirical-implications-1"><span class="header-section-number">3.7.5</span> Empirical Implications</h3>
-<p>FITS enables novel analyses of technological landscapes: 1. <strong>Path identification</strong>: For a target technology <span class="math inline">\(i\)</span>, examine incoming edge weights to identify strong predictors (prerequisites) 2. <strong>Branching points</strong>: High out-degree nodes represent foundational technologies enabling diverse future specializations 3. <strong>Category structure</strong>: Aggregating edges by IPC categories reveals cross-domain dependencies (e.g., mechanical engineering → electronics) 4. <strong>Regional positioning</strong>: Comparing a region’s current portfolio against FITS edge patterns reveals strategic opportunities and gaps</p>
+<p>FITS enables novel analyses of technological landscapes:</p>
+<ol type="1">
+<li><strong>Path identification</strong>: For a target technology <span class="math inline">\(i\)</span>, examine incoming edge weights to identify strong predictors (prerequisites)</li>
+<li><strong>Branching points</strong>: High out-degree nodes represent foundational technologies enabling diverse future specializations</li>
+<li><strong>Category structure</strong>: Aggregating edges by IPC categories reveals cross-domain dependencies (e.g., mechanical engineering → electronics)</li>
+<li><strong>Regional positioning</strong>: Comparing a region’s current portfolio against FITS edge patterns reveals strategic opportunities and gaps</li>
+</ol>
 <p>In our empirical analysis, FITS allows testing whether technology-specific characteristics (position in the network hierarchy, in/out-degree patterns, category embeddings) moderate diversification outcomes—aspects traditional relatedness measures cannot capture.</p>
 </section>
 <section id="network-visualization" class="level3" data-number="3.7.6">
@@ -505,17 +528,34 @@ I_i(t) = \frac{1}{B}\sum_{b=1}^{B} \sum_{n \in T_b : v(n)=t} \Delta G(n)
 <section id="mathematical-construction" class="level3" data-number="3.8.2">
 <h3 data-number="3.8.2" class="anchored" data-anchor-id="mathematical-construction"><span class="header-section-number">3.8.2</span> Mathematical Construction</h3>
 <p>For each region <span class="math inline">\(r\)</span>, technology <span class="math inline">\(i\)</span>, and IPC category <span class="math inline">\(c\)</span>, we construct two embedding vectors capturing <span class="math inline">\(i\)</span>’s directional network position and compare them to <span class="math inline">\(r\)</span>’s average embeddings for technologies in category <span class="math inline">\(c\)</span>.</p>
-<p><strong>Technology embeddings</strong> (individual technology <span class="math inline">\(i\)</span>): - Incoming: <span class="math inline">\(\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} &gt; 0\}|}\)</span> (average FITS weight from category <span class="math inline">\(c\)</span> to technology <span class="math inline">\(i\)</span>) - Outgoing: <span class="math inline">\(\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} &gt; 0\}|}\)</span> (average FITS weight from technology <span class="math inline">\(i\)</span> to category <span class="math inline">\(c\)</span>)</p>
-<p><strong>Regional average embeddings</strong> (region <span class="math inline">\(r\)</span>, category <span class="math inline">\(c\)</span>): - Incoming: <span class="math inline">\(\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}\)</span> where <span class="math inline">\(S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}\)</span> - Outgoing: <span class="math inline">\(\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}\)</span></p>
+<p><strong>Technology embeddings</strong> (individual technology <span class="math inline">\(i\)</span>):</p>
+<ul>
+<li>Incoming: <span class="math inline">\(\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} &gt; 0\}|}\)</span> (average FITS weight from category <span class="math inline">\(c\)</span> to technology <span class="math inline">\(i\)</span>)</li>
+<li>Outgoing: <span class="math inline">\(\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} &gt; 0\}|}\)</span> (average FITS weight from technology <span class="math inline">\(i\)</span> to category <span class="math inline">\(c\)</span>)</li>
+</ul>
+<p><strong>Regional average embeddings</strong> (region <span class="math inline">\(r\)</span>, category <span class="math inline">\(c\)</span>):</p>
+<ul>
+<li>Incoming: <span class="math inline">\(\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}\)</span> where <span class="math inline">\(S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}\)</span></li>
+<li>Outgoing: <span class="math inline">\(\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}\)</span></li>
+</ul>
 <p><strong>Coherence</strong> is the cosine similarity between technology <span class="math inline">\(i\)</span>’s directional embeddings and region <span class="math inline">\(r\)</span>’s average directional embeddings for category <span class="math inline">\(c\)</span>:</p>
 <p><span class="math display">\[
 \text{Coherence}_{r,i,c,y} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}
 \]</span></p>
-<p>where: - <span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]\)</span> - <span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]\)</span></li>
+<li><span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]\)</span></li>
+</ul>
 </section>
 <section id="interpretation" class="level3" data-number="3.8.3">
 <h3 data-number="3.8.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.8.3</span> Interpretation</h3>
-<p>Coherence ranges from -1 to 1: - <strong>High coherence</strong> (<span class="math inline">\(\approx 1\)</span>): Technology <span class="math inline">\(i\)</span>’s FITS network position (both incoming and outgoing connections to category <span class="math inline">\(c\)</span>) closely matches the average network position of technologies in which region <span class="math inline">\(r\)</span> specializes within category <span class="math inline">\(c\)</span>. The region’s existing capabilities align with the structural prerequisites and consequences of technology <span class="math inline">\(i\)</span>. - <strong>Neutral coherence</strong> (<span class="math inline">\(\approx 0\)</span>): Misalignment between technology <span class="math inline">\(i\)</span>’s relational structure and regional specialization patterns. - <strong>Negative coherence</strong> (<span class="math inline">\(\approx -1\)</span>): Technology <span class="math inline">\(i\)</span>’s network position is opposite to the region’s specialization structure (e.g., <span class="math inline">\(i\)</span> receives inputs from categories where the region sends outputs).</p>
+<p>Coherence ranges from -1 to 1:</p>
+<ul>
+<li><strong>High coherence</strong> (<span class="math inline">\(\approx 1\)</span>): Technology <span class="math inline">\(i\)</span>’s FITS network position (both incoming and outgoing connections to category <span class="math inline">\(c\)</span>) closely matches the average network position of technologies in which region <span class="math inline">\(r\)</span> specializes within category <span class="math inline">\(c\)</span>. The region’s existing capabilities align with the structural prerequisites and consequences of technology <span class="math inline">\(i\)</span>.</li>
+<li><strong>Neutral coherence</strong> (<span class="math inline">\(\approx 0\)</span>): Misalignment between technology <span class="math inline">\(i\)</span>’s relational structure and regional specialization patterns.</li>
+<li><strong>Negative coherence</strong> (<span class="math inline">\(\approx -1\)</span>): Technology <span class="math inline">\(i\)</span>’s network position is opposite to the region’s specialization structure (e.g., <span class="math inline">\(i\)</span> receives inputs from categories where the region sends outputs).</li>
+</ul>
 </section>
 <section id="empirical-application" class="level3" data-number="3.8.4">
 <h3 data-number="3.8.4" class="anchored" data-anchor-id="empirical-application"><span class="header-section-number">3.8.4</span> Empirical Application</h3>
