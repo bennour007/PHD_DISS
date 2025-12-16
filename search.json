@@ -140,6 +140,16 @@
     ]
   },
   {
+    "objectID": "div_coh_space.html",
+    "href": "div_coh_space.html",
+    "title": "6  Diversification, coherence, and the role of space",
+    "section": "",
+    "text": "Coherence measures the alignment between a technology’s directional embedding in the network (incoming vs. outgoing edge strengths to different categories) and the regional average embedding pattern for specialized technologies in that category. High coherence indicates the technology’s network position matches the region’s technological profile; low coherence suggests misalignment between the technology’s relational structure and regional specialization patterns.\nFor each region-technology-year combination:\n\\[\\text{Coherence}_{r,i,t} = \\frac{\\mathbf{v}_1 \\cdot \\mathbf{v}_2}{||\\mathbf{v}_1|| \\cdot ||\\mathbf{v}_2||}\\]\nwhere: - \\(\\mathbf{v}_1 = [\\text{embcat\\_to}_{i}, \\bar{\\text{embcat\\_to}}_{r,c}]\\) - \\(\\mathbf{v}_2 = [\\text{embcat\\_from}_{i}, \\bar{\\text{embcat\\_from}}_{r,c}]\\) - \\(\\text{embcat\\_to}_{i} = \\frac{\\sum \\text{weights\\_to}_{i,c}}{\\text{count(incoming edges)}_{i,c}}\\) (average incoming edge weight from category \\(c\\)) - \\(\\text{embcat\\_from}_{i} = \\frac{\\sum \\text{weights\\_from}_{i,c}}{\\text{count(outgoing edges)}_{i,c}}\\) (average outgoing edge weight to category \\(c\\)) - \\(\\bar{\\text{embcat}}_{r,c}\\) = regional average of embcat for technologies with RCA≥1 in category \\(c\\)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Diversification, coherence, and the role of space</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "7  Summary",
