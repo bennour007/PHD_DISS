@@ -25,3 +25,4 @@
 [1,"\u001B[32mGET: /\u001B[39m\n"]
 [1,"\u001B[31mGET: / (404: Not Found)\u001B[39m\n"]
 [1,"\u001B[31mGET: / (404: Not Found)\u001B[39m\n"]
+[1,"\u001B[91mERROR: YAMLException: bad indentation of a mapping entry (_quarto.yml, 12:5)\n11: \u001B[34m    - part: \"Literature Review\"\u001B[91m\n12: \u001B[34m    chapters:\u001B[91m\n       ~~\n13: \u001B[34m      - lit_rev.qmd\u001B[91m\u001B[39m\n"]

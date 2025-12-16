@@ -1,6 +1,6 @@
 # Technology space
 
-### Feature Importance Technolgy Space
+
 
 A natural approach to constructing technology networks would be to use patent citation data: if Patent A cites Patent B, and they contain different technologies, this reveals a relationship between those technology domains. However, this approach presents three critical limitations for our purposes. First, EPO citations include examiner-added citations that may not reflect actual knowledge flows between inventors. Second, aggregating patent-level citations to technology-level relationships relies on co-occurrence patterns that obscure the directionality of knowledge dependencies—whether technology A enables B or vice versa. Third, citation networks are inherently backward-looking, reflecting past relationships rather than predicting future technological trajectories.
 

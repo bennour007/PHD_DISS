@@ -25,5 +25,11 @@
   },
   "references.qmd": {
     "references.html": "be740de4"
+  },
+  "results.qmd": {
+    "results.html": "9bad84a0"
+  },
+  "discussion.qmd": {
+    "discussion.html": "fec28fa5"
   }
 }
