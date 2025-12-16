@@ -200,6 +200,7 @@ graph TB
     loss --> thesis
     suffer --> thesis
     regionexist --> thesis
+    regionexist -.->|exogenous factors:<br/>• neighbouring regions characteristics & outcomes<br/>• national entrepreneurial ecosystem characteristics| thesis
     thesis --> contrib
     
     classDef boxStyle fill:#e1f5ff,stroke:#333,stroke-width:2px
