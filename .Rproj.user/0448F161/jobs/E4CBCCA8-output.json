@@ -21,3 +21,5 @@
 [1,"\u001B[32mGET: /div_coh_space.html\u001B[39m\n"]
 [1,"[WARNING] Could not fetch resource ./lit_rev.html\n[WARNING] Could not fetch resource ./index.html\n"]
 [1,"\u001B[32mGET: /intro.html\u001B[39m\n"]
+[1,"\u001B[91mERROR: 500 (Internal Error): Cannot read properties of undefined (reading 'config')\u001B[39m\n"]
+[1,"\u001B[91mERROR: Unexpected error while scanning for file changes: Cannot read properties of undefined (reading 'files')\u001B[39m\n"]
