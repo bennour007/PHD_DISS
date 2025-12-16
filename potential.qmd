@@ -15,19 +15,16 @@ Our approach responds to this need by modeling technology relationships and regi
 We establish consistent notation used throughout:
 
 **Sets:**
+
 - $\mathcal{T} = \{t : 1 \le t \le N_T\}$: set of technologies
 - $\mathcal{R} = \{r : 1 \le r \le N_R\}$: set of regions  
 - $\mathcal{Y} = \{y : 1 \le y \le N_Y\}$: set of years
 - $\mathcal{C} = \{c : 1 \le c \le N_C\}$: set of technology categories
+- $\mathcal{K} = \{\kappa : 1 \le \kappa \le N_{\kappa}\}$: set of countries
 
-**Variables:**
-- $X_{r,t,y}$: patent count for region $r$ in technology $t$ during year $y$
-- $\text{RTA}_{r,t,y}$: Revealed Comparative Advantage (later referred to as RTA for patents)
-- $z_{r,t,y} \in \{0,1\}$: binary indicator of technological capacity (specialization)
-- $p_{r,t,y} \in [0,1]$: predicted probability of future specialization (technological potential)
-- $I_{t \to t'}$: feature importance weight, directed relationship from technology $t$ to $t'$
 
-We use European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.
+
+We use European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter, we also refer to this as categories), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.
 
 ## Revealed Technological Advantage
 
@@ -42,6 +39,7 @@ $$
 = \frac{X_{r,t,y}\,\sum_{r',t'}X_{r',t',y}}
        {\bigl(\sum_{t'}X_{r,t',y}\bigr)\,\bigl(\sum_{r'}X_{r',t,y}\bigr)}
 $$
+Where, $X_{r,t,y}$: patent count for region $r$ in technology $t$ during year $y$
 
 For each year $y$, we construct the RTA matrix $\mathbf{R}^{(y)}$ with entries $\text{RTA}_{r,t,y}$:
 
@@ -50,7 +48,7 @@ $$
 = \bigl[\text{RTA}_{r,t,y}\bigr]_{r=1,\dots,N_{R}}^{t=1,\dots,N_{T}}
 $$
 
-These yearly matrices form the foundation for all subsequent modeling. We binarize specialization for classification tasks:
+These yearly matrices form the foundation for all subsequent modeling. We then binarize specialization for classification tasks:
 
 $$
 z_{r,t,y}
@@ -166,7 +164,7 @@ We follow the methodology of @albora2023product, originally developed for trade 
 - **Outcome**: $z_{r,i,y}$ (whether region $r$ specializes in technology $i$ at year $y$)
 - **Features**: $\{\text{RTA}_{r,t,y-\delta} : t \in \mathcal{T}, t \neq i\}$ (RTA values for all other technologies $\delta$ years prior)
 
-This technology-specific approach enables each model to learn unique dependency patterns. Setting $\delta = 4$ years balances predictive performance with data availability [@andreoni2019political]. 
+This technology-specific approach enables each model to learn unique dependency patterns. Setting $\delta = 4$ years balances predictive performance with data availability such that current capacity predict future ones [@andreoni2019political]. 
 
 ### Training Procedure
 
@@ -201,6 +199,7 @@ $$p_{r,y} = \frac{\sum_{t} p_{r,t,y}}{N_T}$$
 ### Conceptual Interpretation
 
 Technological potential differs fundamentally from relatedness density. While relatedness density assumes technologies combine linearly and symmetrically, potential:
+
 1. Captures **non-linear interactions** between technologies through Random Forest's decision tree structure
 2. Allows **asymmetric dependencies** where technology $t$ may enable $t'$ but not vice versa
 3. Produces **region-specific estimates** rather than universal technology-pair relationships
@@ -221,6 +220,7 @@ FITS addresses these limitations by constructing asymmetric, predictive networks
 Recall that for each technology $i$, we trained a Random Forest model predicting $z_{r,i,y}$ using $\{\text{RTA}_{r,t,y-\delta} : t \neq i\}$ as features. The feature importance $I_i(t)$ quantifies how much technology $t$ contributes to predicting future specialization in technology $i$ across all regions and time periods in the training data.
 
 We formalize FITS as a directed, weighted network $G = (V, E, W)$ where:
+
 - **Nodes** $V = \mathcal{T}$: the set of technologies
 - **Edges** $E$: directed connections $(t \to i)$ for all $t, i \in \mathcal{T}, t \neq i$
 - **Weights** $W_{t \to i} = I_i(t)$: feature importance of technology $t$ in model predicting technology $i$
@@ -262,6 +262,7 @@ FITS edges represent **predictive dependencies** based on historical diversifica
 ### Empirical Implications
 
 FITS enables novel analyses of technological landscapes:
+
 1. **Path identification**: For a target technology $i$, examine incoming edge weights to identify strong predictors (prerequisites)
 2. **Branching points**: High out-degree nodes represent foundational technologies enabling diverse future specializations
 3. **Category structure**: Aggregating edges by IPC categories reveals cross-domain dependencies (e.g., mechanical engineering → electronics)
@@ -290,10 +291,12 @@ This metric operationalizes the "knowledge coherence" and "cognitive proximity" 
 For each region $r$, technology $i$, and IPC category $c$, we construct two embedding vectors capturing $i$'s directional network position and compare them to $r$'s average embeddings for technologies in category $c$.
 
 **Technology embeddings** (individual technology $i$):
+
 - Incoming: $\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} > 0\}|}$ (average FITS weight from category $c$ to technology $i$)
 - Outgoing: $\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} > 0\}|}$ (average FITS weight from technology $i$ to category $c$)
 
 **Regional average embeddings** (region $r$, category $c$):
+
 - Incoming: $\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}$ where $S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}$
 - Outgoing: $\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}$
 
@@ -304,12 +307,14 @@ $$
 $$
 
 where:
+
 - $\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]$
 - $\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]$
 
 ### Interpretation
 
 Coherence ranges from -1 to 1:
+
 - **High coherence** ($\approx 1$): Technology $i$'s FITS network position (both incoming and outgoing connections to category $c$) closely matches the average network position of technologies in which region $r$ specializes within category $c$. The region's existing capabilities align with the structural prerequisites and consequences of technology $i$.
 - **Neutral coherence** ($\approx 0$): Misalignment between technology $i$'s relational structure and regional specialization patterns.
 - **Negative coherence** ($\approx -1$): Technology $i$'s network position is opposite to the region's specialization structure (e.g., $i$ receives inputs from categories where the region sends outputs).
