@@ -84,15 +84,16 @@ p <- tgs[[11]] %>%
                  repel = TRUE, size = 3
   ) +
   labs(
-    title = "Technology Network(based on 2018 patent data)",
-    subtitle = "Node size = degree, transparency = eigenvector centrality"
+    caption = "Node size = degree, transparency = eigenvector centrality"
+    # subtitle = "Node size = degree, transparency = eigenvector centrality"
   ) +
   theme_graph(base_size = 11) +
   theme(
     plot.background = element_rect(fill = "white", color = NA),
-    plot.title = element_text(face = "bold", size = 14, hjust = 0.5),
-    plot.subtitle = element_text(color = "grey40", size = 10, hjust = 0.5, margin = margin(b = 15)),
+    # plot.title = element_text(face = "bold", size = 14, hjust = 0.5),
+    # plot.subtitle = element_text(color = "grey40", size = 10, hjust = 0.5, margin = margin(b = 15)),
     legend.position = "bottom",
+    # plot.title.position = "bottom",
     legend.box = "horizontal",
     legend.title = element_text(size = 9, face = "bold", hjust = 0.5),
     legend.title.position = "top",
