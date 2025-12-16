@@ -2,59 +2,7 @@
 
 
 
-**Algorithmic Framework**
 
-Random Forest constructs an ensemble of $B$ decision trees through bootstrap aggregating (bagging) with random feature subsampling. For binary classification where $y_i \in \{0,1\}$, each tree $T_b$ is built on a bootstrap sample $\mathcal{D}_b^*$ drawn with replacement from the original dataset.
-
-**Tree Construction via Recursive Partitioning**
-
-Each tree recursively partitions the feature space through binary splits. At node $t$, we randomly select $m$ features (typically $m = \sqrt{p}$) and evaluate all possible splits within this subset. For feature $j$ and threshold $\tau$, the split creates two child nodes: $t_L = \{i : x_{ij} \leq \tau\}$ and $t_R = \{i : x_{ij} > \tau\}$.
-
-**Gini Impurity as Split Criterion**
-
-Split quality is assessed via Gini impurity, defined as:
-
-$$G(t) = 1 - \sum_{k=0}^{1} p_k^2(t) = 2p_0(t)p_1(t)$$
-
-where $p_k(t) = n_k(t)/n(t)$ represents the proportion of class $k$ observations at node $t$. Gini impurity quantifies node heterogeneity: $G=0$ indicates perfect purity (homogeneous class), while $G=0.5$ indicates maximum impurity (equal class distribution). The optimal split maximizes the weighted impurity reduction:
-
-$$\Delta G(j, \tau) = G(t) - \left[\frac{n(t_L)}{n(t)} G(t_L) + \frac{n(t_R)}{n(t)} G(t_R)\right]$$
-
-The weighting by relative node size prevents trivial splits that isolate single observations into pure but uninformative leaves.
-
-**Termination and Class Assignment**
-
-Recursive splitting continues until predefined stopping criteria are met: node purity ($G=0$), minimum node size threshold, or maximum tree depth. Terminal nodes are assigned the majority class of their constituent observations.
-
-**Ensemble Prediction**
-
-For prediction, observation $\mathbf{x}$ traverses all $B$ trees. The final classification aggregates individual tree predictions via majority voting:
-
-$$\hat{y}(\mathbf{x}) = \text{mode}\{\hat{y}_1(\mathbf{x}), \ldots, \hat{y}_B(\mathbf{x})\}$$
-
-Class probabilities are estimated as the proportion of trees predicting each class: 
-
-$$\hat{P}(y=1|\mathbf{x}) = B^{-1}\sum_{b=1}^{B} \mathbb{I}[\hat{y}_b(\mathbf{x})=1]$$
-
-**Interpreting Probability Estimates**
-
-This probability represents the empirical vote share across trees. Values near 1 indicate strong consensus for class 1 (high confidence), while values near 0.5 reflect uncertainty with divided predictions. Unlike parametric models, these are purely data-driven vote proportions rather than model-based probability estimates. Practitioners can adjust classification thresholds based on asymmetric misclassification costs.
-
-**Variance Reduction Mechanism**
-
-The algorithm's effectiveness stems from variance reduction through decorrelated predictions. Bootstrap sampling and random feature selection reduce inter-tree correlation $\rho$, yielding ensemble variance:
-
-$$\text{Var}(\bar{y}) = \rho\sigma^2 + \frac{1-\rho}{B}\sigma^2$$
-
-As $B$ increases and $\rho$ decreases, ensemble variance diminishes while maintaining the low bias of flexible tree models.
-
-**Feature Importance**
-
-Feature importance quantifies each predictor's contribution by aggregating Gini impurity reductions:
-
-$$I(j) = \frac{1}{B}\sum_{b=1}^{B} \sum_{t \in T_b : v(t)=j} \Delta G(t)$$
-
-where the sum runs over all nodes using feature $j$ for splitting. Higher values indicate features consistently creating purer partitions. However, importance measures predictive association rather than causal effect, and suffer from bias toward high-cardinality features and correlated predictor sets. They serve to rank predictive relevance but require caution in causal interpretation.
 
 
 

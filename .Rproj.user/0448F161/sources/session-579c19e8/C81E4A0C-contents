@@ -11,16 +11,12 @@ book:
     - part: "Literature Review"
       chapters:
         - lit_rev.qmd
-        - ML_relatedness.qmd
     - part: "Research Design"
       chapters:
         - potential.qmd
-        - tech_space.qmd
-        - div_coh_space.qmd
     - part: "Results and Discussion"
       chapters:
         - results.qmd
-        - discussion.qmd
     - summary.qmd
     - references.qmd
 
