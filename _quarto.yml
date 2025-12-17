@@ -17,6 +17,21 @@ book:
 bibliography: references.bib
 
 format:
+  pdf:
+    documentclass: scrreprt
+    fontsize: 12pt
+    # linestretch: 1.5
+    # geometry:
+    #   - top=2.5cm
+    #   - bottom=2.5cm
+    #   - left=3cm
+    #   - right=2.5cm
+    lot: true
+    lof: true
+    include-in-header: 
+      text: |
+        \usepackage{tikz}
+        \usetikzlibrary{arrows.meta, positioning, shapes.geometric}
   html:
     browser: brave
     theme: cosmo
@@ -26,6 +41,7 @@ format:
     linestretch: 1.5
     mermaid:
       theme: default
+    
 
 
 

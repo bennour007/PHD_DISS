@@ -1,5 +1,2027 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Crespo",
+                    "given": "Joan"
+                },
+                {
+                    "family": "Rigby",
+                    "given": "David L"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "balland2019smart",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "1252-1268",
+            "publisher": "Routledge",
+            "title": "Smart specialization policy in the european union: Relatedness, knowledge complexity and regional diversification",
+            "title-short": "Smart specialization policy in the european union",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                },
+                {
+                    "family": "Hausmann",
+                    "given": "Ricardo"
+                }
+            ],
+            "container-title": "Proceedings of the national academy of sciences",
+            "id": "hidalgo2009building",
+            "issue": "26",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "10570-10575",
+            "publisher": "National Acad Sciences",
+            "title": "The building blocks of economic complexity",
+            "type": "article-journal",
+            "volume": "106"
+        },
+        {
+            "author": [
+                {
+                    "family": "Li",
+                    "given": "Yang"
+                },
+                {
+                    "family": "Neffke",
+                    "given": "Frank MH"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "li2024evaluating",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "104952",
+            "publisher": "Elsevier",
+            "title": "Evaluating the principle of relatedness: Estimation, drivers and implications for policy",
+            "title-short": "Evaluating the principle of relatedness",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
+                    "family": "Imbs",
+                    "given": "Jean"
+                },
+                {
+                    "family": "Wacziarg",
+                    "given": "Romain"
+                }
+            ],
+            "container-title": "American economic review",
+            "id": "imbs2003stages",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "page": "63-86",
+            "publisher": "American Economic Association",
+            "title": "Stages of diversification",
+            "type": "article-journal",
+            "volume": "93"
+        },
+        {
+            "author": [
+                {
+                    "family": "Collins",
+                    "given": "Harry M"
+                }
+            ],
+            "container-title": "Science studies",
+            "id": "collins1974tea",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1974
+                    ]
+                ]
+            },
+            "page": "165-185",
+            "publisher": "Sage Publications Sage CA: Thousand Oaks, CA",
+            "title": "The TEA set: Tacit knowledge and scientific networks",
+            "title-short": "The TEA set",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fessina",
+                    "given": "Massimiliano"
+                },
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Cimini",
+                    "given": "Giulio"
+                },
+                {
+                    "family": "Squartini",
+                    "given": "Tiziano"
+                }
+            ],
+            "container-title": "Chaos, Solitons & Fractals",
+            "id": "fessina2024pattern",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "114630",
+            "publisher": "Elsevier",
+            "title": "Pattern-detection in the global automotive industry: A manufacturer-supplier-product network analysis",
+            "title-short": "Pattern-detection in the global automotive industry",
+            "type": "article-journal",
+            "volume": "181"
+        },
+        {
+            "author": [
+                {
+                    "family": "Albora",
+                    "given": "Giambattista"
+                },
+                {
+                    "family": "Pietronero",
+                    "given": "Luciano"
+                },
+                {
+                    "family": "Tacchella",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                }
+            ],
+            "container-title": "Scientific Reports",
+            "id": "albora2023product",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "1481",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Product progression: A machine learning approach to forecasting industrial upgrading",
+            "title-short": "Product progression",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hausmann",
+                    "given": "Ricardo"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "Journal of economic growth",
+            "id": "hausmann2011network",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "309-342",
+            "publisher": "Springer",
+            "title": "The network structure of economic output",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pugliese",
+                    "given": "Emanuele"
+                },
+                {
+                    "family": "Cimini",
+                    "given": "Giulio"
+                },
+                {
+                    "family": "Patelli",
+                    "given": "Aurelio"
+                },
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Pietronero",
+                    "given": "Luciano"
+                },
+                {
+                    "family": "Gabrielli",
+                    "given": "Andrea"
+                }
+            ],
+            "container-title": "Scientific reports",
+            "id": "pugliese2019unfolding",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "16440",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Unfolding the innovation system for the development of countries: Coevolution of science, technology and production",
+            "title-short": "Unfolding the innovation system for the development of countries",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "author": [
+                {
+                    "family": "Torre",
+                    "given": "André"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "torre2008role",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "869-889",
+            "publisher": "Taylor & Francis",
+            "title": "On the role played by temporary geographical proximity in knowledge transmission",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "author": [
+                {
+                    "family": "Torre",
+                    "given": "Andre"
+                },
+                {
+                    "family": "Rallet",
+                    "given": "Alain"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "torre2005proximity",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "47-59",
+            "publisher": "Taylor & Francis",
+            "title": "Proximity and localization",
+            "type": "article-journal",
+            "volume": "39"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Miguelez",
+                    "given": "Ernest"
+                },
+                {
+                    "family": "Moreno",
+                    "given": "Rosina"
+                },
+                {
+                    "family": "Ocampo-Corrales",
+                    "given": "Diego B"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "boschma2023role",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "117-139",
+            "publisher": "Taylor & Francis",
+            "title": "The role of relatedness and unrelatedness for the geography of technological breakthroughs in europe",
+            "type": "article-journal",
+            "volume": "99"
+        },
+        {
+            "author": [
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Broekel",
+                    "given": "Tom"
+                },
+                {
+                    "family": "Diodato",
+                    "given": "Dario"
+                },
+                {
+                    "family": "Giuliani",
+                    "given": "Elisa"
+                },
+                {
+                    "family": "Hausmann",
+                    "given": "Ricardo"
+                },
+                {
+                    "family": "Clery",
+                    "given": "Neave",
+                    "non-dropping-particle": "o’"
+                },
+                {
+                    "family": "Rigby",
+                    "given": "David"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "balland2022reprint",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "104568",
+            "publisher": "Elsevier",
+            "title": "Reprint of the new paradigm of economic complexity",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Morrison",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Rabellotti",
+                    "given": "Roberta"
+                },
+                {
+                    "family": "Zirulia",
+                    "given": "Lorenzo"
+                }
+            ],
+            "container-title": "Economic geography",
+            "id": "morrison2013global",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "77-96",
+            "publisher": "Taylor & Francis",
+            "title": "When do global pipelines enhance the diffusion of knowledge in clusters?",
+            "type": "article-journal",
+            "volume": "89"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "boschma2005proximity",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "61-74",
+            "publisher": "Taylor & Francis",
+            "title": "Proximity and innovation: A critical assessment",
+            "title-short": "Proximity and innovation",
+            "type": "article-journal",
+            "volume": "39"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pinheiro",
+                    "given": "Flávio L"
+                },
+                {
+                    "family": "Hartmann",
+                    "given": "Dominik"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "pinheiro2022time",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "104323",
+            "publisher": "Elsevier",
+            "title": "The time and frequency of unrelated diversification",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Acs",
+                    "given": "Zoltan J"
+                },
+                {
+                    "family": "Anselin",
+                    "given": "Luc"
+                },
+                {
+                    "family": "Varga",
+                    "given": "Attila"
+                }
+            ],
+            "container-title": "Research policy",
+            "id": "acs2002patents",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "1069-1085",
+            "publisher": "Elsevier",
+            "title": "Patents and innovation counts as measures of regional production of new knowledge",
+            "type": "article-journal",
+            "volume": "31"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cameron",
+                    "given": "Gavin"
+                }
+            ],
+            "collection-number": "277",
+            "id": "cameron1996innovation",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "publisher": "London School of Economics; Political Science. Centre for Economic …",
+            "title": "Innovation and economic growth",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                },
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Delgado",
+                    "given": "Mercedes"
+                },
+                {
+                    "family": "Feldman",
+                    "given": "Maryann"
+                },
+                {
+                    "family": "Frenken",
+                    "given": "Koen"
+                },
+                {
+                    "family": "Glaeser",
+                    "given": "Edward"
+                },
+                {
+                    "family": "He",
+                    "given": "Canfei"
+                },
+                {
+                    "family": "Kogler",
+                    "given": "Dieter F"
+                },
+                {
+                    "family": "Morrison",
+                    "given": "Andrea"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Unifying themes in complex systems IX: Proceedings of the ninth international conference on complex systems 9",
+            "id": "hidalgo2018principle",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "451-457",
+            "publisher": "Springer",
+            "title": "The principle of relatedness",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Maradana",
+                    "given": "Rana P"
+                },
+                {
+                    "family": "Pradhan",
+                    "given": "Rudra P"
+                },
+                {
+                    "family": "Dash",
+                    "given": "Saurav"
+                },
+                {
+                    "family": "Gaurav",
+                    "given": "Kunal"
+                },
+                {
+                    "family": "Jayakumar",
+                    "given": "Manju"
+                },
+                {
+                    "family": "Chatterjee",
+                    "given": "Debaleena"
+                }
+            ],
+            "container-title": "Journal of Innovation and Entrepreneurship",
+            "id": "maradana2017does",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1",
+            "publisher": "Springer",
+            "title": "Does innovation promote economic growth? Evidence from european countries",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wang",
+                    "given": "Jenn-Hwan"
+                }
+            ],
+            "container-title": "The Journal of Development Studies",
+            "id": "wang2007technological",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "1084-1104",
+            "publisher": "Taylor & Francis",
+            "title": "From technological catch-up to innovation-based economic growth: South korea and taiwan compared",
+            "title-short": "From technological catch-up to innovation-based economic growth",
+            "type": "article-journal",
+            "volume": "43"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hausmann",
+                    "given": "Ricardo"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "Journal of economic growth",
+            "id": "hausmann2011network",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "309-342",
+            "publisher": "Springer",
+            "title": "The network structure of economic output",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Veretennik",
+                    "given": "Elena"
+                },
+                {
+                    "family": "Shakina",
+                    "given": "Elena"
+                }
+            ],
+            "container-title": "Higher Education Quarterly",
+            "id": "veretennik2024beyond",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "212-235",
+            "publisher": "Wiley Online Library",
+            "title": "Beyond borders: Achieving research performance breakthrough with academic collaborations",
+            "title-short": "Beyond borders",
+            "type": "article-journal",
+            "volume": "78"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lin",
+                    "given": "Runhui"
+                },
+                {
+                    "family": "Li",
+                    "given": "Biting"
+                },
+                {
+                    "family": "Lu",
+                    "given": "Yanhong"
+                },
+                {
+                    "family": "Li",
+                    "given": "Yalin"
+                }
+            ],
+            "container-title": "Scientometrics",
+            "id": "lin2024degree",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "3809-3839",
+            "publisher": "Springer",
+            "title": "Degree assortativity in collaboration networks and breakthrough innovation: The moderating role of knowledge networks",
+            "title-short": "Degree assortativity in collaboration networks and breakthrough innovation",
+            "type": "article-journal",
+            "volume": "129"
+        },
+        {
+            "author": [
+                {
+                    "family": "Balassa",
+                    "given": "Bela"
+                }
+            ],
+            "container-title": "The manchester school",
+            "id": "balassa1965rca",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1965
+                    ]
+                ]
+            },
+            "page": "99-123",
+            "publisher": "Wiley Online Library",
+            "title": "Trade liberalisation and “revealed” comparative advantage 1",
+            "type": "article-journal",
+            "volume": "33"
+        },
+        {
+            "author": [
+                {
+                    "family": "Breiman",
+                    "given": "Leo"
+                }
+            ],
+            "container-title": "Machine learning",
+            "id": "RF2001",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "5-32",
+            "publisher": "Springer",
+            "title": "Random forests",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "author": [
+                {
+                    "family": "Afriat",
+                    "given": "Sidney N"
+                }
+            ],
+            "container-title": "International economic review",
+            "id": "afriat1972",
+            "issued": {
+                "date-parts": [
+                    [
+                        1972
+                    ]
+                ]
+            },
+            "page": "568-598",
+            "publisher": "JSTOR",
+            "title": "Efficiency estimation of production functions",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Aigner",
+                    "given": "Dennis"
+                },
+                {
+                    "family": "Lovell",
+                    "given": "CA Knox"
+                },
+                {
+                    "family": "Schmidt",
+                    "given": "Peter"
+                }
+            ],
+            "container-title": "Journal of econometrics",
+            "id": "aigner1977",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1977
+                    ]
+                ]
+            },
+            "page": "21-37",
+            "publisher": "Elsevier",
+            "title": "Formulation and estimation of stochastic frontier production function models",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "author": [
+                {
+                    "family": "Teirlinck",
+                    "given": "Peter"
+                },
+                {
+                    "family": "Spithoven",
+                    "given": "André"
+                }
+            ],
+            "container-title": "Science and Public Policy",
+            "id": "teirlinck2023",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "1001-1017",
+            "publisher": "Oxford University Press UK",
+            "title": "Improving the regional innovation scoreboard for policy: How about innovation efficiency?",
+            "title-short": "Improving the regional innovation scoreboard for policy",
+            "type": "article-journal",
+            "volume": "50"
+        },
+        {
+            "author": [
+                {
+                    "family": "Barra",
+                    "given": "Cristian"
+                },
+                {
+                    "family": "Ruggiero",
+                    "given": "Nazzareno"
+                }
+            ],
+            "container-title": "Journal of Evolutionary Economics",
+            "id": "barra2022",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "591-642",
+            "publisher": "Springer",
+            "title": "How do dimensions of institutional quality improve italian regional innovation system efficiency? The knowledge production function using SFA",
+            "type": "article-journal",
+            "volume": "32"
+        },
+        {
+            "URL": "https://pacha.dev/economiccomplexity/",
+            "author": [
+                {
+                    "family": "Vargas Sepulveda",
+                    "given": "Mauricio"
+                }
+            ],
+            "id": "ecm",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "note": "R package version 2.0.0",
+            "title": "Economiccomplexity: Computational methods for economic complexity",
+            "title-short": "Economiccomplexity",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Tacchella",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Cristelli",
+                    "given": "Matthieu"
+                },
+                {
+                    "family": "Caldarelli",
+                    "given": "Guido"
+                },
+                {
+                    "family": "Gabrielli",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Pietronero",
+                    "given": "Luciano"
+                }
+            ],
+            "container-title": "Scientific reports",
+            "id": "tacchella2012",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "723",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "A new metrics for countries’ fitness and products’ complexity",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pinheiro",
+                    "given": "Flávio L"
+                },
+                {
+                    "family": "Alshamsi",
+                    "given": "Aamena"
+                },
+                {
+                    "family": "Hartmann",
+                    "given": "Dominik"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "César"
+                }
+            ],
+            "id": "pinheiro2018shooting",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "title": "Shooting low or high: Do countries benefit from entering unrelated activities?",
+            "title-short": "Shooting low or high",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pinheiro",
+                    "given": "Cristina"
+                }
+            ],
+            "container-title": "Structural Change and Economic Dynamics",
+            "id": "pinheiro2025",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "page": "1-10",
+            "publisher": "Elsevier",
+            "title": "Relatedness and economic complexity as tools for industrial policy: Insights and limitations",
+            "title-short": "Relatedness and economic complexity as tools for industrial policy",
+            "type": "article-journal",
+            "volume": "72"
+        },
+        {
+            "author": [
+                {
+                    "family": "Balland",
+                    "given": "PA"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "R"
+                }
+            ],
+            "container-title": "European Commission: Brussels, Belgium",
+            "id": "balland2019beyond",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "title": "Smart specialization: Beyond patents",
+            "title-short": "Smart specialization",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Rigby",
+                    "given": "David"
+                }
+            ],
+            "container-title": "Economic geography",
+            "id": "balland2017geography",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1-23",
+            "publisher": "Taylor & Francis",
+            "title": "The geography of complex knowledge",
+            "type": "article-journal",
+            "volume": "93"
+        },
+        {
+            "author": [
+                {
+                    "family": "Neffke",
+                    "given": "Frank"
+                },
+                {
+                    "family": "Henning",
+                    "given": "Martin"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Economic geography",
+            "id": "neffke2011how",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "237-265",
+            "publisher": "Taylor & Francis",
+            "title": "How do regions diversify over time? Industry relatedness and the development of new growth paths in regions",
+            "type": "article-journal",
+            "volume": "87"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "boschma2015towards",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "733-751",
+            "publisher": "Taylor & Francis",
+            "title": "Towards an evolutionary perspective on regional resilience",
+            "type": "article-journal",
+            "volume": "49"
+        },
+        {
+            "author": [
+                {
+                    "family": "Diodato",
+                    "given": "Dario"
+                },
+                {
+                    "family": "Napolitano",
+                    "given": "Lorenzo"
+                },
+                {
+                    "family": "Pugliese",
+                    "given": "Emanuele"
+                },
+                {
+                    "family": "Tacchella",
+                    "given": "Andrea"
+                }
+            ],
+            "id": "diodato2023economic",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "Joint Research Centre",
+            "title": "Economic complexity for regional industrial strategies",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Augsdorfer",
+                    "given": "Peter"
+                }
+            ],
+            "container-title": "research policy",
+            "id": "bootlegging",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "1-11",
+            "publisher": "Elsevier",
+            "title": "Bootlegging and path dependency",
+            "type": "article-journal",
+            "volume": "34"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "hidalgo2023policy",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "104863",
+            "publisher": "Elsevier",
+            "title": "The policy implications of economic complexity",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "Nature Reviews Physics",
+            "id": "hidalgo2021economic",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "92-113",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Economic complexity theory and applications",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Dosi",
+                    "given": "Giovanni"
+                }
+            ],
+            "container-title": "Research policy",
+            "id": "dosi1982technological",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1982
+                    ]
+                ]
+            },
+            "page": "147-162",
+            "publisher": "Elsevier",
+            "title": "Technological paradigms and technological trajectories: A suggested interpretation of the determinants and directions of technical change",
+            "title-short": "Technological paradigms and technological trajectories",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "author": [
+                {
+                    "family": "Weitzman",
+                    "given": "Martin L"
+                }
+            ],
+            "container-title": "The quarterly journal of economics",
+            "id": "weitzman1998recombinant",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "page": "331-360",
+            "publisher": "MIT Press",
+            "title": "Recombinant growth",
+            "type": "article-journal",
+            "volume": "113"
+        },
+        {
+            "author": [
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "balland2022scientific",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "104594",
+            "publisher": "Elsevier",
+            "title": "Do scientific capabilities in specific domains matter for technological diversification in european regions?",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nomaler",
+                    "given": "Önder"
+                },
+                {
+                    "family": "Verspagen",
+                    "given": "Bart"
+                }
+            ],
+            "container-title": "Structural Change and Economic Dynamics",
+            "id": "nomaler2024related",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "503-515",
+            "publisher": "Elsevier",
+            "title": "Related or unrelated diversification: What is smart specialization?",
+            "title-short": "Related or unrelated diversification",
+            "type": "article-journal",
+            "volume": "70"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pinheiro",
+                    "given": "Flavio L"
+                },
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Hartmann",
+                    "given": "Dominik"
+                }
+            ],
+            "container-title": "Regional Studies",
+            "id": "pinheiro2025dark",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "page": "2106362",
+            "publisher": "Taylor & Francis",
+            "title": "The dark side of the geography of innovation: Relatedness, complexity and regional inequality in europe",
+            "title-short": "The dark side of the geography of innovation",
+            "type": "article-journal",
+            "volume": "59"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hartmann",
+                    "given": "Dominik"
+                },
+                {
+                    "family": "Guevara",
+                    "given": "Miguel R"
+                },
+                {
+                    "family": "Jara-Figueroa",
+                    "given": "Cristian"
+                },
+                {
+                    "family": "Aristarán",
+                    "given": "Manuel"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "World development",
+            "id": "hartmann2017linking",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "75-93",
+            "publisher": "Elsevier",
+            "title": "Linking economic complexity, institutions, and income inequality",
+            "type": "article-journal",
+            "volume": "93"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fessina",
+                    "given": "Massimiliano"
+                },
+                {
+                    "family": "Albora",
+                    "given": "Giambattista"
+                },
+                {
+                    "family": "Tacchella",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                }
+            ],
+            "container-title": "Journal of Physics: Complexity",
+            "id": "fessina2024identifying",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "025003",
+            "publisher": "IOP Publishing",
+            "title": "Identifying key products to trigger new exports: An explainable machine learning approach",
+            "title-short": "Identifying key products to trigger new exports",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Mishra",
+                    "given": "Saurabh"
+                },
+                {
+                    "family": "Cader",
+                    "given": "Masud Z"
+                },
+                {
+                    "family": "Pietronero",
+                    "given": "Luciano"
+                }
+            ],
+            "container-title": "World Bank Policy Research Working Paper",
+            "id": "zaccaria2018integrating",
+            "issue": "8485",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "title": "Integrating services in the economic fitness approach",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.2760/368138",
+            "author": [
+                {
+                    "family": "E",
+                    "given": "Pugliese"
+                },
+                {
+                    "family": "A",
+                    "given": "Tacchella"
+                }
+            ],
+            "id": "albora2021economic",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "Publications Office of the European Union",
+            "title": "Economic complexity analytics: Country factsheets",
+            "title-short": "Economic complexity analytics",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.2760/9201933",
+            "author": [
+                {
+                    "family": "G",
+                    "given": "Albora"
+                },
+                {
+                    "family": "D",
+                    "given": "Diodato"
+                },
+                {
+                    "family": "L",
+                    "given": "Napolitano"
+                }
+            ],
+            "id": "albora2025economic",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "publisher": "Publications Office of the European Union",
+            "title": "Economic complexity analytics: Country factsheets 2024",
+            "title-short": "Economic complexity analytics",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wright",
+                    "given": "Marvin N"
+                },
+                {
+                    "family": "Ziegler",
+                    "given": "Andreas"
+                }
+            ],
+            "container-title": "Journal of statistical software",
+            "id": "wright2017ranger",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1-17",
+            "title": "Ranger: A fast implementation of random forests for high dimensional data in c++ and r",
+            "title-short": "Ranger",
+            "type": "article-journal",
+            "volume": "77"
+        },
+        {
+            "author": [
+                {
+                    "family": "Landau",
+                    "given": "William Michael"
+                }
+            ],
+            "container-title": "Journal of Open Source Software",
+            "id": "landau2021targets",
+            "issue": "57",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "2959",
+            "title": "The targets r package: A dynamic make-like function-oriented pipeline toolkit for reproducibility and high-performance computing",
+            "title-short": "The targets r package",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=sfaR/",
+            "author": [
+                {
+                    "family": "Dakpo",
+                    "given": "K Hervé"
+                },
+                {
+                    "family": "Desjeux",
+                    "given": "Yann"
+                },
+                {
+                    "family": "Henningsen",
+                    "given": "Arne"
+                },
+                {
+                    "family": "Latruffe",
+                    "given": "Laure"
+                }
+            ],
+            "id": "sfar",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "note": "R package version 1.0.1",
+            "title": "sfaR: Stochastic frontier analysis routines.",
+            "title-short": "sfaR",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Battese",
+                    "given": "George E"
+                },
+                {
+                    "family": "Coelli",
+                    "given": "Tim J"
+                }
+            ],
+            "container-title": "Journal of econometrics",
+            "id": "battese1988prediction",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "page": "387-399",
+            "publisher": "Elsevier",
+            "title": "Prediction of firm-level technical efficiencies with a generalized frontier production function and panel data",
+            "type": "article-journal",
+            "volume": "38"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jondrow",
+                    "given": "James"
+                },
+                {
+                    "family": "Lovell",
+                    "given": "CA Knox"
+                },
+                {
+                    "family": "Materov",
+                    "given": "Ivan S"
+                },
+                {
+                    "family": "Schmidt",
+                    "given": "Peter"
+                }
+            ],
+            "container-title": "Journal of econometrics",
+            "id": "jondrow1982estimation",
+            "issue": "2-3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1982
+                    ]
+                ]
+            },
+            "page": "233-238",
+            "publisher": "Elsevier",
+            "title": "On the estimation of technical inefficiency in the stochastic frontier production function model",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lee",
+                    "given": "Changyong"
+                },
+                {
+                    "family": "Kwon",
+                    "given": "Ohjin"
+                },
+                {
+                    "family": "Kim",
+                    "given": "Myeongjung"
+                },
+                {
+                    "family": "Kwon",
+                    "given": "Daeil"
+                }
+            ],
+            "container-title": "Technological Forecasting and Social Change",
+            "id": "lee2018early",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "291-303",
+            "publisher": "Elsevier",
+            "title": "Early identification of emerging technologies: A machine learning approach using multiple patent indicators",
+            "title-short": "Early identification of emerging technologies",
+            "type": "article-journal",
+            "volume": "127"
+        },
+        {
+            "author": [
+                {
+                    "family": "Tacchella",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Miccheli",
+                    "given": "Marco"
+                },
+                {
+                    "family": "Pietronero",
+                    "given": "Luciano"
+                }
+            ],
+            "container-title": "Chaos, Solitons & Fractals",
+            "id": "tacchella2023relatedness",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "114071",
+            "publisher": "Elsevier",
+            "title": "Relatedness in the era of machine learning",
+            "type": "article-journal",
+            "volume": "176"
+        },
+        {
+            "author": [
+                {
+                    "family": "Alshamsi",
+                    "given": "Aamena"
+                },
+                {
+                    "family": "Pinheiro",
+                    "given": "Flávio L"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "Cesar A"
+                }
+            ],
+            "container-title": "Nature communications",
+            "id": "alshamsi2018optimal",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "1328",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Optimal diversification strategies in the networks of related products and of related research areas",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Regional Studies",
+            "id": "boschma2017relatedness",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "351-364",
+            "publisher": "Taylor & Francis",
+            "title": "Relatedness as driver of regional diversification: A research agenda",
+            "title-short": "Relatedness as driver of regional diversification",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Coniglio",
+                    "given": "Nicola D"
+                },
+                {
+                    "family": "Vurchio",
+                    "given": "Davide"
+                },
+                {
+                    "family": "Cantore",
+                    "given": "Nicola"
+                },
+                {
+                    "family": "Clara",
+                    "given": "Michele"
+                }
+            ],
+            "container-title": "Journal of International Economics",
+            "id": "coniglio2021evolution",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "103522",
+            "publisher": "Elsevier",
+            "title": "On the evolution of comparative advantage: Path-dependent versus path-defying changes",
+            "title-short": "On the evolution of comparative advantage",
+            "type": "article-journal",
+            "volume": "133"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hirschman",
+                    "given": "Albert O"
+                }
+            ],
+            "id": "hirschman1958strategy",
+            "issued": {
+                "date-parts": [
+                    [
+                        1958
+                    ]
+                ]
+            },
+            "publisher": "New Haven, Conn.: Yale University,",
+            "title": "The strategy of economic development",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenstein-Rodan",
+                    "given": "Paul N"
+                }
+            ],
+            "container-title": "The economic journal",
+            "id": "rosenstein1943problems",
+            "issue": "210-211",
+            "issued": {
+                "date-parts": [
+                    [
+                        1943
+                    ]
+                ]
+            },
+            "page": "202-211",
+            "publisher": "Oxford University Press Oxford, UK",
+            "title": "Problems of industrialisation of eastern and south-eastern europe",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
+                    "family": "Andreoni",
+                    "given": "Antonio"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Ha-Joon"
+                }
+            ],
+            "container-title": "Structural change and economic dynamics",
+            "id": "andreoni2019political",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "136-150",
+            "publisher": "Elsevier",
+            "title": "The political economy of industrial policy: Structural interdependencies, policy alignment and conflict management",
+            "title-short": "The political economy of industrial policy",
+            "type": "article-journal",
+            "volume": "48"
+        },
+        {
+            "author": [
+                {
+                    "family": "Amsden",
+                    "given": "Alice Hoffenberg"
+                }
+            ],
+            "id": "amsden1989asia",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ]
+            },
+            "publisher": "Oxford University Press",
+            "title": "Asia’s next giant: South korea and late industrialization",
+            "title-short": "Asia’s next giant",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lee",
+                    "given": "Keun"
+                },
+                {
+                    "family": "Ki",
+                    "given": "Jee-hoon"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "lee2017rise",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "365-375",
+            "publisher": "Elsevier",
+            "title": "Rise of latecomers and catch-up cycles in the world steel industry",
+            "type": "article-journal",
+            "volume": "46"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mealy",
+                    "given": "Penny"
+                },
+                {
+                    "family": "Coyle",
+                    "given": "Diane"
+                }
+            ],
+            "container-title": "International Tax and Public Finance",
+            "id": "mealy2022them",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "358-377",
+            "publisher": "Springer",
+            "title": "To them that hath: Economic complexity and local industrial strategy in the UK",
+            "title-short": "To them that hath",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lee",
+                    "given": "Keun"
+                },
+                {
+                    "family": "Malerba",
+                    "given": "Franco"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "lee2017catch",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "338-351",
+            "publisher": "Elsevier",
+            "title": "Catch-up cycles and changes in industrial leadership: Windows of opportunity and responses of firms and countries in the evolution of sectoral systems",
+            "title-short": "Catch-up cycles and changes in industrial leadership",
+            "type": "article-journal",
+            "volume": "46"
+        }
+    ],
     "project_biblios": [
         "references.bib"
     ]
