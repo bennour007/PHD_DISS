@@ -17,6 +17,15 @@ book:
 bibliography: references.bib
 
 format:
+  html:
+    browser: brave
+    theme: cosmo
+    lot: true
+    lof: true
+    fontsize: 12pt
+    linestretch: 1.5
+    mermaid:
+      theme: default
   pdf:
     documentclass: scrreprt
     fontsize: 12pt
@@ -32,15 +41,6 @@ format:
       text: |
         \usepackage{tikz}
         \usetikzlibrary{arrows.meta, positioning, shapes.geometric}
-  html:
-    browser: brave
-    theme: cosmo
-    lot: true
-    lof: true
-    fontsize: 12pt
-    linestretch: 1.5
-    mermaid:
-      theme: default
     
 
 
