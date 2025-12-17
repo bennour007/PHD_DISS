@@ -298,7 +298,7 @@ window.Quarto = {
 </section>
 <section id="revealed-technological-advantage" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="revealed-technological-advantage"><span class="header-section-number">3.3</span> Revealed Technological Advantage</h2>
-<p>We quantify regional specialization using the Revealed Comparative Advantage <span class="citation" data-cites="balassa1965RTA">(<a href="references.html#ref-balassa1965RTA" role="doc-biblioref"><strong>balassa1965RTA?</strong></a>)</span>. Although originally designed for trade data, this metric has been widely adopted in innovation geography literature. Following <span class="citation" data-cites="balland2017geography">(<a href="references.html#ref-balland2017geography" role="doc-biblioref"><strong>balland2017geography?</strong></a>)</span>, we refer to it as Revealed Technological Advantage (RTA) in our patent context. The RTA measures relative specialization, enabling simultaneous capture of expertise depth and portfolio diversity while reducing co-occurrence noise <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. Despite critiques regarding patent-based applications <span class="citation" data-cites="balland2019beyond diodato2023economic">(<a href="references.html#ref-balland2019beyond" role="doc-biblioref">Balland and Boschma 2019</a>; <a href="references.html#ref-diodato2023economic" role="doc-biblioref">Diodato et al. 2023</a>)</span>, RTA aligns with our objective of capturing meaningful technology relationships through machine learning rather than raw co-occurrence.</p>
+<p>We quantify regional specialization using the Revealed Comparative Advantage <span class="citation" data-cites="balassa1965rca">(<a href="references.html#ref-balassa1965rca" role="doc-biblioref">Balassa 1965</a>)</span>. Although originally designed for trade data, this metric has been widely adopted in innovation geography literature. Following <span class="citation" data-cites="balland2017geography">P.-A. Balland and Rigby (<a href="references.html#ref-balland2017geography" role="doc-biblioref">2017</a>)</span>, we refer to it as Revealed Technological Advantage (RTA) in our patent context. The RTA measures relative specialization, enabling simultaneous capture of expertise depth and portfolio diversity while reducing co-occurrence noise <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. Despite critiques regarding patent-based applications <span class="citation" data-cites="balland2019beyond diodato2023economic">(<a href="references.html#ref-balland2019beyond" role="doc-biblioref">P. Balland and Boschma 2019</a>; <a href="references.html#ref-diodato2023economic" role="doc-biblioref">Diodato et al. 2023</a>)</span>, RTA aligns with our objective of capturing meaningful technology relationships through machine learning rather than raw co-occurrence.</p>
 <p>The RTA for region <span class="math inline">\(r\)</span> in technology <span class="math inline">\(t\)</span> during year <span class="math inline">\(y\)</span> is:</p>
 <p><span class="math display">\[
 \text{RTA}_{r,t,y}
@@ -523,7 +523,7 @@ I_i(t) = \frac{1}{B}\sum_{b=1}^{B} \sum_{n \in T_b : v(n)=t} \Delta G(n)
 <section id="conceptual-motivation" class="level3" data-number="3.8.1">
 <h3 data-number="3.8.1" class="anchored" data-anchor-id="conceptual-motivation"><span class="header-section-number">3.8.1</span> Conceptual Motivation</h3>
 <p>Consider two regions, both lacking specialization in technology <span class="math inline">\(i\)</span>, both having similar potential <span class="math inline">\(p_{r,i,y}\)</span>. However, Region A specializes in technologies that are strong predictors of <span class="math inline">\(i\)</span> (high incoming FITS edges), while Region B specializes in technologies unrelated to <span class="math inline">\(i\)</span> in the network. Coherence captures this difference: Region A has high coherence with <span class="math inline">\(i\)</span> (its portfolio aligns with <span class="math inline">\(i\)</span>’s network prerequisites), while Region B has low coherence (misalignment).</p>
-<p>This metric operationalizes the “knowledge coherence” and “cognitive proximity” concepts from innovation literature <span class="citation" data-cites="neffke2011how boschma2015towards">(<a href="references.html#ref-neffke2011how" role="doc-biblioref"><strong>neffke2011how?</strong></a>; <a href="references.html#ref-boschma2015towards" role="doc-biblioref"><strong>boschma2015towards?</strong></a>)</span> using our directional network structure. It enables testing whether diversification success depends not just on potential (predicted feasibility) but on the structural fit between regional portfolios and technology network positions.</p>
+<p>This metric operationalizes the “knowledge coherence” and “cognitive proximity” concepts from innovation literature <span class="citation" data-cites="neffke2011how boschma2015towards">(<a href="references.html#ref-neffke2011how" role="doc-biblioref">Neffke, Henning, and Boschma 2011</a>; <a href="references.html#ref-boschma2015towards" role="doc-biblioref">Boschma 2015</a>)</span> using our directional network structure. It enables testing whether diversification success depends not just on potential (predicted feasibility) but on the structural fit between regional portfolios and technology network positions.</p>
 </section>
 <section id="mathematical-construction" class="level3" data-number="3.8.2">
 <h3 data-number="3.8.2" class="anchored" data-anchor-id="mathematical-construction"><span class="header-section-number">3.8.2</span> Mathematical Construction</h3>
@@ -547,6 +547,88 @@ I_i(t) = \frac{1}{B}\sum_{b=1}^{B} \sum_{n \in T_b : v(n)=t} \Delta G(n)
 <li><span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]\)</span></li>
 <li><span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]\)</span></li>
 </ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme':'base', 'themeVariables': {'fontSize':'12px'}}}%%
+graph TB
+    subgraph "Technology Network"
+        A[Tech A&lt;br/&gt;Cat: A]
+        B[Tech B&lt;br/&gt;Cat: B]
+        C[Tech C&lt;br/&gt;Cat: C]
+        D[Tech D&lt;br/&gt;Cat: D]
+        
+        A --&gt;|w=0.8| B
+        A --&gt;|w=0.5| C
+        B --&gt;|w=0.6| A
+        C --&gt;|w=0.9| A
+        D --&gt;|w=0.4| A
+    end
+    
+    subgraph "Step 1: Technology i Embeddings"
+        direction TB
+        to[Incoming to Tech A:&lt;br/&gt;From Cat B: 0.6&lt;br/&gt;From Cat C: 0.9&lt;br/&gt;From Cat D: 0.4]
+        from[Outgoing from Tech A:&lt;br/&gt;To Cat B: 0.8&lt;br/&gt;To Cat C: 0.5]
+        
+        calc_to[embcat_to_A,B = 0.6/1 = 0.6&lt;br/&gt;embcat_to_A,C = 0.9/1 = 0.9&lt;br/&gt;embcat_to_A,D = 0.4/1 = 0.4]
+        calc_from[embcat_from_A,B = 0.8/1 = 0.8&lt;br/&gt;embcat_from_A,C = 0.5/1 = 0.5]
+        
+        to --&gt; calc_to
+        from --&gt; calc_from
+    end
+    
+    subgraph "Step 2: Regional Benchmarks"
+        direction TB
+        reg[Region r has RCA≥1 in:&lt;br/&gt;Tech A Cat A&lt;br/&gt;Tech E Cat B&lt;br/&gt;Tech F Cat C]
+        
+        reg_calc[Regional averages for specialized techs:&lt;br/&gt;mean embcat_to for Cat B = 0.7&lt;br/&gt;mean embcat_from for Cat B = 0.75&lt;br/&gt;mean embcat_to for Cat C = 0.85&lt;br/&gt;mean embcat_from for Cat C = 0.6]
+    end
+    
+    subgraph "Step 3: Construct Vectors"
+        direction TB
+        v1_construct[v₁ incoming pattern:&lt;br/&gt;v₁ = embcat_to_A,B, mean_to_r,B&lt;br/&gt;v₁ = 0.6, 0.7]
+        v2_construct[v₂ outgoing pattern:&lt;br/&gt;v₂ = embcat_from_A,B, mean_from_r,B&lt;br/&gt;v₂ = 0.8, 0.75]
+    end
+    
+    subgraph "Step 4: Compute Cosine Similarity"
+        direction TB
+        dot[Dot product:&lt;br/&gt;v₁·v₂ = 0.6×0.8 + 0.7×0.75&lt;br/&gt;= 0.48 + 0.525 = 1.005]
+        norm[Norms:&lt;br/&gt;||v₁|| = √(0.6² + 0.7²) = √0.85 = 0.922&lt;br/&gt;||v₂|| = √(0.8² + 0.75²) = √1.2025 = 1.097]
+        cos[Coherence:&lt;br/&gt;cos(v₁,v₂) = 1.005/(0.922×1.097)&lt;br/&gt;= 1.005/1.011 = 0.994]
+    end
+    
+    A --&gt; to
+    A --&gt; from
+    calc_to --&gt; v1_construct
+    calc_from --&gt; v2_construct
+    reg --&gt; reg_calc
+    reg_calc --&gt; v1_construct
+    reg_calc --&gt; v2_construct
+    v1_construct --&gt; dot
+    v2_construct --&gt; dot
+    v1_construct --&gt; norm
+    v2_construct --&gt; norm
+    dot --&gt; cos
+    norm --&gt; cos
+    
+    result[High coherence 0.994:&lt;br/&gt;Tech A's network position&lt;br/&gt;aligns with region's&lt;br/&gt;specialization pattern]
+    cos --&gt; result
+    
+    classDef techNode fill:#ffe6e6,stroke:#333,stroke-width:2px
+    classDef calcNode fill:#e6f3ff,stroke:#333,stroke-width:2px
+    classDef resultNode fill:#e6ffe6,stroke:#333,stroke-width:2px
+    
+    class A,B,C,D techNode
+    class to,from,calc_to,calc_from,reg_calc,v1_construct,v2_construct,dot,norm,cos calcNode
+    class result resultNode
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="interpretation" class="level3" data-number="3.8.3">
 <h3 data-number="3.8.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.8.3</span> Interpretation</h3>
@@ -586,8 +668,17 @@ Albora, Giambattista, Luciano Pietronero, Andrea Tacchella, and Andrea Zaccaria.
 <div id="ref-andreoni2019political" class="csl-entry" role="listitem">
 Andreoni, Antonio, and Ha-Joon Chang. 2019. <span>“The Political Economy of Industrial Policy: Structural Interdependencies, Policy Alignment and Conflict Management.”</span> <em>Structural Change and Economic Dynamics</em> 48: 136–50.
 </div>
+<div id="ref-balassa1965rca" class="csl-entry" role="listitem">
+Balassa, Bela. 1965. <span>“Trade Liberalisation and <span>‘Revealed’</span> Comparative Advantage 1.”</span> <em>The Manchester School</em> 33 (2): 99–123.
+</div>
 <div id="ref-balland2019beyond" class="csl-entry" role="listitem">
 Balland, PA, and R Boschma. 2019. <span>“Smart Specialization: Beyond Patents.”</span> <em>European Commission: Brussels, Belgium</em>.
+</div>
+<div id="ref-balland2017geography" class="csl-entry" role="listitem">
+Balland, Pierre-Alexandre, and David Rigby. 2017. <span>“The Geography of Complex Knowledge.”</span> <em>Economic Geography</em> 93 (1): 1–23.
+</div>
+<div id="ref-boschma2015towards" class="csl-entry" role="listitem">
+Boschma, Ron. 2015. <span>“Towards an Evolutionary Perspective on Regional Resilience.”</span> <em>Regional Studies</em> 49 (5): 733–51.
 </div>
 <div id="ref-boschma2023role" class="csl-entry" role="listitem">
 Boschma, Ron, Ernest Miguelez, Rosina Moreno, and Diego B Ocampo-Corrales. 2023. <span>“The Role of Relatedness and Unrelatedness for the Geography of Technological Breakthroughs in Europe.”</span> <em>Economic Geography</em> 99 (2): 117–39.
@@ -627,6 +718,9 @@ Lee, Changyong, Ohjin Kwon, Myeongjung Kim, and Daeil Kwon. 2018. <span>“Early
 </div>
 <div id="ref-li2024evaluating" class="csl-entry" role="listitem">
 Li, Yang, and Frank MH Neffke. 2024. <span>“Evaluating the Principle of Relatedness: Estimation, Drivers and Implications for Policy.”</span> <em>Research Policy</em> 53 (3): 104952.
+</div>
+<div id="ref-neffke2011how" class="csl-entry" role="listitem">
+Neffke, Frank, Martin Henning, and Ron Boschma. 2011. <span>“How Do Regions Diversify over Time? Industry Relatedness and the Development of New Growth Paths in Regions.”</span> <em>Economic Geography</em> 87 (3): 237–65.
 </div>
 <div id="ref-pinheiro2025dark" class="csl-entry" role="listitem">
 Pinheiro, Flavio L, Pierre-Alexandre Balland, Ron Boschma, and Dominik Hartmann. 2025. <span>“The Dark Side of the Geography of Innovation: Relatedness, Complexity and Regional Inequality in Europe.”</span> <em>Regional Studies</em> 59 (1): 2106362.
