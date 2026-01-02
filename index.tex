@@ -5,7 +5,6 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  12pt,
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrreprt}
@@ -140,8 +139,6 @@
  
 
 
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -213,8 +210,6 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\listoffigures
-\listoftables
 
 \bookmarksetup{startatroot}
 
@@ -599,60 +594,63 @@ dependencies between technologies, (2) linear aggregation that loses
 granular information about technology-specific requirements, and (3)
 noise when technologies outnumber regions.
 
-We address these limitations by replacing traditional measures with
-machine learning-derived alternatives. Specifically, we use Random
-Forest models to generate: (1) \textbf{asymmetric feature importance
-networks (FITS)} that capture directional, hierarchical technology
-relationships, replacing symmetric relatedness measures; and (2)
-\textbf{predicted probabilities (technological potential)} that estimate
-region-specific feasibility of technology adoption, replacing linear
-relatedness density. This approach enables the contextualization of
-diversification strategies by accounting for technology-specific
-characteristics, regional knowledge infrastructure, and broader spatial
-dynamics---elements that traditional measures cannot adequately capture.
+We address these limitations by replacing traditional measures with a
+machine learning training strategy based on the Random Forest algorithm
+(RF). Specifically, we use RF to generate: (1) \textbf{Feature
+Importance Technology Space (FITS)} follwoing Fessina et al. (2024),
+analogous to the mainstream Technology Space. FITS captures directional,
+hierarchical technology relationships, replacing symmetric relatedness
+measures; and (2) \textbf{predicted probabilities (technological
+potential)} following Albora et al. (2023), analogous to relatedness
+density. The technological potential estimates region-specific
+feasibility of technology adoption given the region's own technological
+portfolio, replacing linear relatedness density. This approach enables
+the contextualization of diversification strategies by accounting
+simultaneously for technology-specific characteristics, regional
+knowledge infrastructure, and the broader non-linear interconnectedness
+between regions and technologies that traditional measures cannot
+adequately capture.
 
-Before detailing our methodology, we briefly situate this approach
-within the broader literature. The Principle of Relatedness (PoR)
-formalizes the empirical observation that shared input requirements
-(knowledge, resources, capabilities) determine diversification
-feasibility (Hidalgo et al. 2018; Hidalgo 2021). Economic Complexity
-(EC) complements this by quantifying sophistication patterns (Hidalgo
-and Hausmann 2009). While these frameworks have proven valuable for
-policy (Zaccaria et al. 2018; E and A 2021), deriving granular,
-context-specific implications remains challenging (Hidalgo 2023; Li and
-Neffke 2024). Recent work on unrelated diversification (Flávio L.
-Pinheiro et al. 2022; Boschma et al. 2023), geographic inequalities
-(Flavio L. Pinheiro et al. 2025; Hartmann et al. 2017), and emerging
-technologies (Lee et al. 2018; Fessina et al. 2024) highlights the need
-for methodologies that capture contextual nuances beyond path dependency
-identification.
+Before detailing our methodology and how we leverage the contributions
+in Fessina et al. (2024) and Albora et al. (2023), we will briefly
+situate this approach within the literature namely The Relatedness and
+Economic Complexity (REC). Essentially, REC formalizes the empirical
+observation that shared input requirements (knowledge, resources,
+capabilities) determine diversification feasibility (Hidalgo et al.
+2018; Hidalgo 2021). Economic Complexity (EC) complements this by
+quantifying sophistication patterns (Hidalgo and Hausmann 2009). While
+this framework have proven valuable for policy (Zaccaria et al. 2018; E
+and A 2021), deriving granular, context-specific implications remains
+challenging (Hidalgo 2023; Li and Neffke 2024). Recent work on unrelated
+diversification (Flávio L. Pinheiro et al. 2022; Boschma et al. 2023),
+geographic inequalities (Flavio L. Pinheiro et al. 2025; Hartmann et al.
+2017), and emerging technologies (Lee et al. 2018; Fessina et al. 2024)
+highlights the need for methodologies that capture contextual nuances
+beyond path dependency identification.
 
 Our approach responds to this need by modeling technology relationships
 and regional capabilities in ways that explicitly incorporate
 heterogeneity. The following sections establish our notation system,
-describe the Random Forest algorithm, and detail how we construct and
-interpret technological potential, FITS, and coherence measures.
+describe the Random Forest algorithm we use to our aim, and detail how
+we construct and interpret technological potential, FITS, and coherence
+measures.
 
 \section{Notation and Data Structure}\label{notation-and-data-structure}
 
-We establish consistent notation used throughout:
-
-\textbf{Sets:}
+We establish the following notation used throughout this work:
 
 \begin{itemize}
 \tightlist
 \item
-  \(\mathcal{T} = \{t : 1 \le t \le N_T\}\): set of technologies
+  \(\mathcal{T} = \{t_i\}_{i=1}^{N_T}\): set of technologies
 \item
-  \(\mathcal{R} = \{r : 1 \le r \le N_R\}\): set of regions\\
+  \(\mathcal{R} = \{r_i\}_{i=1}^{N_R}\): set of regions\\
 \item
-  \(\mathcal{Y} = \{y : 1 \le y \le N_Y\}\): set of years
+  \(\mathcal{Y} = \{y_i\}_{i=1}^{N_Y}\): set of years
 \item
-  \(\mathcal{C} = \{c : 1 \le c \le N_C\}\): set of technology
-  categories
+  \(\mathcal{C} = \{c_i\}_{i=1}^{N_C}\): set of technology categories
 \item
-  \(\mathcal{K} = \{\kappa : 1 \le \kappa \le N_{\kappa}\}\): set of
-  countries
+  \(\mathcal{K} = \{\kappa_i\}_{i=1}^{N_K}\): set of countries
 \end{itemize}
 
 We use European Patent Office data (1978-2021) classified at the 4-digit
@@ -674,8 +672,7 @@ this metric has been widely adopted in innovation geography literature.
 Following P.-A. Balland and Rigby (2017), we refer to it as Revealed
 Technological Advantage (RTA) in our patent context. The RTA measures
 relative specialization, enabling simultaneous capture of expertise
-depth and portfolio diversity while reducing co-occurrence noise
-(Fessina et al. 2024). Despite critiques regarding patent-based
+depth and portfolio diversity. Despite critiques regarding patent-based
 applications (P. Balland and Boschma 2019; Diodato et al. 2023), RTA
 aligns with our objective of capturing meaningful technology
 relationships through machine learning rather than raw co-occurrence.
@@ -720,15 +717,10 @@ Before detailing our applications, we provide comprehensive context on
 the Random Forest algorithm, which fuels our entire methodological
 approach. We focus on binary classification where \(y_i \in \{0,1\}\).
 
-\subsection{Algorithm Structure}\label{algorithm-structure}
-
 Random Forest constructs an ensemble of \(B\) decision trees through
 bootstrap aggregating (bagging) with random feature subsampling. Each
 tree \(T_b\) is built on a bootstrap sample \(\mathcal{D}_b^*\) drawn
 with replacement from the original dataset.
-
-\subsection{Tree Construction via Recursive
-Partitioning}\label{tree-construction-via-recursive-partitioning}
 
 Each tree recursively partitions the feature space through binary
 splits. At node \(t\), we randomly select \(m\) features (typically
@@ -736,9 +728,6 @@ splits. At node \(t\), we randomly select \(m\) features (typically
 For feature \(j\) and threshold \(\tau\), the split creates two child
 nodes: \(t_L = \{i : x_{ij} \leq \tau\}\) and
 \(t_R = \{i : x_{ij} > \tau\}\).
-
-\subsection{Gini Impurity as Split
-Criterion}\label{gini-impurity-as-split-criterion}
 
 Split quality is assessed via Gini impurity:
 
@@ -755,15 +744,10 @@ maximizes weighted impurity reduction:
 Weighting by relative node size prevents trivial splits that isolate
 single observations into pure but uninformative leaves.
 
-\subsection{Termination and Class
-Assignment}\label{termination-and-class-assignment}
-
 Recursive splitting continues until predefined stopping criteria: node
 purity (\(G=0\)), minimum node size threshold, or maximum tree depth.
 Terminal nodes are assigned the majority class of their constituent
 observations.
-
-\subsection{Ensemble Prediction}\label{ensemble-prediction}
 
 For prediction, observation \(\mathbf{x}\) traverses all \(B\) trees.
 Final classification aggregates individual tree predictions via majority
@@ -782,9 +766,6 @@ values near 0.5 reflect uncertainty. Unlike parametric models, these are
 data-driven vote proportions rather than model-based probability
 estimates.
 
-\subsection{Variance Reduction
-Mechanism}\label{variance-reduction-mechanism}
-
 The algorithm's effectiveness stems from variance reduction through
 decorrelated predictions. Bootstrap sampling and random feature
 selection reduce inter-tree correlation \(\rho\), yielding ensemble
@@ -794,8 +775,6 @@ variance:
 
 As \(B\) increases and \(\rho\) decreases, ensemble variance diminishes
 while maintaining the low bias of flexible tree models.
-
-\subsection{Feature Importance}\label{feature-importance}
 
 Feature importance quantifies each predictor's contribution by
 aggregating Gini impurity reductions:
@@ -839,13 +818,11 @@ moderate technology adoption patterns.
 
 \includegraphics[width=7.97in,height=6.06in]{potential_files/figure-latex/mermaid-figure-1.png}
 
-\section{Technological Potential}\label{technological-potential}
-
-We follow the methodology of Albora et al. (2023), originally developed
-for trade data. The innovation lies in modeling each technology
-separately rather than constructing a single global model. For every
-technology \(i \in \mathcal{T}\), we train a binary classification model
-where:
+We follow the methodology of Fessina et al. (2024) and Albora et al.
+(2023), originally developed for trade data. The innovation lies in
+modeling each technology separately rather than constructing a single
+global model. For every technology \(i \in \mathcal{T}\), we train a
+binary classification model where:
 
 \begin{itemize}
 \tightlist
@@ -890,8 +867,7 @@ Training was conducted in R using the Ranger package (Wright and Ziegler
 2017), orchestrated via the targets pipeline (Landau 2021) within the
 tidymodels framework.
 
-\subsection{Output: Regional Technological
-Potential}\label{output-regional-technological-potential}
+\section{Technological Potential}\label{technological-potential}
 
 Each model produces probabilities
 \(p_{r,i,y} = P(z_{r,i,y} = 1 \mid \text{RTA}_{r,\cdot,y-\delta})\)
@@ -1071,8 +1047,6 @@ technology-specific characteristics (position in the network hierarchy,
 in/out-degree patterns, category embeddings) moderate diversification
 outcomes---aspects traditional relatedness measures cannot capture.
 
-\subsection{Network Visualization}\label{network-visualization}
-
 \begin{figure}[H]
 
 {\centering \pandocbounded{\includegraphics[keepaspectratio]{resources/technology_network.png}}
@@ -1096,9 +1070,8 @@ FITS identifies technology-to-technology relationships. Technological
 Potential quantifies regional diversification feasibility.
 \textbf{Coherence} bridges these levels by measuring the alignment
 between a technology's position in the FITS network and a region's
-existing specialization structure.
-
-\subsection{Conceptual Motivation}\label{conceptual-motivation}
+existing specialization structure. In a way coherence can be viewed as
+sector level relatedness density.
 
 Consider two regions, both lacking specialization in technology \(i\),
 both having similar potential \(p_{r,i,y}\). However, Region A
@@ -1115,8 +1088,6 @@ Boschma 2011; Boschma 2015) using our directional network structure. It
 enables testing whether diversification success depends not just on
 potential (predicted feasibility) but on the structural fit between
 regional portfolios and technology network positions.
-
-\subsection{Mathematical Construction}\label{mathematical-construction}
 
 For each region \(r\), technology \(i\), and IPC category \(c\), we
 construct two embedding vectors capturing \(i\)'s directional network
@@ -1167,10 +1138,6 @@ where:
 \item
   \(\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]\)
 \end{itemize}
-
-\includegraphics[width=25.13in,height=5.33in]{potential_files/figure-latex/mermaid-figure-2.png}
-
-\subsection{Interpretation}\label{interpretation}
 
 Coherence ranges from -1 to 1:
 

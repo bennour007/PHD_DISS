@@ -142,3 +142,18 @@ empirical contribution: \\ exogenous contexts};
         
         
 ![**THIS IS HARD!**](pres_rf_s7/get-out-of-my-head-meme.gif)
+
+
+
+
+By focusing on regions with established technological advantages rather than raw patent counts, it reduces noise from minor patenting activity and captures asymmetric prerequisite relationships between technologies.
+
+The conditional probability $P(\text{RTA}_{r,t} | \text{RTA}_{r,t'})$ is calculated as:
+
+$$
+P(\text{RTA}_{r,t} | \text{RTA}_{r,t'}) = \frac{\sum_{r \in \mathcal{R}} \mathbb{1}[\text{RTA}_{r,t} \land \text{RTA}_{r,t'}]}{\sum_{r \in \mathcal{R}} \mathbb{1}[\text{RTA}_{r,t'}]}
+$$
+
+Where numerator is the count of regions that have RTA in *both* technology $t$ *and* technology $t'$, and the denominator is the count of regions that have RTA in technology $t'$. With this normalisation, we are answering "Of all the regions specialized in technology $t'$, what fraction are also specialized in technology $t$?"
+
+This is why the method operates on a binary RTA matrix rather than raw patent counts. For each region-technology pair, you first determine whether $\text{RTA}_{r,t} = 1$ (region has advantage) or $\text{RTA}_{r,t} = 0$ (no advantage), then count co-occurrences of these binary indicators across regions. The minimum operation then ensures symmetry while preserving the asymmetric prerequisite interpretation: if $t$ is more common than $t'$, the measure reflects how often $t'$ implies $t$.
