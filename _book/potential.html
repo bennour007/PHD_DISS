@@ -217,13 +217,7 @@ window.Quarto = {
   <li><a href="#revealed-technological-advantage" id="toc-revealed-technological-advantage" class="nav-link" data-scroll-target="#revealed-technological-advantage"><span class="header-section-number">3.3</span> Revealed Technological Advantage</a></li>
   <li><a href="#random-forest-algorithm" id="toc-random-forest-algorithm" class="nav-link" data-scroll-target="#random-forest-algorithm"><span class="header-section-number">3.4</span> Random Forest Algorithm</a>
   <ul class="collapse">
-  <li><a href="#algorithm-structure" id="toc-algorithm-structure" class="nav-link" data-scroll-target="#algorithm-structure"><span class="header-section-number">3.4.1</span> Algorithm Structure</a></li>
-  <li><a href="#tree-construction-via-recursive-partitioning" id="toc-tree-construction-via-recursive-partitioning" class="nav-link" data-scroll-target="#tree-construction-via-recursive-partitioning"><span class="header-section-number">3.4.2</span> Tree Construction via Recursive Partitioning</a></li>
-  <li><a href="#gini-impurity-as-split-criterion" id="toc-gini-impurity-as-split-criterion" class="nav-link" data-scroll-target="#gini-impurity-as-split-criterion"><span class="header-section-number">3.4.3</span> Gini Impurity as Split Criterion</a></li>
-  <li><a href="#termination-and-class-assignment" id="toc-termination-and-class-assignment" class="nav-link" data-scroll-target="#termination-and-class-assignment"><span class="header-section-number">3.4.4</span> Termination and Class Assignment</a></li>
-  <li><a href="#ensemble-prediction" id="toc-ensemble-prediction" class="nav-link" data-scroll-target="#ensemble-prediction"><span class="header-section-number">3.4.5</span> Ensemble Prediction</a></li>
-  <li><a href="#variance-reduction-mechanism" id="toc-variance-reduction-mechanism" class="nav-link" data-scroll-target="#variance-reduction-mechanism"><span class="header-section-number">3.4.6</span> Variance Reduction Mechanism</a></li>
-  <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance"><span class="header-section-number">3.4.7</span> Feature Importance</a></li>
+  <li><a href="#gini-impurity-as-split-criterion" id="toc-gini-impurity-as-split-criterion" class="nav-link" data-scroll-target="#gini-impurity-as-split-criterion"><span class="header-section-number">3.4.1</span> Gini Impurity as Split Criterion</a></li>
   </ul></li>
   <li><a href="#connecting-random-forest-to-the-relatedness-framework" id="toc-connecting-random-forest-to-the-relatedness-framework" class="nav-link" data-scroll-target="#connecting-random-forest-to-the-relatedness-framework"><span class="header-section-number">3.5</span> Connecting Random Forest to the Relatedness Framework</a></li>
   <li><a href="#technological-potential" id="toc-technological-potential" class="nav-link" data-scroll-target="#technological-potential"><span class="header-section-number">3.6</span> Technological Potential</a>
@@ -326,42 +320,24 @@ z_{r,t,y}
 <section id="random-forest-algorithm" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="random-forest-algorithm"><span class="header-section-number">3.4</span> Random Forest Algorithm</h2>
 <p>Before detailing our applications, we provide comprehensive context on the Random Forest algorithm, which fuels our entire methodological approach. We focus on binary classification where <span class="math inline">\(y_i \in \{0,1\}\)</span>.</p>
-<section id="algorithm-structure" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="algorithm-structure"><span class="header-section-number">3.4.1</span> Algorithm Structure</h3>
 <p>Random Forest constructs an ensemble of <span class="math inline">\(B\)</span> decision trees through bootstrap aggregating (bagging) with random feature subsampling. Each tree <span class="math inline">\(T_b\)</span> is built on a bootstrap sample <span class="math inline">\(\mathcal{D}_b^*\)</span> drawn with replacement from the original dataset.</p>
-</section>
-<section id="tree-construction-via-recursive-partitioning" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="tree-construction-via-recursive-partitioning"><span class="header-section-number">3.4.2</span> Tree Construction via Recursive Partitioning</h3>
 <p>Each tree recursively partitions the feature space through binary splits. At node <span class="math inline">\(t\)</span>, we randomly select <span class="math inline">\(m\)</span> features (typically <span class="math inline">\(m = \sqrt{p}\)</span>) and evaluate all possible splits within this subset. For feature <span class="math inline">\(j\)</span> and threshold <span class="math inline">\(\tau\)</span>, the split creates two child nodes: <span class="math inline">\(t_L = \{i : x_{ij} \leq \tau\}\)</span> and <span class="math inline">\(t_R = \{i : x_{ij} &gt; \tau\}\)</span>.</p>
-</section>
-<section id="gini-impurity-as-split-criterion" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="gini-impurity-as-split-criterion"><span class="header-section-number">3.4.3</span> Gini Impurity as Split Criterion</h3>
+<section id="gini-impurity-as-split-criterion" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="gini-impurity-as-split-criterion"><span class="header-section-number">3.4.1</span> Gini Impurity as Split Criterion</h3>
 <p>Split quality is assessed via Gini impurity:</p>
 <p><span class="math display">\[G(t) = 1 - \sum_{k=0}^{1} p_k^2(t) = 2p_0(t)p_1(t)\]</span></p>
 <p>where <span class="math inline">\(p_k(t) = n_k(t)/n(t)\)</span> represents the proportion of class <span class="math inline">\(k\)</span> observations at node <span class="math inline">\(t\)</span>. Gini impurity quantifies node heterogeneity: <span class="math inline">\(G=0\)</span> indicates perfect purity (homogeneous class), while <span class="math inline">\(G=0.5\)</span> indicates maximum impurity (equal class distribution). The optimal split maximizes weighted impurity reduction:</p>
 <p><span class="math display">\[\Delta G(j, \tau) = G(t) - \left[\frac{n(t_L)}{n(t)} G(t_L) + \frac{n(t_R)}{n(t)} G(t_R)\right]\]</span></p>
 <p>Weighting by relative node size prevents trivial splits that isolate single observations into pure but uninformative leaves.</p>
-</section>
-<section id="termination-and-class-assignment" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="termination-and-class-assignment"><span class="header-section-number">3.4.4</span> Termination and Class Assignment</h3>
 <p>Recursive splitting continues until predefined stopping criteria: node purity (<span class="math inline">\(G=0\)</span>), minimum node size threshold, or maximum tree depth. Terminal nodes are assigned the majority class of their constituent observations.</p>
-</section>
-<section id="ensemble-prediction" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="ensemble-prediction"><span class="header-section-number">3.4.5</span> Ensemble Prediction</h3>
 <p>For prediction, observation <span class="math inline">\(\mathbf{x}\)</span> traverses all <span class="math inline">\(B\)</span> trees. Final classification aggregates individual tree predictions via majority voting:</p>
 <p><span class="math display">\[\hat{y}(\mathbf{x}) = \text{mode}\{\hat{y}_1(\mathbf{x}), \ldots, \hat{y}_B(\mathbf{x})\}\]</span></p>
 <p>Class probabilities are estimated as the proportion of trees predicting each class:</p>
 <p><span class="math display">\[\hat{P}(y=1|\mathbf{x}) = B^{-1}\sum_{b=1}^{B} \mathbb{I}[\hat{y}_b(\mathbf{x})=1]\]</span></p>
 <p>This probability represents empirical vote share across trees. Values near 1 indicate strong consensus for class 1 (high confidence), while values near 0.5 reflect uncertainty. Unlike parametric models, these are data-driven vote proportions rather than model-based probability estimates.</p>
-</section>
-<section id="variance-reduction-mechanism" class="level3" data-number="3.4.6">
-<h3 data-number="3.4.6" class="anchored" data-anchor-id="variance-reduction-mechanism"><span class="header-section-number">3.4.6</span> Variance Reduction Mechanism</h3>
 <p>The algorithm’s effectiveness stems from variance reduction through decorrelated predictions. Bootstrap sampling and random feature selection reduce inter-tree correlation <span class="math inline">\(\rho\)</span>, yielding ensemble variance:</p>
 <p><span class="math display">\[\text{Var}(\bar{y}) = \rho\sigma^2 + \frac{1-\rho}{B}\sigma^2\]</span></p>
 <p>As <span class="math inline">\(B\)</span> increases and <span class="math inline">\(\rho\)</span> decreases, ensemble variance diminishes while maintaining the low bias of flexible tree models.</p>
-</section>
-<section id="feature-importance" class="level3" data-number="3.4.7">
-<h3 data-number="3.4.7" class="anchored" data-anchor-id="feature-importance"><span class="header-section-number">3.4.7</span> Feature Importance</h3>
 <p>Feature importance quantifies each predictor’s contribution by aggregating Gini impurity reductions:</p>
 <p><span class="math display">\[I(j) = \frac{1}{B}\sum_{b=1}^{B} \sum_{t \in T_b : v(t)=j} \Delta G(t)\]</span></p>
 <p>where the sum runs over all nodes using feature <span class="math inline">\(j\)</span> for splitting. Higher values indicate features consistently creating purer partitions. Feature importance measures predictive association rather than causal effect, and suffers from bias toward high-cardinality features and correlated predictor sets. It ranks predictive relevance but requires caution in causal interpretation.</p>
@@ -547,88 +523,6 @@ I_i(t) = \frac{1}{B}\sum_{b=1}^{B} \sum_{n \in T_b : v(n)=t} \Delta G(n)
 <li><span class="math inline">\(\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]\)</span></li>
 <li><span class="math inline">\(\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]\)</span></li>
 </ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {'theme':'base', 'themeVariables': {'fontSize':'12px'}}}%%
-graph TB
-    subgraph "Technology Network"
-        A[Tech A&lt;br/&gt;Cat: A]
-        B[Tech B&lt;br/&gt;Cat: B]
-        C[Tech C&lt;br/&gt;Cat: C]
-        D[Tech D&lt;br/&gt;Cat: D]
-        
-        A --&gt;|w=0.8| B
-        A --&gt;|w=0.5| C
-        B --&gt;|w=0.6| A
-        C --&gt;|w=0.9| A
-        D --&gt;|w=0.4| A
-    end
-    
-    subgraph "Step 1: Technology i Embeddings"
-        direction TB
-        to[Incoming to Tech A:&lt;br/&gt;From Cat B: 0.6&lt;br/&gt;From Cat C: 0.9&lt;br/&gt;From Cat D: 0.4]
-        from[Outgoing from Tech A:&lt;br/&gt;To Cat B: 0.8&lt;br/&gt;To Cat C: 0.5]
-        
-        calc_to[embcat_to_A,B = 0.6/1 = 0.6&lt;br/&gt;embcat_to_A,C = 0.9/1 = 0.9&lt;br/&gt;embcat_to_A,D = 0.4/1 = 0.4]
-        calc_from[embcat_from_A,B = 0.8/1 = 0.8&lt;br/&gt;embcat_from_A,C = 0.5/1 = 0.5]
-        
-        to --&gt; calc_to
-        from --&gt; calc_from
-    end
-    
-    subgraph "Step 2: Regional Benchmarks"
-        direction TB
-        reg[Region r has RCA≥1 in:&lt;br/&gt;Tech A Cat A&lt;br/&gt;Tech E Cat B&lt;br/&gt;Tech F Cat C]
-        
-        reg_calc[Regional averages for specialized techs:&lt;br/&gt;mean embcat_to for Cat B = 0.7&lt;br/&gt;mean embcat_from for Cat B = 0.75&lt;br/&gt;mean embcat_to for Cat C = 0.85&lt;br/&gt;mean embcat_from for Cat C = 0.6]
-    end
-    
-    subgraph "Step 3: Construct Vectors"
-        direction TB
-        v1_construct[v₁ incoming pattern:&lt;br/&gt;v₁ = embcat_to_A,B, mean_to_r,B&lt;br/&gt;v₁ = 0.6, 0.7]
-        v2_construct[v₂ outgoing pattern:&lt;br/&gt;v₂ = embcat_from_A,B, mean_from_r,B&lt;br/&gt;v₂ = 0.8, 0.75]
-    end
-    
-    subgraph "Step 4: Compute Cosine Similarity"
-        direction TB
-        dot[Dot product:&lt;br/&gt;v₁·v₂ = 0.6×0.8 + 0.7×0.75&lt;br/&gt;= 0.48 + 0.525 = 1.005]
-        norm[Norms:&lt;br/&gt;||v₁|| = √(0.6² + 0.7²) = √0.85 = 0.922&lt;br/&gt;||v₂|| = √(0.8² + 0.75²) = √1.2025 = 1.097]
-        cos[Coherence:&lt;br/&gt;cos(v₁,v₂) = 1.005/(0.922×1.097)&lt;br/&gt;= 1.005/1.011 = 0.994]
-    end
-    
-    A --&gt; to
-    A --&gt; from
-    calc_to --&gt; v1_construct
-    calc_from --&gt; v2_construct
-    reg --&gt; reg_calc
-    reg_calc --&gt; v1_construct
-    reg_calc --&gt; v2_construct
-    v1_construct --&gt; dot
-    v2_construct --&gt; dot
-    v1_construct --&gt; norm
-    v2_construct --&gt; norm
-    dot --&gt; cos
-    norm --&gt; cos
-    
-    result[High coherence 0.994:&lt;br/&gt;Tech A's network position&lt;br/&gt;aligns with region's&lt;br/&gt;specialization pattern]
-    cos --&gt; result
-    
-    classDef techNode fill:#ffe6e6,stroke:#333,stroke-width:2px
-    classDef calcNode fill:#e6f3ff,stroke:#333,stroke-width:2px
-    classDef resultNode fill:#e6ffe6,stroke:#333,stroke-width:2px
-    
-    class A,B,C,D techNode
-    class to,from,calc_to,calc_from,reg_calc,v1_construct,v2_construct,dot,norm,cos calcNode
-    class result resultNode
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
 </section>
 <section id="interpretation" class="level3" data-number="3.8.3">
 <h3 data-number="3.8.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.8.3</span> Interpretation</h3>

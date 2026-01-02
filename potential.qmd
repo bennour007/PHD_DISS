@@ -65,11 +65,10 @@ where $z_{r,t,y} = 1$ indicates region $r$ has comparative advantage (specializa
 
 Before detailing our applications, we provide comprehensive context on the Random Forest algorithm, which fuels our entire methodological approach. We focus on binary classification where $y_i \in \{0,1\}$.
 
-### Algorithm Structure
+
 
 Random Forest constructs an ensemble of $B$ decision trees through bootstrap aggregating (bagging) with random feature subsampling. Each tree $T_b$ is built on a bootstrap sample $\mathcal{D}_b^*$ drawn with replacement from the original dataset.
 
-### Tree Construction via Recursive Partitioning
 
 Each tree recursively partitions the feature space through binary splits. At node $t$, we randomly select $m$ features (typically $m = \sqrt{p}$) and evaluate all possible splits within this subset. For feature $j$ and threshold $\tau$, the split creates two child nodes: $t_L = \{i : x_{ij} \leq \tau\}$ and $t_R = \{i : x_{ij} > \tau\}$.
 
@@ -85,11 +84,9 @@ $$\Delta G(j, \tau) = G(t) - \left[\frac{n(t_L)}{n(t)} G(t_L) + \frac{n(t_R)}{n(
 
 Weighting by relative node size prevents trivial splits that isolate single observations into pure but uninformative leaves.
 
-### Termination and Class Assignment
 
 Recursive splitting continues until predefined stopping criteria: node purity ($G=0$), minimum node size threshold, or maximum tree depth. Terminal nodes are assigned the majority class of their constituent observations.
 
-### Ensemble Prediction
 
 For prediction, observation $\mathbf{x}$ traverses all $B$ trees. Final classification aggregates individual tree predictions via majority voting:
 
@@ -101,7 +98,7 @@ $$\hat{P}(y=1|\mathbf{x}) = B^{-1}\sum_{b=1}^{B} \mathbb{I}[\hat{y}_b(\mathbf{x}
 
 This probability represents empirical vote share across trees. Values near 1 indicate strong consensus for class 1 (high confidence), while values near 0.5 reflect uncertainty. Unlike parametric models, these are data-driven vote proportions rather than model-based probability estimates.
 
-### Variance Reduction Mechanism
+
 
 The algorithm's effectiveness stems from variance reduction through decorrelated predictions. Bootstrap sampling and random feature selection reduce inter-tree correlation $\rho$, yielding ensemble variance:
 
@@ -109,7 +106,6 @@ $$\text{Var}(\bar{y}) = \rho\sigma^2 + \frac{1-\rho}{B}\sigma^2$$
 
 As $B$ increases and $\rho$ decreases, ensemble variance diminishes while maintaining the low bias of flexible tree models.
 
-### Feature Importance
 
 Feature importance quantifies each predictor's contribution by aggregating Gini impurity reductions:
 
@@ -312,80 +308,6 @@ where:
 - $\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]$
 
 
-
-```{mermaid}
-%%{init: {'theme':'base', 'themeVariables': {'fontSize':'12px'}}}%%
-graph TB
-    subgraph "Technology Network"
-        A[Tech A<br/>Cat: A]
-        B[Tech B<br/>Cat: B]
-        C[Tech C<br/>Cat: C]
-        D[Tech D<br/>Cat: D]
-        
-        A -->|w=0.8| B
-        A -->|w=0.5| C
-        B -->|w=0.6| A
-        C -->|w=0.9| A
-        D -->|w=0.4| A
-    end
-    
-    subgraph "Step 1: Technology i Embeddings"
-        direction TB
-        to[Incoming to Tech A:<br/>From Cat B: 0.6<br/>From Cat C: 0.9<br/>From Cat D: 0.4]
-        from[Outgoing from Tech A:<br/>To Cat B: 0.8<br/>To Cat C: 0.5]
-        
-        calc_to[embcat_to_A,B = 0.6/1 = 0.6<br/>embcat_to_A,C = 0.9/1 = 0.9<br/>embcat_to_A,D = 0.4/1 = 0.4]
-        calc_from[embcat_from_A,B = 0.8/1 = 0.8<br/>embcat_from_A,C = 0.5/1 = 0.5]
-        
-        to --> calc_to
-        from --> calc_from
-    end
-    
-    subgraph "Step 2: Regional Benchmarks"
-        direction TB
-        reg[Region r has RCA≥1 in:<br/>Tech A Cat A<br/>Tech E Cat B<br/>Tech F Cat C]
-        
-        reg_calc[Regional averages for specialized techs:<br/>mean embcat_to for Cat B = 0.7<br/>mean embcat_from for Cat B = 0.75<br/>mean embcat_to for Cat C = 0.85<br/>mean embcat_from for Cat C = 0.6]
-    end
-    
-    subgraph "Step 3: Construct Vectors"
-        direction TB
-        v1_construct[v₁ incoming pattern:<br/>v₁ = embcat_to_A,B, mean_to_r,B<br/>v₁ = 0.6, 0.7]
-        v2_construct[v₂ outgoing pattern:<br/>v₂ = embcat_from_A,B, mean_from_r,B<br/>v₂ = 0.8, 0.75]
-    end
-    
-    subgraph "Step 4: Compute Cosine Similarity"
-        direction TB
-        dot[Dot product:<br/>v₁·v₂ = 0.6×0.8 + 0.7×0.75<br/>= 0.48 + 0.525 = 1.005]
-        norm[Norms:<br/>||v₁|| = √(0.6² + 0.7²) = √0.85 = 0.922<br/>||v₂|| = √(0.8² + 0.75²) = √1.2025 = 1.097]
-        cos[Coherence:<br/>cos(v₁,v₂) = 1.005/(0.922×1.097)<br/>= 1.005/1.011 = 0.994]
-    end
-    
-    A --> to
-    A --> from
-    calc_to --> v1_construct
-    calc_from --> v2_construct
-    reg --> reg_calc
-    reg_calc --> v1_construct
-    reg_calc --> v2_construct
-    v1_construct --> dot
-    v2_construct --> dot
-    v1_construct --> norm
-    v2_construct --> norm
-    dot --> cos
-    norm --> cos
-    
-    result[High coherence 0.994:<br/>Tech A's network position<br/>aligns with region's<br/>specialization pattern]
-    cos --> result
-    
-    classDef techNode fill:#ffe6e6,stroke:#333,stroke-width:2px
-    classDef calcNode fill:#e6f3ff,stroke:#333,stroke-width:2px
-    classDef resultNode fill:#e6ffe6,stroke:#333,stroke-width:2px
-    
-    class A,B,C,D techNode
-    class to,from,calc_to,calc_from,reg_calc,v1_construct,v2_construct,dot,norm,cos calcNode
-    class result resultNode
-```
 
 
 ### Interpretation
