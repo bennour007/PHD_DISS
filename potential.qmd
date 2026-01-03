@@ -10,7 +10,6 @@ Before detailing our methodology and how we leverage the contributions in @fessi
 
 Our approach responds to this need by modeling technology relationships and regional capabilities in ways that explicitly incorporate heterogeneity. The following sections establish our notation system, details the mainstream approach to measuring relatedness and relatedness density, describe the Random Forest algorithm we use to our aim, and detail how we construct and interpret technological potential, FITS, and coherence measures.
 
-## Notation and Data Structure
 
 We establish the following notation used throughout this work:
 
@@ -24,8 +23,6 @@ We establish the following notation used throughout this work:
 
 
 We use European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter, we also refer to this as categories), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.
-
-## Revealed Technological Advantage
 
 We quantify regional specialization using the Revealed Comparative Advantage [@balassa1965rca]. Although originally designed for trade data, this metric has been widely adopted in innovation geography literature. Following @balland2017geography, we refer to it as Revealed Technological Advantage (RTA) in our patent context. The RTA measures relative specialization, enabling simultaneous capture of expertise depth and portfolio diversity. Despite critiques regarding patent-based applications [@balland2019beyond; @diodato2023economic], RTA aligns with our objective of capturing meaningful technology relationships through machine learning rather than raw co-occurrence.
 
@@ -59,6 +56,59 @@ z_{r,t,y}
 $$
 
 where $z_{r,t,y} = 1$ indicates region $r$ has comparative advantage (specialization) in technology $t$ at year $y$.
+
+To further elaborate, let's consider $c_{t,t'}$, the count of patents containing both technologies $t$ and $t'$ ($t\neq t'$) at a given time period, such that $t, t' \in \mathcal{T}$, and $c_{t}$, $c_{t'}$ denote the total patent counts for each class individually.
+
+In the following we will begin by outlining how the REC literature approach relatedness, how it's calculated and discuss in detail different technical contributions to this end and the limitation of the mainstream approach. We will then present our approach and detail our methodological and conceptual contribution in response to these limitations. 
+
+
+## Relatedness as measured via co-occurence
+
+In the REC literature relatedness is calculated based on the pair-wise observed frequency of co-occurrences. The idea is simple: frequent co-occurrences mean strong links between technologies. Here we show in detail how relatedness is measured, and the different normalization techniques used to harmonize the pairwise links.
+
+The simplest measure of relatedness here would be to consider $c_{t,t'}$. However, as we mentioned in the introduction, co-occurrences are noisy and harmonizing the pairwise values is crucial. To this end, the REC literature considers different normalization methods. Here we will briefly outline the most commonly used methods.
+
+**Association Strength** 
+
+$$
+\phi_{t,t'}^{\text{assoc}} = \frac{c_{t,t'} \cdot T}{c_t \cdot c_{t'}}
+$$
+where $T = \sum_{t \in \mathcal{T}} c_t$ is the total patent count. This probabilistic measure developed in @eck2009normalize compares observed to expected co-occurrence under independence. Values above 1 indicate stronger-than-random association. It properly corrects for size effects.
+
+**Probability Index**  
+
+$$
+\phi_{t,t'}^{\text{prob}} = \frac{c_{t,t'}}{\frac{1}{2}\left[\frac{c_t}{T} \cdot \frac{c_{t'}}{T - c_t} + \frac{c_{t'}}{T} \cdot \frac{c_t}{T - c_{t'}}\right] \cdot T}
+$$
+This improved probabilistic measure proposed by @steijn2017improvement uses combinations without repetition, correcting for the fact that a patent cannot co-occur with itself. It provides more accurate estimates than association strength for patent co-occurrence analysis. This normalisation method is implemented in the EconGeo R package [@balland2016econgeo].
+
+**Cosine Similarity** 
+
+$$
+\phi_{t,t'}^{\text{cosine}} = \frac{c_{t,t'}}{\sqrt{c_t \cdot c_{t'}}}
+$$
+A set-theoretic measure of relative overlap. While intuitive, it systematically favors frequent technologies over rare ones and does not properly correct for size effects.
+
+**Minimum Conditional Probability** 
+
+$$
+\phi_{t,t'}^{\text{min}} = \min\left\{P(\text{RTA}_{r,t} | \text{RTA}_{r,t'}), P(\text{RTA}_{r,t'} | \text{RTA}_{r,t})\right\}
+$$
+
+where $\text{RTA}_{r,t}$ indicates that region $r \in \mathcal{R}$ has a revealed technological advantage in technology $t$. This approach-popularised by @hidalgo2007product-computes the minimum of pair-wise conditional probabilities of regions having RTA in one technology given they have RTA in another. 
+
+
+**Relatedness Density**
+
+Relatedness density, is a much simpler aggregation. Essentially it measures how close a region's existing technological portfolio is to a potential new technology. For region $r \in \mathcal{R}$, technology $t \in \mathcal{T}$, relatedness density aggregates the relatedness between technology $t$ and all technologies in which the region specializes($\mathcal{T}_r$) [@hidalgo2007product; @boschma2015relatedness]:
+$$
+\text{relatedness density}: \Phi_{r,t} = \frac{\sum_{t \in \mathcal{T}_r \,  t' \neq t} \phi_{t,t'}}{\sum_{t' \neq t} \phi_{t,t'}} \times 100
+$$
+The numerator sums relatedness values to technologies in which the region specializes, while the denominator normalizes by total relatedness to all technologies. High density indicates technology $t$ is "close" to the region's existing capabilities; low density suggests it requires capabilities the region lacks.
+
+
+
+
 
 ## Random Forest Algorithm
 
@@ -111,58 +161,10 @@ $$I(j) = \frac{1}{B}\sum_{b=1}^{B} \sum_{t \in T_b : v(t)=j} \Delta G(t)$$
 
 where the sum runs over all nodes using feature $j$ for splitting. Higher values indicate features consistently creating purer partitions. Feature importance measures predictive association rather than causal effect, and suffers from bias toward high-cardinality features and correlated predictor sets. It ranks predictive relevance but requires caution in causal interpretation.
 
+![](resources/ML_relatedness_tachella.jpg)
+
 
 ## Connecting Random Forest to the Relatedness Framework
-
-Before we delve into the details of our approach and highlight why it improves mainstream relatedness measures we first showcase how the literature approach relatedness then we show how our approach takes the framework a step further.
-
-### Relatedness as measured via co-occurence
-
-In the REC literature relatedness is calculated based on the pair-wise observed frequency of co-occurrence. The idea is simple: frequent co-occurrences mean strong links between technologies. Here we show in detail how relatedness is measured, and the different normalization techniques used to harmonize the pairwise links.
-
-To further elaborate, let's consider $c_{t,t'}$, the count of patents containing both technologies $t$ and $t'$ ($t\neq t'$) at a given year, such that $t, t' \in \mathcal{T}$, and $c_{t}$, $c_{t'}$ denote the total patent counts for each class individually.
-
-The simplest measure of relatedness here would be to consider $c_{t,t'}$. However, as we mentioned in the introduction, co-occurrences are noisy and harmonizing the pairwise values is crucial. To this end, the REC literature considers different normalization methods. Here we will briefly outline the most commonly used methods.
-
-**Association Strength** [@van2009software]
-
-$$
-\phi_{t,t'}^{\text{assoc}} = \frac{c_{t,t'} \cdot T}{c_t \cdot c_{t'}}
-$$
-where $T = \sum_{t \in \mathcal{T}} c_t$ is the total patent count. This probabilistic measure compares observed to expected co-occurrence under independence. Values above 1 indicate stronger-than-random association. It properly corrects for size effects, making it suitable for normalization purposes.
-
-**Probability Index** [@steijn2017improvement]
-
-$$
-\phi_{t,t'}^{\text{prob}} = \frac{c_{t,t'}}{\frac{1}{2}\left[\frac{c_t}{T} \cdot \frac{c_{t'}}{T - c_t} + \frac{c_{t'}}{T} \cdot \frac{c_t}{T - c_{t'}}\right] \cdot T}
-$$
-This improved probabilistic measure uses combinations without repetition, correcting for the fact that a patent cannot co-occur with itself. It provides more accurate estimates than association strength for patent co-occurrence analysis.
-
-**Cosine Similarity** [@van2009software]
-
-$$
-\phi_{t,t'}^{\text{cosine}} = \frac{c_{t,t'}}{\sqrt{c_t \cdot c_{t'}}}
-$$
-A set-theoretic measure of relative overlap. While intuitive, it systematically favors frequent technologies over rare ones and does not properly correct for size effects.
-
-**Minimum Conditional Probability** [@hidalgo2007product]
-
-$$
-\phi_{t,t'}^{\text{min}} = \min\left\{P(\text{RTA}_{r,t} | \text{RTA}_{r,t'}), P(\text{RTA}_{r,t'} | \text{RTA}_{r,t})\right\}
-$$
-
-where $\text{RTA}_{r,t}$ indicates that region $r \in \mathcal{R}$ has a revealed technological advantage in technology $t$. This approach computes the minimum of pair-wise conditional probabilities of regions having RTA in one technology given they have RTA in another. 
-
-
-**Relatedness Density**
-
-Relatedness density, is a much simpler aggregation. Essentially it measures how close a region's existing technological portfolio is to a potential new technology. For region $r \in \mathcal{R}$, technology $t \in \mathcal{T}$, relatedness density aggregates the relatedness between technology $t$ and all technologies in which the region specializes($\mathcal{T}_r$) [@hidalgo2007product; @boschma2015relatedness]:
-$$
-\text{relatedness density}: \Phi_{r,t} = \frac{\sum_{t \in \mathcal{T}_r \,  t' \neq t} \phi_{t,t'}}{\sum_{t' \neq t} \phi_{t,t'}} \times 100
-$$
-The numerator sums relatedness values to technologies in which the region specializes, while the denominator normalizes by total relatedness to all technologies. High density indicates technology $t$ is "close" to the region's existing capabilities; low density suggests it requires capabilities the region lacks.
-
-
 
 
 ### Machine learning as an alternative

@@ -1098,6 +1098,78 @@
         {
             "author": [
                 {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                }
+            ],
+            "container-title": "R package",
+            "id": "balland2016econgeo",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "title": "EconGeo: Computing key indicators of the spatial distribution of economic activities",
+            "title-short": "EconGeo",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "dropping-particle": "van",
+                    "family": "Eck",
+                    "given": "Nees Jan"
+                },
+                {
+                    "family": "Waltman",
+                    "given": "Ludo"
+                }
+            ],
+            "container-title": "Journal of the American society for information science and technology",
+            "id": "eck2009normalize",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "1635-1651",
+            "publisher": "Wiley Online Library",
+            "title": "How to normalize cooccurrence data? An analysis of some well-known similarity measures",
+            "type": "article-journal",
+            "volume": "60"
+        },
+        {
+            "author": [
+                {
+                    "family": "Steijn",
+                    "given": "Mathieu PA"
+                }
+            ],
+            "container-title": "Quantitative Science Studies",
+            "id": "steijn2021improvement",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "778-794",
+            "publisher": "MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info …",
+            "title": "Improvement on the association strength: Implementing a probabilistic measure based on combinations without repetition",
+            "title-short": "Improvement on the association strength",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
                     "family": "Neffke",
                     "given": "Frank"
                 },
