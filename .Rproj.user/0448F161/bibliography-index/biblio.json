@@ -66,6 +66,34 @@
         {
             "author": [
                 {
+                    "family": "Antonietti",
+                    "given": "Roberto"
+                },
+                {
+                    "family": "Montresor",
+                    "given": "Sandro"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "antonietti2021going",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "187-207",
+            "publisher": "Taylor & Francis",
+            "title": "Going beyond relatedness: Regional diversification trajectories and key enabling technologies (KETs) in italian regions",
+            "title-short": "Going beyond relatedness",
+            "type": "article-journal",
+            "volume": "97"
+        },
+        {
+            "author": [
+                {
                     "family": "Li",
                     "given": "Yang"
                 },
