@@ -120,7 +120,7 @@ Despite the variety of normalisation approaches, co-occurrence-based relatedness
 
 ### Relatedness Density Through Linear Aggregation
 
-Relatedness density bridges the gap between pairwise technology relationships and region-specific diversification potential. Where co-occurrence measures describe technology-to-technology proximity, relatedness density aggregates these proximities relative to a region's existing portfolio, producing a single value meant to capture how feasible a new technology is for a given region. The measure has become central to diversification analysis and policy guidance, serving as the primary predictor in entry models and the basis for strategic recommendations.
+Relatedness density [@hidalgo2007product] bridges the gap between pairwise technology relationships and region-specific diversification potential. Where co-occurrence measures describe technology-to-technology proximity, relatedness density aggregates these proximities relative to a region's existing portfolio, producing a single value meant to capture how feasible a new technology is for a given region. The measure has become central to diversification analysis and policy guidance, serving as the primary predictor in entry models and the basis for strategic recommendations.
 
 The aggregation, however, imposes strong assumptions about how capabilities combine. By summing pairwise relationships, relatedness density treats the regional portfolio as a linear accumulation of independent components. Whether this adequately represents how knowledge and capabilities actually interact in enabling new activities is an empirical question that the measure's structure forecloses.
 
@@ -140,21 +140,19 @@ This measure has proven remarkably predictive: across numerous studies using dif
 
 The predictive success of relatedness density is not in question. The limitations concern what it cannot reveal and how its structure constrains interpretation.
 
-**Linear aggregation discards combinatorial information.** Relatedness density sums pairwise relationships without regard to their interactions. This implicitly assumes that having two related technologies is simply twice as beneficial as having one—capabilities combine additively. Yet capabilities may interact in ways that linear summation cannot capture. Certain combinations may be more than the sum of their parts, creating complementarities where the joint presence of technologies $A$ and $B$ enables technology $C$ in ways that neither alone provides. Other combinations may be redundant, contributing less than their individual relatedness values would suggest. By reducing many-body relationships to independent two-body terms, linear aggregation discards precisely the combinatorial information that may distinguish feasible diversification paths from infeasible ones [@tacchella2023relatedness]. Empirically, prediction models that capture many-product interactions substantially outperform density-based predictions, suggesting that linear aggregation loses significant information [@albora2023product].
+**Linear aggregation obscures combinatorial information.** Relatedness density sums pairwise relationships without regard to their interactions. This implicitly assumes that having two related technologies is simply twice as beneficial as having one—capabilities combine additively. Yet capabilities may interact in ways that linear summation cannot capture. Certain combinations may be more than the sum of their parts, creating complementarities where the joint presence of technologies $A$ and $B$ enables technology $C$ in ways that neither alone provides. Other combinations may be redundant, contributing less than their individual relatedness values would suggest. By reducing many-body relationships to independent two-body terms, linear aggregation discards precisely the combinatorial information that may distinguish feasible diversification paths from infeasible ones [@tacchella2023relatedness]. Empirically, prediction models that capture many-product interactions substantially outperform density-based predictions, suggesting that linear aggregation loses significant information [@albora2023product].
 
 **Noise compounds through aggregation.** The dimensional mismatch and spurious associations affecting pairwise co-occurrence estimates do not disappear when aggregated into relatedness density—they compound. Summing noisy pairwise values produces a noisy aggregate. The normalisation by total relatedness provides some correction but cannot recover signal that was lost at the pairwise level. For regions with portfolios concentrated in rare technologies, where pairwise estimates are least reliable, relatedness density inherits and potentially amplifies these estimation problems.
 
-**Context disappears in uniform application.** Perhaps most critically for our purposes, relatedness density treats all regions identically. The same technology-to-technology relationships govern diversification predictions everywhere, regardless of regional characteristics, national institutional environments, or spatial position. A peripheral region in a small economy faces the same relatedness structure as a core region in a large, innovation-intensive country. This homogeneity directly contradicts the contextualisation that policy guidance requires.
 
-**Frequency of entry conflates observation with feasibility.** The empirical regularity that higher relatedness density associates with higher entry probability is often interpreted as evidence that related diversification is more feasible and therefore should be prioritised. But this inference conflates observed frequency with success rate [@pinheiro2025relatedness]. We observe which entries occurred, not which were attempted; the denominator—attempts—remains unobserved. Related diversification may appear more common because it is attempted more frequently, perhaps precisely because existing frameworks recommend it, rather than because it succeeds more often when attempted. Moreover, the observed product and technology spaces may themselves reflect past policies promoting related diversification [@andreoni2019political], creating circularity when used to justify future policy.
-
+**Frequency of entry conflates observation with feasibility.** The empirical regularity that higher relatedness density associates with higher entry probability is often interpreted as evidence that related diversification is more feasible and therefore should be prioritised. But this inference conflates observed frequency with success rate as emphasised in @pinheiro2025. We observe which entries occurred, not which were attempted; the denominator—attempts—remains unobserved. Related diversification may appear more common because it is attempted more frequently, perhaps precisely because existing frameworks recommend it, rather than because it succeeds more often when attempted. @coniglio2021evolution addresses precisely this issue and shows that related diversification attempts succeeded 80% in Germany in contrast to 40% in the United States and France. Moreover, the observed product and technology spaces may themselves reflect past policies promoting related diversification [@andreoni2019political], creating circularity when used to justify future policy. 
 
 
 ### Implications for Contextualisation
 
-The limitations identified above are not independent—they compound. Noisy co-occurrence estimates feed into symmetric matrices that are then linearly aggregated, producing context-free measures whose predictive success may reflect structural properties of the data (nestedness, diversification hierarchies) as much as genuine capability-based relationships. The resulting framework provides a supply-side instrument: it identifies what regions might produce given their existing portfolios, while remaining silent on demand dynamics, competitive pressures, and the institutional conditions that shape whether capability-based proximity translates into actual entry [@pinheiro2025relatedness; @andreoni2019political].
+The limitations identified above are not independent—they compound. Noisy co-occurrence estimates feed into symmetric matrices that are then linearly aggregated, producing context-free measures whose predictive success may reflect structural properties of the data (nestedness, diversification hierarchies) as much as genuine capability-based relationships. The resulting framework provides a supply-side instrument: it identifies what regions might produce given their existing portfolios, while remaining silent on demand dynamics, competitive pressures, and the institutional conditions that shape whether capability-based proximity translates into actual entry [@pinheiro2025; @andreoni2019political].
 
-This supply-side orientation has consequences. When applied to policy, relatedness-based recommendations may systematically favour already-diversified regions whose dense portfolios generate high relatedness density across many targets, while offering limited guidance to less-diversified regions whose sparse portfolios produce low density values regardless of strategic potential. The concern that such recommendations reinforce rather than ameliorate path dependency—locking peripheral regions into constrained trajectories while core regions accumulate further advantages—has been explicitly raised in recent literature examining regional inequality and the distributional consequences of relatedness-based strategies [@pinheiro2022dark; @mealy2022economic; @hidalgo2023policy].
+This supply-side orientation has consequences. When applied to policy, relatedness-based recommendations may systematically favour already-diversified regions whose dense portfolios generate high relatedness density across many targets, while offering limited guidance to less-diversified regions whose sparse portfolios produce low density values regardless of strategic potential. The concern that such recommendations reinforce rather than ameliorate path dependency—locking peripheral regions into constrained trajectories while core regions accumulate further advantages—has been explicitly raised in recent literature examining regional inequality and the distributional consequences of relatedness-based strategies [@pinheiro2025dark; @mealy2022economic; @hidalgo2023policy].
 
 The issue is not that relatedness is empirically wrong—the predictive regularity is robust—but that the measures as currently constructed cannot inform us about the conditions under which relatedness matters more or less, about which technologies serve as stepping stones toward others, or about how regional knowledge infrastructure, national ecosystems, and spatial factors moderate diversification possibilities. Addressing these limitations requires reconstructing the core methodological constructs in ways that relax the problematic assumptions while preserving the fundamental insight that prior capabilities shape future possibilities. This reconstruction motivates the machine learning approach developed in the following sections.
 
@@ -162,7 +160,7 @@ The issue is not that relatedness is empirically wrong—the predictive regulari
 
 ## An Alternative Approach: Machine Learning for Contextualised Relatedness
 
-The limitations outlined above—dimensional mismatch producing noisy correlations, symmetric measures obscuring directional dependencies, and linear aggregation discarding interaction effects—are not merely technical inconveniences. They represent fundamental obstacles to using relatedness for prediction and policy. If co-occurrence methods perform no better than trivial baselines, as Tacchella et al. (2023) demonstrate, then their assessment of diversification feasibility offers insufficient guidance for strategic decisions. This motivates a shift from descriptive correlation to predictive modelling.
+The limitations outlined above—dimensional mismatch producing noisy correlations, symmetric measures obscuring directional dependencies, and linear aggregation discarding interaction effects—are not merely technical inconveniences. They represent fundamental obstacles to using relatedness for prediction and policy. If co-occurrence methods perform no better than trivial baselines, as demonstrated in @tacchella2023relatedness, then their assessment of diversification feasibility offers insufficient guidance for strategic decisions. This motivates a shift from descriptive correlation to predictive modelling.
 
 ### Machine Learning as Prediction Framework
 
@@ -195,6 +193,7 @@ Among supervised learning approaches, tree-based ensemble methods—particularly
 
 The choice of Random Forest over alternatives thus reflects both practical constraints (sample size, interpretability requirements) and the specific structure of relatedness estimation (sparse, high-dimensional, interaction-rich). We now present the algorithm formally before describing our application.
 
+![](resources/ML_relatedness_tachella.jpg)
 
 ### Random Forest Algorithm
 
@@ -265,20 +264,8 @@ The procedure yields 7,051 models (641 technologies × 11 years). Given computat
 
 Each model produces probabilities $p_{r,i,y} = P(z_{r,i,y} = 1 \mid \text{RTA}_{r,\cdot,y-\delta})$ representing the likelihood that region $r$ develops specialisation in technology $i$ by year $y$, conditional on its prior portfolio. These probabilities constitute **Technological Potential**—a forward-looking, region-specific measure of diversification feasibility.
 
-### Contrast with Relatedness Density
 
-Technological Potential differs from relatedness density in ways that directly address the limitations identified earlier:
-
-| Limitation | Relatedness Density | Technological Potential |
-|------------|--------------------|-----------------------|
-| Dimensional mismatch | Estimates pairwise correlations from sparse co-occurrences | Learns patterns from pooled region-year observations |
-| Symmetry | $\phi_{ij} = \phi_{ji}$ by construction | Separate models yield directional predictions |
-| Linear aggregation | $\omega_{ri} = \sum_j M_{rj}\phi_{ij} / \sum_j \phi_{ij}$ | Tree structure captures interactions |
-| Context-free | Same density for all regions with identical portfolios | Region-specific probability estimates |
-
-The shift from correlation to prediction reframes what the measure captures. Density asks: "How similar is technology $i$ to what region $r$ already has?" Potential asks: "Given everything we know about how regions diversify, how likely is region $r$ to develop technology $i$?" The latter question—the one relevant for policy—requires the predictive machinery to answer.
-
-### Interpretation
+The shift from correlation to prediction reframes what the measure captures. Density asks: "How similar is technology $i$ to what region $r$ already has?" Potential asks: "Given everything we know about how regions diversify, how likely is region $r$ to develop technology $i$?" The latter question—the one relevant for policy—requires a predictive approach.
 
 High potential ($p_{r,t,y} \approx 1$) indicates a region's existing portfolio strongly predicts future specialisation—the region likely possesses necessary complementary capabilities. Low potential ($p_{r,t,y} \approx 0$) suggests capability gaps that make diversification unlikely under current conditions. Intermediate values reflect genuine uncertainty, often indicating that diversification is possible but contingent on factors beyond current portfolio composition.
 
@@ -291,7 +278,6 @@ Traditional technology networks rely on patent citations or co-occurrence patter
 
 FITS addresses these by constructing an asymmetric, predictive network from the feature importance scores of our Technological Potential models. Rather than inferring relationships from co-occurrence, FITS extracts directional dependencies revealed by which technologies predict others' future adoption.
 
-### Construction
 
 Recall that for each technology $i$, we trained a Random Forest model predicting $z_{r,i,y}$ using $\{\text{RTA}_{r,t,y-\delta} : t \neq i\}$ as features. The feature importance $I_i(t)$ quantifies how much technology $t$ contributes to predicting future specialisation in technology $i$ across all regions and time periods.
 
@@ -307,7 +293,8 @@ $$W_{t \to i} = \frac{I_i(t)}{\sum_{t' \neq i} I_i(t')}$$
 
 ensuring incoming edge weights sum to 1 for each technology. This normalisation facilitates comparison across technologies with different overall predictability.
 
-### Asymmetry and Hierarchy
+![Technology Network (based on 2018 patent data)](resources/technology_network.png)
+
 
 The defining property of FITS is asymmetry: $W_{t \to i} \neq W_{i \to t}$ in general. This asymmetry captures hierarchical technological dependencies invisible to symmetric measures:
 
@@ -320,8 +307,6 @@ The defining property of FITS is asymmetry: $W_{t \to i} \neq W_{i \to t}$ in ge
 This directional structure reveals technological trajectories: regions can identify which current capabilities open paths toward desired future technologies, and which apparent similarities mask asymmetric dependencies.
 
 
-### Illustrative Comparison: Relatedness versus FITS
-
 The contrast between co-occurrence relatedness and FITS is sharpest when examining specific technologies. Consider H01L (semiconductors) and D06Q (textile decoration).
 
 For semiconductors, co-occurrence relatedness identifies technologies that frequently appear together in regional portfolios. Some connections are sensible: semiconductor memories (H10B), packaging technologies (B68B). But the measure also surfaces implausible links—textile decoration (D06Q), woodworking (B27H), fusion reactors (G21B)—that appear not because of genuine technological affinity but because they happen to co-occur in diverse portfolios. This is the noise problem: frequency-based aggregation treats all co-presence equally, regardless of whether it reflects shared capabilities or statistical coincidence.
@@ -332,17 +317,11 @@ The contrast sharpens further with D06Q (textile decoration), a sparse technolog
 
 This example illustrates how FITS captures the functional architecture of innovation networks that co-occurrence frequencies obscure. The method's ability to distinguish signal from statistical artifact, combined with its directional structure revealing technological hierarchies, provides the foundation for contextualised analysis of regional diversification patterns.
 
+![](resources/h10l_eg.png)
 
-## Summary
+![](resources/d06q_eg.png)
 
-The measures developed in this section address specific limitations of conventional relatedness approaches:
 
-| Limitation | Conventional Approach | Our Response |
-|------------|----------------------|--------------|
-| Noise from dimensional mismatch | Pairwise co-occurrence correlations | Ensemble learning from pooled observations |
-| Symmetry obscures directionality | $\phi_{ij} = \phi_{ji}$ | FITS extracts asymmetric dependencies |
-| Linear aggregation discards interactions | Density as weighted sum | Tree structure captures conditionality |
-| Context-free measures | Universal technology-pair scores | Region-specific Potential estimates |
 
 Technological Potential provides region-specific feasibility estimates grounded in predictive performance rather than descriptive correlation. FITS reveals the directional, hierarchical structure of technological dependencies that symmetric measures cannot represent. Together, these constructs enable the contextualised analysis our research questions require: examining how regional knowledge infrastructure, national innovation systems, and spatial factors moderate the relationship between technological characteristics and diversification outcomes.
 

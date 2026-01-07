@@ -59,8 +59,9 @@ The interaction between these layers is critical: endogenous capacity determines
 
 
 ```{mermaid}
-
-%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+%%| fig-width: 3
+%%| fig-height: 8
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'10px'}}}%%
 graph TB
     world[the world<br/>uncertainty shocks]
     relevance[The need for resilience]

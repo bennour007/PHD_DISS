@@ -270,6 +270,41 @@
         {
             "author": [
                 {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                },
+                {
+                    "family": "Klinger",
+                    "given": "Bailey"
+                },
+                {
+                    "family": "Barabási",
+                    "given": "A-L"
+                },
+                {
+                    "family": "Hausmann",
+                    "given": "Ricardo"
+                }
+            ],
+            "container-title": "Science",
+            "id": "hidalgo2007product",
+            "issue": "5837",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "482-487",
+            "publisher": "American Association for the Advancement of Science",
+            "title": "The product space conditions the development of nations",
+            "type": "article-journal",
+            "volume": "317"
+        },
+        {
+            "author": [
+                {
                     "family": "Pugliese",
                     "given": "Emanuele"
                 },
@@ -1071,6 +1106,86 @@
             "title-short": "Relatedness and economic complexity as tools for industrial policy",
             "type": "article-journal",
             "volume": "72"
+        },
+        {
+            "author": [
+                {
+                    "family": "Saracco",
+                    "given": "Fabio"
+                },
+                {
+                    "family": "Straka",
+                    "given": "Mika J"
+                },
+                {
+                    "family": "Di Clemente",
+                    "given": "Riccardo"
+                },
+                {
+                    "family": "Gabrielli",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Caldarelli",
+                    "given": "Guido"
+                },
+                {
+                    "family": "Squartini",
+                    "given": "Tiziano"
+                }
+            ],
+            "container-title": "New Journal of Physics",
+            "id": "saracco2017inferring",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "053022",
+            "publisher": "IOP Publishing",
+            "title": "Inferring monopartite projections of bipartite networks: An entropy-based approach",
+            "title-short": "Inferring monopartite projections of bipartite networks",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "author": [
+                {
+                    "family": "Saracco",
+                    "given": "Fabio"
+                },
+                {
+                    "family": "Di Clemente",
+                    "given": "Riccardo"
+                },
+                {
+                    "family": "Gabrielli",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Squartini",
+                    "given": "Tiziano"
+                }
+            ],
+            "container-title": "Scientific reports",
+            "id": "saracco2015randomizing",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "10595",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Randomizing bipartite networks: The case of the world trade web",
+            "title-short": "Randomizing bipartite networks",
+            "type": "article-journal",
+            "volume": "5"
         },
         {
             "author": [
@@ -1917,6 +2032,138 @@
         {
             "author": [
                 {
+                    "family": "Bun",
+                    "given": "Joël"
+                },
+                {
+                    "family": "Bouchaud",
+                    "given": "Jean-Philippe"
+                },
+                {
+                    "family": "Potters",
+                    "given": "Marc"
+                }
+            ],
+            "container-title": "Physics Reports",
+            "id": "bun2017cleaning",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1-109",
+            "publisher": "Elsevier",
+            "title": "Cleaning large correlation matrices: Tools from random matrix theory",
+            "title-short": "Cleaning large correlation matrices",
+            "type": "article-journal",
+            "volume": "666"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mariani",
+                    "given": "Manuel Sebastian"
+                },
+                {
+                    "family": "Ren",
+                    "given": "Zhuo-Ming"
+                },
+                {
+                    "family": "Bascompte",
+                    "given": "Jordi"
+                },
+                {
+                    "family": "Tessone",
+                    "given": "Claudio Juan"
+                }
+            ],
+            "container-title": "Physics Reports",
+            "id": "mariani2019nestedness",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "1-90",
+            "publisher": "Elsevier",
+            "title": "Nestedness in complex networks: Observation, emergence, and implications",
+            "title-short": "Nestedness in complex networks",
+            "type": "article-journal",
+            "volume": "813"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mealy",
+                    "given": "Penny"
+                },
+                {
+                    "family": "Farmer",
+                    "given": "J Doyne"
+                },
+                {
+                    "family": "Teytelboym",
+                    "given": "Alexander"
+                }
+            ],
+            "container-title": "Science advances",
+            "id": "mealy2019interpreting",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "eaau1705",
+            "publisher": "American Association for the Advancement of Science",
+            "title": "Interpreting economic complexity",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bustos",
+                    "given": "Sebastián"
+                },
+                {
+                    "family": "Gomez",
+                    "given": "Charles"
+                },
+                {
+                    "family": "Hausmann",
+                    "given": "Ricardo"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "César A"
+                }
+            ],
+            "container-title": "PloS one",
+            "id": "bustos2012dynamics",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "e49393",
+            "publisher": "Public Library of Science San Francisco, USA",
+            "title": "The dynamics of nestedness predicts the evolution of industrial ecosystems",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "author": [
+                {
                     "family": "Coniglio",
                     "given": "Nicola D"
                 },
@@ -2077,7 +2324,7 @@
                 }
             ],
             "container-title": "International Tax and Public Finance",
-            "id": "mealy2022them",
+            "id": "mealy2022economic",
             "issue": "2",
             "issued": {
                 "date-parts": [

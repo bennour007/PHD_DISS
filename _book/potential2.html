@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./results.html" rel="next">
+<link href="./empirical.html" rel="next">
 <link href="./lit_rev.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -182,14 +182,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./empirical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -224,21 +230,11 @@ window.Quarto = {
   <li><a href="#random-forest-algorithm" id="toc-random-forest-algorithm" class="nav-link" data-scroll-target="#random-forest-algorithm"><span class="header-section-number">3.3.3</span> Random Forest Algorithm</a></li>
   <li><a href="#training-procedure" id="toc-training-procedure" class="nav-link" data-scroll-target="#training-procedure"><span class="header-section-number">3.3.4</span> Training Procedure</a></li>
   </ul></li>
-  <li><a href="#technological-potential" id="toc-technological-potential" class="nav-link" data-scroll-target="#technological-potential"><span class="header-section-number">3.4</span> Technological Potential</a>
+  <li><a href="#technological-potential" id="toc-technological-potential" class="nav-link" data-scroll-target="#technological-potential"><span class="header-section-number">3.4</span> Technological Potential</a></li>
+  <li><a href="#feature-importance-technology-space-fits" id="toc-feature-importance-technology-space-fits" class="nav-link" data-scroll-target="#feature-importance-technology-space-fits"><span class="header-section-number">3.5</span> Feature Importance Technology Space (FITS)</a></li>
+  <li><a href="#coherence-bridging-technology-networks-and-regional-portfolios" id="toc-coherence-bridging-technology-networks-and-regional-portfolios" class="nav-link" data-scroll-target="#coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.6</span> Coherence: Bridging Technology Networks and Regional Portfolios</a>
   <ul class="collapse">
-  <li><a href="#contrast-with-relatedness-density" id="toc-contrast-with-relatedness-density" class="nav-link" data-scroll-target="#contrast-with-relatedness-density"><span class="header-section-number">3.4.1</span> Contrast with Relatedness Density</a></li>
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">3.4.2</span> Interpretation</a></li>
-  </ul></li>
-  <li><a href="#feature-importance-technology-space-fits" id="toc-feature-importance-technology-space-fits" class="nav-link" data-scroll-target="#feature-importance-technology-space-fits"><span class="header-section-number">3.5</span> Feature Importance Technology Space (FITS)</a>
-  <ul class="collapse">
-  <li><a href="#construction" id="toc-construction" class="nav-link" data-scroll-target="#construction"><span class="header-section-number">3.5.1</span> Construction</a></li>
-  <li><a href="#asymmetry-and-hierarchy" id="toc-asymmetry-and-hierarchy" class="nav-link" data-scroll-target="#asymmetry-and-hierarchy"><span class="header-section-number">3.5.2</span> Asymmetry and Hierarchy</a></li>
-  <li><a href="#illustrative-comparison-relatedness-versus-fits" id="toc-illustrative-comparison-relatedness-versus-fits" class="nav-link" data-scroll-target="#illustrative-comparison-relatedness-versus-fits"><span class="header-section-number">3.5.3</span> Illustrative Comparison: Relatedness versus FITS</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3.6</span> Summary</a></li>
-  <li><a href="#coherence-bridging-technology-networks-and-regional-portfolios" id="toc-coherence-bridging-technology-networks-and-regional-portfolios" class="nav-link" data-scroll-target="#coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.7</span> Coherence: Bridging Technology Networks and Regional Portfolios</a>
-  <ul class="collapse">
-  <li><a href="#empirical-application" id="toc-empirical-application" class="nav-link" data-scroll-target="#empirical-application"><span class="header-section-number">3.7.1</span> Empirical Application</a></li>
+  <li><a href="#empirical-application" id="toc-empirical-application" class="nav-link" data-scroll-target="#empirical-application"><span class="header-section-number">3.6.1</span> Empirical Application</a></li>
   </ul></li>
   <li><a href="#summary-of-methodological-framework" id="toc-summary-of-methodological-framework" class="nav-link" data-scroll-target="#summary-of-methodological-framework"><span class="header-section-number">4</span> Summary of Methodological Framework</a></li>
   </ul>
@@ -340,14 +336,14 @@ z_{r,t,y}
 <section id="structural-limitations-of-co-occurrence-based-relatedness" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="structural-limitations-of-co-occurrence-based-relatedness"><span class="header-section-number">3.2.2</span> Structural Limitations of Co-occurrence-Based Relatedness</h3>
 <p>Despite the variety of normalisation approaches, co-occurrence-based relatedness measures share structural limitations that affect their reliability and interpretation.</p>
-<p><strong>Dimensional mismatch produces noisy estimates.</strong> The reliability of frequency-based measures depends on having sufficient observations to estimate co-occurrence patterns accurately. In typical applications, the number of technologies substantially exceeds the number of locations—estimating a matrix of several thousand technology pairs from fewer than two hundred country observations, for instance, produces correlation structures that are largely random <span class="citation" data-cites="tacchella2023relatedness">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>)</span>. The number of observations required for reliable estimation of such matrices easily reaches tens of thousands <span class="citation" data-cites="bun2017cleaning">(<a href="references.html#ref-bun2017cleaning" role="doc-biblioref"><strong>bun2017cleaning?</strong></a>)</span>, far exceeding available data. This problem is not resolved by moving to subnational levels, where harmonised data is often unavailable and the fundamental dimensional mismatch persists.</p>
-<p><strong>Nested structure dominates the relatedness signal.</strong> Location-activity networks typically exhibit strong nested structure: diversified regions produce almost everything while less diversified regions produce only ubiquitous activities <span class="citation" data-cites="mariani2019nestedness">(<a href="references.html#ref-mariani2019nestedness" role="doc-biblioref"><strong>mariani2019nestedness?</strong></a>)</span>. This triangular pattern means that when counting co-occurrences, one primarily detects the diversification hierarchy rather than genuine capability-based relationships. The relatedness signal becomes second-order relative to the structural pattern that generates nestedness <span class="citation" data-cites="tacchella2023relatedness">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>)</span>. This explains why even randomised relatedness matrices produce predictions comparable to co-occurrence-based measures—they still capture the fact that diversified regions are likely to add activities regardless of which specific activities are involved <span class="citation" data-cites="bustos2012dynamics">(<a href="references.html#ref-bustos2012dynamics" role="doc-biblioref"><strong>bustos2012dynamics?</strong></a>)</span>.</p>
-<p><strong>Spurious associations are rarely filtered.</strong> Studies employing co-occurrence measures often fail to test the statistical significance of the relationships they identify <span class="citation" data-cites="saracco2015randomizing saracco2017inferring">(<a href="references.html#ref-saracco2015randomizing" role="doc-biblioref"><strong>saracco2015randomizing?</strong></a>; <a href="references.html#ref-saracco2017inferring" role="doc-biblioref"><strong>saracco2017inferring?</strong></a>)</span>. Without appropriate null models, spurious co-occurrences due to sampling variability are mistaken for genuine relatedness. When such tests are applied to trade data, the results are sobering: the null hypothesis of random diversification—no path dependence—is rejected for only approximately half of countries examined, with most high-income and large economies exhibiting diversification patterns that defy path dependence entirely <span class="citation" data-cites="coniglio2021evolution">(<a href="references.html#ref-coniglio2021evolution" role="doc-biblioref">Coniglio et al. 2021</a>)</span>. Whether these findings extend to patent-based technology data remains an open question, but they raise concerns about the generalisability of path-dependent diversification as a universal empirical regularity.</p>
+<p><strong>Dimensional mismatch produces noisy estimates.</strong> The reliability of frequency-based measures depends on having sufficient observations to estimate co-occurrence patterns accurately. In typical applications, the number of technologies substantially exceeds the number of locations—estimating a matrix of several thousand technology pairs from fewer than two hundred country observations, for instance, produces correlation structures that are largely random <span class="citation" data-cites="tacchella2023relatedness">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>)</span>. The number of observations required for reliable estimation of such matrices easily reaches tens of thousands <span class="citation" data-cites="bun2017cleaning">(<a href="references.html#ref-bun2017cleaning" role="doc-biblioref">Bun, Bouchaud, and Potters 2017</a>)</span>, far exceeding available data. This problem is not resolved by moving to subnational levels, where harmonised data is often unavailable and the fundamental dimensional mismatch persists.</p>
+<p><strong>Nested structure dominates the relatedness signal.</strong> Location-activity networks typically exhibit strong nested structure: diversified regions produce almost everything while less diversified regions produce only ubiquitous activities <span class="citation" data-cites="mariani2019nestedness">(<a href="references.html#ref-mariani2019nestedness" role="doc-biblioref">Mariani et al. 2019</a>)</span>. This triangular pattern means that when counting co-occurrences, one primarily detects the diversification hierarchy rather than genuine capability-based relationships. The relatedness signal becomes second-order relative to the structural pattern that generates nestedness <span class="citation" data-cites="tacchella2023relatedness">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>)</span>. This explains why even randomised relatedness matrices produce predictions comparable to co-occurrence-based measures—they still capture the fact that diversified regions are likely to add activities regardless of which specific activities are involved <span class="citation" data-cites="bustos2012dynamics">(<a href="references.html#ref-bustos2012dynamics" role="doc-biblioref">Bustos et al. 2012</a>)</span>.</p>
+<p><strong>Spurious associations are rarely filtered.</strong> Studies employing co-occurrence measures often fail to test the statistical significance of the relationships they identify <span class="citation" data-cites="saracco2015randomizing saracco2017inferring">(<a href="references.html#ref-saracco2015randomizing" role="doc-biblioref">Saracco et al. 2015</a>, <a href="references.html#ref-saracco2017inferring" role="doc-biblioref">2017</a>)</span>. Without appropriate null models, spurious co-occurrences due to sampling variability are mistaken for genuine relatedness. When such tests are applied to trade data, the results are sobering: the null hypothesis of random diversification—no path dependence—is rejected for only approximately half of countries examined, with most high-income and large economies exhibiting diversification patterns that defy path dependence entirely <span class="citation" data-cites="coniglio2021evolution">(<a href="references.html#ref-coniglio2021evolution" role="doc-biblioref">Coniglio et al. 2021</a>)</span>. Whether these findings extend to patent-based technology data remains an open question, but they raise concerns about the generalisability of path-dependent diversification as a universal empirical regularity.</p>
 <p><strong>Symmetry obscures directional dependencies.</strong> All normalisation schemes above produce symmetric measures: <span class="math inline">\(\phi_{t,t'} = \phi_{t',t}\)</span>. This symmetry assumes that the relationship between any two technologies operates bidirectionally with equal strength. Yet technological development often exhibits clear hierarchies <span class="citation" data-cites="boschma2017relatedness">(<a href="references.html#ref-boschma2017relatedness" role="doc-biblioref">Boschma 2017</a>)</span>. Expertise in semiconductor fabrication may strongly predict future development of integrated circuit design, but the reverse need not hold—circuit designers may not subsequently develop fabrication capabilities. The capabilities required to transition from technology <span class="math inline">\(i\)</span> to technology <span class="math inline">\(j\)</span> may differ vastly from those required for the reverse transition. Symmetric measures cannot distinguish prerequisite relationships from derived relationships, enabling technologies from their applications, or identify the stepping-stone pathways that matter for strategic planning.</p>
 </section>
 <section id="relatedness-density-through-linear-aggregation" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="relatedness-density-through-linear-aggregation"><span class="header-section-number">3.2.3</span> Relatedness Density Through Linear Aggregation</h3>
-<p>Relatedness density bridges the gap between pairwise technology relationships and region-specific diversification potential. Where co-occurrence measures describe technology-to-technology proximity, relatedness density aggregates these proximities relative to a region’s existing portfolio, producing a single value meant to capture how feasible a new technology is for a given region. The measure has become central to diversification analysis and policy guidance, serving as the primary predictor in entry models and the basis for strategic recommendations.</p>
+<p>Relatedness density <span class="citation" data-cites="hidalgo2007product">(<a href="references.html#ref-hidalgo2007product" role="doc-biblioref">Hidalgo et al. 2007</a>)</span> bridges the gap between pairwise technology relationships and region-specific diversification potential. Where co-occurrence measures describe technology-to-technology proximity, relatedness density aggregates these proximities relative to a region’s existing portfolio, producing a single value meant to capture how feasible a new technology is for a given region. The measure has become central to diversification analysis and policy guidance, serving as the primary predictor in entry models and the basis for strategic recommendations.</p>
 <p>The aggregation, however, imposes strong assumptions about how capabilities combine. By summing pairwise relationships, relatedness density treats the regional portfolio as a linear accumulation of independent components. Whether this adequately represents how knowledge and capabilities actually interact in enabling new activities is an empirical question that the measure’s structure forecloses.</p>
 <p>For region <span class="math inline">\(r\)</span> and technology <span class="math inline">\(t\)</span>, relatedness density aggregates the relatedness between technology <span class="math inline">\(t\)</span> and all technologies in which the region currently specialises:</p>
 <p><span class="math display">\[
@@ -360,22 +356,21 @@ z_{r,t,y}
 <section id="structural-limitations-of-linear-aggregation" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="structural-limitations-of-linear-aggregation"><span class="header-section-number">3.2.4</span> Structural Limitations of Linear Aggregation</h3>
 <p>The predictive success of relatedness density is not in question. The limitations concern what it cannot reveal and how its structure constrains interpretation.</p>
-<p><strong>Linear aggregation discards combinatorial information.</strong> Relatedness density sums pairwise relationships without regard to their interactions. This implicitly assumes that having two related technologies is simply twice as beneficial as having one—capabilities combine additively. Yet capabilities may interact in ways that linear summation cannot capture. Certain combinations may be more than the sum of their parts, creating complementarities where the joint presence of technologies <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> enables technology <span class="math inline">\(C\)</span> in ways that neither alone provides. Other combinations may be redundant, contributing less than their individual relatedness values would suggest. By reducing many-body relationships to independent two-body terms, linear aggregation discards precisely the combinatorial information that may distinguish feasible diversification paths from infeasible ones <span class="citation" data-cites="tacchella2023relatedness">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>)</span>. Empirically, prediction models that capture many-product interactions substantially outperform density-based predictions, suggesting that linear aggregation loses significant information <span class="citation" data-cites="albora2023product">(<a href="references.html#ref-albora2023product" role="doc-biblioref">Albora et al. 2023</a>)</span>.</p>
+<p><strong>Linear aggregation obscures combinatorial information.</strong> Relatedness density sums pairwise relationships without regard to their interactions. This implicitly assumes that having two related technologies is simply twice as beneficial as having one—capabilities combine additively. Yet capabilities may interact in ways that linear summation cannot capture. Certain combinations may be more than the sum of their parts, creating complementarities where the joint presence of technologies <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> enables technology <span class="math inline">\(C\)</span> in ways that neither alone provides. Other combinations may be redundant, contributing less than their individual relatedness values would suggest. By reducing many-body relationships to independent two-body terms, linear aggregation discards precisely the combinatorial information that may distinguish feasible diversification paths from infeasible ones <span class="citation" data-cites="tacchella2023relatedness">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>)</span>. Empirically, prediction models that capture many-product interactions substantially outperform density-based predictions, suggesting that linear aggregation loses significant information <span class="citation" data-cites="albora2023product">(<a href="references.html#ref-albora2023product" role="doc-biblioref">Albora et al. 2023</a>)</span>.</p>
 <p><strong>Noise compounds through aggregation.</strong> The dimensional mismatch and spurious associations affecting pairwise co-occurrence estimates do not disappear when aggregated into relatedness density—they compound. Summing noisy pairwise values produces a noisy aggregate. The normalisation by total relatedness provides some correction but cannot recover signal that was lost at the pairwise level. For regions with portfolios concentrated in rare technologies, where pairwise estimates are least reliable, relatedness density inherits and potentially amplifies these estimation problems.</p>
-<p><strong>Context disappears in uniform application.</strong> Perhaps most critically for our purposes, relatedness density treats all regions identically. The same technology-to-technology relationships govern diversification predictions everywhere, regardless of regional characteristics, national institutional environments, or spatial position. A peripheral region in a small economy faces the same relatedness structure as a core region in a large, innovation-intensive country. This homogeneity directly contradicts the contextualisation that policy guidance requires.</p>
-<p><strong>Frequency of entry conflates observation with feasibility.</strong> The empirical regularity that higher relatedness density associates with higher entry probability is often interpreted as evidence that related diversification is more feasible and therefore should be prioritised. But this inference conflates observed frequency with success rate <span class="citation" data-cites="pinheiro2025relatedness">(<a href="references.html#ref-pinheiro2025relatedness" role="doc-biblioref"><strong>pinheiro2025relatedness?</strong></a>)</span>. We observe which entries occurred, not which were attempted; the denominator—attempts—remains unobserved. Related diversification may appear more common because it is attempted more frequently, perhaps precisely because existing frameworks recommend it, rather than because it succeeds more often when attempted. Moreover, the observed product and technology spaces may themselves reflect past policies promoting related diversification <span class="citation" data-cites="andreoni2019political">(<a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>, creating circularity when used to justify future policy.</p>
+<p><strong>Frequency of entry conflates observation with feasibility.</strong> The empirical regularity that higher relatedness density associates with higher entry probability is often interpreted as evidence that related diversification is more feasible and therefore should be prioritised. But this inference conflates observed frequency with success rate as emphasised in <span class="citation" data-cites="pinheiro2025">C. Pinheiro (<a href="references.html#ref-pinheiro2025" role="doc-biblioref">2025</a>)</span>. We observe which entries occurred, not which were attempted; the denominator—attempts—remains unobserved. Related diversification may appear more common because it is attempted more frequently, perhaps precisely because existing frameworks recommend it, rather than because it succeeds more often when attempted. <span class="citation" data-cites="coniglio2021evolution">Coniglio et al. (<a href="references.html#ref-coniglio2021evolution" role="doc-biblioref">2021</a>)</span> addresses precisely this issue and shows that related diversification attempts succeeded 80% in Germany in contrast to 40% in the United States and France. Moreover, the observed product and technology spaces may themselves reflect past policies promoting related diversification <span class="citation" data-cites="andreoni2019political">(<a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>, creating circularity when used to justify future policy.</p>
 </section>
 <section id="implications-for-contextualisation" class="level3" data-number="3.2.5">
 <h3 data-number="3.2.5" class="anchored" data-anchor-id="implications-for-contextualisation"><span class="header-section-number">3.2.5</span> Implications for Contextualisation</h3>
-<p>The limitations identified above are not independent—they compound. Noisy co-occurrence estimates feed into symmetric matrices that are then linearly aggregated, producing context-free measures whose predictive success may reflect structural properties of the data (nestedness, diversification hierarchies) as much as genuine capability-based relationships. The resulting framework provides a supply-side instrument: it identifies what regions might produce given their existing portfolios, while remaining silent on demand dynamics, competitive pressures, and the institutional conditions that shape whether capability-based proximity translates into actual entry <span class="citation" data-cites="pinheiro2025relatedness andreoni2019political">(<a href="references.html#ref-pinheiro2025relatedness" role="doc-biblioref"><strong>pinheiro2025relatedness?</strong></a>; <a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>.</p>
-<p>This supply-side orientation has consequences. When applied to policy, relatedness-based recommendations may systematically favour already-diversified regions whose dense portfolios generate high relatedness density across many targets, while offering limited guidance to less-diversified regions whose sparse portfolios produce low density values regardless of strategic potential. The concern that such recommendations reinforce rather than ameliorate path dependency—locking peripheral regions into constrained trajectories while core regions accumulate further advantages—has been explicitly raised in recent literature examining regional inequality and the distributional consequences of relatedness-based strategies <span class="citation" data-cites="pinheiro2022dark mealy2022economic hidalgo2023policy">(<a href="references.html#ref-pinheiro2022dark" role="doc-biblioref"><strong>pinheiro2022dark?</strong></a>; <a href="references.html#ref-mealy2022economic" role="doc-biblioref"><strong>mealy2022economic?</strong></a>; <a href="references.html#ref-hidalgo2023policy" role="doc-biblioref">Hidalgo 2023</a>)</span>.</p>
+<p>The limitations identified above are not independent—they compound. Noisy co-occurrence estimates feed into symmetric matrices that are then linearly aggregated, producing context-free measures whose predictive success may reflect structural properties of the data (nestedness, diversification hierarchies) as much as genuine capability-based relationships. The resulting framework provides a supply-side instrument: it identifies what regions might produce given their existing portfolios, while remaining silent on demand dynamics, competitive pressures, and the institutional conditions that shape whether capability-based proximity translates into actual entry <span class="citation" data-cites="pinheiro2025 andreoni2019political">(<a href="references.html#ref-pinheiro2025" role="doc-biblioref">C. Pinheiro 2025</a>; <a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>)</span>.</p>
+<p>This supply-side orientation has consequences. When applied to policy, relatedness-based recommendations may systematically favour already-diversified regions whose dense portfolios generate high relatedness density across many targets, while offering limited guidance to less-diversified regions whose sparse portfolios produce low density values regardless of strategic potential. The concern that such recommendations reinforce rather than ameliorate path dependency—locking peripheral regions into constrained trajectories while core regions accumulate further advantages—has been explicitly raised in recent literature examining regional inequality and the distributional consequences of relatedness-based strategies <span class="citation" data-cites="pinheiro2025dark mealy2022economic hidalgo2023policy">(<a href="references.html#ref-pinheiro2025dark" role="doc-biblioref">Flavio L. Pinheiro et al. 2025</a>; <a href="references.html#ref-mealy2022economic" role="doc-biblioref">Mealy and Coyle 2022</a>; <a href="references.html#ref-hidalgo2023policy" role="doc-biblioref">Hidalgo 2023</a>)</span>.</p>
 <p>The issue is not that relatedness is empirically wrong—the predictive regularity is robust—but that the measures as currently constructed cannot inform us about the conditions under which relatedness matters more or less, about which technologies serve as stepping stones toward others, or about how regional knowledge infrastructure, national ecosystems, and spatial factors moderate diversification possibilities. Addressing these limitations requires reconstructing the core methodological constructs in ways that relax the problematic assumptions while preserving the fundamental insight that prior capabilities shape future possibilities. This reconstruction motivates the machine learning approach developed in the following sections.</p>
 <hr>
 </section>
 </section>
 <section id="an-alternative-approach-machine-learning-for-contextualised-relatedness" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="an-alternative-approach-machine-learning-for-contextualised-relatedness"><span class="header-section-number">3.3</span> An Alternative Approach: Machine Learning for Contextualised Relatedness</h2>
-<p>The limitations outlined above—dimensional mismatch producing noisy correlations, symmetric measures obscuring directional dependencies, and linear aggregation discarding interaction effects—are not merely technical inconveniences. They represent fundamental obstacles to using relatedness for prediction and policy. If co-occurrence methods perform no better than trivial baselines, as Tacchella et al.&nbsp;(2023) demonstrate, then their assessment of diversification feasibility offers insufficient guidance for strategic decisions. This motivates a shift from descriptive correlation to predictive modelling.</p>
+<p>The limitations outlined above—dimensional mismatch producing noisy correlations, symmetric measures obscuring directional dependencies, and linear aggregation discarding interaction effects—are not merely technical inconveniences. They represent fundamental obstacles to using relatedness for prediction and policy. If co-occurrence methods perform no better than trivial baselines, as demonstrated in <span class="citation" data-cites="tacchella2023relatedness">Tacchella et al. (<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">2023</a>)</span>, then their assessment of diversification feasibility offers insufficient guidance for strategic decisions. This motivates a shift from descriptive correlation to predictive modelling.</p>
 <section id="machine-learning-as-prediction-framework" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="machine-learning-as-prediction-framework"><span class="header-section-number">3.3.1</span> Machine Learning as Prediction Framework</h3>
 <p>The core reframing is methodological: rather than inferring relatedness from co-occurrence patterns and hoping this correlates with future outcomes, we directly model diversification as a prediction problem. This follows recent work positioning relatedness estimation within supervised learning frameworks <span class="citation" data-cites="tacchella2023relatedness albora2023product fessina2024identifying">(<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">Tacchella et al. 2023</a>; <a href="references.html#ref-albora2023product" role="doc-biblioref">Albora et al. 2023</a>; <a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. The shift offers three advantages.</p>
@@ -394,6 +389,7 @@ z_{r,t,y}
 <p><strong>Interpretable feature importance.</strong> Unlike black-box models, Random Forests produce feature importance scores that aggregate each predictor’s contribution across all trees. These scores become the basis for FITS construction, translating prediction performance into an interpretable technology network. This maintains the explanatory value of relatedness measures while grounding them in predictive validity.</p>
 <p><strong>Ensemble variance reduction.</strong> Bootstrap aggregation across many trees reduces the variance that would plague individual decision trees, particularly given the moderate sample sizes (regions × years) available in patent data. The ensemble structure provides stability without sacrificing the flexibility needed to capture complex capability interactions.</p>
 <p>The choice of Random Forest over alternatives thus reflects both practical constraints (sample size, interpretability requirements) and the specific structure of relatedness estimation (sparse, high-dimensional, interaction-rich). We now present the algorithm formally before describing our application.</p>
+<p><img src="resources/ML_relatedness_tachella.jpg" class="img-fluid"></p>
 </section>
 <section id="random-forest-algorithm" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="random-forest-algorithm"><span class="header-section-number">3.3.3</span> Random Forest Algorithm</h3>
@@ -435,59 +431,14 @@ z_{r,t,y}
 <section id="technological-potential" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="technological-potential"><span class="header-section-number">3.4</span> Technological Potential</h2>
 <p>Each model produces probabilities <span class="math inline">\(p_{r,i,y} = P(z_{r,i,y} = 1 \mid \text{RTA}_{r,\cdot,y-\delta})\)</span> representing the likelihood that region <span class="math inline">\(r\)</span> develops specialisation in technology <span class="math inline">\(i\)</span> by year <span class="math inline">\(y\)</span>, conditional on its prior portfolio. These probabilities constitute <strong>Technological Potential</strong>—a forward-looking, region-specific measure of diversification feasibility.</p>
-<section id="contrast-with-relatedness-density" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="contrast-with-relatedness-density"><span class="header-section-number">3.4.1</span> Contrast with Relatedness Density</h3>
-<p>Technological Potential differs from relatedness density in ways that directly address the limitations identified earlier:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 36%">
-<col style="width: 41%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Limitation</th>
-<th>Relatedness Density</th>
-<th>Technological Potential</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Dimensional mismatch</td>
-<td>Estimates pairwise correlations from sparse co-occurrences</td>
-<td>Learns patterns from pooled region-year observations</td>
-</tr>
-<tr class="even">
-<td>Symmetry</td>
-<td><span class="math inline">\(\phi_{ij} = \phi_{ji}\)</span> by construction</td>
-<td>Separate models yield directional predictions</td>
-</tr>
-<tr class="odd">
-<td>Linear aggregation</td>
-<td><span class="math inline">\(\omega_{ri} = \sum_j M_{rj}\phi_{ij} / \sum_j \phi_{ij}\)</span></td>
-<td>Tree structure captures interactions</td>
-</tr>
-<tr class="even">
-<td>Context-free</td>
-<td>Same density for all regions with identical portfolios</td>
-<td>Region-specific probability estimates</td>
-</tr>
-</tbody>
-</table>
-<p>The shift from correlation to prediction reframes what the measure captures. Density asks: “How similar is technology <span class="math inline">\(i\)</span> to what region <span class="math inline">\(r\)</span> already has?” Potential asks: “Given everything we know about how regions diversify, how likely is region <span class="math inline">\(r\)</span> to develop technology <span class="math inline">\(i\)</span>?” The latter question—the one relevant for policy—requires the predictive machinery to answer.</p>
-</section>
-<section id="interpretation" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.4.2</span> Interpretation</h3>
+<p>The shift from correlation to prediction reframes what the measure captures. Density asks: “How similar is technology <span class="math inline">\(i\)</span> to what region <span class="math inline">\(r\)</span> already has?” Potential asks: “Given everything we know about how regions diversify, how likely is region <span class="math inline">\(r\)</span> to develop technology <span class="math inline">\(i\)</span>?” The latter question—the one relevant for policy—requires a predictive approach.</p>
 <p>High potential (<span class="math inline">\(p_{r,t,y} \approx 1\)</span>) indicates a region’s existing portfolio strongly predicts future specialisation—the region likely possesses necessary complementary capabilities. Low potential (<span class="math inline">\(p_{r,t,y} \approx 0\)</span>) suggests capability gaps that make diversification unlikely under current conditions. Intermediate values reflect genuine uncertainty, often indicating that diversification is possible but contingent on factors beyond current portfolio composition.</p>
 <p>Crucially, potential varies across regions for the same technology. Two regions with similar aggregate relatedness density may have quite different potential scores because their specific portfolio configurations interact differently with the target technology’s requirements. This variation enables analysis of how regional context—knowledge infrastructure, institutional environment, spatial position—moderates diversification feasibility.</p>
-</section>
 </section>
 <section id="feature-importance-technology-space-fits" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="feature-importance-technology-space-fits"><span class="header-section-number">3.5</span> Feature Importance Technology Space (FITS)</h2>
 <p>Traditional technology networks rely on patent citations or co-occurrence patterns, each with limitations. Citations suffer from examiner additions that may not reflect actual knowledge flows, aggregation from patent-level to technology-level that obscures directionality, and backward-looking orientation that captures historical influence rather than predictive relationships <span class="citation" data-cites="fessina2024identifying">(<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">Fessina et al. 2024</a>)</span>. Co-occurrence networks inherit the problems outlined in our critique: symmetry, noise, and linear assumptions.</p>
 <p>FITS addresses these by constructing an asymmetric, predictive network from the feature importance scores of our Technological Potential models. Rather than inferring relationships from co-occurrence, FITS extracts directional dependencies revealed by which technologies predict others’ future adoption.</p>
-<section id="construction" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="construction"><span class="header-section-number">3.5.1</span> Construction</h3>
 <p>Recall that for each technology <span class="math inline">\(i\)</span>, we trained a Random Forest model predicting <span class="math inline">\(z_{r,i,y}\)</span> using <span class="math inline">\(\{\text{RTA}_{r,t,y-\delta} : t \neq i\}\)</span> as features. The feature importance <span class="math inline">\(I_i(t)\)</span> quantifies how much technology <span class="math inline">\(t\)</span> contributes to predicting future specialisation in technology <span class="math inline">\(i\)</span> across all regions and time periods.</p>
 <p>We formalise FITS as a directed, weighted network <span class="math inline">\(G = (V, E, W)\)</span> where:</p>
 <ul>
@@ -498,9 +449,12 @@ z_{r,t,y}
 <p>We normalise weights within each target technology:</p>
 <p><span class="math display">\[W_{t \to i} = \frac{I_i(t)}{\sum_{t' \neq i} I_i(t')}\]</span></p>
 <p>ensuring incoming edge weights sum to 1 for each technology. This normalisation facilitates comparison across technologies with different overall predictability.</p>
-</section>
-<section id="asymmetry-and-hierarchy" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="asymmetry-and-hierarchy"><span class="header-section-number">3.5.2</span> Asymmetry and Hierarchy</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/technology_network.png" class="img-fluid figure-img"></p>
+<figcaption>Technology Network (based on 2018 patent data)</figcaption>
+</figure>
+</div>
 <p>The defining property of FITS is asymmetry: <span class="math inline">\(W_{t \to i} \neq W_{i \to t}\)</span> in general. This asymmetry captures hierarchical technological dependencies invisible to symmetric measures:</p>
 <ul>
 <li><p><strong><span class="math inline">\(W_{t \to i} \gg W_{i \to t}\)</span></strong>: Technology <span class="math inline">\(t\)</span> is a prerequisite or enabler for <span class="math inline">\(i\)</span>. Expertise in <span class="math inline">\(t\)</span> predicts future development of <span class="math inline">\(i\)</span>, but not vice versa. This pattern identifies foundational technologies and developmental sequences.</p></li>
@@ -508,59 +462,17 @@ z_{r,t,y}
 <li><p><strong><span class="math inline">\(W_{t \to i} \ll W_{i \to t}\)</span></strong>: Technology <span class="math inline">\(i\)</span> enables <span class="math inline">\(t\)</span>, reversing the hierarchical relationship.</p></li>
 </ul>
 <p>This directional structure reveals technological trajectories: regions can identify which current capabilities open paths toward desired future technologies, and which apparent similarities mask asymmetric dependencies.</p>
-</section>
-<section id="illustrative-comparison-relatedness-versus-fits" class="level3" data-number="3.5.3">
-<h3 data-number="3.5.3" class="anchored" data-anchor-id="illustrative-comparison-relatedness-versus-fits"><span class="header-section-number">3.5.3</span> Illustrative Comparison: Relatedness versus FITS</h3>
 <p>The contrast between co-occurrence relatedness and FITS is sharpest when examining specific technologies. Consider H01L (semiconductors) and D06Q (textile decoration).</p>
 <p>For semiconductors, co-occurrence relatedness identifies technologies that frequently appear together in regional portfolios. Some connections are sensible: semiconductor memories (H10B), packaging technologies (B68B). But the measure also surfaces implausible links—textile decoration (D06Q), woodworking (B27H), fusion reactors (G21B)—that appear not because of genuine technological affinity but because they happen to co-occur in diverse portfolios. This is the noise problem: frequency-based aggregation treats all co-presence equally, regardless of whether it reflects shared capabilities or statistical coincidence.</p>
 <p>FITS reveals a different structure. Rather than asking which technologies appear alongside semiconductors, it asks which technologies predict future semiconductor development—and which technologies semiconductors predict. The asymmetry is striking: strong edges flow FROM application domains (digital computing G06F, telecommunications H04L, control systems G05F) TO semiconductors, indicating these fields depend on semiconductor capabilities. Weaker reverse edges show that semiconductor expertise does not particularly predict entry into computing or telecommunications. H01L emerges as an enabling technology whose importance lies in what it makes possible rather than what leads to it.</p>
 <p>The contrast sharpens further with D06Q (textile decoration), a sparse technology where co-occurrence produces near-total noise: elevators (B64B), timing devices (G04D), chemical production (C13B) appear simply because D06Q is rare and co-occurs randomly with whatever else rare-technology regions happen to have. FITS filters this effectively, identifying genuine textile domain relationships—sewing (D05B), textile treatment (D06M), wall coverings (D06N)—that share actual functional connections.</p>
 <p>This example illustrates how FITS captures the functional architecture of innovation networks that co-occurrence frequencies obscure. The method’s ability to distinguish signal from statistical artifact, combined with its directional structure revealing technological hierarchies, provides the foundation for contextualised analysis of regional diversification patterns.</p>
-</section>
-</section>
-<section id="summary" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.6</span> Summary</h2>
-<p>The measures developed in this section address specific limitations of conventional relatedness approaches:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 45%">
-<col style="width: 29%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Limitation</th>
-<th>Conventional Approach</th>
-<th>Our Response</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Noise from dimensional mismatch</td>
-<td>Pairwise co-occurrence correlations</td>
-<td>Ensemble learning from pooled observations</td>
-</tr>
-<tr class="even">
-<td>Symmetry obscures directionality</td>
-<td><span class="math inline">\(\phi_{ij} = \phi_{ji}\)</span></td>
-<td>FITS extracts asymmetric dependencies</td>
-</tr>
-<tr class="odd">
-<td>Linear aggregation discards interactions</td>
-<td>Density as weighted sum</td>
-<td>Tree structure captures conditionality</td>
-</tr>
-<tr class="even">
-<td>Context-free measures</td>
-<td>Universal technology-pair scores</td>
-<td>Region-specific Potential estimates</td>
-</tr>
-</tbody>
-</table>
+<p><img src="resources/h10l_eg.png" class="img-fluid"></p>
+<p><img src="resources/d06q_eg.png" class="img-fluid"></p>
 <p>Technological Potential provides region-specific feasibility estimates grounded in predictive performance rather than descriptive correlation. FITS reveals the directional, hierarchical structure of technological dependencies that symmetric measures cannot represent. Together, these constructs enable the contextualised analysis our research questions require: examining how regional knowledge infrastructure, national innovation systems, and spatial factors moderate the relationship between technological characteristics and diversification outcomes.</p>
 </section>
-<section id="coherence-bridging-technology-networks-and-regional-portfolios" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.7</span> Coherence: Bridging Technology Networks and Regional Portfolios</h2>
+<section id="coherence-bridging-technology-networks-and-regional-portfolios" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.6</span> Coherence: Bridging Technology Networks and Regional Portfolios</h2>
 <p>FITS identifies technology-to-technology relationships. Technological Potential quantifies regional diversification feasibility. <strong>Coherence</strong> bridges these levels by measuring the alignment between a technology’s position in the FITS network and a region’s existing specialization structure. In a way coherence can be viewed as sector level relatedness density.</p>
 <p>Consider two regions, both lacking specialization in technology <span class="math inline">\(i\)</span>, both having similar potential <span class="math inline">\(p_{r,i,y}\)</span>. However, Region A specializes in technologies that are strong predictors of <span class="math inline">\(i\)</span> (high incoming FITS edges), while Region B specializes in technologies unrelated to <span class="math inline">\(i\)</span> in the network. Coherence captures this difference: Region A has high coherence with <span class="math inline">\(i\)</span> (its portfolio aligns with <span class="math inline">\(i\)</span>’s network prerequisites), while Region B has low coherence (misalignment).</p>
 <p>This metric operationalizes the “knowledge coherence” and “cognitive proximity” concepts from innovation literature <span class="citation" data-cites="neffke2011how boschma2015towards">(<a href="references.html#ref-neffke2011how" role="doc-biblioref">Neffke, Henning, and Boschma 2011</a>; <a href="references.html#ref-boschma2015towards" role="doc-biblioref">Boschma 2015</a>)</span> using our directional network structure. It enables testing whether diversification success depends not just on potential (predicted feasibility) but on the structural fit between regional portfolios and technology network positions.</p>
@@ -590,8 +502,8 @@ z_{r,t,y}
 <li><strong>Neutral coherence</strong> (<span class="math inline">\(\approx 0\)</span>): Misalignment between technology <span class="math inline">\(i\)</span>’s relational structure and regional specialization patterns.</li>
 <li><strong>Negative coherence</strong> (<span class="math inline">\(\approx -1\)</span>): Technology <span class="math inline">\(i\)</span>’s network position is opposite to the region’s specialization structure (e.g., <span class="math inline">\(i\)</span> receives inputs from categories where the region sends outputs).</li>
 </ul>
-<section id="empirical-application" class="level3" data-number="3.7.1">
-<h3 data-number="3.7.1" class="anchored" data-anchor-id="empirical-application"><span class="header-section-number">3.7.1</span> Empirical Application</h3>
+<section id="empirical-application" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="empirical-application"><span class="header-section-number">3.6.1</span> Empirical Application</h3>
 <p>Coherence serves two roles in our empirical analysis:</p>
 <ol type="1">
 <li><p><strong>Interaction with Potential</strong>: Test whether high potential translates to actual diversification only when coherence is also high (H2a: technology-specific characteristics moderated by regional knowledge coherence)</p></li>
@@ -637,6 +549,12 @@ Boschma, Ron. 2015. <span>“Towards an Evolutionary Perspective on Regional Res
 <div id="ref-boschma2023role" class="csl-entry" role="listitem">
 Boschma, Ron, Ernest Miguelez, Rosina Moreno, and Diego B Ocampo-Corrales. 2023. <span>“The Role of Relatedness and Unrelatedness for the Geography of Technological Breakthroughs in Europe.”</span> <em>Economic Geography</em> 99 (2): 117–39.
 </div>
+<div id="ref-bun2017cleaning" class="csl-entry" role="listitem">
+Bun, Joël, Jean-Philippe Bouchaud, and Marc Potters. 2017. <span>“Cleaning Large Correlation Matrices: Tools from Random Matrix Theory.”</span> <em>Physics Reports</em> 666: 1–109.
+</div>
+<div id="ref-bustos2012dynamics" class="csl-entry" role="listitem">
+Bustos, Sebastián, Charles Gomez, Ricardo Hausmann, and César A Hidalgo. 2012. <span>“The Dynamics of Nestedness Predicts the Evolution of Industrial Ecosystems.”</span> <em>PloS One</em> 7 (11): e49393.
+</div>
 <div id="ref-coniglio2021evolution" class="csl-entry" role="listitem">
 Coniglio, Nicola D, Davide Vurchio, Nicola Cantore, and Michele Clara. 2021. <span>“On the Evolution of Comparative Advantage: Path-Dependent Versus Path-Defying Changes.”</span> <em>Journal of International Economics</em> 133: 103522.
 </div>
@@ -664,6 +582,9 @@ Hidalgo, César A. 2021. <span>“Economic Complexity Theory and Applications.�
 <div id="ref-hidalgo2018principle" class="csl-entry" role="listitem">
 Hidalgo, César A, Pierre-Alexandre Balland, Ron Boschma, Mercedes Delgado, Maryann Feldman, Koen Frenken, Edward Glaeser, et al. 2018. <span>“The Principle of Relatedness.”</span> In <em>Unifying Themes in Complex Systems IX: Proceedings of the Ninth International Conference on Complex Systems 9</em>, 451–57. Springer.
 </div>
+<div id="ref-hidalgo2007product" class="csl-entry" role="listitem">
+Hidalgo, César A, Bailey Klinger, A-L Barabási, and Ricardo Hausmann. 2007. <span>“The Product Space Conditions the Development of Nations.”</span> <em>Science</em> 317 (5837): 482–87.
+</div>
 <div id="ref-landau2021targets" class="csl-entry" role="listitem">
 Landau, William Michael. 2021. <span>“The Targets r Package: A Dynamic Make-Like Function-Oriented Pipeline Toolkit for Reproducibility and High-Performance Computing.”</span> <em>Journal of Open Source Software</em> 6 (57): 2959.
 </div>
@@ -673,14 +594,29 @@ Lee, Changyong, Ohjin Kwon, Myeongjung Kim, and Daeil Kwon. 2018. <span>“Early
 <div id="ref-li2024evaluating" class="csl-entry" role="listitem">
 Li, Yang, and Frank MH Neffke. 2024. <span>“Evaluating the Principle of Relatedness: Estimation, Drivers and Implications for Policy.”</span> <em>Research Policy</em> 53 (3): 104952.
 </div>
+<div id="ref-mariani2019nestedness" class="csl-entry" role="listitem">
+Mariani, Manuel Sebastian, Zhuo-Ming Ren, Jordi Bascompte, and Claudio Juan Tessone. 2019. <span>“Nestedness in Complex Networks: Observation, Emergence, and Implications.”</span> <em>Physics Reports</em> 813: 1–90.
+</div>
+<div id="ref-mealy2022economic" class="csl-entry" role="listitem">
+Mealy, Penny, and Diane Coyle. 2022. <span>“To Them That Hath: Economic Complexity and Local Industrial Strategy in the UK.”</span> <em>International Tax and Public Finance</em> 29 (2): 358–77.
+</div>
 <div id="ref-neffke2011how" class="csl-entry" role="listitem">
 Neffke, Frank, Martin Henning, and Ron Boschma. 2011. <span>“How Do Regions Diversify over Time? Industry Relatedness and the Development of New Growth Paths in Regions.”</span> <em>Economic Geography</em> 87 (3): 237–65.
+</div>
+<div id="ref-pinheiro2025" class="csl-entry" role="listitem">
+Pinheiro, Cristina. 2025. <span>“Relatedness and Economic Complexity as Tools for Industrial Policy: Insights and Limitations.”</span> <em>Structural Change and Economic Dynamics</em> 72: 1–10.
 </div>
 <div id="ref-pinheiro2025dark" class="csl-entry" role="listitem">
 Pinheiro, Flavio L, Pierre-Alexandre Balland, Ron Boschma, and Dominik Hartmann. 2025. <span>“The Dark Side of the Geography of Innovation: Relatedness, Complexity and Regional Inequality in Europe.”</span> <em>Regional Studies</em> 59 (1): 2106362.
 </div>
 <div id="ref-pinheiro2022time" class="csl-entry" role="listitem">
 Pinheiro, Flávio L, Dominik Hartmann, Ron Boschma, and César A Hidalgo. 2022. <span>“The Time and Frequency of Unrelated Diversification.”</span> <em>Research Policy</em> 51 (8): 104323.
+</div>
+<div id="ref-saracco2015randomizing" class="csl-entry" role="listitem">
+Saracco, Fabio, Riccardo Di Clemente, Andrea Gabrielli, and Tiziano Squartini. 2015. <span>“Randomizing Bipartite Networks: The Case of the World Trade Web.”</span> <em>Scientific Reports</em> 5 (1): 10595.
+</div>
+<div id="ref-saracco2017inferring" class="csl-entry" role="listitem">
+Saracco, Fabio, Mika J Straka, Riccardo Di Clemente, Andrea Gabrielli, Guido Caldarelli, and Tiziano Squartini. 2017. <span>“Inferring Monopartite Projections of Bipartite Networks: An Entropy-Based Approach.”</span> <em>New Journal of Physics</em> 19 (5): 053022.
 </div>
 <div id="ref-tacchella2023relatedness" class="csl-entry" role="listitem">
 Tacchella, Andrea, Andrea Zaccaria, Marco Miccheli, and Luciano Pietronero. 2023. <span>“Relatedness in the Era of Machine Learning.”</span> <em>Chaos, Solitons &amp; Fractals</em> 176: 114071.
@@ -1101,8 +1037,8 @@ Zaccaria, Andrea, Saurabh Mishra, Masud Z Cader, and Luciano Pietronero. 2018. <
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./results.html" class="pagination-link" aria-label="Results">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Results</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./empirical.html" class="pagination-link" aria-label="Empirical Design">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
