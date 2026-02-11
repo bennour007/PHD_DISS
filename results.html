@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./summary.html" rel="next">
-<link href="./empirical.html" rel="prev">
+<link href="./empirical2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -133,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./empirical.html" class="sidebar-item-text sidebar-link">
+  <a href="./empirical2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span></a>
   </div>
 </li>
@@ -160,8 +189,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#entry" id="toc-entry" class="nav-link active" data-scroll-target="#entry"><span class="header-section-number">5.1</span> Entry</a></li>
+  <li><a href="#network-effects-and-coherence-moderation" id="toc-network-effects-and-coherence-moderation" class="nav-link" data-scroll-target="#network-effects-and-coherence-moderation"><span class="header-section-number">5.2</span> Network Effects and Coherence Moderation</a></li>
+  <li><a href="#national-context-and-robustness" id="toc-national-context-and-robustness" class="nav-link" data-scroll-target="#national-context-and-robustness"><span class="header-section-number">5.3</span> National Context and Robustness</a></li>
+  <li><a href="#hierarchical-structure-and-spatial-implications" id="toc-hierarchical-structure-and-spatial-implications" class="nav-link" data-scroll-target="#hierarchical-structure-and-spatial-implications"><span class="header-section-number">5.4</span> Hierarchical Structure and Spatial Implications</a></li>
+  <li><a href="#role-of-space" id="toc-role-of-space" class="nav-link" data-scroll-target="#role-of-space"><span class="header-section-number">5.5</span> Role of space</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -185,8 +224,4887 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Our empirical analysis proceeds in five stages. First, we benchmark how much standard relatedness density and our RF-based Potential explain next-period entry under progressively stricter comparisons (Table <a href="#tbl-entry-ols" class="quarto-xref">Table&nbsp;<span>5.1</span></a>). Second, we examine how technology network positions, regional knowledge infrastructure, and accessibility shape diversification potential using region and year fixed effects (Table <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a>). Third, we incorporate national entrepreneurial ecosystem characteristics to test whether these dyadic mechanisms persist once national institutions are accounted for (Table <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.4</span></a>). Fourth, we estimate hierarchical random effects models to reflect the nesting of regions within countries and to assess how much variation lies between versus within regional units (Table <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a>). Fifth, we aggregate potential to the regional level and estimate spatial panel models to test whether regional potential exhibits spatial dependence consistent with spillovers or correlated unobservables (Tables <a href="#tbl-spatial-sar" class="quarto-xref">Table&nbsp;<span>5.6</span></a> and <a href="#tbl-spatial-sem" class="quarto-xref">Table&nbsp;<span>5.7</span></a>). Together, these analyses test our hypotheses while checking whether conclusions depend on model structure or level of aggregation.</p>
+<section id="entry" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="entry"><span class="header-section-number">5.1</span> Entry</h2>
+<p>In <a href="#tbl-entry-ols" class="quarto-xref">Table&nbsp;<span>5.1</span></a> we benchmark how much standard relatedness density and our RF-based Potential (pred11) explain next-period entry when we progressively tighten comparisons. In the pooled specifications, both measures strongly predict entry: relatedness density is positive and precisely estimated (<span class="math inline">\(0.055\)</span>), while Potential is larger (<span class="math inline">\(0.081\)</span>). This is consistent with the interpretation that both capture opportunity, while Potential is closer to feasibility as learned from portfolio configurations. Once we move to the fixed-effects designs and absorb region and year fixed effects, interpretation shifts to within-region changes over time, net of common year shocks. In this setting, relatedness density remains strongly positive (e.g., <span class="math inline">\(0.089\)</span> in the density-only fixed effects model), and Potential also remains strongly positive (<span class="math inline">\(0.089\)</span> in the Potential-only fixed effects model), indicating that both track time-varying entry propensity beyond stable regional differences.</p>
+<p>The most informative column is the joint fixed effects model, where both predictors enter together. Here, relatedness density drops from <span class="math inline">\(0.089\)</span> to <span class="math inline">\(0.028\)</span>, while Potential remains large at <span class="math inline">\(0.086\)</span>. This pattern implies that Potential subsumes a substantial share of what density captures, but not all of it: density retains an independent association with entry even after controlling for Potential. In other words, Potential appears to be the dominant predictor in this horse race, while density retains residual explanatory content that may reflect a simpler proximity component that survives beyond the non-linear feasibility signal embedded in Potential. This dominance is also reflected in fit: within-<span class="math inline">\(R^2\)</span> rises from <span class="math inline">\(0.014\)</span> in the density-only fixed effects model to <span class="math inline">\(0.062\)</span> in the Potential-only fixed effects model and remains <span class="math inline">\(0.062\)</span> in the joint model. This benchmark motivates the subsequent mechanism analysis: rather than treating relatedness as a sufficient summary statistic, we examine how portfolio alignment, network position, and accessibility structure feasibility. This move is consistent with the broader methodological critique that pairwise relatedness can miss higher-order portfolio information; for example, <span class="citation" data-cites="RelatednessMachineLearning">(<a href="references.html#ref-RelatednessMachineLearning" role="doc-biblioref"><strong>RelatednessMachineLearning?</strong></a>)</span> argues that shifting from “two-product correlations” to information that captures richer configurations can improve predictive performance. This benchmark motivates our subsequent mechanism analysis: having established that Potential dominates relatedness density in predicting entry, we now decompose Potential itself to examine how portfolio alignment (coherence), network position (betweenness, eigenvector), and accessibility structure feasibility at the dyadic technology-region level</p>
+<div class="cell">
+<div id="tbl-entry-ols" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-entry-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Entry (t + 1): LPM
+</figcaption>
+<div aria-describedby="tbl-entry-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="snbjjfzfau" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#snbjjfzfau table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#snbjjfzfau thead, #snbjjfzfau tbody, #snbjjfzfau tfoot, #snbjjfzfau tr, #snbjjfzfau td, #snbjjfzfau th {
+  border-style: none;
+}
+
+#snbjjfzfau p {
+  margin: 0;
+  padding: 0;
+}
+
+#snbjjfzfau .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#snbjjfzfau .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#snbjjfzfau .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#snbjjfzfau .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#snbjjfzfau .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#snbjjfzfau .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#snbjjfzfau .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#snbjjfzfau .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#snbjjfzfau .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#snbjjfzfau .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#snbjjfzfau .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#snbjjfzfau .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#snbjjfzfau .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#snbjjfzfau .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#snbjjfzfau .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#snbjjfzfau .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#snbjjfzfau .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#snbjjfzfau .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#snbjjfzfau .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#snbjjfzfau .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#snbjjfzfau .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#snbjjfzfau .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#snbjjfzfau .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#snbjjfzfau .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#snbjjfzfau .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#snbjjfzfau .gt_left {
+  text-align: left;
+}
+
+#snbjjfzfau .gt_center {
+  text-align: center;
+}
+
+#snbjjfzfau .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#snbjjfzfau .gt_font_normal {
+  font-weight: normal;
+}
+
+#snbjjfzfau .gt_font_bold {
+  font-weight: bold;
+}
+
+#snbjjfzfau .gt_font_italic {
+  font-style: italic;
+}
+
+#snbjjfzfau .gt_super {
+  font-size: 65%;
+}
+
+#snbjjfzfau .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#snbjjfzfau .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#snbjjfzfau .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#snbjjfzfau .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#snbjjfzfau .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#snbjjfzfau .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#snbjjfzfau .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#snbjjfzfau .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#snbjjfzfau div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Entry (t + 1): LPM</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="baseline1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">baseline1</th>
+<th id="baseline2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">baseline2</th>
+<th id="full1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">full1</th>
+<th id="full2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">full2</th>
+<th id="full3" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">full3</th>
+<th id="full4" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">full4</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">(Intercept)</td>
+<td class="gt_row gt_center" headers="baseline1">0.069***</td>
+<td class="gt_row gt_center" headers="baseline2">0.070***</td>
+<td class="gt_row gt_center" headers="full1"></td>
+<td class="gt_row gt_center" headers="full2"></td>
+<td class="gt_row gt_center" headers="full3"></td>
+<td class="gt_row gt_center" headers="full4"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline1">(0.002)</td>
+<td class="gt_row gt_center" headers="baseline2">(0.001)</td>
+<td class="gt_row gt_center" headers="full1"></td>
+<td class="gt_row gt_center" headers="full2"></td>
+<td class="gt_row gt_center" headers="full3"></td>
+<td class="gt_row gt_center" headers="full4"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">patent_n</td>
+<td class="gt_row gt_center" headers="baseline1">0.008</td>
+<td class="gt_row gt_center" headers="baseline2">-0.007**</td>
+<td class="gt_row gt_center" headers="full1">0.017*</td>
+<td class="gt_row gt_center" headers="full2">0.004</td>
+<td class="gt_row gt_center" headers="full3">0.004</td>
+<td class="gt_row gt_center" headers="full4">-0.000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline1">(0.007)</td>
+<td class="gt_row gt_center" headers="baseline2">(0.002)</td>
+<td class="gt_row gt_center" headers="full1">(0.008)</td>
+<td class="gt_row gt_center" headers="full2">(0.003)</td>
+<td class="gt_row gt_center" headers="full3">(0.003)</td>
+<td class="gt_row gt_center" headers="full4">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">relatedness_density</td>
+<td class="gt_row gt_center" headers="baseline1">0.055***</td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1">0.089***</td>
+<td class="gt_row gt_center" headers="full2"></td>
+<td class="gt_row gt_center" headers="full3">0.028***</td>
+<td class="gt_row gt_center" headers="full4">0.029***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline1">(0.002)</td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1">(0.006)</td>
+<td class="gt_row gt_center" headers="full2"></td>
+<td class="gt_row gt_center" headers="full3">(0.002)</td>
+<td class="gt_row gt_center" headers="full4">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_center" headers="baseline1">-0.003***</td>
+<td class="gt_row gt_center" headers="baseline2">-0.003***</td>
+<td class="gt_row gt_center" headers="full1">-0.001***</td>
+<td class="gt_row gt_center" headers="full2">-0.000</td>
+<td class="gt_row gt_center" headers="full3">-0.001**</td>
+<td class="gt_row gt_center" headers="full4">-0.001**</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline1">(0.001)</td>
+<td class="gt_row gt_center" headers="baseline2">(0.001)</td>
+<td class="gt_row gt_center" headers="full1">(0.000)</td>
+<td class="gt_row gt_center" headers="full2">(0.000)</td>
+<td class="gt_row gt_center" headers="full3">(0.000)</td>
+<td class="gt_row gt_center" headers="full4">(0.000)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">tech_comp</td>
+<td class="gt_row gt_center" headers="baseline1">-0.015***</td>
+<td class="gt_row gt_center" headers="baseline2">-0.005***</td>
+<td class="gt_row gt_center" headers="full1">-0.013***</td>
+<td class="gt_row gt_center" headers="full2">-0.004***</td>
+<td class="gt_row gt_center" headers="full3">-0.003***</td>
+<td class="gt_row gt_center" headers="full4">0.001***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline1">(0.002)</td>
+<td class="gt_row gt_center" headers="baseline2">(0.001)</td>
+<td class="gt_row gt_center" headers="full1">(0.002)</td>
+<td class="gt_row gt_center" headers="full2">(0.001)</td>
+<td class="gt_row gt_center" headers="full3">(0.001)</td>
+<td class="gt_row gt_center" headers="full4">(0.000)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">pred11</td>
+<td class="gt_row gt_center" headers="baseline1"></td>
+<td class="gt_row gt_center" headers="baseline2">0.081***</td>
+<td class="gt_row gt_center" headers="full1"></td>
+<td class="gt_row gt_center" headers="full2">0.089***</td>
+<td class="gt_row gt_center" headers="full3">0.086***</td>
+<td class="gt_row gt_center" headers="full4">0.082***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="baseline1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="baseline2" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.002)</td>
+<td class="gt_row gt_center" headers="full1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="full2" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.002)</td>
+<td class="gt_row gt_center" headers="full3" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.002)</td>
+<td class="gt_row gt_center" headers="full4" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="baseline1">1571364</td>
+<td class="gt_row gt_center" headers="baseline2">1571364</td>
+<td class="gt_row gt_center" headers="full1">1571364</td>
+<td class="gt_row gt_center" headers="full2">1571364</td>
+<td class="gt_row gt_center" headers="full3">1571364</td>
+<td class="gt_row gt_center" headers="full4">1571364</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2</td>
+<td class="gt_row gt_center" headers="baseline1">0.043</td>
+<td class="gt_row gt_center" headers="baseline2">0.086</td>
+<td class="gt_row gt_center" headers="full1">0.046</td>
+<td class="gt_row gt_center" headers="full2">0.092</td>
+<td class="gt_row gt_center" headers="full3">0.093</td>
+<td class="gt_row gt_center" headers="full4">0.097</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Adj.</td>
+<td class="gt_row gt_center" headers="baseline1">0.043</td>
+<td class="gt_row gt_center" headers="baseline2">0.086</td>
+<td class="gt_row gt_center" headers="full1">0.046</td>
+<td class="gt_row gt_center" headers="full2">0.092</td>
+<td class="gt_row gt_center" headers="full3">0.093</td>
+<td class="gt_row gt_center" headers="full4">0.097</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2 Within</td>
+<td class="gt_row gt_center" headers="baseline1"></td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1">0.014</td>
+<td class="gt_row gt_center" headers="full2">0.062</td>
+<td class="gt_row gt_center" headers="full3">0.062</td>
+<td class="gt_row gt_center" headers="full4">0.030</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Within Adj.</td>
+<td class="gt_row gt_center" headers="baseline1"></td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1">0.014</td>
+<td class="gt_row gt_center" headers="full2">0.062</td>
+<td class="gt_row gt_center" headers="full3">0.062</td>
+<td class="gt_row gt_center" headers="full4">0.030</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="baseline1">-36976.1</td>
+<td class="gt_row gt_center" headers="baseline2">-109812.6</td>
+<td class="gt_row gt_center" headers="full1">-41129.6</td>
+<td class="gt_row gt_center" headers="full2">-119089.6</td>
+<td class="gt_row gt_center" headers="full3">-120205.8</td>
+<td class="gt_row gt_center" headers="full4">-127189.1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="baseline1">-36914.8</td>
+<td class="gt_row gt_center" headers="baseline2">-109751.3</td>
+<td class="gt_row gt_center" headers="full1">-37375.8</td>
+<td class="gt_row gt_center" headers="full2">-115335.8</td>
+<td class="gt_row gt_center" headers="full3">-116439.6</td>
+<td class="gt_row gt_center" headers="full4">-115547.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">RMSE</td>
+<td class="gt_row gt_center" headers="baseline1">0.24</td>
+<td class="gt_row gt_center" headers="baseline2">0.23</td>
+<td class="gt_row gt_center" headers="full1">0.24</td>
+<td class="gt_row gt_center" headers="full2">0.23</td>
+<td class="gt_row gt_center" headers="full3">0.23</td>
+<td class="gt_row gt_center" headers="full4">0.23</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Std.Errors</td>
+<td class="gt_row gt_center" headers="baseline1">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="baseline2">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="full1">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="full2">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="full3">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="full4">by: region &amp; tech</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">FE: region</td>
+<td class="gt_row gt_center" headers="baseline1"></td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1">X</td>
+<td class="gt_row gt_center" headers="full2">X</td>
+<td class="gt_row gt_center" headers="full3">X</td>
+<td class="gt_row gt_center" headers="full4">X</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">FE: year</td>
+<td class="gt_row gt_center" headers="baseline1"></td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1">X</td>
+<td class="gt_row gt_center" headers="full2">X</td>
+<td class="gt_row gt_center" headers="full3">X</td>
+<td class="gt_row gt_center" headers="full4">X</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">FE: tech</td>
+<td class="gt_row gt_center" headers="baseline1"></td>
+<td class="gt_row gt_center" headers="baseline2"></td>
+<td class="gt_row gt_center" headers="full1"></td>
+<td class="gt_row gt_center" headers="full2"></td>
+<td class="gt_row gt_center" headers="full3"></td>
+<td class="gt_row gt_center" headers="full4">X</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="7" class="gt_sourcenote">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div id="tbl-entry-logit" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-entry-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.2
+</figcaption>
+<div aria-describedby="tbl-entry-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="network-effects-and-coherence-moderation" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="network-effects-and-coherence-moderation"><span class="header-section-number">5.2</span> Network Effects and Coherence Moderation</h2>
+<p><a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a> presents our core test of how technology network positions and regional knowledge infrastructure shape diversification potential. Column 4, our preferred specification with region and year fixed effects, shows that coherence—the alignment between a technology’s FITS embeddedness and the region’s portfolio—strongly predicts potential (<span class="math inline">\(0.706\)</span>). This aligns with the capabilities-based interpretation of relatedness in evolutionary economic geography. <span class="citation" data-cites="TechNetworkResilience">(<a href="references.html#ref-TechNetworkResilience" role="doc-biblioref"><strong>TechNetworkResilience?</strong></a>)</span> states that “economic activities are related through sharing various capabilities,” and it links diversification to learning enabled by “cognitive proximity and interactive learning” following Boschma’s proximity framework. In our setting, coherence operationalizes this shared-capability, portfolio-fit mechanism and remains stable across specifications, consistent with its interpretation as a structural feasibility correlate rather than a modeling artifact.</p>
+<div class="cell">
+<div id="tbl-potential-fe-ols" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.3: logit(pred1) - ols
+</figcaption>
+<div aria-describedby="tbl-potential-fe-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="xzfbzvmvfe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xzfbzvmvfe table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xzfbzvmvfe thead, #xzfbzvmvfe tbody, #xzfbzvmvfe tfoot, #xzfbzvmvfe tr, #xzfbzvmvfe td, #xzfbzvmvfe th {
+  border-style: none;
+}
+
+#xzfbzvmvfe p {
+  margin: 0;
+  padding: 0;
+}
+
+#xzfbzvmvfe .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xzfbzvmvfe .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xzfbzvmvfe .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xzfbzvmvfe .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xzfbzvmvfe .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xzfbzvmvfe .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xzfbzvmvfe .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xzfbzvmvfe .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xzfbzvmvfe .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xzfbzvmvfe .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xzfbzvmvfe .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xzfbzvmvfe .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xzfbzvmvfe .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xzfbzvmvfe .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xzfbzvmvfe .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xzfbzvmvfe .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xzfbzvmvfe .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xzfbzvmvfe .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xzfbzvmvfe .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xzfbzvmvfe .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xzfbzvmvfe .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xzfbzvmvfe .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xzfbzvmvfe .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xzfbzvmvfe .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xzfbzvmvfe .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xzfbzvmvfe .gt_left {
+  text-align: left;
+}
+
+#xzfbzvmvfe .gt_center {
+  text-align: center;
+}
+
+#xzfbzvmvfe .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xzfbzvmvfe .gt_font_normal {
+  font-weight: normal;
+}
+
+#xzfbzvmvfe .gt_font_bold {
+  font-weight: bold;
+}
+
+#xzfbzvmvfe .gt_font_italic {
+  font-style: italic;
+}
+
+#xzfbzvmvfe .gt_super {
+  font-size: 65%;
+}
+
+#xzfbzvmvfe .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xzfbzvmvfe .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xzfbzvmvfe .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xzfbzvmvfe .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xzfbzvmvfe .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xzfbzvmvfe .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xzfbzvmvfe .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xzfbzvmvfe .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xzfbzvmvfe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Potential (logit): Fixed Effects (LPM)</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="baseline" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">baseline</th>
+<th id="network" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">network</th>
+<th id="interaction_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction_a</th>
+<th id="interaction_a1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction_a1</th>
+<th id="interaction_b" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction_b</th>
+<th id="interaction_b1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction_b1</th>
+<th id="interaction_c" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction_c</th>
+<th id="interaction_c1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction_c1</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">(Intercept)</td>
+<td class="gt_row gt_center" headers="baseline">-2.528***</td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a">-2.462***</td>
+<td class="gt_row gt_center" headers="interaction_a1">-2.476***</td>
+<td class="gt_row gt_center" headers="interaction_b"></td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">-2.516***</td>
+<td class="gt_row gt_center" headers="interaction_c1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.070)</td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a">(0.074)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.074)</td>
+<td class="gt_row gt_center" headers="interaction_b"></td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">(0.071)</td>
+<td class="gt_row gt_center" headers="interaction_c1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">patent_n</td>
+<td class="gt_row gt_center" headers="baseline">0.211***</td>
+<td class="gt_row gt_center" headers="network">0.088***</td>
+<td class="gt_row gt_center" headers="interaction_a">0.213***</td>
+<td class="gt_row gt_center" headers="interaction_a1">0.215***</td>
+<td class="gt_row gt_center" headers="interaction_b">0.088***</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.091***</td>
+<td class="gt_row gt_center" headers="interaction_c">0.212***</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.088***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.054)</td>
+<td class="gt_row gt_center" headers="network">(0.023)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.053)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.054)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.023)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.024)</td>
+<td class="gt_row gt_center" headers="interaction_c">(0.053)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.023)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence</td>
+<td class="gt_row gt_center" headers="baseline">1.026***</td>
+<td class="gt_row gt_center" headers="network">0.779***</td>
+<td class="gt_row gt_center" headers="interaction_a">0.898***</td>
+<td class="gt_row gt_center" headers="interaction_a1">0.909***</td>
+<td class="gt_row gt_center" headers="interaction_b">0.706***</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.723***</td>
+<td class="gt_row gt_center" headers="interaction_c">0.944***</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.780***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.038)</td>
+<td class="gt_row gt_center" headers="network">(0.039)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.039)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.040)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.037)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.038)</td>
+<td class="gt_row gt_center" headers="interaction_c">(0.039)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.039)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist</td>
+<td class="gt_row gt_center" headers="baseline">-0.028</td>
+<td class="gt_row gt_center" headers="network">-0.039</td>
+<td class="gt_row gt_center" headers="interaction_a">-0.011</td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b">-0.029</td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">0.036</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.009</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.028)</td>
+<td class="gt_row gt_center" headers="network">(0.028)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.027)</td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b">(0.027)</td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">(0.046)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.045)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_center" headers="baseline">0.741***</td>
+<td class="gt_row gt_center" headers="network">0.013</td>
+<td class="gt_row gt_center" headers="interaction_a">0.746***</td>
+<td class="gt_row gt_center" headers="interaction_a1">0.741***</td>
+<td class="gt_row gt_center" headers="interaction_b">0.010</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.010</td>
+<td class="gt_row gt_center" headers="interaction_c">0.745***</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.013</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.065)</td>
+<td class="gt_row gt_center" headers="network">(0.018)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.066)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.065)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.017)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.017)</td>
+<td class="gt_row gt_center" headers="interaction_c">(0.065)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.018)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">tech_comp</td>
+<td class="gt_row gt_center" headers="baseline">-0.213***</td>
+<td class="gt_row gt_center" headers="network">-0.256***</td>
+<td class="gt_row gt_center" headers="interaction_a">-0.212***</td>
+<td class="gt_row gt_center" headers="interaction_a1">-0.198***</td>
+<td class="gt_row gt_center" headers="interaction_b">-0.254***</td>
+<td class="gt_row gt_center" headers="interaction_b1">-0.238***</td>
+<td class="gt_row gt_center" headers="interaction_c">-0.212***</td>
+<td class="gt_row gt_center" headers="interaction_c1">-0.255***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.035)</td>
+<td class="gt_row gt_center" headers="network">(0.040)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.035)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.034)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.039)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.038)</td>
+<td class="gt_row gt_center" headers="interaction_c">(0.035)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.040)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.131***</td>
+<td class="gt_row gt_center" headers="interaction_a">0.249***</td>
+<td class="gt_row gt_center" headers="interaction_a1">0.266***</td>
+<td class="gt_row gt_center" headers="interaction_b">0.388***</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.407***</td>
+<td class="gt_row gt_center" headers="interaction_c">0.101***</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.147***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.023)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.039)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.040)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.037)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.038)</td>
+<td class="gt_row gt_center" headers="interaction_c">(0.028)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.029)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">-0.237***</td>
+<td class="gt_row gt_center" headers="interaction_a">-0.206***</td>
+<td class="gt_row gt_center" headers="interaction_a1">-0.201***</td>
+<td class="gt_row gt_center" headers="interaction_b">-0.221***</td>
+<td class="gt_row gt_center" headers="interaction_b1">-0.216***</td>
+<td class="gt_row gt_center" headers="interaction_c">-0.209***</td>
+<td class="gt_row gt_center" headers="interaction_c1">-0.233***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.030)</td>
+<td class="gt_row gt_center" headers="interaction_a">(0.028)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.029)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.027)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.028)</td>
+<td class="gt_row gt_center" headers="interaction_c">(0.030)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.030)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness × coherence</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a">-0.184***</td>
+<td class="gt_row gt_center" headers="interaction_a1">-0.191***</td>
+<td class="gt_row gt_center" headers="interaction_b">-0.284***</td>
+<td class="gt_row gt_center" headers="interaction_b1">-0.292***</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a">(0.032)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.033)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.030)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.031)</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence × eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a">-0.015</td>
+<td class="gt_row gt_center" headers="interaction_a1">-0.001</td>
+<td class="gt_row gt_center" headers="interaction_b">-0.001</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.013</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a">(0.030)</td>
+<td class="gt_row gt_center" headers="interaction_a1">(0.031)</td>
+<td class="gt_row gt_center" headers="interaction_b">(0.028)</td>
+<td class="gt_row gt_center" headers="interaction_b1">(0.030)</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness × rawdist</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b"></td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">0.067</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.057</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b"></td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">(0.081)</td>
+<td class="gt_row gt_center" headers="interaction_c1">(0.078)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist × eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b"></td>
+<td class="gt_row gt_center" headers="interaction_b1"></td>
+<td class="gt_row gt_center" headers="interaction_c">-0.081***</td>
+<td class="gt_row gt_center" headers="interaction_c1">-0.080***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="baseline" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="network" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction_a" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction_a1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction_b" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction_b1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction_c" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.023)</td>
+<td class="gt_row gt_center" headers="interaction_c1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.023)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="baseline">1906137</td>
+<td class="gt_row gt_center" headers="network">1906137</td>
+<td class="gt_row gt_center" headers="interaction_a">1906137</td>
+<td class="gt_row gt_center" headers="interaction_a1">1922371</td>
+<td class="gt_row gt_center" headers="interaction_b">1906137</td>
+<td class="gt_row gt_center" headers="interaction_b1">1922371</td>
+<td class="gt_row gt_center" headers="interaction_c">1906137</td>
+<td class="gt_row gt_center" headers="interaction_c1">1906137</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2</td>
+<td class="gt_row gt_center" headers="baseline">0.354</td>
+<td class="gt_row gt_center" headers="network">0.659</td>
+<td class="gt_row gt_center" headers="interaction_a">0.366</td>
+<td class="gt_row gt_center" headers="interaction_a1">0.367</td>
+<td class="gt_row gt_center" headers="interaction_b">0.665</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.658</td>
+<td class="gt_row gt_center" headers="interaction_c">0.364</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.659</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Adj.</td>
+<td class="gt_row gt_center" headers="baseline">0.354</td>
+<td class="gt_row gt_center" headers="network">0.659</td>
+<td class="gt_row gt_center" headers="interaction_a">0.366</td>
+<td class="gt_row gt_center" headers="interaction_a1">0.367</td>
+<td class="gt_row gt_center" headers="interaction_b">0.665</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.658</td>
+<td class="gt_row gt_center" headers="interaction_c">0.364</td>
+<td class="gt_row gt_center" headers="interaction_c1">0.659</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2 Within</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.356</td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b">0.368</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.367</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1">0.357</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Within Adj.</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.356</td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b">0.368</td>
+<td class="gt_row gt_center" headers="interaction_b1">0.367</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1">0.357</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="baseline">7682716.6</td>
+<td class="gt_row gt_center" headers="network">6466221.8</td>
+<td class="gt_row gt_center" headers="interaction_a">7645396.3</td>
+<td class="gt_row gt_center" headers="interaction_a1">7738488.6</td>
+<td class="gt_row gt_center" headers="interaction_b">6429417.5</td>
+<td class="gt_row gt_center" headers="interaction_b1">6556534.8</td>
+<td class="gt_row gt_center" headers="interaction_c">7650873.9</td>
+<td class="gt_row gt_center" headers="interaction_c1">6461334.5</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="baseline">7682791.4</td>
+<td class="gt_row gt_center" headers="network">6470084.6</td>
+<td class="gt_row gt_center" headers="interaction_a">7645520.9</td>
+<td class="gt_row gt_center" headers="interaction_a1">7738600.8</td>
+<td class="gt_row gt_center" headers="interaction_b">6433305.2</td>
+<td class="gt_row gt_center" headers="interaction_b1">6560412.7</td>
+<td class="gt_row gt_center" headers="interaction_c">7650998.5</td>
+<td class="gt_row gt_center" headers="interaction_c1">6465222.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">RMSE</td>
+<td class="gt_row gt_center" headers="baseline">1.82</td>
+<td class="gt_row gt_center" headers="network">1.32</td>
+<td class="gt_row gt_center" headers="interaction_a">1.80</td>
+<td class="gt_row gt_center" headers="interaction_a1">1.81</td>
+<td class="gt_row gt_center" headers="interaction_b">1.31</td>
+<td class="gt_row gt_center" headers="interaction_b1">1.33</td>
+<td class="gt_row gt_center" headers="interaction_c">1.80</td>
+<td class="gt_row gt_center" headers="interaction_c1">1.32</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Std.Errors</td>
+<td class="gt_row gt_center" headers="baseline">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="network">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="interaction_a">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="interaction_a1">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="interaction_b">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="interaction_b1">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="interaction_c">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="interaction_c1">by: region &amp; tech</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">FE: year</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">X</td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b">X</td>
+<td class="gt_row gt_center" headers="interaction_b1">X</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1">X</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">FE: region</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">X</td>
+<td class="gt_row gt_center" headers="interaction_a"></td>
+<td class="gt_row gt_center" headers="interaction_a1"></td>
+<td class="gt_row gt_center" headers="interaction_b">X</td>
+<td class="gt_row gt_center" headers="interaction_b1">X</td>
+<td class="gt_row gt_center" headers="interaction_c"></td>
+<td class="gt_row gt_center" headers="interaction_c1">X</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="9" class="gt_sourcenote">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Betweenness centrality, capturing bridge positions that connect domains, exhibits substantial positive effects (<span class="math inline">\(0.388\)</span>). However, the coherence <span class="math inline">\(\times\)</span> betweenness interaction is significantly negative (<span class="math inline">\(-0.284\)</span>), revealing contextual contingency: bridging positions disproportionately benefit regions with lower coherence, offering catch-up opportunities when portfolios are misaligned with these bridge technologies. Conversely, high-coherence regions gain less from bridging positions, suggesting that their feasible opportunities are less dependent on bridge roles and more concentrated in already-aligned portions of the technology space. This contingency is conceptually consistent with a tension highlighted in <span class="citation" data-cites="TechNetworkResilience">(<a href="references.html#ref-TechNetworkResilience" role="doc-biblioref"><strong>TechNetworkResilience?</strong></a>)</span>. After reviewing the standard logic that related variety supports diversification, it notes that interdependencies can also transmit shocks and that evidence on how internal relatedness structures shape outcomes is mixed; it concludes that it is “still unclear” how relatedness shapes resilience and that “networks are of great assistance” because economies are “webs” of interdependent knowledge and activities. Our interaction result is consistent with that network-conditional view: the value of a network position depends on portfolio context rather than being uniform.</p>
+<p>The eigenvector centrality pattern presents a contrasting story. Technologies occupying authority positions consistently inhibit entry (e.g., <span class="math inline">\(-0.221\)</span> in Column 4), yet the coherence <span class="math inline">\(\times\)</span> eigenvector interaction remains non-significant. A conservative interpretation is that authority-like targets are systematically difficult to enter regardless of alignment as captured by coherence. This pattern is compatible with arguments that diversification requires more than proximity. <span class="citation" data-cites="GoingBeyondRelatednessKETs">(<a href="references.html#ref-GoingBeyondRelatednessKETs" role="doc-biblioref"><strong>GoingBeyondRelatednessKETs?</strong></a>)</span> argues that diversification is “going beyond relatedness” and reports that enabling technologies support more exploratory trajectories “only when” they are used by other local technologies, implying a complementarity and integration condition beyond portfolio fit alone. Our null moderation for eigenvector is consistent with the idea that barriers for authority targets reflect complements or coordination not captured by alignment measures.</p>
+<p>Distance becomes most informative once interactions are introduced. In Table <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a>, the main effect of rawdist is not stable in the fixed effects setting, but the interaction between rawdist and eigenvector is negative and robust (around <span class="math inline">\(-0.080\)</span> in the distance-interaction specifications). This indicates that authority technologies become particularly difficult when they are also topologically remote from any regional foothold. This mechanism is close to the account in <span class="citation" data-cites="StrongLinksWeakLinksUnrelatedSurvive">(<a href="references.html#ref-StrongLinksWeakLinksUnrelatedSurvive" role="doc-biblioref"><strong>StrongLinksWeakLinksUnrelatedSurvive?</strong></a>)</span>, which describes network links as “pipelines” and states that “the strength of links reflects technological distance,” with the implication that predictable transfer is more feasible through stronger, closer links. In contrast, the betweenness <span class="math inline">\(\times\)</span> rawdist interaction is small and not robust in the fixed effects specifications (e.g., <span class="math inline">\(0.067\)</span> and <span class="math inline">\(0.057\)</span> with large standard errors), suggesting limited evidence in within-region comparisons that bridge positions systematically enable longer jumps purely through remoteness.</p>
+</section>
+<section id="national-context-and-robustness" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="national-context-and-robustness"><span class="header-section-number">5.3</span> National Context and Robustness</h2>
+<p><a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.4</span></a> extends our framework by incorporating national entrepreneurial ecosystem characteristics from the Global Entrepreneurship Index. Column 4 shows that the core dyadic mechanisms persist: coherence remains positive (<span class="math inline">\(0.709\)</span>), betweenness remains positive (<span class="math inline">\(0.398\)</span>), and the coherence <span class="math inline">\(\times\)</span> betweenness interaction remains negative (<span class="math inline">\(-0.292\)</span>). The eigenvector penalty likewise persists (around <span class="math inline">\(-0.222\)</span>) without coherence moderation, and the distance–authority interaction remains negative (rawdist <span class="math inline">\(\times\)</span> eigenvector around <span class="math inline">\(-0.082\)</span>). This stability supports a cautious conclusion that the coherence and network-position mechanisms are not simply proxies for national institutional variation. At the same time, national ecosystem variables contribute additional explanatory structure. Competition is consistently positive (about <span class="math inline">\(0.088\)</span> in Column 4), while internationalization is consistently negative (about <span class="math inline">\(-0.082\)</span>). Other GEI components show heterogeneous patterns across specifications, suggesting they may operate differently in cross-sectional comparisons than in within-country temporal change. This combination of stable dyadic mechanisms and non-negligible national effects is consistent with <span class="citation" data-cites="RelatednessAndEconComplexityPolicy">(<a href="references.html#ref-RelatednessAndEconComplexityPolicy" role="doc-biblioref"><strong>RelatednessAndEconComplexityPolicy?</strong></a>)</span>, which cautions against treating relatedness metrics as sufficient guides to diversification because institutional and policy context can shape which opportunities are realized. This heterogeneity notwithstanding, the consistency of competition and internationalization effects, alongside the stable core mechanisms, provides sufficient evidence for H3 that national entrepreneurial ecosystems shape regional potential beyond dyadic technology-region characteristics.</p>
+<div class="cell">
+<div id="tbl-potential-fe-ols-h" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-ols-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.4: logit(pred1) - ols
+</figcaption>
+<div aria-describedby="tbl-potential-fe-ols-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="bxavxesbfn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bxavxesbfn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bxavxesbfn thead, #bxavxesbfn tbody, #bxavxesbfn tfoot, #bxavxesbfn tr, #bxavxesbfn td, #bxavxesbfn th {
+  border-style: none;
+}
+
+#bxavxesbfn p {
+  margin: 0;
+  padding: 0;
+}
+
+#bxavxesbfn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bxavxesbfn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bxavxesbfn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bxavxesbfn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bxavxesbfn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bxavxesbfn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bxavxesbfn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bxavxesbfn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bxavxesbfn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bxavxesbfn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bxavxesbfn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bxavxesbfn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bxavxesbfn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bxavxesbfn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bxavxesbfn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bxavxesbfn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bxavxesbfn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bxavxesbfn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bxavxesbfn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bxavxesbfn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bxavxesbfn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bxavxesbfn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bxavxesbfn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bxavxesbfn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bxavxesbfn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bxavxesbfn .gt_left {
+  text-align: left;
+}
+
+#bxavxesbfn .gt_center {
+  text-align: center;
+}
+
+#bxavxesbfn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bxavxesbfn .gt_font_normal {
+  font-weight: normal;
+}
+
+#bxavxesbfn .gt_font_bold {
+  font-weight: bold;
+}
+
+#bxavxesbfn .gt_font_italic {
+  font-style: italic;
+}
+
+#bxavxesbfn .gt_super {
+  font-size: 65%;
+}
+
+#bxavxesbfn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bxavxesbfn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bxavxesbfn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bxavxesbfn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bxavxesbfn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bxavxesbfn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bxavxesbfn .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#bxavxesbfn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#bxavxesbfn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Potential (logit): Fixed Effects (LPM)</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="h0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h0</th>
+<th id="h01" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h01</th>
+<th id="h1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h1</th>
+<th id="h2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h2</th>
+<th id="h3" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h3</th>
+<th id="h3-" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h3</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">(Intercept)</td>
+<td class="gt_row gt_center" headers="h0">-2.493***</td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1">-2.406***</td>
+<td class="gt_row gt_center" headers="h2"></td>
+<td class="gt_row gt_center" headers="h3">-2.480***</td>
+<td class="gt_row gt_center" headers="h3 "></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.060)</td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1">(0.063)</td>
+<td class="gt_row gt_center" headers="h2"></td>
+<td class="gt_row gt_center" headers="h3">(0.061)</td>
+<td class="gt_row gt_center" headers="h3 "></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">patent_n</td>
+<td class="gt_row gt_center" headers="h0">0.181***</td>
+<td class="gt_row gt_center" headers="h01">0.090***</td>
+<td class="gt_row gt_center" headers="h1">0.181***</td>
+<td class="gt_row gt_center" headers="h2">0.090***</td>
+<td class="gt_row gt_center" headers="h3">0.181***</td>
+<td class="gt_row gt_center" headers="h3 ">0.089***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.044)</td>
+<td class="gt_row gt_center" headers="h01">(0.023)</td>
+<td class="gt_row gt_center" headers="h1">(0.045)</td>
+<td class="gt_row gt_center" headers="h2">(0.024)</td>
+<td class="gt_row gt_center" headers="h3">(0.044)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.023)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence</td>
+<td class="gt_row gt_center" headers="h0">0.884***</td>
+<td class="gt_row gt_center" headers="h01">0.784***</td>
+<td class="gt_row gt_center" headers="h1">0.826***</td>
+<td class="gt_row gt_center" headers="h2">0.709***</td>
+<td class="gt_row gt_center" headers="h3">0.885***</td>
+<td class="gt_row gt_center" headers="h3 ">0.785***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.039)</td>
+<td class="gt_row gt_center" headers="h01">(0.040)</td>
+<td class="gt_row gt_center" headers="h1">(0.038)</td>
+<td class="gt_row gt_center" headers="h2">(0.038)</td>
+<td class="gt_row gt_center" headers="h3">(0.039)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.040)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist</td>
+<td class="gt_row gt_center" headers="h0">-0.024</td>
+<td class="gt_row gt_center" headers="h01">-0.037</td>
+<td class="gt_row gt_center" headers="h1">-0.015</td>
+<td class="gt_row gt_center" headers="h2">-0.027</td>
+<td class="gt_row gt_center" headers="h3">0.031</td>
+<td class="gt_row gt_center" headers="h3 ">0.010</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.030)</td>
+<td class="gt_row gt_center" headers="h01">(0.030)</td>
+<td class="gt_row gt_center" headers="h1">(0.029)</td>
+<td class="gt_row gt_center" headers="h2">(0.029)</td>
+<td class="gt_row gt_center" headers="h3">(0.046)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.045)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_center" headers="h0">0.519***</td>
+<td class="gt_row gt_center" headers="h01">0.015</td>
+<td class="gt_row gt_center" headers="h1">0.518***</td>
+<td class="gt_row gt_center" headers="h2">0.011</td>
+<td class="gt_row gt_center" headers="h3">0.519***</td>
+<td class="gt_row gt_center" headers="h3 ">0.015</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.063)</td>
+<td class="gt_row gt_center" headers="h01">(0.021)</td>
+<td class="gt_row gt_center" headers="h1">(0.063)</td>
+<td class="gt_row gt_center" headers="h2">(0.020)</td>
+<td class="gt_row gt_center" headers="h3">(0.063)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.021)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">tech_comp</td>
+<td class="gt_row gt_center" headers="h0">-0.215***</td>
+<td class="gt_row gt_center" headers="h01">-0.243***</td>
+<td class="gt_row gt_center" headers="h1">-0.214***</td>
+<td class="gt_row gt_center" headers="h2">-0.241***</td>
+<td class="gt_row gt_center" headers="h3">-0.214***</td>
+<td class="gt_row gt_center" headers="h3 ">-0.241***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.039)</td>
+<td class="gt_row gt_center" headers="h01">(0.042)</td>
+<td class="gt_row gt_center" headers="h1">(0.039)</td>
+<td class="gt_row gt_center" headers="h2">(0.041)</td>
+<td class="gt_row gt_center" headers="h3">(0.039)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.042)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness</td>
+<td class="gt_row gt_center" headers="h0">0.104***</td>
+<td class="gt_row gt_center" headers="h01">0.133***</td>
+<td class="gt_row gt_center" headers="h1">0.316***</td>
+<td class="gt_row gt_center" headers="h2">0.398***</td>
+<td class="gt_row gt_center" headers="h3">0.121***</td>
+<td class="gt_row gt_center" headers="h3 ">0.147***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.023)</td>
+<td class="gt_row gt_center" headers="h01">(0.024)</td>
+<td class="gt_row gt_center" headers="h1">(0.038)</td>
+<td class="gt_row gt_center" headers="h2">(0.038)</td>
+<td class="gt_row gt_center" headers="h3">(0.029)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.030)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">eigenvector</td>
+<td class="gt_row gt_center" headers="h0">-0.224***</td>
+<td class="gt_row gt_center" headers="h01">-0.240***</td>
+<td class="gt_row gt_center" headers="h1">-0.211***</td>
+<td class="gt_row gt_center" headers="h2">-0.222***</td>
+<td class="gt_row gt_center" headers="h3">-0.220***</td>
+<td class="gt_row gt_center" headers="h3 ">-0.235***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.031)</td>
+<td class="gt_row gt_center" headers="h01">(0.031)</td>
+<td class="gt_row gt_center" headers="h1">(0.028)</td>
+<td class="gt_row gt_center" headers="h2">(0.028)</td>
+<td class="gt_row gt_center" headers="h3">(0.031)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.031)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x8_human_capital</td>
+<td class="gt_row gt_center" headers="h0">-0.132*</td>
+<td class="gt_row gt_center" headers="h01">0.044*</td>
+<td class="gt_row gt_center" headers="h1">-0.134*</td>
+<td class="gt_row gt_center" headers="h2">0.044*</td>
+<td class="gt_row gt_center" headers="h3">-0.132*</td>
+<td class="gt_row gt_center" headers="h3 ">0.044*</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.054)</td>
+<td class="gt_row gt_center" headers="h01">(0.022)</td>
+<td class="gt_row gt_center" headers="h1">(0.054)</td>
+<td class="gt_row gt_center" headers="h2">(0.022)</td>
+<td class="gt_row gt_center" headers="h3">(0.054)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.022)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x9_competition</td>
+<td class="gt_row gt_center" headers="h0">0.568***</td>
+<td class="gt_row gt_center" headers="h01">0.087*</td>
+<td class="gt_row gt_center" headers="h1">0.573***</td>
+<td class="gt_row gt_center" headers="h2">0.088**</td>
+<td class="gt_row gt_center" headers="h3">0.568***</td>
+<td class="gt_row gt_center" headers="h3 ">0.088*</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.082)</td>
+<td class="gt_row gt_center" headers="h01">(0.034)</td>
+<td class="gt_row gt_center" headers="h1">(0.082)</td>
+<td class="gt_row gt_center" headers="h2">(0.034)</td>
+<td class="gt_row gt_center" headers="h3">(0.082)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.034)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x10_product_innovation</td>
+<td class="gt_row gt_center" headers="h0">0.198***</td>
+<td class="gt_row gt_center" headers="h01">0.016</td>
+<td class="gt_row gt_center" headers="h1">0.200***</td>
+<td class="gt_row gt_center" headers="h2">0.017</td>
+<td class="gt_row gt_center" headers="h3">0.198***</td>
+<td class="gt_row gt_center" headers="h3 ">0.016</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.056)</td>
+<td class="gt_row gt_center" headers="h01">(0.018)</td>
+<td class="gt_row gt_center" headers="h1">(0.056)</td>
+<td class="gt_row gt_center" headers="h2">(0.018)</td>
+<td class="gt_row gt_center" headers="h3">(0.056)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.018)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x11_process_innovation</td>
+<td class="gt_row gt_center" headers="h0">0.235***</td>
+<td class="gt_row gt_center" headers="h01">-0.020</td>
+<td class="gt_row gt_center" headers="h1">0.236***</td>
+<td class="gt_row gt_center" headers="h2">-0.022</td>
+<td class="gt_row gt_center" headers="h3">0.235***</td>
+<td class="gt_row gt_center" headers="h3 ">-0.020</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.063)</td>
+<td class="gt_row gt_center" headers="h01">(0.028)</td>
+<td class="gt_row gt_center" headers="h1">(0.063)</td>
+<td class="gt_row gt_center" headers="h2">(0.028)</td>
+<td class="gt_row gt_center" headers="h3">(0.063)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.028)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x12_high_growth</td>
+<td class="gt_row gt_center" headers="h0">-0.110+</td>
+<td class="gt_row gt_center" headers="h01">0.008</td>
+<td class="gt_row gt_center" headers="h1">-0.109+</td>
+<td class="gt_row gt_center" headers="h2">0.009</td>
+<td class="gt_row gt_center" headers="h3">-0.110*</td>
+<td class="gt_row gt_center" headers="h3 ">0.008</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.056)</td>
+<td class="gt_row gt_center" headers="h01">(0.020)</td>
+<td class="gt_row gt_center" headers="h1">(0.056)</td>
+<td class="gt_row gt_center" headers="h2">(0.020)</td>
+<td class="gt_row gt_center" headers="h3">(0.056)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.020)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x13_internationalization</td>
+<td class="gt_row gt_center" headers="h0">-0.088</td>
+<td class="gt_row gt_center" headers="h01">-0.080**</td>
+<td class="gt_row gt_center" headers="h1">-0.090</td>
+<td class="gt_row gt_center" headers="h2">-0.082**</td>
+<td class="gt_row gt_center" headers="h3">-0.088</td>
+<td class="gt_row gt_center" headers="h3 ">-0.080**</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.054)</td>
+<td class="gt_row gt_center" headers="h01">(0.029)</td>
+<td class="gt_row gt_center" headers="h1">(0.054)</td>
+<td class="gt_row gt_center" headers="h2">(0.029)</td>
+<td class="gt_row gt_center" headers="h3">(0.054)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.029)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x14_risk_capital</td>
+<td class="gt_row gt_center" headers="h0">0.109*</td>
+<td class="gt_row gt_center" headers="h01">-0.035</td>
+<td class="gt_row gt_center" headers="h1">0.109*</td>
+<td class="gt_row gt_center" headers="h2">-0.035</td>
+<td class="gt_row gt_center" headers="h3">0.109*</td>
+<td class="gt_row gt_center" headers="h3 ">-0.035</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0">(0.045)</td>
+<td class="gt_row gt_center" headers="h01">(0.023)</td>
+<td class="gt_row gt_center" headers="h1">(0.046)</td>
+<td class="gt_row gt_center" headers="h2">(0.023)</td>
+<td class="gt_row gt_center" headers="h3">(0.045)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.023)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence × betweenness</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1">-0.234***</td>
+<td class="gt_row gt_center" headers="h2">-0.292***</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 "></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1">(0.031)</td>
+<td class="gt_row gt_center" headers="h2">(0.031)</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 "></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence × eigenvector</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1">-0.006</td>
+<td class="gt_row gt_center" headers="h2">0.002</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 "></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1">(0.030)</td>
+<td class="gt_row gt_center" headers="h2">(0.030)</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 "></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness × rawdist</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2"></td>
+<td class="gt_row gt_center" headers="h3">0.063</td>
+<td class="gt_row gt_center" headers="h3 ">0.050</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2"></td>
+<td class="gt_row gt_center" headers="h3">(0.079)</td>
+<td class="gt_row gt_center" headers="h3 ">(0.078)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist × eigenvector</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01"></td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2"></td>
+<td class="gt_row gt_center" headers="h3">-0.084***</td>
+<td class="gt_row gt_center" headers="h3 ">-0.082***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h0" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h01" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h2" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h3" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.024)</td>
+<td class="gt_row gt_center" headers="h3 " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.024)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="h0">1506300</td>
+<td class="gt_row gt_center" headers="h01">1506300</td>
+<td class="gt_row gt_center" headers="h1">1506300</td>
+<td class="gt_row gt_center" headers="h2">1506300</td>
+<td class="gt_row gt_center" headers="h3">1506300</td>
+<td class="gt_row gt_center" headers="h3 ">1506300</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2</td>
+<td class="gt_row gt_center" headers="h0">0.474</td>
+<td class="gt_row gt_center" headers="h01">0.661</td>
+<td class="gt_row gt_center" headers="h1">0.478</td>
+<td class="gt_row gt_center" headers="h2">0.668</td>
+<td class="gt_row gt_center" headers="h3">0.475</td>
+<td class="gt_row gt_center" headers="h3 ">0.662</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Adj.</td>
+<td class="gt_row gt_center" headers="h0">0.474</td>
+<td class="gt_row gt_center" headers="h01">0.661</td>
+<td class="gt_row gt_center" headers="h1">0.478</td>
+<td class="gt_row gt_center" headers="h2">0.668</td>
+<td class="gt_row gt_center" headers="h3">0.475</td>
+<td class="gt_row gt_center" headers="h3 ">0.662</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2 Within</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01">0.358</td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2">0.371</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 ">0.359</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Within Adj.</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01">0.358</td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2">0.371</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 ">0.359</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="h0">5748605.3</td>
+<td class="gt_row gt_center" headers="h01">5088428.5</td>
+<td class="gt_row gt_center" headers="h1">5735734.5</td>
+<td class="gt_row gt_center" headers="h2">5057169.8</td>
+<td class="gt_row gt_center" headers="h3">5745677.7</td>
+<td class="gt_row gt_center" headers="h3 ">5084204.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="h0">5748788.7</td>
+<td class="gt_row gt_center" headers="h01">5092279.4</td>
+<td class="gt_row gt_center" headers="h1">5735942.3</td>
+<td class="gt_row gt_center" headers="h2">5061045.2</td>
+<td class="gt_row gt_center" headers="h3">5745885.6</td>
+<td class="gt_row gt_center" headers="h3 ">5088080.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">RMSE</td>
+<td class="gt_row gt_center" headers="h0">1.63</td>
+<td class="gt_row gt_center" headers="h01">1.31</td>
+<td class="gt_row gt_center" headers="h1">1.62</td>
+<td class="gt_row gt_center" headers="h2">1.30</td>
+<td class="gt_row gt_center" headers="h3">1.63</td>
+<td class="gt_row gt_center" headers="h3 ">1.31</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Std.Errors</td>
+<td class="gt_row gt_center" headers="h0">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="h01">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="h1">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="h2">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="h3">by: region &amp; tech</td>
+<td class="gt_row gt_center" headers="h3 ">by: region &amp; tech</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">FE: region</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01">X</td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2">X</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 ">X</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">FE: year</td>
+<td class="gt_row gt_center" headers="h0"></td>
+<td class="gt_row gt_center" headers="h01">X</td>
+<td class="gt_row gt_center" headers="h1"></td>
+<td class="gt_row gt_center" headers="h2">X</td>
+<td class="gt_row gt_center" headers="h3"></td>
+<td class="gt_row gt_center" headers="h3 ">X</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="7" class="gt_sourcenote">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="hierarchical-structure-and-spatial-implications" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="hierarchical-structure-and-spatial-implications"><span class="header-section-number">5.4</span> Hierarchical Structure and Spatial Implications</h2>
+<p><a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a> <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a> employs random effects models that account for regions nested within countries, a specification that matches the hierarchical structure of the data and is appropriate given that the GEI variables are measured at the national level. The high intra-class correlation, <span class="math inline">\(ICC = 0.60\)</span>, implies that <span class="math inline">\(60%\)</span> of variance in potential is between units rather than within-region over time. The variance components show that country-level heterogeneity (standard deviation approximately <span class="math inline">\(1.12\)</span>–<span class="math inline">\(1.17\)</span>) exceeds region-within-country heterogeneity (approximately <span class="math inline">\(1.02\)</span>–<span class="math inline">\(1.04\)</span>). These magnitudes do not contradict the fixed effects results; rather, they clarify that while the fixed effects estimates document robust within-region mechanisms, a substantial portion of the feasibility landscape is structured by relatively persistent differences across countries and regions.</p>
+<p>Crucially, the core coefficients remain stable in the hierarchical models. In the random effects specification comparable to the fixed effects benchmark, coherence remains positive (around <span class="math inline">\(0.709\)</span>), betweenness remains positive (around <span class="math inline">\(0.398\)</span>), and the coherence <span class="math inline">\(\times\)</span> betweenness interaction remains negative (around <span class="math inline">\(-0.292\)</span>). Eigenvector centrality remains negative (around <span class="math inline">\(-0.222\)</span>) without coherence moderation. Distance is more salient in this setting: rawdist becomes significant and negative as a main effect (about <span class="math inline">\(-0.027\)</span>), consistent with the idea that topological accessibility matters for cross-regional comparisons even if it is less informative for within-region shifts once fixed effects absorb time-invariant accessibility differences. At the same time, the interaction results reinforce the earlier asymmetry. The rawdist <span class="math inline">\(\times\)</span> eigenvector term remains strongly negative (around <span class="math inline">\(-0.082\)</span>), indicating that remoteness compounds difficulty specifically for authority targets. The betweenness <span class="math inline">\(\times\)</span> rawdist interaction becomes positive and significant in the random effects model (e.g., <span class="math inline">\(0.050\)</span>–<span class="math inline">\(0.061\)</span>), suggesting that bridging positions may be more relevant for overcoming remoteness in between-place comparisons than in within-region variation. Because these patterns appear most clearly in the cross-sectional component captured by random effects, they should be interpreted as differences in accessibility across places rather than as short-run within-place responses.</p>
+<p>These hierarchical results also help justify the spatial models that follow. First, the large <span class="math inline">\(ICC\)</span> indicates that potential is strongly structured across places, not only through time-varying within-region dynamics. Second, <span class="citation" data-cites="TechNetworkResilience">(<a href="references.html#ref-TechNetworkResilience" role="doc-biblioref"><strong>TechNetworkResilience?</strong></a>)</span> emphasizes that regional economies are “webs” of interdependent activities and argues that “networks are of great assistance,” a framing that makes it plausible that feasibility is not independent across space but may be shaped by neighboring structures. Third, the distinction between within-region fixed effects patterns and between-place random effects patterns suggests that part of the remaining heterogeneity may be geographically patterned, motivating an explicit test for spatial dependence.</p>
+<div class="cell">
+<div id="tbl-potential-re" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-re-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.5: logit(pred1) - ols
+</figcaption>
+<div aria-describedby="tbl-potential-re-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="jkyxzsndcu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jkyxzsndcu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jkyxzsndcu thead, #jkyxzsndcu tbody, #jkyxzsndcu tfoot, #jkyxzsndcu tr, #jkyxzsndcu td, #jkyxzsndcu th {
+  border-style: none;
+}
+
+#jkyxzsndcu p {
+  margin: 0;
+  padding: 0;
+}
+
+#jkyxzsndcu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jkyxzsndcu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jkyxzsndcu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jkyxzsndcu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jkyxzsndcu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jkyxzsndcu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jkyxzsndcu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jkyxzsndcu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jkyxzsndcu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jkyxzsndcu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jkyxzsndcu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jkyxzsndcu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jkyxzsndcu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jkyxzsndcu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jkyxzsndcu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jkyxzsndcu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jkyxzsndcu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jkyxzsndcu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jkyxzsndcu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jkyxzsndcu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jkyxzsndcu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jkyxzsndcu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jkyxzsndcu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jkyxzsndcu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jkyxzsndcu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jkyxzsndcu .gt_left {
+  text-align: left;
+}
+
+#jkyxzsndcu .gt_center {
+  text-align: center;
+}
+
+#jkyxzsndcu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jkyxzsndcu .gt_font_normal {
+  font-weight: normal;
+}
+
+#jkyxzsndcu .gt_font_bold {
+  font-weight: bold;
+}
+
+#jkyxzsndcu .gt_font_italic {
+  font-style: italic;
+}
+
+#jkyxzsndcu .gt_super {
+  font-size: 65%;
+}
+
+#jkyxzsndcu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jkyxzsndcu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jkyxzsndcu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jkyxzsndcu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jkyxzsndcu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jkyxzsndcu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jkyxzsndcu .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jkyxzsndcu .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jkyxzsndcu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Potential (t): Random Effects</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="inter_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">inter_a</th>
+<th id="inter_a1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">inter_a1</th>
+<th id="inter_b" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">inter_b</th>
+<th id="inter_b1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">inter_b1</th>
+<th id="h_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h_a</th>
+<th id="h_b" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h_b</th>
+<th id="h_b1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">h_b1</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">(Intercept)</td>
+<td class="gt_row gt_center" headers="inter_a">-2.577***</td>
+<td class="gt_row gt_center" headers="inter_a1">-2.667***</td>
+<td class="gt_row gt_center" headers="inter_b">-2.573***</td>
+<td class="gt_row gt_center" headers="inter_b1">-2.666***</td>
+<td class="gt_row gt_center" headers="h_a">-2.817***</td>
+<td class="gt_row gt_center" headers="h_b">-2.711***</td>
+<td class="gt_row gt_center" headers="h_b1">-2.807***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.088)</td>
+<td class="gt_row gt_center" headers="inter_a1">(0.087)</td>
+<td class="gt_row gt_center" headers="inter_b">(0.088)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.088)</td>
+<td class="gt_row gt_center" headers="h_a">(0.227)</td>
+<td class="gt_row gt_center" headers="h_b">(0.230)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.227)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">patent_n</td>
+<td class="gt_row gt_center" headers="inter_a">0.109***</td>
+<td class="gt_row gt_center" headers="inter_a1">0.108***</td>
+<td class="gt_row gt_center" headers="inter_b">0.088***</td>
+<td class="gt_row gt_center" headers="inter_b1">0.088***</td>
+<td class="gt_row gt_center" headers="h_a">0.090***</td>
+<td class="gt_row gt_center" headers="h_b">0.090***</td>
+<td class="gt_row gt_center" headers="h_b1">0.089***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_a1">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist</td>
+<td class="gt_row gt_center" headers="inter_a">-0.032***</td>
+<td class="gt_row gt_center" headers="inter_a1">0.008***</td>
+<td class="gt_row gt_center" headers="inter_b">-0.029***</td>
+<td class="gt_row gt_center" headers="inter_b1">0.009***</td>
+<td class="gt_row gt_center" headers="h_a">-0.037***</td>
+<td class="gt_row gt_center" headers="h_b">-0.027***</td>
+<td class="gt_row gt_center" headers="h_b1">0.010***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_a1">(0.002)</td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.002)</td>
+<td class="gt_row gt_center" headers="h_a">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness</td>
+<td class="gt_row gt_center" headers="inter_a">0.427***</td>
+<td class="gt_row gt_center" headers="inter_a1">0.200***</td>
+<td class="gt_row gt_center" headers="inter_b">0.388***</td>
+<td class="gt_row gt_center" headers="inter_b1">0.147***</td>
+<td class="gt_row gt_center" headers="h_a">0.133***</td>
+<td class="gt_row gt_center" headers="h_b">0.398***</td>
+<td class="gt_row gt_center" headers="h_b1">0.147***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.002)</td>
+<td class="gt_row gt_center" headers="inter_a1">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b">(0.002)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence</td>
+<td class="gt_row gt_center" headers="inter_a">0.729***</td>
+<td class="gt_row gt_center" headers="inter_a1">0.802***</td>
+<td class="gt_row gt_center" headers="inter_b">0.706***</td>
+<td class="gt_row gt_center" headers="inter_b1">0.780***</td>
+<td class="gt_row gt_center" headers="h_a">0.784***</td>
+<td class="gt_row gt_center" headers="h_b">0.709***</td>
+<td class="gt_row gt_center" headers="h_b1">0.785***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_a1">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">eigenvector</td>
+<td class="gt_row gt_center" headers="inter_a">-0.212***</td>
+<td class="gt_row gt_center" headers="inter_a1">-0.223***</td>
+<td class="gt_row gt_center" headers="inter_b">-0.221***</td>
+<td class="gt_row gt_center" headers="inter_b1">-0.233***</td>
+<td class="gt_row gt_center" headers="h_a">-0.240***</td>
+<td class="gt_row gt_center" headers="h_b">-0.222***</td>
+<td class="gt_row gt_center" headers="h_b1">-0.235***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_a1">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness × coherence</td>
+<td class="gt_row gt_center" headers="inter_a">-0.270***</td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">-0.284***</td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence × eigenvector</td>
+<td class="gt_row gt_center" headers="inter_a">0.000</td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">-0.001</td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b">0.002</td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">betweenness × rawdist</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1">0.061***</td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1">0.057***</td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1">(0.004)</td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1">(0.004)</td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist × eigenvector</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1">-0.080***</td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1">-0.080***</td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1">-0.082***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1">(0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">0.010***</td>
+<td class="gt_row gt_center" headers="inter_b1">0.014***</td>
+<td class="gt_row gt_center" headers="h_a">0.015***</td>
+<td class="gt_row gt_center" headers="h_b">0.011***</td>
+<td class="gt_row gt_center" headers="h_b1">0.015***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">tech_comp</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">-0.254***</td>
+<td class="gt_row gt_center" headers="inter_b1">-0.255***</td>
+<td class="gt_row gt_center" headers="h_a">-0.243***</td>
+<td class="gt_row gt_center" headers="h_b">-0.241***</td>
+<td class="gt_row gt_center" headers="h_b1">-0.241***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b">(0.001)</td>
+<td class="gt_row gt_center" headers="inter_b1">(0.001)</td>
+<td class="gt_row gt_center" headers="h_a">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b">(0.001)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x8_human_capital</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">0.044***</td>
+<td class="gt_row gt_center" headers="h_b">0.044***</td>
+<td class="gt_row gt_center" headers="h_b1">0.044***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.003)</td>
+<td class="gt_row gt_center" headers="h_b">(0.003)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x9_competition</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">0.088***</td>
+<td class="gt_row gt_center" headers="h_b">0.088***</td>
+<td class="gt_row gt_center" headers="h_b1">0.088***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.005)</td>
+<td class="gt_row gt_center" headers="h_b">(0.005)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.005)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x10_product_innovation</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">0.016***</td>
+<td class="gt_row gt_center" headers="h_b">0.017***</td>
+<td class="gt_row gt_center" headers="h_b1">0.016***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x11_process_innovation</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">-0.020***</td>
+<td class="gt_row gt_center" headers="h_b">-0.022***</td>
+<td class="gt_row gt_center" headers="h_b1">-0.020***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.004)</td>
+<td class="gt_row gt_center" headers="h_b">(0.004)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.004)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x12_high_growth</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">0.008**</td>
+<td class="gt_row gt_center" headers="h_b">0.009**</td>
+<td class="gt_row gt_center" headers="h_b1">0.008**</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.003)</td>
+<td class="gt_row gt_center" headers="h_b">(0.003)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x13_internationalization</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">-0.080***</td>
+<td class="gt_row gt_center" headers="h_b">-0.082***</td>
+<td class="gt_row gt_center" headers="h_b1">-0.080***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.003)</td>
+<td class="gt_row gt_center" headers="h_b">(0.003)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">x14_risk_capital</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">-0.035***</td>
+<td class="gt_row gt_center" headers="h_b">-0.034***</td>
+<td class="gt_row gt_center" headers="h_b1">-0.035***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b1">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">coherence × betweenness</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b">-0.292***</td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b">(0.002)</td>
+<td class="gt_row gt_center" headers="h_b1"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rawdist × betweenness</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1">0.050***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a"></td>
+<td class="gt_row gt_center" headers="h_b"></td>
+<td class="gt_row gt_center" headers="h_b1">(0.004)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">SD (Observations)</td>
+<td class="gt_row gt_center" headers="inter_a">1.346</td>
+<td class="gt_row gt_center" headers="inter_a1">1.356</td>
+<td class="gt_row gt_center" headers="inter_b">1.307</td>
+<td class="gt_row gt_center" headers="inter_b1">1.318</td>
+<td class="gt_row gt_center" headers="h_a">1.310</td>
+<td class="gt_row gt_center" headers="h_b">1.296</td>
+<td class="gt_row gt_center" headers="h_b1">1.308</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">SD (Intercept regioncountry)</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">1.029</td>
+<td class="gt_row gt_center" headers="h_b">1.036</td>
+<td class="gt_row gt_center" headers="h_b1">1.028</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">SD (Intercept country)</td>
+<td class="gt_row gt_center" headers="inter_a"></td>
+<td class="gt_row gt_center" headers="inter_a1"></td>
+<td class="gt_row gt_center" headers="inter_b"></td>
+<td class="gt_row gt_center" headers="inter_b1"></td>
+<td class="gt_row gt_center" headers="h_a">1.124</td>
+<td class="gt_row gt_center" headers="h_b">1.135</td>
+<td class="gt_row gt_center" headers="h_b1">1.123</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">SD (Intercept region)</td>
+<td class="gt_row gt_center" headers="inter_a" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">1.497</td>
+<td class="gt_row gt_center" headers="inter_a1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">1.489</td>
+<td class="gt_row gt_center" headers="inter_b" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">1.513</td>
+<td class="gt_row gt_center" headers="inter_b1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">1.499</td>
+<td class="gt_row gt_center" headers="h_a" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h_b" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="h_b1" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="inter_a">1999432</td>
+<td class="gt_row gt_center" headers="inter_a1">1999432</td>
+<td class="gt_row gt_center" headers="inter_b">1906137</td>
+<td class="gt_row gt_center" headers="inter_b1">1906137</td>
+<td class="gt_row gt_center" headers="h_a">1506300</td>
+<td class="gt_row gt_center" headers="h_b">1506300</td>
+<td class="gt_row gt_center" headers="h_b1">1506300</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2 Marg.</td>
+<td class="gt_row gt_center" headers="inter_a">0.190</td>
+<td class="gt_row gt_center" headers="inter_a1">0.186</td>
+<td class="gt_row gt_center" headers="inter_b">0.202</td>
+<td class="gt_row gt_center" headers="inter_b1">0.198</td>
+<td class="gt_row gt_center" headers="h_a">0.197</td>
+<td class="gt_row gt_center" headers="h_b">0.201</td>
+<td class="gt_row gt_center" headers="h_b1">0.198</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2 Cond.</td>
+<td class="gt_row gt_center" headers="inter_a">0.638</td>
+<td class="gt_row gt_center" headers="inter_a1">0.631</td>
+<td class="gt_row gt_center" headers="inter_b">0.659</td>
+<td class="gt_row gt_center" headers="inter_b1">0.651</td>
+<td class="gt_row gt_center" headers="h_a">0.659</td>
+<td class="gt_row gt_center" headers="h_b">0.668</td>
+<td class="gt_row gt_center" headers="h_b1">0.659</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="inter_a">6864439.5</td>
+<td class="gt_row gt_center" headers="inter_a1">6894186.6</td>
+<td class="gt_row gt_center" headers="inter_b">6431985.8</td>
+<td class="gt_row gt_center" headers="inter_b1">6463890.4</td>
+<td class="gt_row gt_center" headers="h_a">5090780.3</td>
+<td class="gt_row gt_center" headers="h_b">5059555.4</td>
+<td class="gt_row gt_center" headers="h_b1">5086578.2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="inter_a">6864689.6</td>
+<td class="gt_row gt_center" headers="inter_a1">6894436.8</td>
+<td class="gt_row gt_center" headers="inter_b">6432259.9</td>
+<td class="gt_row gt_center" headers="inter_b1">6464164.5</td>
+<td class="gt_row gt_center" headers="h_a">5091110.4</td>
+<td class="gt_row gt_center" headers="h_b">5059909.9</td>
+<td class="gt_row gt_center" headers="h_b1">5086932.7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">ICC</td>
+<td class="gt_row gt_center" headers="inter_a">0.6</td>
+<td class="gt_row gt_center" headers="inter_a1">0.5</td>
+<td class="gt_row gt_center" headers="inter_b">0.6</td>
+<td class="gt_row gt_center" headers="inter_b1">0.6</td>
+<td class="gt_row gt_center" headers="h_a">0.6</td>
+<td class="gt_row gt_center" headers="h_b">0.6</td>
+<td class="gt_row gt_center" headers="h_b1">0.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">RMSE</td>
+<td class="gt_row gt_center" headers="inter_a">1.35</td>
+<td class="gt_row gt_center" headers="inter_a1">1.36</td>
+<td class="gt_row gt_center" headers="inter_b">1.31</td>
+<td class="gt_row gt_center" headers="inter_b1">1.32</td>
+<td class="gt_row gt_center" headers="h_a">1.31</td>
+<td class="gt_row gt_center" headers="h_b">1.30</td>
+<td class="gt_row gt_center" headers="h_b1">1.31</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="8" class="gt_sourcenote">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="role-of-space" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="role-of-space"><span class="header-section-number">5.5</span> Role of space</h2>
+<p>Having established stable dyadic mechanisms at the technology–region level (Tables <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a> and <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.4</span></a>) and substantial between-place heterogeneity in the hierarchical models (Table <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a>), we test whether regional potential exhibits spatial dependence. We aggregate potential to region-year means and estimate spatial panel models with <span class="math inline">\(5\)</span>-nearest-neighbor weights matrices. Tables <a href="#tbl-spatial-sar" class="quarto-xref">Table&nbsp;<span>5.6</span></a> and <a href="#tbl-spatial-sem" class="quarto-xref">Table&nbsp;<span>5.7</span></a> reveal substantial spatial dependence. In the SAR model, the spatial autoregressive parameter is around <span class="math inline">\(0.376\)</span> in the interaction specification, indicating that regional potential is positively associated with neighboring regions’ outcomes. In the SEM model, the spatial error parameter is around <span class="math inline">\(0.420\)</span> in the interaction specification, indicating spatial correlation in unobserved components. These estimates are consistent with the interpretation that spatial context matters for regional feasibility landscapes, whether through spillovers or through correlated shocks and unobservables.</p>
+<div class="cell">
+<div id="tbl-spatial-sar" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spatial-sar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
+</figcaption>
+<div aria-describedby="tbl-spatial-sar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="lymlyuefzr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lymlyuefzr table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lymlyuefzr thead, #lymlyuefzr tbody, #lymlyuefzr tfoot, #lymlyuefzr tr, #lymlyuefzr td, #lymlyuefzr th {
+  border-style: none;
+}
+
+#lymlyuefzr p {
+  margin: 0;
+  padding: 0;
+}
+
+#lymlyuefzr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lymlyuefzr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lymlyuefzr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lymlyuefzr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lymlyuefzr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lymlyuefzr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lymlyuefzr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lymlyuefzr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lymlyuefzr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lymlyuefzr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lymlyuefzr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lymlyuefzr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lymlyuefzr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lymlyuefzr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lymlyuefzr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lymlyuefzr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lymlyuefzr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lymlyuefzr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lymlyuefzr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lymlyuefzr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lymlyuefzr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lymlyuefzr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lymlyuefzr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lymlyuefzr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lymlyuefzr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lymlyuefzr .gt_left {
+  text-align: left;
+}
+
+#lymlyuefzr .gt_center {
+  text-align: center;
+}
+
+#lymlyuefzr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lymlyuefzr .gt_font_normal {
+  font-weight: normal;
+}
+
+#lymlyuefzr .gt_font_bold {
+  font-weight: bold;
+}
+
+#lymlyuefzr .gt_font_italic {
+  font-style: italic;
+}
+
+#lymlyuefzr .gt_super {
+  font-size: 65%;
+}
+
+#lymlyuefzr .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lymlyuefzr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lymlyuefzr .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lymlyuefzr .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lymlyuefzr .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lymlyuefzr .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lymlyuefzr .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lymlyuefzr .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lymlyuefzr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Regional Potential (t): Spatial SAR Panel</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="baseline" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">baseline</th>
+<th id="network" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">network</th>
+<th id="interaction" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">(Intercept)</td>
+<td class="gt_row gt_center" headers="baseline">0.116***</td>
+<td class="gt_row gt_center" headers="network">0.136***</td>
+<td class="gt_row gt_center" headers="interaction">0.132***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.003)</td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_center" headers="baseline">0.060***</td>
+<td class="gt_row gt_center" headers="network">0.055***</td>
+<td class="gt_row gt_center" headers="interaction">0.054***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.003)</td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">patent_count</td>
+<td class="gt_row gt_center" headers="baseline">0.077***</td>
+<td class="gt_row gt_center" headers="network">0.062***</td>
+<td class="gt_row gt_center" headers="interaction">0.062***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.003)</td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">rho</td>
+<td class="gt_row gt_center" headers="baseline">0.464***</td>
+<td class="gt_row gt_center" headers="network">0.375***</td>
+<td class="gt_row gt_center" headers="interaction">0.376***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.015)</td>
+<td class="gt_row gt_center" headers="network">(0.016)</td>
+<td class="gt_row gt_center" headers="interaction">(0.016)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_coherence</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.055***</td>
+<td class="gt_row gt_center" headers="interaction">0.065***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_betweenness</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">-0.009**</td>
+<td class="gt_row gt_center" headers="interaction">0.009*</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.004)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.018***</td>
+<td class="gt_row gt_center" headers="interaction">0.022***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_coherence × avg_betweenness</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction">0.013***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_coherence × avg_eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction">0.006***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="baseline" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="network" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="baseline">3223</td>
+<td class="gt_row gt_center" headers="network">3223</td>
+<td class="gt_row gt_center" headers="interaction">3223</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">Log.Lik.</td>
+<td class="gt_row gt_center" headers="baseline">4350.51</td>
+<td class="gt_row gt_center" headers="network">4559.40</td>
+<td class="gt_row gt_center" headers="interaction">4578.55</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="baseline">-8693.02</td>
+<td class="gt_row gt_center" headers="network">-9104.81</td>
+<td class="gt_row gt_center" headers="interaction">-9139.09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="baseline">-8668.71</td>
+<td class="gt_row gt_center" headers="network">-9062.26</td>
+<td class="gt_row gt_center" headers="interaction">-9084.39</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Sigma</td>
+<td class="gt_row gt_center" headers="baseline">0.161</td>
+<td class="gt_row gt_center" headers="network">0.149</td>
+<td class="gt_row gt_center" headers="interaction">0.148</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">Res.Var</td>
+<td class="gt_row gt_center" headers="baseline">0.024</td>
+<td class="gt_row gt_center" headers="network">0.021</td>
+<td class="gt_row gt_center" headers="interaction">0.021</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">EDF Total</td>
+<td class="gt_row gt_center" headers="baseline">4</td>
+<td class="gt_row gt_center" headers="network">7</td>
+<td class="gt_row gt_center" headers="interaction">9</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="4" class="gt_sourcenote">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The regional aggregate covariates also help interpret the relationship between dyadic feasibility and portfolio-level advantage. Average coherence is positive (about <span class="math inline">\(0.065\)</span> in the SAR interaction model and <span class="math inline">\(0.073\)</span> in the SEM interaction model), consistent with the dyadic evidence that alignment is a central feasibility correlate. Average eigenvector centrality of existing portfolios is also positive (about <span class="math inline">\(0.022\)</span> in SAR and <span class="math inline">\(0.021\)</span> in SEM), and it interacts positively with average coherence (about <span class="math inline">\(0.006\)</span> in SAR and <span class="math inline">\(0.005\)</span> in SEM). This differs in sign from the dyadic eigenvector penalty for candidate technologies (around <span class="math inline">\(-0.22\)</span>). A conservative reconciliation is that these statistics capture different objects: dyadic eigenvector describes the difficulty of entering an authority-like target technology, whereas average eigenvector of a region’s existing specializations reflects accumulated capabilities embedded in those technologies that may raise overall potential across the opportunity set. This distinction is compatible with the enabling-technology argument in <span class="citation" data-cites="GoingBeyondRelatednessKETs">(<a href="references.html#ref-GoingBeyondRelatednessKETs" role="doc-biblioref"><strong>GoingBeyondRelatednessKETs?</strong></a>)</span>, which emphasizes that enabling capacities matter when they are embedded and used within the local system, rather than as isolated targets.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-lisa" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lisa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="results_files/figure-html/fig-lisa-1.png" id="fig-lisa" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-lisa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A similar distinction applies to betweenness. At the dyadic level, bridge positions are more valuable for low-coherence regions, reflected in the negative coherence <span class="math inline">\(\times\)</span> betweenness term (around <span class="math inline">\(-0.28\)</span>). At the regional level, average betweenness is modest in isolation but becomes positive once interacted with average coherence (about <span class="math inline">\(0.013\)</span> in SAR and <span class="math inline">\(0.012\)</span> in SEM). This suggests that advantaged portfolios may combine alignment and bridging among what regions already do, while at the margin bridging targets provide relatively greater benefits when alignment is weak. Overall, the spatial results do not overturn the dyadic mechanisms; instead, they indicate that feasibility is also spatially structured, and that portfolio composition at the regional level can be associated with higher average potential even when entry into specific authority targets remains difficult.</p>
+<div class="cell">
+<div id="tbl-spatial-sem" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spatial-sem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
+</figcaption>
+<div aria-describedby="tbl-spatial-sem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="jwwyhvafjx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jwwyhvafjx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jwwyhvafjx thead, #jwwyhvafjx tbody, #jwwyhvafjx tfoot, #jwwyhvafjx tr, #jwwyhvafjx td, #jwwyhvafjx th {
+  border-style: none;
+}
+
+#jwwyhvafjx p {
+  margin: 0;
+  padding: 0;
+}
+
+#jwwyhvafjx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jwwyhvafjx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jwwyhvafjx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jwwyhvafjx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jwwyhvafjx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jwwyhvafjx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jwwyhvafjx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jwwyhvafjx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jwwyhvafjx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jwwyhvafjx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jwwyhvafjx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jwwyhvafjx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jwwyhvafjx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jwwyhvafjx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jwwyhvafjx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwwyhvafjx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jwwyhvafjx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jwwyhvafjx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jwwyhvafjx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwwyhvafjx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jwwyhvafjx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwwyhvafjx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jwwyhvafjx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwwyhvafjx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jwwyhvafjx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwwyhvafjx .gt_left {
+  text-align: left;
+}
+
+#jwwyhvafjx .gt_center {
+  text-align: center;
+}
+
+#jwwyhvafjx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jwwyhvafjx .gt_font_normal {
+  font-weight: normal;
+}
+
+#jwwyhvafjx .gt_font_bold {
+  font-weight: bold;
+}
+
+#jwwyhvafjx .gt_font_italic {
+  font-style: italic;
+}
+
+#jwwyhvafjx .gt_super {
+  font-size: 65%;
+}
+
+#jwwyhvafjx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jwwyhvafjx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jwwyhvafjx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jwwyhvafjx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jwwyhvafjx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jwwyhvafjx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jwwyhvafjx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jwwyhvafjx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jwwyhvafjx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Regional Potential (t): Spatial SEM Panel</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="baseline" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">baseline</th>
+<th id="network" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">network</th>
+<th id="interaction" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">interaction</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">(Intercept)</td>
+<td class="gt_row gt_center" headers="baseline">0.217***</td>
+<td class="gt_row gt_center" headers="network">0.221***</td>
+<td class="gt_row gt_center" headers="interaction">0.217***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.006)</td>
+<td class="gt_row gt_center" headers="network">(0.005)</td>
+<td class="gt_row gt_center" headers="interaction">(0.005)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_center" headers="baseline">0.060***</td>
+<td class="gt_row gt_center" headers="network">0.059***</td>
+<td class="gt_row gt_center" headers="interaction">0.058***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.003)</td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">patent_count</td>
+<td class="gt_row gt_center" headers="baseline">0.072***</td>
+<td class="gt_row gt_center" headers="network">0.059***</td>
+<td class="gt_row gt_center" headers="interaction">0.059***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.003)</td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">delta</td>
+<td class="gt_row gt_center" headers="baseline">0.522***</td>
+<td class="gt_row gt_center" headers="network">0.421***</td>
+<td class="gt_row gt_center" headers="interaction">0.420***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline">(0.019)</td>
+<td class="gt_row gt_center" headers="network">(0.023)</td>
+<td class="gt_row gt_center" headers="interaction">(0.023)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_coherence</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.063***</td>
+<td class="gt_row gt_center" headers="interaction">0.073***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.004)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_betweenness</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">-0.008**</td>
+<td class="gt_row gt_center" headers="interaction">0.009*</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.004)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">0.017***</td>
+<td class="gt_row gt_center" headers="interaction">0.021***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network">(0.003)</td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_coherence × avg_betweenness</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction">0.012***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction">(0.003)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">avg_coherence × avg_eigenvector</td>
+<td class="gt_row gt_center" headers="baseline"></td>
+<td class="gt_row gt_center" headers="network"></td>
+<td class="gt_row gt_center" headers="interaction">0.005**</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="baseline" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="network" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="interaction" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(0.002)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="baseline">3223</td>
+<td class="gt_row gt_center" headers="network">3223</td>
+<td class="gt_row gt_center" headers="interaction">3223</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">Log.Lik.</td>
+<td class="gt_row gt_center" headers="baseline">4228.41</td>
+<td class="gt_row gt_center" headers="network">4443.00</td>
+<td class="gt_row gt_center" headers="interaction">4458.15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="baseline">-8448.83</td>
+<td class="gt_row gt_center" headers="network">-8871.99</td>
+<td class="gt_row gt_center" headers="interaction">-8898.31</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="baseline">-8424.51</td>
+<td class="gt_row gt_center" headers="network">-8829.45</td>
+<td class="gt_row gt_center" headers="interaction">-8843.61</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Sigma</td>
+<td class="gt_row gt_center" headers="baseline">0.181</td>
+<td class="gt_row gt_center" headers="network">0.162</td>
+<td class="gt_row gt_center" headers="interaction">0.161</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">Res.Var</td>
+<td class="gt_row gt_center" headers="baseline">0.025</td>
+<td class="gt_row gt_center" headers="network">0.023</td>
+<td class="gt_row gt_center" headers="interaction">0.022</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">EDF Total</td>
+<td class="gt_row gt_center" headers="baseline">4</td>
+<td class="gt_row gt_center" headers="network">7</td>
+<td class="gt_row gt_center" headers="interaction">9</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="4" class="gt_sourcenote">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="section" class="level7">
+<p class="heading"></p>
+<div id="tbl-potential-fe-logit" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.8: logit(pred1) - logistic
+</figcaption>
+<div aria-describedby="tbl-potential-fe-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+</figure>
+</div>
+<div id="tbl-potential-fe-logit-h" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-logit-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.9: logit(pred1) - logitic
+</figcaption>
+<div aria-describedby="tbl-potential-fe-logit-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+</figure>
+</div>
+<div id="tbl-potential-re1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-re1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.10: pred1 - ols
+</figcaption>
+<div aria-describedby="tbl-potential-re1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+</figure>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -590,7 +5508,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./empirical.html" class="pagination-link" aria-label="Empirical Design">
+      <a href="./empirical2.html" class="pagination-link" aria-label="Empirical Design">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span>
       </a>          
   </div>

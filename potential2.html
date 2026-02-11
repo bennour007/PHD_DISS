@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./empirical.html" rel="next">
+<link href="./empirical2.html" rel="next">
 <link href="./lit_rev.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -182,7 +182,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./empirical.html" class="sidebar-item-text sidebar-link">
+  <a href="./empirical2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span></a>
   </div>
 </li>
@@ -232,11 +232,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#technological-potential" id="toc-technological-potential" class="nav-link" data-scroll-target="#technological-potential"><span class="header-section-number">3.4</span> Technological Potential</a></li>
   <li><a href="#feature-importance-technology-space-fits" id="toc-feature-importance-technology-space-fits" class="nav-link" data-scroll-target="#feature-importance-technology-space-fits"><span class="header-section-number">3.5</span> Feature Importance Technology Space (FITS)</a></li>
-  <li><a href="#coherence-bridging-technology-networks-and-regional-portfolios" id="toc-coherence-bridging-technology-networks-and-regional-portfolios" class="nav-link" data-scroll-target="#coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.6</span> Coherence: Bridging Technology Networks and Regional Portfolios</a>
-  <ul class="collapse">
-  <li><a href="#empirical-application" id="toc-empirical-application" class="nav-link" data-scroll-target="#empirical-application"><span class="header-section-number">3.6.1</span> Empirical Application</a></li>
-  </ul></li>
-  <li><a href="#summary-of-methodological-framework" id="toc-summary-of-methodological-framework" class="nav-link" data-scroll-target="#summary-of-methodological-framework"><span class="header-section-number">4</span> Summary of Methodological Framework</a></li>
+  <li><a href="#coherence-bridging-technology-networks-and-regional-portfolios" id="toc-coherence-bridging-technology-networks-and-regional-portfolios" class="nav-link" data-scroll-target="#coherence-bridging-technology-networks-and-regional-portfolios"><span class="header-section-number">3.6</span> Coherence: Bridging Technology Networks and Regional Portfolios</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3.7</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -476,18 +473,18 @@ z_{r,t,y}
 <p>FITS identifies technology-to-technology relationships. Technological Potential quantifies regional diversification feasibility. <strong>Coherence</strong> bridges these levels by measuring the alignment between a technology’s position in the FITS network and a region’s existing specialization structure. In a way coherence can be viewed as sector level relatedness density.</p>
 <p>Consider two regions, both lacking specialization in technology <span class="math inline">\(i\)</span>, both having similar potential <span class="math inline">\(p_{r,i,y}\)</span>. However, Region A specializes in technologies that are strong predictors of <span class="math inline">\(i\)</span> (high incoming FITS edges), while Region B specializes in technologies unrelated to <span class="math inline">\(i\)</span> in the network. Coherence captures this difference: Region A has high coherence with <span class="math inline">\(i\)</span> (its portfolio aligns with <span class="math inline">\(i\)</span>’s network prerequisites), while Region B has low coherence (misalignment).</p>
 <p>This metric operationalizes the “knowledge coherence” and “cognitive proximity” concepts from innovation literature <span class="citation" data-cites="neffke2011how boschma2015towards">(<a href="references.html#ref-neffke2011how" role="doc-biblioref">Neffke, Henning, and Boschma 2011</a>; <a href="references.html#ref-boschma2015towards" role="doc-biblioref">Boschma 2015</a>)</span> using our directional network structure. It enables testing whether diversification success depends not just on potential (predicted feasibility) but on the structural fit between regional portfolios and technology network positions.</p>
-<p>For each region <span class="math inline">\(r\)</span>, technology <span class="math inline">\(i\)</span>, and IPC category <span class="math inline">\(c\)</span>, we construct two embedding vectors capturing <span class="math inline">\(i\)</span>’s directional network position and compare them to <span class="math inline">\(r\)</span>’s average embeddings for technologies in category <span class="math inline">\(c\)</span>.</p>
-<p><strong>Technology embeddings</strong> (individual technology <span class="math inline">\(i\)</span>):</p>
+<p>For each region <span class="math inline">\(r\)</span>, technology <span class="math inline">\(i\)</span>, and IPC category <span class="math inline">\(c\)</span>, we construct two embedding vectors capturing <span class="math inline">\(i\)</span>’s directional network position and compare them to <span class="math inline">\(r\)</span>’s average embededness for technologies in category <span class="math inline">\(c\)</span>.</p>
+<p><strong>Technology embededness</strong> (individual technology <span class="math inline">\(i\)</span>):</p>
 <ul>
 <li>Incoming: <span class="math inline">\(\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} &gt; 0\}|}\)</span> (average FITS weight from category <span class="math inline">\(c\)</span> to technology <span class="math inline">\(i\)</span>)</li>
 <li>Outgoing: <span class="math inline">\(\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} &gt; 0\}|}\)</span> (average FITS weight from technology <span class="math inline">\(i\)</span> to category <span class="math inline">\(c\)</span>)</li>
 </ul>
-<p><strong>Regional average embeddings</strong> (region <span class="math inline">\(r\)</span>, category <span class="math inline">\(c\)</span>):</p>
+<p><strong>Regional average embededness</strong> (region <span class="math inline">\(r\)</span>, category <span class="math inline">\(c\)</span>):</p>
 <ul>
 <li>Incoming: <span class="math inline">\(\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}\)</span> where <span class="math inline">\(S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}\)</span></li>
 <li>Outgoing: <span class="math inline">\(\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}\)</span></li>
 </ul>
-<p><strong>Coherence</strong> is the cosine similarity between technology <span class="math inline">\(i\)</span>’s directional embeddings and region <span class="math inline">\(r\)</span>’s average directional embeddings for category <span class="math inline">\(c\)</span>:</p>
+<p><strong>Coherence</strong> is the cosine similarity between technology <span class="math inline">\(i\)</span>’s directional embededness and region <span class="math inline">\(r\)</span>’s average directional embededness for category <span class="math inline">\(c\)</span>:</p>
 <p><span class="math display">\[
 \text{Coherence}_{r,i,c,y} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}
 \]</span></p>
@@ -502,8 +499,6 @@ z_{r,t,y}
 <li><strong>Neutral coherence</strong> (<span class="math inline">\(\approx 0\)</span>): Misalignment between technology <span class="math inline">\(i\)</span>’s relational structure and regional specialization patterns.</li>
 <li><strong>Negative coherence</strong> (<span class="math inline">\(\approx -1\)</span>): Technology <span class="math inline">\(i\)</span>’s network position is opposite to the region’s specialization structure (e.g., <span class="math inline">\(i\)</span> receives inputs from categories where the region sends outputs).</li>
 </ul>
-<section id="empirical-application" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="empirical-application"><span class="header-section-number">3.6.1</span> Empirical Application</h3>
 <p>Coherence serves two roles in our empirical analysis:</p>
 <ol type="1">
 <li><p><strong>Interaction with Potential</strong>: Test whether high potential translates to actual diversification only when coherence is also high (H2a: technology-specific characteristics moderated by regional knowledge coherence)</p></li>
@@ -511,9 +506,8 @@ z_{r,t,y}
 </ol>
 <p>By incorporating coherence, we test whether successful diversification requires not just predicted feasibility (potential) and related capabilities (traditional relatedness), but also structural alignment between regional portfolios and network prerequisites—a form of contextualization that traditional measures cannot capture.</p>
 </section>
-</section>
-<section id="summary-of-methodological-framework" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Summary of Methodological Framework</h1>
+<section id="summary" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.7</span> Summary</h2>
 <p>Our approach replaces traditional relatedness constructs with machine learning-derived measures that enable contextualized diversification analysis:</p>
 <ul>
 <li><strong>Technological Potential</strong> (<span class="math inline">\(p_{r,t,y}\)</span>): Region-specific, non-linear, time-varying probabilities replace linear relatedness density</li>
@@ -1037,7 +1031,7 @@ Zaccaria, Andrea, Saurabh Mishra, Masud Z Cader, and Luciano Pietronero. 2018. <
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./empirical.html" class="pagination-link" aria-label="Empirical Design">
+      <a href="./empirical2.html" class="pagination-link" aria-label="Empirical Design">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
