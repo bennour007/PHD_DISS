@@ -406,7 +406,7 @@ Coherence serves two roles in our empirical analysis:
 By incorporating coherence, we test whether successful diversification requires not just predicted feasibility (potential) and related capabilities (traditional relatedness), but also structural alignment between regional portfolios and network prerequisites—a form of contextualization that traditional measures cannot capture.
 
 
-# Summary of Methodological Framework
+## Summary of Methodological Framework
 
 Our approach replaces traditional relatedness constructs with machine learning-derived measures that enable contextualized diversification analysis:
 

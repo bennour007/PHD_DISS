@@ -1,3 +1,248 @@
 # Empirical Design
 
+```{r}
+
+pacman::p_load(modelsummary, gt)
+```
+
+
+
+Up until now we've established few ideas that justify the need to study technological diversification of sub-national regions. This need stems from the obvious observation of the increasing uncertainties in the world and the collapse of the conventional world order. Resilience in the face of these ever-increasing external shocks is essential for long term prosperity and sovereignty. Thus, a resilient economy must have diverse technological capacity in order to use these capacities and their underlying knowledge to evolve, adapt and change accordingly as a response to these challenges. To this end, a baseline of diverse knowledge is needed. In here, technological diversity is key since the entire idea is to combine knowledge in different configurations to produce novel knowledge that responds to scarcity, limitations, and challenges excreted from these uncertainties. From there we positioned our work within the geography of innovation and the REC literature and showed that the mainstream approach in studying diversification,specifically, relatedness-based diversification strategy rely on conceptual and methodological concepts that obscures much of the contextual information. In the previous chapter we highlighted these limitations, their core constructs and consequences. We then proposed a machine learning approach that reframes relatedness as a predictive excercice instead of a descriptive one. The main contrast between the mainstream approach and ours is that we are able to capture complex nonlinear interactions that estimates the likelihood of diversification of regions in our sample accounting for complex configuration which would be obscured compared to relatedness density measures, and we also showed that with our strategy we can construct a technology space (FITS) that captures more granular details in terms of the relationships between technologies. We also introduced the coherence metric, which we constructed around the FITS network to measure the alignment in terms of industrial embededness between a technology and a region. Coherence plays a pivotal role in our work since it provides further context and tells us whether a region has the industrial knowledge infrastructure to adopt and use a specific technology.
+
+However these extra contexts are not enough since they only show endogenous elements, in this chapter we take these ideas further to also account for the exogenous context specifically national and spatial factors. In order to do that we will start to decompose the different contexts and their relationships in a clear conceptual map that frames our work within clear boundaries as outlined in the objectives. Since we cannot account for every possible context and factor that could determine technological diversification we will constraint ourself to four specific elements:
+
+1- Links between technologies and regions.
+2- Coherence of technological industrial alignment between technologies and regions.
+3- National Entrepreneurial Ecosystem characteristics.
+4- Geographical and spacial proximity factors. 
+
+These elements are the roadmap of our conceptual and empirical design and guide us through our research questions, hypothesis, and the econometric specifications required to address each of them. Thus, our empirical analysis proceeds in analogue to the corresponding distinct levels of analysis and research questions. First we examine technology-region-year observations to test whether network position effects on technological potential are contingent on regional knowledge coherence (H2a, H2b) and national entrepreneurial ecosystem characteristics (H3a). Then we aggregate our data to a region-year panel to examine spatial dependence in regional potential (H4a-c).
+
+## Conceptual framework
+
+The relationship between regions and technologies operates through distinct yet interconnected characteristics that span multiple analytical levels. At the most granular level, technologies are defined by their position within the Feature Importance Technology Space (FITS) network captured through different measures we will elaborate on in the subsequent data section. Regions, conversely, are characterised by their existing technological landscape and aggregate complexity. The critical intersection between these two entities manifests in two dyadic properties: coherence and potential. Coherence measures the network-based alignment between a region's existing technological portfolio and a focal technology's embededness within FITS, essentially quantifying whether the region possesses the complementary knowledge infrastructure necessary for adoption or application. Potential represents the estimated probability of regional entry into a specific technology, constituting our primary outcome of interest. These shared characteristics emerge from the interaction between regional capabilities and technological requirements, forming the analytical bridge that connects disparate elements within our framework.
+
+
+
+```{mermaid}
+graph TB
+    subgraph " "
+        R[Region]
+        T[Technology]
+    end
+    
+    subgraph "Region-Specific"
+        RL[Technological<br/>Landscape]
+        RC[Regional<br/>Complexity]
+    end
+    
+    subgraph "Shared Characteristics"
+        COH[Coherence]
+        POT[Potential]
+    end
+    
+    subgraph "Technology-Specific"
+        POS[Position in<br/>FITS Network]
+        TC[Technology<br/>Complexity]
+    end
+    
+    R --> RL
+    R --> RC
+    R --> COH
+    R --> POT
+    
+    T --> POS
+    T --> TC
+    T --> COH
+    T --> POT
+    
+    style R fill:#e1f5ff
+    style T fill:#ffe1f5
+    style COH fill:#fff4e1
+    style POT fill:#fff4e1
+```
+
+Moreover, this dyadic relationship, is nested within broader contextual hierarchies that shape diversification dynamics. At the regional level, spatial interdependencies introduce spillover effects, where neighboring regions' average coherence and potential influence focal region outcomes through knowledge diffusion and competitive pressures. Moving up the hierarchy, the national entrepreneurial ecosystem—captured through Global Entrepreneurship Index (GEI) dimensions provides the institutional backdrop that uniformly affects all regions within a country. Critically, coherence serves not only as a direct predictor of potential but also as a moderator, amplifying or dampening the effects of technology network characteristics on regional potential. This moderation hypothesis posits that technologies occupying central network positions yield differential regional impacts depending on the degree of industrial alignment: high coherence regions can better leverage well-connected technologies, while low coherence regions may struggle despite favorable network positions. By decomposing these hierarchical levels—technology, region-technology dyad, region, and country—our framework captures both endogenous matching dynamics and exogenous contextual forces, providing a comprehensive view of the mechanisms driving regional technological diversification.
+
+
+```{mermaid}
+graph TB
+    subgraph Country["Country Level"]
+        GEI[National Entrepreneurial<br/>Ecosystem]
+    end
+    
+    subgraph Region["Region Level"]
+        NEIGH[Neighboring Regions'<br/>Avg Coherence & Potential]
+        REG[Focal Region]
+    end
+    
+    subgraph Dyad["Region-Technology Dyad"]
+        COH[Coherence<br/>Network-based Fit]
+        POT[Entry Potential]
+    end
+    
+    subgraph Tech["Technology Level"]
+        NET[Network Position<br/>Betweenness, Eigenvector]
+        COMP[Technology Complexity]
+    end
+    
+    GEI -.-> POT
+    NEIGH --> POT
+    REG --> COH
+    NET --> POT
+    COMP --> POT
+    COH -->|Moderates| POT
+    NET -.->|Moderated by| COH
+    
+    style Country fill:#f0f0f0,stroke:#999
+    style Region fill:#e1f5ff,stroke:#0066cc
+    style Dyad fill:#fff4e1,stroke:#ff9900
+    style Tech fill:#ffe1f5,stroke:#cc0066
+    style POT fill:#ffcc00,stroke:#996600,stroke-width:3px
+```
+
+With this conceptual mapping in mind, we can elaborate further on the specificities to the end of answering our Research Questions and testing the derived hypothesis. For that we propose two econometric models which we present in the next section and highlight the data used.
+
+## Research desgin
+
+As we mentioned in the introduction and reasserted in the previous section, our objective is to understand the different factors and contingencies contributing to the potential of a region in a technology with the main aim of contextualising the dynamics of the different relationships. In this section we will present our econometric approach which we can summarise in two models with the main outcome of interest being the regional potential. We will also highlight the independent variables we used as well as the contingencies, and specifications.  
+
+### Data and variables 
+
+Our outcome is region technological potential, the Random Forest-predicted probability that region $r$ develops specialization in technology $t$ by year $y$, given its prior portfolio at $y-4$. As developed in the methodology chapter. The rest of the variables are defined as follows:
+
+**Technology-region level:**
+
+| Variable | Description | Source |
+|----------|-------------|--------|
+| `patent_n` | Log patent count in technology $t$ for region $r$ | EPO/PATSTAT |
+| `coherence` | Cosine similarity between technology's FITS embededness and region's portfolio embededness | Computed from FITS |
+| `rawdist` | Network distance from region's specialized technologies to target | FITS shortest paths |
+
+**Technology structure (from FITS):**
+
+| Variable | Description | Interpretation |
+|----------|-------------|----------------|
+| `betweenness` | Betweenness centrality in FITS | Bridging technologies |
+| `authority` | Authority score (HITS algorithm) | Technologies predicted by many others |
+| `hub` | Hub score (HITS algorithm) | Technologies that predict many others |
+| `cat` | IPC section (A-H) | Technology domain fixed effects |
+
+**National context (GEI components):**
+
+| Variable | GEI Component |
+|----------|---------------|
+| `x8` | Human capital |
+| `x9` | Competition |
+| `x10` | Product innovation |
+| `x11` | Process innovation |
+| `x12` | High growth |
+| `x13` | Internationalization |
+| `x14` | Risk capital |
+
+
+
+
+
+### Model Specification
+
+
+We estimate generalized additive models (GAM) with beta-distributed errors to accommodate the bounded outcome of the potential:
+
+$$g(\mu_{r,t,y}) = \mathbf{X}_{r,t,y}\boldsymbol{\beta} + f_1(\text{year}) + f_2(\text{region}) + f_3(\text{tech}) + f_4(\text{country})$$
+
+where $g(\cdot)$ is the logit link, $\mu_{r,t,y} = E[\text{potential}^*_{r,t,y}]$, and $f_j(\cdot)$ are random effect smooths capturing unobserved heterogeneity at each level.
+
+We estimate five nested specifications to isolate the contribution of each predictor set:
+
+
+**Model 1 (Basic):** Regional and technology baseline
+
+$$g(\mu) = \beta_0 + \beta_1 \text{patents}_{r,t,y} + \beta_2 \text{coherence}_{r,t,y} + \beta_3 \text{distance}_{t,y}$$
+
+**Model 2 (Network):** Add FITS network position
+
+$$g(\mu) = \ldots + \beta_4 \text{betweenness}_t + \beta_5 \text{authority}_t + \beta_6 \text{hub}_t + \gamma_c \text{category}_t + f_j(\cdot)$$
+
+**Model 3 (Interaction):** Coherence moderates network effects
+
+$$g(\mu) = \ldots + \beta_7 (\text{coherence} \times \text{betweenness}) + \beta_8 (\text{coherence} \times \text{authority}) + \beta_9 (\text{coherence} \times \text{hub}) + \beta_{10} (\text{coherence} \times \text{distance})$$
+
+**Model 4 (Entrepreneurial):** Add national GEI factors
+
+$$g(\mu) = \text{Model 2} + \sum_{k=8}^{14} \delta_k \text{GEI}_k$$
+
+**Model 5 (Full):** Interactions plus GEI
+
+$$g(\mu) = \text{Model 3} + \sum_{k=8}^{14} \delta_k \text{GEI}_k$$
+
+
+We use `bam()` from the mgcv package, which implements fast estimation for large datasets via discretization of covariates. Random effects are specified as penalized smooth terms with ridge penalty, equivalent to random intercepts in mixed models.
+
+
+The interaction terms test H2 directly. A positive coefficient on $\text{coherence} \times \text{betweenness}$ indicates that bridging technologies yield higher potential *specifically when* regional portfolios align with the bridged domains. This supports the contextual argument: structural opportunity requires complementary capabilities.
+
+The GEI coefficients test H3. Positive effects indicate that national ecosystem characteristics enable higher regional potential, conditional on technological and portfolio factors.
+
+
+
+To examine spatial dynamics in regional technological potential, we adopt a Spatial Autoregressive (SAR) panel model with random effects. This specification choice follows from diagnostic testing.
+
+We first confirmed substantial spatial clustering using Moran's I statistics, which revealed persistent positive spatial autocorrelation across all years (I ≈ 0.44–0.51, p < 0.001). To discriminate between competing spatial specifications, we applied Baltagi-Song-Koh LM tests designed for panel data. The robust LM-lag test (350.4, p < 0.001) strongly rejected the null of no spatial lag dependence, while the robust LM-error test was only marginally significant (4.1, p = 0.042) after controlling for spatial lag. This indicates that spatial dependence operates primarily through neighbors' outcomes rather than through spatially correlated errors—regions with high-potential neighbors tend to exhibit higher potential themselves. Finally, the spatial Hausman test (χ² = 5.99, p = 0.112) found no significant difference between fixed and random effects specifications, supporting the use of random effects for efficiency.
+
+
+
+We aggregate technology-region-year observations to the region-year panel:
+
+$$P_{r,y} = \frac{1}{|\mathcal{T}|} \sum_{t \in \mathcal{T}} p_{r,t,y}$$
+
+
+Additionally, we also incorporate:
+
+| Variable | Definition |
+|----------|------------|
+| `n_specialized` | Count of technologies with RTA ≥ 1 |
+| `diversity` | Shannon entropy of portfolio |
+| `avg_coherence` | Mean coherence across technologies |
+| `avg_betweenness` | Mean betweenness of portfolio |
+| `avg_eigenvector` | Mean eigenvector centrality of portfolio |
+| `pct_high_between` | Share of portfolio above median betweenness |
+| `pct_high_eigen` | Share of portfolio above median eigenvector |
+
+
+
+We construct k-nearest neighbor weights based on geographic centroids:
+
+$$w_{ij} = \begin{cases} 1/k & \text{if } j \in \text{knn}_k(i) \\ 0 & \text{otherwise} \end{cases}$$
+
+with $k = 5$ and row-standardization ($\sum_j w_{ij} = 1$).
+
+
+We use these elements to construct the following models:
+
+
+**SAR with Durbin terms (Model A):**
+
+$$y_{r,y} = \rho \sum_j w_{ij} y_{j,y} + \mathbf{X}_{r,y}\boldsymbol{\beta} + \sum_j w_{ij} \mathbf{X}_{j,y}\boldsymbol{\theta} + \alpha_r + \epsilon_{r,y}$$
+
+This tests both outcome spillovers ($\rho$: does neighbors' potential affect focal region?) and covariate spillovers ($\theta$: do neighbors' characteristics affect focal region?).
+
+**Pure SAR (Model B):**
+
+$$y_{r,y} = \rho \sum_j w_{ij} y_{j,y} + \mathbf{X}_{r,y}\boldsymbol{\beta} + \alpha_r + \tau_y + \epsilon_{r,y}$$
+
+Tests outcome contagion only, with two-way fixed effects.
+
+**Spatial Durbin with selective lags (Model C):**
+
+$$y_{r,y} = \rho \sum_j w_{ij} y_{j,y} + \mathbf{X}_{r,y}\boldsymbol{\beta} + \sum_j w_{ij} \tilde{\mathbf{X}}_{j,y}\boldsymbol{\theta} + \alpha_r + \tau_y + \epsilon_{r,y}$$
+
+where $\tilde{\mathbf{X}}$ includes only `eigenvector`, `betweenness`, `patent_count`, and `n_specialized`. This tests whether *specific* neighbor characteristics matter.
+
+
+A significant $\rho > 0$ supports H4a: neighboring regions' potential positively affects focal region potential, suggesting knowledge spillovers or demonstration effects.
+
+Significant $\theta$ coefficients support H4b: neighbors' technological characteristics influence focal region outcomes beyond the focal region's own characteristics.
+
+
 

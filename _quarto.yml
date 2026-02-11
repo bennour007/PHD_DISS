@@ -10,7 +10,7 @@ book:
     - intro.qmd
     - lit_rev.qmd
     - potential2.qmd
-    - empirical.qmd
+    - empirical2.qmd
     - results.qmd
     - summary.qmd
     - references.qmd
@@ -39,6 +39,9 @@ format:
     lot: true
     lof: true
     
+execute:
+  echo: false
+  warning: false
 
 
 

@@ -336,19 +336,19 @@ Consider two regions, both lacking specialization in technology $i$, both having
 This metric operationalizes the "knowledge coherence" and "cognitive proximity" concepts from innovation literature [@neffke2011how; @boschma2015towards] using our directional network structure. It enables testing whether diversification success depends not just on potential (predicted feasibility) but on the structural fit between regional portfolios and technology network positions.
 
 
-For each region $r$, technology $i$, and IPC category $c$, we construct two embedding vectors capturing $i$'s directional network position and compare them to $r$'s average embeddings for technologies in category $c$.
+For each region $r$, technology $i$, and IPC category $c$, we construct two embedding vectors capturing $i$'s directional network position and compare them to $r$'s average embededness for technologies in category $c$.
 
-**Technology embeddings** (individual technology $i$):
+**Technology embededness** (individual technology $i$):
 
 - Incoming: $\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} > 0\}|}$ (average FITS weight from category $c$ to technology $i$)
 - Outgoing: $\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} > 0\}|}$ (average FITS weight from technology $i$ to category $c$)
 
-**Regional average embeddings** (region $r$, category $c$):
+**Regional average embededness** (region $r$, category $c$):
 
 - Incoming: $\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}$ where $S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}$
 - Outgoing: $\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}$
 
-**Coherence** is the cosine similarity between technology $i$'s directional embeddings and region $r$'s average directional embeddings for category $c$:
+**Coherence** is the cosine similarity between technology $i$'s directional embededness and region $r$'s average directional embededness for category $c$:
 
 $$
 \text{Coherence}_{r,i,c,y} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}
@@ -367,7 +367,6 @@ Coherence ranges from -1 to 1:
 - **Neutral coherence** ($\approx 0$): Misalignment between technology $i$'s relational structure and regional specialization patterns.
 - **Negative coherence** ($\approx -1$): Technology $i$'s network position is opposite to the region's specialization structure (e.g., $i$ receives inputs from categories where the region sends outputs).
 
-### Empirical Application
 
 Coherence serves two roles in our empirical analysis:
 
@@ -378,7 +377,7 @@ Coherence serves two roles in our empirical analysis:
 By incorporating coherence, we test whether successful diversification requires not just predicted feasibility (potential) and related capabilities (traditional relatedness), but also structural alignment between regional portfolios and network prerequisites—a form of contextualization that traditional measures cannot capture.
 
 
-# Summary of Methodological Framework
+## Summary
 
 Our approach replaces traditional relatedness constructs with machine learning-derived measures that enable contextualized diversification analysis:
 
