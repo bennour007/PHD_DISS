@@ -1344,6 +1344,350 @@
         {
             "author": [
                 {
+                    "family": "Christopherson",
+                    "given": "Susan"
+                },
+                {
+                    "family": "Michie",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Tyler",
+                    "given": "Peter"
+                }
+            ],
+            "container-title": "Cambridge Journal of Regions, Economy and Society",
+            "id": "christopherson2010regional",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "3-10",
+            "publisher": "Oxford University Press",
+            "title": "Regional resilience: Theoretical and empirical perspectives",
+            "title-short": "Regional resilience",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fingleton",
+                    "given": "Bernard"
+                },
+                {
+                    "family": "Garretsen",
+                    "given": "Harry"
+                },
+                {
+                    "family": "Martin",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Journal of Regional Science",
+            "id": "fingleton2012recessionary",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "109-133",
+            "publisher": "Wiley Online Library",
+            "title": "Recessionary shocks and regional employment: Evidence on the resilience of UK regions",
+            "title-short": "Recessionary shocks and regional employment",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Martin",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Journal of Economic Geography",
+            "id": "martin2012regional",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "1-32",
+            "publisher": "Oxford University Press",
+            "title": "Regional economic resilience, hysteresis and recessionary shocks",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pendall",
+                    "given": "Rolf"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Kathryn A"
+                },
+                {
+                    "family": "Cowell",
+                    "given": "Margaret"
+                }
+            ],
+            "container-title": "Cambridge Journal of Regions, Economy and Society",
+            "id": "pendall2010resilience",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "71-84",
+            "publisher": "Oxford University Press",
+            "title": "Resilience and regions: Building understanding of the metaphor",
+            "title-short": "Resilience and regions",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pike",
+                    "given": "Andy"
+                },
+                {
+                    "family": "Dawley",
+                    "given": "Stuart"
+                },
+                {
+                    "family": "Tomaney",
+                    "given": "John"
+                }
+            ],
+            "container-title": "Cambridge Journal of Regions, Economy and Society",
+            "id": "pike2010resilience",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "59-70",
+            "publisher": "Oxford University Press",
+            "title": "Resilience, adaptation and adaptability",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bathelt",
+                    "given": "Harald"
+                },
+                {
+                    "family": "Storper",
+                    "given": "Michael"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "bathelt2023related",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "441-470",
+            "publisher": "Taylor & Francis",
+            "title": "Related variety and regional development: A critique",
+            "title-short": "Related variety and regional development",
+            "type": "article-journal",
+            "volume": "99"
+        },
+        {
+            "author": [
+                {
+                    "family": "Simmie",
+                    "given": "James"
+                },
+                {
+                    "family": "Martin",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Cambridge Journal of Regions, Economy and Society",
+            "id": "simmie2010economic",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "27-43",
+            "publisher": "Oxford University Press",
+            "title": "The economic resilience of regions: Towards an evolutionary approach",
+            "title-short": "The economic resilience of regions",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Xiao",
+                    "given": "Jing"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Andersson",
+                    "given": "Martin"
+                }
+            ],
+            "container-title": "Industrial and Corporate Change",
+            "id": "xiao2018resilience",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "15-47",
+            "publisher": "Oxford University Press",
+            "title": "Resilience in the european union: The effect of the 2008 crisis on the ability of regions in europe to develop new industrial specializations",
+            "title-short": "Resilience in the european union",
+            "type": "article-journal",
+            "volume": "27"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rocchetta",
+                    "given": "Silvia"
+                },
+                {
+                    "family": "Mina",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Lee",
+                    "given": "Changjun"
+                },
+                {
+                    "family": "Kogler",
+                    "given": "Dieter F"
+                }
+            ],
+            "container-title": "Journal of Economic Geography",
+            "id": "rocchetta2022",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "27-51",
+            "publisher": "Oxford University Press",
+            "title": "Technological knowledge spaces and the resilience of european regions",
+            "type": "article-journal",
+            "volume": "22"
+        },
+        {
+            "author": [
+                {
+                    "family": "Tóth",
+                    "given": "Gergő"
+                },
+                {
+                    "family": "Elekes",
+                    "given": "Zoltán"
+                },
+                {
+                    "family": "Whittle",
+                    "given": "Adam"
+                },
+                {
+                    "family": "Lee",
+                    "given": "Changjun"
+                },
+                {
+                    "family": "Kogler",
+                    "given": "Dieter F"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "toth2022technology",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "355-378",
+            "publisher": "Taylor & Francis",
+            "title": "Technology network structure conditions the economic resilience of regions",
+            "type": "article-journal",
+            "volume": "98"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Kogler",
+                    "given": "Dieter Franz"
+                }
+            ],
+            "container-title": "Industrial and corporate change",
+            "id": "boschma2015relatedness",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "223-250",
+            "publisher": "Oxford University Press",
+            "title": "Relatedness and technological change in cities: The rise and fall of technological knowledge in US metropolitan areas from 1981 to 2010",
+            "title-short": "Relatedness and technological change in cities",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "author": [
+                {
                     "family": "Boschma",
                     "given": "Ron"
                 }
@@ -2339,6 +2683,37 @@
             "title-short": "To them that hath",
             "type": "article-journal",
             "volume": "29"
+        },
+        {
+            "author": [
+                {
+                    "family": "Balland",
+                    "given": "Pierre-Alexandre"
+                },
+                {
+                    "family": "Rigby",
+                    "given": "David"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Cambridge Journal of Regions, Economy and Society",
+            "id": "ballandboschma2015",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "167-184",
+            "publisher": "Oxford University Press UK",
+            "title": "The technological resilience of US cities",
+            "type": "article-journal",
+            "volume": "8"
         },
         {
             "author": [

@@ -2,4 +2,26 @@
 
 
 
+## Regional diversification as an outcome to resilience: Overview from an Evolutionary perspective
 
+In the previous chapter, we framed this work's core idea around the need to study technological diversification patterns of regions within a broader context. To justify this framing we grounded this core idea on the ever increasing importance of resilience facing an increasingly uncertain global and geopolitical world order [@xiao2018resilience]. Although resilience in itself is not a core focus of this work, we will use it an adjacent conceptual paradigm to justify our core ideas conceptually, methodologically and empirically through the literature. 
+
+Within the literature of evolutionary economic geography, @ballandboschma2015 summarize this turn toward resilience and highlight that, while interest has grown, "the resulting debate suggests [that economic geographers] are far from a common understanding". This is to say that resilience as a concept is attracting more attention, however, there's still no consensus on a generalised ontological framework that drives further research in this area. The different studies that addressed this concept (eg: @christopherson2010regional; @fingleton2012recessionary; @martin2012regional; @pendall2010resilience; @pike2010resilience; @simmie2010economic) relatively converge in refuting equilibrium based approaches that consider resilience as an immediate reaction to shock, and calling for further focus on an evolutionary approach. The argument for this proposed agenda is related to robust results showing that precedent regional capabilities are recycled over time with different configuration driving different regional growth paths [@boschma2015relatedness; @neffke2011how]. However, @ballandboschma2015 also criticises the literature in this context for ignoring key explanatory dimensions that are central to evolutionary accounts of regional change; technological relatedness, network structures, and institutions. 
+
+This agenda matters for the present study because our goal is not to address regional resilience, but to explain the mechanisms that shape diversification feasibility in a way that is consistent with an evolutionary view of regional adaptation. Some work has been done in this context notably @toth2022technology who address the relatedness and network structures gaps. The authors anchor their view on resilience by considering it an "adaptive ability of regions to reconfigure their economic structure" and that this ability could be observed in diversification patterns. This intuition was addressed and confirmed in @rocchetta2022 for technological diversification patterns and for industrial diversification patterns in @xiao2018resilience. 
+
+Against this background, we adopt an evolutionary framing that treats diversification as a constrained, path-dependent process of recombination. Empirically, this motivates a more contextualized assessment of regional capabilities and a decomposition of diversification drivers along three dimensions that the literature highlights as consequential: relatedness, network structure, and higher-level context (including national entrepreneurial ecosystems and spatial interdependence).
+
+
+    
+## Geography of innovation: why place matters?
+    
+## REC: what it achieves → what it assumes → where it fails
+
+### ML approach: how to fix the methodological problems
+    
+### Coherence tradition: what's missing conceptually
+    
+## Contextual layers: endogenous (FITS, coherence) + exogenous (ecosystem, space)
+    
+## Our framework: positioned against the literature
