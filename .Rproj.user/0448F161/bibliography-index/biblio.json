@@ -1344,6 +1344,82 @@
         {
             "author": [
                 {
+                    "family": "Neffke",
+                    "given": "Frank"
+                },
+                {
+                    "family": "Hartog",
+                    "given": "Matté"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Henning",
+                    "given": "Martin"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "neffke2018agents",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "23-48",
+            "publisher": "Taylor & Francis",
+            "title": "Agents of structural change: The role of firms and entrepreneurs in regional diversification",
+            "title-short": "Agents of structural change",
+            "type": "article-journal",
+            "volume": "94"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hekkert",
+                    "given": "Marko P"
+                },
+                {
+                    "family": "Suurs",
+                    "given": "Roald AA"
+                },
+                {
+                    "family": "Negro",
+                    "given": "Simona O"
+                },
+                {
+                    "family": "Kuhlmann",
+                    "given": "Stefan"
+                },
+                {
+                    "family": "Smits",
+                    "given": "Ruud EHM"
+                }
+            ],
+            "container-title": "Technological forecasting and social change",
+            "id": "hekkert2007functions",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "413-432",
+            "publisher": "Elsevier",
+            "title": "Functions of innovation systems: A new approach for analysing technological change",
+            "title-short": "Functions of innovation systems",
+            "type": "article-journal",
+            "volume": "74"
+        },
+        {
+            "author": [
+                {
                     "family": "Christopherson",
                     "given": "Susan"
                 },
@@ -1372,6 +1448,33 @@
             "title-short": "Regional resilience",
             "type": "article-journal",
             "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Martin",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Sunley",
+                    "given": "Peter"
+                }
+            ],
+            "container-title": "Journal of economic geography",
+            "id": "martin2007complexity",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "573-601",
+            "publisher": "Oxford University Press",
+            "title": "Complexity thinking and evolutionary economic geography",
+            "type": "article-journal",
+            "volume": "7"
         },
         {
             "author": [
@@ -1490,6 +1593,34 @@
             "title": "Resilience, adaptation and adaptability",
             "type": "article-journal",
             "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Whittle",
+                    "given": "Adam"
+                },
+                {
+                    "family": "Kogler",
+                    "given": "Dieter F"
+                }
+            ],
+            "container-title": "Papers in Regional Science",
+            "id": "whittle2020related",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "97-114",
+            "publisher": "Elsevier",
+            "title": "Related to what? Reviewing the literature on technological relatedness: Where we are now and where can we go?",
+            "title-short": "Related to what? Reviewing the literature on technological relatedness",
+            "type": "article-journal",
+            "volume": "99"
         },
         {
             "author": [
@@ -2104,6 +2235,46 @@
             "title": "Economic complexity analytics: Country factsheets 2024",
             "title-short": "Economic complexity analytics",
             "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Napolitano",
+                    "given": "Lorenzo"
+                },
+                {
+                    "family": "Evangelou",
+                    "given": "Evangelos"
+                },
+                {
+                    "family": "Pugliese",
+                    "given": "Emanuele"
+                },
+                {
+                    "family": "Zeppini",
+                    "given": "Paolo"
+                },
+                {
+                    "family": "Room",
+                    "given": "Graham"
+                }
+            ],
+            "container-title": "Royal Society open science",
+            "id": "napolitano2018technology",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "172445",
+            "publisher": "The Royal Society Publishing",
+            "title": "Technology networks: The autocatalytic origins of innovation",
+            "title-short": "Technology networks",
+            "type": "article-journal",
+            "volume": "5"
         },
         {
             "author": [
