@@ -66,6 +66,236 @@
         {
             "author": [
                 {
+                    "family": "Komlósi",
+                    "given": "Éva"
+                },
+                {
+                    "family": "Dejardin",
+                    "given": "Marcus"
+                },
+                {
+                    "family": "Szerb",
+                    "given": "László"
+                },
+                {
+                    "family": "Páger",
+                    "given": "Balázs"
+                }
+            ],
+            "container-title": "The Journal of Technology Transfer",
+            "id": "komlosi2025balanced",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "page": "1669-1708",
+            "publisher": "Springer",
+            "title": "Is a balanced entrepreneurial ecosystem essential for success? A configurational analysis of european regional entrepreneurial ecosystems",
+            "type": "article-journal",
+            "volume": "50"
+        },
+        {
+            "author": [
+                {
+                    "family": "Acs",
+                    "given": "Zoltan J"
+                },
+                {
+                    "family": "Autio",
+                    "given": "Erkko"
+                },
+                {
+                    "family": "Szerb",
+                    "given": "László"
+                }
+            ],
+            "container-title": "Research policy",
+            "id": "acs2014national",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "476-494",
+            "publisher": "Elsevier",
+            "title": "National systems of entrepreneurship: Measurement issues and policy implications",
+            "title-short": "National systems of entrepreneurship",
+            "type": "article-journal",
+            "volume": "43"
+        },
+        {
+            "author": [
+                {
+                    "family": "Argiles",
+                    "given": "Raquel Ortega"
+                },
+                {
+                    "family": "Acs",
+                    "given": "Zoltan J"
+                },
+                {
+                    "family": "Szerb",
+                    "given": "Laszlo"
+                },
+                {
+                    "family": "Autio",
+                    "given": "Erkko"
+                },
+                {
+                    "family": "Komlosi",
+                    "given": "Eva"
+                }
+            ],
+            "id": "argiles2014redi",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "Publications Office of the European Union",
+            "title": "REDI: The regional entrepreneurship and development index–measuring regional entrepreneurship final report",
+            "title-short": "REDI",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Szerb",
+                    "given": "Laszlo"
+                },
+                {
+                    "family": "Ács",
+                    "given": "Zoltán"
+                },
+                {
+                    "family": "Autio",
+                    "given": "Erkko"
+                },
+                {
+                    "family": "Ortega-Argiles",
+                    "given": "Raquel"
+                },
+                {
+                    "family": "Komlosi",
+                    "given": "Eva"
+                }
+            ],
+            "id": "szerb2013regional",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "publisher": "European Commission",
+            "title": "The regional entrepreneurship and development index–measuring regional entrepreneurship",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Leendertse",
+                    "given": "Jip"
+                },
+                {
+                    "family": "Schrijvers",
+                    "given": "Mirella"
+                },
+                {
+                    "family": "Stam",
+                    "given": "Erik"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "leendertse2022measure",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "104336",
+            "publisher": "Elsevier",
+            "title": "Measure twice, cut once: Entrepreneurial ecosystem metrics",
+            "title-short": "Measure twice, cut once",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Adams",
+                    "given": "Stephen B"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "adams2011growing",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "368-379",
+            "publisher": "Elsevier",
+            "title": "Growing where you are planted: Exogenous firms and the seeding of silicon valley",
+            "title-short": "Growing where you are planted",
+            "type": "article-journal",
+            "volume": "40"
+        },
+        {
+            "author": [
+                {
+                    "family": "Acs",
+                    "given": "Zoltan J"
+                },
+                {
+                    "family": "Estrin",
+                    "given": "Saul"
+                },
+                {
+                    "family": "Mickiewicz",
+                    "given": "Tomasz"
+                },
+                {
+                    "family": "Szerb",
+                    "given": "László"
+                }
+            ],
+            "container-title": "Small Business Economics",
+            "id": "acs2018entrepreneurship",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "501-514",
+            "publisher": "Springer",
+            "title": "Entrepreneurship, institutional economics, and economic growth: An ecosystem perspective",
+            "title-short": "Entrepreneurship, institutional economics, and economic growth",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
                     "family": "Antonietti",
                     "given": "Roberto"
                 },
@@ -1344,6 +1574,34 @@
         {
             "author": [
                 {
+                    "family": "Frenken",
+                    "given": "Koen"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron A"
+                }
+            ],
+            "container-title": "Journal of economic geography",
+            "id": "frenken2007theoretical",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "635-649",
+            "publisher": "Oxford University Press",
+            "title": "A theoretical framework for evolutionary economic geography: Industrial dynamics and urban growth as a branching process",
+            "title-short": "A theoretical framework for evolutionary economic geography",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "author": [
+                {
                     "family": "Neffke",
                     "given": "Frank"
                 },
@@ -1416,6 +1674,61 @@
             "title-short": "Functions of innovation systems",
             "type": "article-journal",
             "volume": "74"
+        },
+        {
+            "author": [
+                {
+                    "family": "Montresor",
+                    "given": "Sandro"
+                },
+                {
+                    "family": "Quatraro",
+                    "given": "Francesco"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "montresor2017regional",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "367-396",
+            "publisher": "Taylor & Francis",
+            "title": "Regional branching and key enabling technologies: Evidence from european patent data",
+            "title-short": "Regional branching and key enabling technologies",
+            "type": "article-journal",
+            "volume": "93"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Iammarino",
+                    "given": "Simona"
+                }
+            ],
+            "container-title": "Economic geography",
+            "id": "boschma2009related",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "289-311",
+            "publisher": "Taylor & Francis",
+            "title": "Related variety, trade linkages, and regional growth in italy",
+            "type": "article-journal",
+            "volume": "85"
         },
         {
             "author": [
@@ -2609,6 +2922,38 @@
             "title-short": "Nestedness in complex networks",
             "type": "article-journal",
             "volume": "813"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zhu",
+                    "given": "Shengjun"
+                },
+                {
+                    "family": "Guo",
+                    "given": "Qi"
+                },
+                {
+                    "family": "He",
+                    "given": "Canfei"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "zhu2021strong",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "66-88",
+            "publisher": "Taylor & Francis",
+            "title": "Strong links and weak links: How do unrelated industries survive in an unfriendly environment?",
+            "title-short": "Strong links and weak links",
+            "type": "article-journal",
+            "volume": "97"
         },
         {
             "author": [

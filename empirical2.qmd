@@ -257,6 +257,12 @@ corr_matrix_agg <- targets::tar_read(corr_matrix_agg, store = here::here("../../
 corr_matrix_agg
 ```
 
+```{r tbl-corr-ecosystem, echo=FALSE}
+corr_matrix_disag_c <- targets::tar_read(corr_matrix_disag_c, store = here::here("../../_targets_DES"))
+
+corr_matrix_disag_c
+```
+
 
 
 ```{r fig-map-potential, echo=FALSE}

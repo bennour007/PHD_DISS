@@ -1,3 +1,41 @@
 # Summary
 
-In summary, this book has no content whatsoever.
+
+## Discussion
+
+This work was initiated with a simple subjective reality check from geopolitical perspective. Since the financial crisis of 2008 the conventional rule-based world order started to corrode and linguish. The covid 19 pandemic further exacerbated this corrosion and forced policy makers to reassess their decisions. This new world order is still in its infancy and its nature is yet to be clear, meanwhile uncertainties in global security and trade is only getting worse and vulnerable economies are the first victims. From here we posited that in the face of such shocks, understanding what makes an economy resilient is a sensible exercise. This was a clear research agenda in the literature which we presented and discussed in the review chapter. We framed adaptation as a theoretically observable consequence of resilience and that this adaptation, i.e. the capacity to adapt to constraints by recombining existing local capabilities in new configuration can be observed itself in the diversification patterns of these local economies. From there we justified the current study and framed it as a response to the need to a more contextualised assessment of regional technological diversification. Our methodological and empirical contribution target essentially context dimension following the research agenda proposed in many studies in different steams of literature. In this chapter we will conclude this dissertation and discuss different aspect of novelty, limitations and implication to our contributions.        
+
+
+### On the methodology
+
+Our contribution in this work spans both methodology and empirical application. The call in the literature for a more contextualised studies of regional capabilities were our main theoretical motivation in this context. @ballandboschma2015 call for a more focused consideration of the evolutionary accounts of regional change; technological relatedness, network structures, and institutions. However, @pinheiro2025; @andreoni2019political and @batheltstorper2023 provided another optic regarding this agenda specifically on the limitation of the current conventional instruments of measuring proximity (relatedness) and thus the technology space (network) and their conceptual flaws that obscure granular context. This means that even if this research agenda is opertionalised through relatedness measurements, the loss in information compound regardless. To address this specific issue, @fessina2024identifying, @albora2023product, and most notably @tacchella2023relatedness propose a machine learning conceptualisation to the relatedness measurements. Their work propose a shift from co-occurrence and frequency based measurements to a predictive framework that serves three objectives. First, a falsifiable and testable measure of feasibility, second, leveraging already granular data for a richer context, and third accommodate the non-linearity of knowledge structure and their interactions. We adopted this framework as a direct response to the gaps in the literature which constitutes our main methodological contribution. However, this methodology is not without limitation itself. In fact, @pinheiro2025 acknowledged the merits of this framework with a clear factual scepticism regarding the performance of these machine learning models. The problem she mentions is related mainly to false negative predictions, which are the result of the unbalanced data itself (few regions with observed specialisation, the majority of the outcome is 0). Although this is a well merited criticism, it still can be addressed in future iterations with different training strategies (using synthetic minority oversampling technique or SMOTE) or with innovative machine learning modeling algorithms (causal random forest as an potential candidate). Moreover as we've shown in the comparative example in chapter 3, FITS produce a much more stable prediction than conventional technology space, the merits of that is our main motivation for this adoption. 
+
+The empirical design in our work is also not above critcism or limitations. Our asse
+
+### On the results
+
+The main endogeneity concern in this analysis is that coherence is constructed from
+the same portfolio data that feeds the RF model generating potential. Within a given
+year and region, a technology with higher coherence will mechanically share portfolio
+features with the region in ways that likely raise the RF's predicted probability. This
+is analogous to — though more subtle than — the reverse causality concern that
+Antonietti and Montresor (2021, p. 199, "Econometric Strategy") address by
+controlling for firm birth rates: regions endowed with more KETs may also be those
+where firm creation is normally higher, introducing spurious correlation between KETs
+and diversification outcomes. In our case, the circularity is internal to the variable
+construction rather than external to the model.
+
+The two-way fixed effects address part of this: the identifying variation is
+within-region change over time, so stable portfolio-technology alignment is absorbed.
+The consistency of coefficients across fixed effects and random effects specifications,
+and the stability of the network centrality patterns — which are technology-specific
+rather than portfolio-derived — provide some reassurance that the results are not
+purely mechanical. We treat the estimates throughout as conditional associations that
+characterise the structure of the feasibility landscape rather than as causal parameters,
+and we return to the broader implications of this distinction in the discussion.
+
+### Policy implication
+
+## Future research agenda 
+
+## Conclusion
