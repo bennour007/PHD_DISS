@@ -245,7 +245,7 @@ window.Quarto = {
 
 
 <p>In the previous chapter we discussed thoroughly the different areas of interest to this work. We relied on a clear framing that justifies assessing the regional diversification potential in a more contextualised and granular approach. To do that we started from the conceptual constructs of relatedness and the subsequent technology space and introduced our machine learning approach as context-rich alternative. We also introduced our coherence metric that capitalises on our approach. With that we’ve drawn a clear conceptual framework on how all these ideas should interact and inform on our main outcome. Essentially we propose two levels of analysis each with a clear objective but with complementary interpretation. These two analysis are opertaionalised via three models which we described their rational, specifications, and how they meet our hypothesis in the previous chapter. In this chapter we present the results of these models and contrast their interpretation to the hypothesis and the questions this work aims to address.</p>
-<p>In here we will decompose our finding for each of the models we specified. We will first explore the results of model 0 (<a href="#tbl-entry-ols" class="quarto-xref">Table&nbsp;<span>5.1</span></a>), which treats the benchmark hypothesis and compare the empirical contribution of regional potential and relatedness to regional entry, following a large body of literature we already discussed in the literature review. Then we will present the results of model 1 (<a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a>) which explores the hypothesis on the empirical contribution of technologies’ roles in the network structure from the FITS network. This model also explores the interaction between these roles and coherence to investigate whether the relationship is universal or contingent on the alignment in industrial embededdess between the region and the technology. Model 1 also extends this exploration by including the national ecosystem covariates (<a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.4</span></a>), this to test the stability of the network metric and their interaction as predictive factors, and also as a robustness check for their contribution compared to model 2. Essentially model 1 fits our variables to regional technological potential and assess the within-group variation. But because the national ecosystem covariates are not at a regional level, we also want to assess their contribution when we account for both within-group and between-group variation since regions are administrative artefacts that share the same national ecosystem characteristics. This nested structure motivate our model 2 presented in <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a>. As we mentioned in the previous chapter, if the nested structure of model 2 drives most of the variation of the outcome, it could be an indication that this variation is mainly driven by spatial dependence. This is the case as we will explain later in this chapter, thus motivates our model 3. The idea here is to understand the spatial dynamics that drives regional outcomes, the test results presented in the previous chapter indicate a strong dependence on neighbouring region outcome. This justified the inclusion of the SAR model (<a href="#tbl-spatial-sar" class="quarto-xref">Table&nbsp;<span>5.6</span></a>), albeit we also present the SEM model as a robustness check (<a href="#tbl-spatial-sem" class="quarto-xref">Table&nbsp;<span>5.7</span></a>)</p>
+<p>In here we will decompose our finding for each of the models we specified. We will first explore the results of model 0 (<a href="#tbl-entry-ols" class="quarto-xref">Table&nbsp;<span>5.1</span></a>), which treats the benchmark hypothesis and compare the empirical contribution of regional potential and relatedness to regional entry, following a large body of literature we already discussed in the literature review. Then we will present the results of model 1 (<a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.2</span></a>) which explores the hypothesis on the empirical contribution of technologies’ roles in the network structure from the FITS network. This model also explores the interaction between these roles and coherence to investigate whether the relationship is universal or contingent on the alignment in industrial embededdess between the region and the technology. Model 1 also extends this exploration by including the national ecosystem covariates (<a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.3</span></a>), this to test the stability of the network metric and their interaction as predictive factors, and also as a robustness check for their contribution compared to model 2. Essentially model 1 fits our variables to regional technological potential and assess the within-group variation. But because the national ecosystem covariates are not at a regional level, we also want to assess their contribution when we account for both within-group and between-group variation since regions are administrative artefacts that share the same national ecosystem characteristics. This nested structure motivate our model 2 presented in <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.4</span></a>. As we mentioned in the previous chapter, if the nested structure of model 2 drives most of the variation of the outcome, it could be an indication that this variation is mainly driven by spatial dependence. This is the case as we will explain later in this chapter, thus motivates our model 3. The idea here is to understand the spatial dynamics that drives regional outcomes, the test results presented in the previous chapter indicate a strong dependence on neighbouring region outcome. This justified the inclusion of the SAR model (<a href="#tbl-spatial-sar" class="quarto-xref">Table&nbsp;<span>5.5</span></a>), albeit we also present the SEM model as a robustness check (<a href="#tbl-spatial-sem" class="quarto-xref">Table&nbsp;<span>5.6</span></a>)</p>
 <section id="entry" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="entry"><span class="header-section-number">5.1</span> Entry</h2>
 <p>In <a href="#tbl-entry-ols" class="quarto-xref">Table&nbsp;<span>5.1</span></a> we benchmark how much conventional relatedness density and potential (pred11) explain regional entry to a new technology. In the pooled specifications, both measures strongly predict entry: relatedness density is positive and precisely estimated (<span class="math inline">\(0.055\)</span>), while Potential is larger (<span class="math inline">\(0.081\)</span>). This is consistent with the interpretation that both capture diversification opportunities, however, Potential here is closer to a feasibility metric that’s learned from portfolio configurations than relatedness. Once we move to the fixed-effects designs and absorb region and year fixed effects, interpretation shifts to within-region changes over time, net of common year shocks. In this setting, relatedness density remains strongly positive (e.g., <span class="math inline">\(0.089\)</span> in the density-only fixed effects model), and Potential also remains strongly positive (<span class="math inline">\(0.089\)</span> in the Potential-only fixed effects model). The coefficient of relatedness increase significantly more than potential (which remains relatively at a stable value) when we account for within-group variation in which case both relatedness and potential contribute similarly to the probability of entry. Albeit, potential seems to improve the overall and within-group fit more than potential (within-<span class="math inline">\(R^2\)</span> rises from <span class="math inline">\(0.014\)</span> in the density-only fixed effects model to <span class="math inline">\(0.062\)</span> in the Potential-only fixed effects model). Moreover, when we include both metrics together, the dominance of potential influence becomes clear, the coefficient of relatedness decrease from 8.9% to 2.8%, whereas the coefficient of relatedness remains stable at 8.6%. In other words, Potential appears to be relatively the dominant predictor in this horse race, while density retains residual explanatory content that may reflect a simpler proximity component that survives beyond the non-linear feasibility signal embedded in Potential.</p>
@@ -259,23 +259,23 @@ Table&nbsp;5.1: Entry (t + 1): LPM
 </figcaption>
 <div aria-describedby="tbl-entry-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ecmbadhvjy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ecmbadhvjy table {
+<div id="srdkviewuf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#srdkviewuf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ecmbadhvjy thead, #ecmbadhvjy tbody, #ecmbadhvjy tfoot, #ecmbadhvjy tr, #ecmbadhvjy td, #ecmbadhvjy th {
+#srdkviewuf thead, #srdkviewuf tbody, #srdkviewuf tfoot, #srdkviewuf tr, #srdkviewuf td, #srdkviewuf th {
   border-style: none;
 }
 
-#ecmbadhvjy p {
+#srdkviewuf p {
   margin: 0;
   padding: 0;
 }
 
-#ecmbadhvjy .gt_table {
+#srdkviewuf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -301,12 +301,12 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-left-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_caption {
+#srdkviewuf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ecmbadhvjy .gt_title {
+#srdkviewuf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -318,7 +318,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-bottom-width: 0;
 }
 
-#ecmbadhvjy .gt_subtitle {
+#srdkviewuf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -330,7 +330,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-top-width: 0;
 }
 
-#ecmbadhvjy .gt_heading {
+#srdkviewuf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -342,13 +342,13 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-right-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_bottom_border {
+#srdkviewuf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_col_headings {
+#srdkviewuf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -363,7 +363,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-right-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_col_heading {
+#srdkviewuf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -383,7 +383,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   overflow-x: hidden;
 }
 
-#ecmbadhvjy .gt_column_spanner_outer {
+#srdkviewuf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -395,15 +395,15 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   padding-right: 4px;
 }
 
-#ecmbadhvjy .gt_column_spanner_outer:first-child {
+#srdkviewuf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ecmbadhvjy .gt_column_spanner_outer:last-child {
+#srdkviewuf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ecmbadhvjy .gt_column_spanner {
+#srdkviewuf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -415,11 +415,11 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   width: 100%;
 }
 
-#ecmbadhvjy .gt_spanner_row {
+#srdkviewuf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ecmbadhvjy .gt_group_heading {
+#srdkviewuf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -445,7 +445,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   text-align: left;
 }
 
-#ecmbadhvjy .gt_empty_group_heading {
+#srdkviewuf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -460,15 +460,15 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   vertical-align: middle;
 }
 
-#ecmbadhvjy .gt_from_md > :first-child {
+#srdkviewuf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ecmbadhvjy .gt_from_md > :last-child {
+#srdkviewuf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ecmbadhvjy .gt_row {
+#srdkviewuf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -487,7 +487,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   overflow-x: hidden;
 }
 
-#ecmbadhvjy .gt_stub {
+#srdkviewuf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -500,7 +500,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   padding-right: 5px;
 }
 
-#ecmbadhvjy .gt_stub_row_group {
+#srdkviewuf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -514,15 +514,15 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   vertical-align: top;
 }
 
-#ecmbadhvjy .gt_row_group_first td {
+#srdkviewuf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ecmbadhvjy .gt_row_group_first th {
+#srdkviewuf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ecmbadhvjy .gt_summary_row {
+#srdkviewuf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -532,16 +532,16 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   padding-right: 5px;
 }
 
-#ecmbadhvjy .gt_first_summary_row {
+#srdkviewuf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_first_summary_row.thick {
+#srdkviewuf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ecmbadhvjy .gt_last_summary_row {
+#srdkviewuf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -551,7 +551,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-bottom-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_grand_summary_row {
+#srdkviewuf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -561,7 +561,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   padding-right: 5px;
 }
 
-#ecmbadhvjy .gt_first_grand_summary_row {
+#srdkviewuf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -571,7 +571,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-top-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_last_grand_summary_row_top {
+#srdkviewuf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -581,11 +581,11 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-bottom-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_striped {
+#srdkviewuf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ecmbadhvjy .gt_table_body {
+#srdkviewuf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -594,7 +594,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-bottom-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_footnotes {
+#srdkviewuf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -608,7 +608,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-right-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_footnote {
+#srdkviewuf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -617,7 +617,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   padding-right: 5px;
 }
 
-#ecmbadhvjy .gt_sourcenotes {
+#srdkviewuf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -631,7 +631,7 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   border-right-color: #D3D3D3;
 }
 
-#ecmbadhvjy .gt_sourcenote {
+#srdkviewuf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -639,72 +639,72 @@ Table&nbsp;5.1: Entry (t + 1): LPM
   padding-right: 5px;
 }
 
-#ecmbadhvjy .gt_left {
+#srdkviewuf .gt_left {
   text-align: left;
 }
 
-#ecmbadhvjy .gt_center {
+#srdkviewuf .gt_center {
   text-align: center;
 }
 
-#ecmbadhvjy .gt_right {
+#srdkviewuf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ecmbadhvjy .gt_font_normal {
+#srdkviewuf .gt_font_normal {
   font-weight: normal;
 }
 
-#ecmbadhvjy .gt_font_bold {
+#srdkviewuf .gt_font_bold {
   font-weight: bold;
 }
 
-#ecmbadhvjy .gt_font_italic {
+#srdkviewuf .gt_font_italic {
   font-style: italic;
 }
 
-#ecmbadhvjy .gt_super {
+#srdkviewuf .gt_super {
   font-size: 65%;
 }
 
-#ecmbadhvjy .gt_footnote_marks {
+#srdkviewuf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ecmbadhvjy .gt_asterisk {
+#srdkviewuf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ecmbadhvjy .gt_indent_1 {
+#srdkviewuf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ecmbadhvjy .gt_indent_2 {
+#srdkviewuf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ecmbadhvjy .gt_indent_3 {
+#srdkviewuf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ecmbadhvjy .gt_indent_4 {
+#srdkviewuf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ecmbadhvjy .gt_indent_5 {
+#srdkviewuf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ecmbadhvjy .katex-display {
+#srdkviewuf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ecmbadhvjy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#srdkviewuf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -954,48 +954,39 @@ Table&nbsp;5.1: Entry (t + 1): LPM
 </div>
 </div>
 </div>
-<div id="tbl-entry-logit" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-entry-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.2
-</figcaption>
-<div aria-describedby="tbl-entry-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-
-</div>
-</div>
-</figure>
-</div>
 </section>
 <section id="network-effects-and-coherence-moderation" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="network-effects-and-coherence-moderation"><span class="header-section-number">5.2</span> Network Effects and Coherence Moderation</h2>
-<p><a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a> presents our core test of how technology network positions and regional knowledge infrastructure shape diversification potential. Column 4, our preferred specification with region and year fixed effects, shows that coherence—the alignment between a technology’s FITS embeddedness and the region’s portfolio—strongly predicts potential (<span class="math inline">\(0.706\)</span>). This aligns with the capabilities-based interpretation of relatedness in evolutionary economic geography. <span class="citation" data-cites="toth2022technology">Tóth et al. (<a href="references.html#ref-toth2022technology" role="doc-biblioref">2022</a>)</span> states that “economic activities are related through sharing various capabilities,” and it links diversification to learning enabled by “cognitive proximity and interactive learning” following Boschma’s proximity framework. In our setting, coherence operationalizes this shared-capability, portfolio-fit mechanism and remains stable across specifications, consistent with its interpretation as a structural feasibility correlate rather than a modeling artifact.</p>
+<p>As we mentioned in the beginning of this chapter, one of our main tests in our work is regarding the relationship between the technologies’ network roles and regional technological potential and whether this relationship is universal or dependent on the alignment of industrial structure between regions’ portfolios and a given technology. <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.2</span></a> portrait one side of the picture that we’re testing here which focuses on the within-group variation.</p>
+<p>The first observation here is that all the coefficients maintain the same sign across all specification. The coefficients of betweenness, eigenvector, coherence, and the interactions are the most notably stable in sign and significance with a slight fluctuation in size of the effect.</p>
+<p>As a start, column 5 which represent our full specification shows that coherence–the alignment between a technology’s FITS embeddedness and the region’s portfolio–is the strongest predictor of potential (<span class="math inline">\(0.706\)</span>). Although regional complexity exhibit a similar predictive strength (column 2 and 3), the size of its effect is completely absorbed by the fixed effects.</p>
+<p>This aligns with the capabilities-based interpretation of relatedness in evolutionary economic geography which we also adopt for the regional technological potential measure. To this end, <span class="citation" data-cites="toth2022technology">Tóth et al. (<a href="references.html#ref-toth2022technology" role="doc-biblioref">2022</a>)</span> states that “economic activities are related through sharing various capabilities”. Thus, with this interpretation, potential is the link between diversification and learning. This is theorised to be enabled by “cognitive proximity and interactive learning” following Boschma’s proximity framework. In our setting, coherence operationalizes this shared-capability, portfolio-fit mechanism as it remains stable across specifications. This is also consistent with its interpretation as a structural feasibility correlate rather than a mere modeling artifact.</p>
 <div class="landscape">
 <div class="cell">
 <div id="tbl-potential-fe-ols" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.3: logit(pred1) - ols
+Table&nbsp;5.2: logit(pred1) - ols
 </figcaption>
 <div aria-describedby="tbl-potential-fe-ols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zpjyhezlfm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zpjyhezlfm table {
+<div id="oxsbjtxuwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oxsbjtxuwa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zpjyhezlfm thead, #zpjyhezlfm tbody, #zpjyhezlfm tfoot, #zpjyhezlfm tr, #zpjyhezlfm td, #zpjyhezlfm th {
+#oxsbjtxuwa thead, #oxsbjtxuwa tbody, #oxsbjtxuwa tfoot, #oxsbjtxuwa tr, #oxsbjtxuwa td, #oxsbjtxuwa th {
   border-style: none;
 }
 
-#zpjyhezlfm p {
+#oxsbjtxuwa p {
   margin: 0;
   padding: 0;
 }
 
-#zpjyhezlfm .gt_table {
+#oxsbjtxuwa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1021,12 +1012,12 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-left-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_caption {
+#oxsbjtxuwa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zpjyhezlfm .gt_title {
+#oxsbjtxuwa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1038,7 +1029,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-bottom-width: 0;
 }
 
-#zpjyhezlfm .gt_subtitle {
+#oxsbjtxuwa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1050,7 +1041,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-top-width: 0;
 }
 
-#zpjyhezlfm .gt_heading {
+#oxsbjtxuwa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1062,13 +1053,13 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_bottom_border {
+#oxsbjtxuwa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_col_headings {
+#oxsbjtxuwa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1083,7 +1074,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_col_heading {
+#oxsbjtxuwa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1103,7 +1094,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   overflow-x: hidden;
 }
 
-#zpjyhezlfm .gt_column_spanner_outer {
+#oxsbjtxuwa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1115,15 +1106,15 @@ Table&nbsp;5.3: logit(pred1) - ols
   padding-right: 4px;
 }
 
-#zpjyhezlfm .gt_column_spanner_outer:first-child {
+#oxsbjtxuwa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zpjyhezlfm .gt_column_spanner_outer:last-child {
+#oxsbjtxuwa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zpjyhezlfm .gt_column_spanner {
+#oxsbjtxuwa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1135,11 +1126,11 @@ Table&nbsp;5.3: logit(pred1) - ols
   width: 100%;
 }
 
-#zpjyhezlfm .gt_spanner_row {
+#oxsbjtxuwa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zpjyhezlfm .gt_group_heading {
+#oxsbjtxuwa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1165,7 +1156,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   text-align: left;
 }
 
-#zpjyhezlfm .gt_empty_group_heading {
+#oxsbjtxuwa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1180,15 +1171,15 @@ Table&nbsp;5.3: logit(pred1) - ols
   vertical-align: middle;
 }
 
-#zpjyhezlfm .gt_from_md > :first-child {
+#oxsbjtxuwa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zpjyhezlfm .gt_from_md > :last-child {
+#oxsbjtxuwa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zpjyhezlfm .gt_row {
+#oxsbjtxuwa .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1207,7 +1198,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   overflow-x: hidden;
 }
 
-#zpjyhezlfm .gt_stub {
+#oxsbjtxuwa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1220,7 +1211,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#zpjyhezlfm .gt_stub_row_group {
+#oxsbjtxuwa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1234,15 +1225,15 @@ Table&nbsp;5.3: logit(pred1) - ols
   vertical-align: top;
 }
 
-#zpjyhezlfm .gt_row_group_first td {
+#oxsbjtxuwa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zpjyhezlfm .gt_row_group_first th {
+#oxsbjtxuwa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zpjyhezlfm .gt_summary_row {
+#oxsbjtxuwa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1252,16 +1243,16 @@ Table&nbsp;5.3: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#zpjyhezlfm .gt_first_summary_row {
+#oxsbjtxuwa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_first_summary_row.thick {
+#oxsbjtxuwa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zpjyhezlfm .gt_last_summary_row {
+#oxsbjtxuwa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1271,7 +1262,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_grand_summary_row {
+#oxsbjtxuwa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1281,7 +1272,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#zpjyhezlfm .gt_first_grand_summary_row {
+#oxsbjtxuwa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1291,7 +1282,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-top-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_last_grand_summary_row_top {
+#oxsbjtxuwa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1301,11 +1292,11 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_striped {
+#oxsbjtxuwa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zpjyhezlfm .gt_table_body {
+#oxsbjtxuwa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1314,7 +1305,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_footnotes {
+#oxsbjtxuwa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1328,7 +1319,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_footnote {
+#oxsbjtxuwa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1337,7 +1328,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#zpjyhezlfm .gt_sourcenotes {
+#oxsbjtxuwa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1351,7 +1342,7 @@ Table&nbsp;5.3: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#zpjyhezlfm .gt_sourcenote {
+#oxsbjtxuwa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1359,72 +1350,72 @@ Table&nbsp;5.3: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#zpjyhezlfm .gt_left {
+#oxsbjtxuwa .gt_left {
   text-align: left;
 }
 
-#zpjyhezlfm .gt_center {
+#oxsbjtxuwa .gt_center {
   text-align: center;
 }
 
-#zpjyhezlfm .gt_right {
+#oxsbjtxuwa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zpjyhezlfm .gt_font_normal {
+#oxsbjtxuwa .gt_font_normal {
   font-weight: normal;
 }
 
-#zpjyhezlfm .gt_font_bold {
+#oxsbjtxuwa .gt_font_bold {
   font-weight: bold;
 }
 
-#zpjyhezlfm .gt_font_italic {
+#oxsbjtxuwa .gt_font_italic {
   font-style: italic;
 }
 
-#zpjyhezlfm .gt_super {
+#oxsbjtxuwa .gt_super {
   font-size: 65%;
 }
 
-#zpjyhezlfm .gt_footnote_marks {
+#oxsbjtxuwa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zpjyhezlfm .gt_asterisk {
+#oxsbjtxuwa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zpjyhezlfm .gt_indent_1 {
+#oxsbjtxuwa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zpjyhezlfm .gt_indent_2 {
+#oxsbjtxuwa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zpjyhezlfm .gt_indent_3 {
+#oxsbjtxuwa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zpjyhezlfm .gt_indent_4 {
+#oxsbjtxuwa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zpjyhezlfm .gt_indent_5 {
+#oxsbjtxuwa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zpjyhezlfm .katex-display {
+#oxsbjtxuwa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zpjyhezlfm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oxsbjtxuwa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1845,39 +1836,44 @@ Table&nbsp;5.3: logit(pred1) - ols
 </div>
 </div>
 </div>
-<p>Betweenness centrality, capturing bridge positions that connect domains, exhibits substantial positive effects (<span class="math inline">\(0.388\)</span>). However, the coherence <span class="math inline">\(\times\)</span> betweenness interaction is significantly negative (<span class="math inline">\(-0.284\)</span>), revealing contextual contingency: bridging positions disproportionately benefit regions with lower coherence, offering catch-up opportunities when portfolios are misaligned with these bridge technologies. Conversely, high-coherence regions gain less from bridging positions, suggesting that their feasible opportunities are less dependent on bridge roles and more concentrated in already-aligned portions of the technology space. This contingency is conceptually consistent with a tension highlighted in <span class="citation" data-cites="toth2022technology">Tóth et al. (<a href="references.html#ref-toth2022technology" role="doc-biblioref">2022</a>)</span>. After reviewing the standard logic that related variety supports diversification, it notes that interdependencies can also transmit shocks and that evidence on how internal relatedness structures shape outcomes is mixed; it concludes that it is “still unclear” how relatedness shapes resilience and that “networks are of great assistance” because economies are “webs” of interdependent knowledge and activities. Our interaction result is consistent with that network-conditional view: the value of a network position depends on portfolio context rather than being uniform.</p>
-<p>The eigenvector centrality pattern presents a contrasting story. Technologies occupying authority positions consistently inhibit entry (e.g., <span class="math inline">\(-0.221\)</span> in Column 4), yet the coherence <span class="math inline">\(\times\)</span> eigenvector interaction remains non-significant. A conservative interpretation is that authority-like targets are systematically difficult to enter regardless of alignment as captured by coherence. This pattern is compatible with arguments that diversification requires more than proximity. <span class="citation" data-cites="GoingBeyondRelatednessKETs">(<a href="references.html#ref-GoingBeyondRelatednessKETs" role="doc-biblioref"><strong>GoingBeyondRelatednessKETs?</strong></a>)</span> argues that diversification is “going beyond relatedness” and reports that enabling technologies support more exploratory trajectories “only when” they are used by other local technologies, implying a complementarity and integration condition beyond portfolio fit alone. Our null moderation for eigenvector is consistent with the idea that barriers for authority targets reflect complements or coordination not captured by alignment measures.</p>
-<p>Distance becomes most informative once interactions are introduced. In Table <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a>, the main effect of rawdist is not stable in the fixed effects setting, but the interaction between rawdist and eigenvector is negative and robust (around <span class="math inline">\(-0.080\)</span> in the distance-interaction specifications). This indicates that authority technologies become particularly difficult when they are also topologically remote from any regional foothold. This mechanism is close to the account in <span class="citation" data-cites="StrongLinksWeakLinksUnrelatedSurvive">(<a href="references.html#ref-StrongLinksWeakLinksUnrelatedSurvive" role="doc-biblioref"><strong>StrongLinksWeakLinksUnrelatedSurvive?</strong></a>)</span>, which describes network links as “pipelines” and states that “the strength of links reflects technological distance,” with the implication that predictable transfer is more feasible through stronger, closer links. In contrast, the betweenness <span class="math inline">\(\times\)</span> rawdist interaction is small and not robust in the fixed effects specifications (e.g., <span class="math inline">\(0.067\)</span> and <span class="math inline">\(0.057\)</span> with large standard errors), suggesting limited evidence in within-region comparisons that bridge positions systematically enable longer jumps purely through remoteness.</p>
+<p>Similarly, betweenness centrality, our network measure that captures bridging positions (as a proxy classification to general purpose technology role), exhibits consistent and substansive positive effects (<span class="math inline">\(0.388\)</span>). However, the coherence <span class="math inline">\(\times\)</span> betweenness interaction is significantly negative (<span class="math inline">\(-0.284\)</span>). This reveals contextual contingency: bridging positions disproportionately benefit regions with lower coherence, offering catch-up opportunities when portfolios are misaligned with these bridge technologies. Conversely, high-coherence regions gain less from bridging positions. This could suggests that their (high-coherence regions) feasible opportunities are less dependent on bridge roles and more concentrated in already-aligned portions of the technology space<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>This contingency is conceptually consistent with a tension highlighted in <span class="citation" data-cites="toth2022technology">Tóth et al. (<a href="references.html#ref-toth2022technology" role="doc-biblioref">2022</a>)</span>. The study highlights that region-technology interdependencies can transmit “shocks” and that evidence on how regional portfolio structures shape outcomes (the adaptation of the region to the shock in its technology portfolio/network in our case regional potential) is mixed. The interaction results at least for betweenness, is consistent with this assessment: the value of the bridging position to regional potential is context dependent. The internal industrial structure of the region’s portfolio (its knowledge infrastructure) condition the influence of this position.</p>
+<p>On the other side of this logic, the eigenvector centrality pattern presents a contrasting story. Technologies occupying authority/prestige positions (as a proxy to key enabling technology roles) consistently inhibit potential (<span class="math inline">\(-0.221\)</span> in Column 5). Yet its interaction with coherence (coherence <span class="math inline">\(\times\)</span> eigenvector) shows consistent non-significance. A conservative interpretation here, is that authority-like technologies are systematically difficult to enter regardless of the industrial alignment of the region as captured by coherence. <span class="citation" data-cites="pinheiro2025">Pinheiro (<a href="references.html#ref-pinheiro2025" role="doc-biblioref">2025</a>)</span> (among others) argues in this context in favour of these results. The author consider that proximity alone is not a sufficient predictor of diversification. Similarly, <span class="citation" data-cites="antonietti2021going">Antonietti and Montresor (<a href="references.html#ref-antonietti2021going" role="doc-biblioref">2021</a>)</span> argues that diversification is “going beyond relatedness” and show that enabling technologies support more exploratory trajectories “only when” they are used by other local technologies. We will return to this idea in the discussion chapter.</p>
+<p>Our null moderation for eigenvector centrality is consistent with the idea that adopting enabling technologies is challenging and that the conditions and context for this adoption may not be captured by our coherence measure. For that reason we added the interaction between the network measures and the distance covariate. The interaction between distance and eigenvector is negative and relatively robust (<span class="math inline">\(-0.080\)</span> in columns 7 and 8). This indicates that authority technologies become particularly difficult when they are also topologically remote from any regional foothold. This mechanism is close to the account in <span class="citation" data-cites="zhu2021strong">Zhu, Guo, and He (<a href="references.html#ref-zhu2021strong" role="doc-biblioref">2021</a>)</span>, the authors show that diversification is more feasible through stronger, closer links. Our results contextualise this further, as this distance seems more relevant for technologies with enabling roles rather than bridging roles. This contrast can be seen in the insignificant betweenness <span class="math inline">\(\times\)</span> rawdist interaction. This (limited evidence) aligns with the intuition that general purpose technologies by construct should be accessible as they bridge different areas of the network regardless of the distance in the network.</p>
 </section>
 <section id="national-context-and-robustness" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="national-context-and-robustness"><span class="header-section-number">5.3</span> National Context and Robustness</h2>
-<p><a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.4</span></a> extends our framework by incorporating national entrepreneurial ecosystem characteristics from the Global Entrepreneurship Index. Column 4 shows that the core dyadic mechanisms persist: coherence remains positive (<span class="math inline">\(0.709\)</span>), betweenness remains positive (<span class="math inline">\(0.398\)</span>), and the coherence <span class="math inline">\(\times\)</span> betweenness interaction remains negative (<span class="math inline">\(-0.292\)</span>). The eigenvector penalty likewise persists (around <span class="math inline">\(-0.222\)</span>) without coherence moderation, and the distance–authority interaction remains negative (rawdist <span class="math inline">\(\times\)</span> eigenvector around <span class="math inline">\(-0.082\)</span>). This stability supports a cautious conclusion that the coherence and network-position mechanisms are not simply proxies for national institutional variation. At the same time, national ecosystem variables contribute additional explanatory structure. Competition is consistently positive (about <span class="math inline">\(0.088\)</span> in Column 4), while internationalization is consistently negative (about <span class="math inline">\(-0.082\)</span>). Other GEI components show heterogeneous patterns across specifications, suggesting they may operate differently in cross-sectional comparisons than in within-country temporal change. This combination of stable dyadic mechanisms and non-negligible national effects is consistent with <span class="citation" data-cites="RelatednessAndEconComplexityPolicy">(<a href="references.html#ref-RelatednessAndEconComplexityPolicy" role="doc-biblioref"><strong>RelatednessAndEconComplexityPolicy?</strong></a>)</span>, which cautions against treating relatedness metrics as sufficient guides to diversification because institutional and policy context can shape which opportunities are realized. This heterogeneity notwithstanding, the consistency of competition and internationalization effects, alongside the stable core mechanisms, provides sufficient evidence for H3 that national entrepreneurial ecosystems shape regional potential beyond dyadic technology-region characteristics.</p>
+<p>In <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.3</span></a> (and later on in <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.4</span></a>) we extend our framework by incorporating covariates on the national entrepreneurial ecosystem characteristics from the Global Entrepreneurship Index. The idea here is to understand whether these covariates contribute to the variation in regional potential along side the network metrics (and their interactions).</p>
+<p>First, we can see in <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.3</span></a> that across the different specification the inclusion of the entrepreneurial ecosystem covariates does not change the sign, significance nor the size of the effects of the other covariates we explored in <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.2</span></a>. In fact we see a marginal improvements in the goodness of fit (within-<span class="math inline">\(R^2\)</span> rises from <span class="math inline">\(0.368\)</span> to <span class="math inline">\(0.371\)</span> and overall-<span class="math inline">\(R^2\)</span> from <span class="math inline">\(0.665\)</span> to <span class="math inline">\(0.668\)</span>). Although small, this improvement shows that the inclusion of the national entrepreneurial ecosystem covariates is still contributive regardless. This stability supports a cautious conclusion that the coherence and network-position mechanisms are not simply proxies for national institutional variation.</p>
+<p>The contribution of these covariates, however, doesn’t show the same consistency across our specification with the exception of “x13_internationalization” and “x9_competition”. This is especially notable when we include the fixed effects. We already briefly discussed in the previous chapter why this could be the case here, and we will return to this point in the discussion chapter.</p>
+<p>Regardless, Competition is consistently positive, while internationalization is consistently negative (<span class="math inline">\(0.088\)</span> and <span class="math inline">\(-0.082\)</span> respectively in Column 4). Other GEI components show heterogeneous patterns across specifications.</p>
+<p>This combination of stable dyadic mechanisms and non-negligible national effects is consistent with the caveat mentioned in <span class="citation" data-cites="pinheiro2025">Pinheiro (<a href="references.html#ref-pinheiro2025" role="doc-biblioref">2025</a>)</span> (also in <span class="citation" data-cites="boschma2015towards">Boschma (<a href="references.html#ref-boschma2015towards" role="doc-biblioref">2015</a>)</span>), which cautions against treating relatedness metrics as sufficient guides to diversification arguing that institutional and policy context can shape which opportunities are realized. This heterogeneity (regardless of the consistency of competition and internationalization effects), together with the stable core mechanisms that remain consistent constitute one of our main empirical contribution in this work. Consequently and in alignment with these observations in the literature these results provides partial evidence for H3. To explore this further model 3 provides an alternative specification that’s more adequate to the hierarchical structure of the data.</p>
 <div class="landscape">
 <div class="cell">
 <div id="tbl-potential-fe-ols-h" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-ols-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.4: logit(pred1) - ols
+Table&nbsp;5.3: logit(pred1) - ols
 </figcaption>
 <div aria-describedby="tbl-potential-fe-ols-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uceyparznm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uceyparznm table {
+<div id="vlpbnwraze" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vlpbnwraze table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uceyparznm thead, #uceyparznm tbody, #uceyparznm tfoot, #uceyparznm tr, #uceyparznm td, #uceyparznm th {
+#vlpbnwraze thead, #vlpbnwraze tbody, #vlpbnwraze tfoot, #vlpbnwraze tr, #vlpbnwraze td, #vlpbnwraze th {
   border-style: none;
 }
 
-#uceyparznm p {
+#vlpbnwraze p {
   margin: 0;
   padding: 0;
 }
 
-#uceyparznm .gt_table {
+#vlpbnwraze .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1903,12 +1899,12 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-left-color: #D3D3D3;
 }
 
-#uceyparznm .gt_caption {
+#vlpbnwraze .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uceyparznm .gt_title {
+#vlpbnwraze .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1920,7 +1916,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-bottom-width: 0;
 }
 
-#uceyparznm .gt_subtitle {
+#vlpbnwraze .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1932,7 +1928,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-top-width: 0;
 }
 
-#uceyparznm .gt_heading {
+#vlpbnwraze .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1944,13 +1940,13 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#uceyparznm .gt_bottom_border {
+#vlpbnwraze .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uceyparznm .gt_col_headings {
+#vlpbnwraze .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1965,7 +1961,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#uceyparznm .gt_col_heading {
+#vlpbnwraze .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1985,7 +1981,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   overflow-x: hidden;
 }
 
-#uceyparznm .gt_column_spanner_outer {
+#vlpbnwraze .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1997,15 +1993,15 @@ Table&nbsp;5.4: logit(pred1) - ols
   padding-right: 4px;
 }
 
-#uceyparznm .gt_column_spanner_outer:first-child {
+#vlpbnwraze .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uceyparznm .gt_column_spanner_outer:last-child {
+#vlpbnwraze .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uceyparznm .gt_column_spanner {
+#vlpbnwraze .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2017,11 +2013,11 @@ Table&nbsp;5.4: logit(pred1) - ols
   width: 100%;
 }
 
-#uceyparznm .gt_spanner_row {
+#vlpbnwraze .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uceyparznm .gt_group_heading {
+#vlpbnwraze .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2047,7 +2043,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   text-align: left;
 }
 
-#uceyparznm .gt_empty_group_heading {
+#vlpbnwraze .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2062,15 +2058,15 @@ Table&nbsp;5.4: logit(pred1) - ols
   vertical-align: middle;
 }
 
-#uceyparznm .gt_from_md > :first-child {
+#vlpbnwraze .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uceyparznm .gt_from_md > :last-child {
+#vlpbnwraze .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uceyparznm .gt_row {
+#vlpbnwraze .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2089,7 +2085,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   overflow-x: hidden;
 }
 
-#uceyparznm .gt_stub {
+#vlpbnwraze .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2102,7 +2098,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#uceyparznm .gt_stub_row_group {
+#vlpbnwraze .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2116,15 +2112,15 @@ Table&nbsp;5.4: logit(pred1) - ols
   vertical-align: top;
 }
 
-#uceyparznm .gt_row_group_first td {
+#vlpbnwraze .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uceyparznm .gt_row_group_first th {
+#vlpbnwraze .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uceyparznm .gt_summary_row {
+#vlpbnwraze .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2134,16 +2130,16 @@ Table&nbsp;5.4: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#uceyparznm .gt_first_summary_row {
+#vlpbnwraze .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uceyparznm .gt_first_summary_row.thick {
+#vlpbnwraze .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uceyparznm .gt_last_summary_row {
+#vlpbnwraze .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2153,7 +2149,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#uceyparznm .gt_grand_summary_row {
+#vlpbnwraze .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2163,7 +2159,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#uceyparznm .gt_first_grand_summary_row {
+#vlpbnwraze .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2173,7 +2169,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-top-color: #D3D3D3;
 }
 
-#uceyparznm .gt_last_grand_summary_row_top {
+#vlpbnwraze .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2183,11 +2179,11 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#uceyparznm .gt_striped {
+#vlpbnwraze .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uceyparznm .gt_table_body {
+#vlpbnwraze .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2196,7 +2192,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#uceyparznm .gt_footnotes {
+#vlpbnwraze .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2210,7 +2206,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#uceyparznm .gt_footnote {
+#vlpbnwraze .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2219,7 +2215,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#uceyparznm .gt_sourcenotes {
+#vlpbnwraze .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2233,7 +2229,7 @@ Table&nbsp;5.4: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#uceyparznm .gt_sourcenote {
+#vlpbnwraze .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2241,72 +2237,72 @@ Table&nbsp;5.4: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#uceyparznm .gt_left {
+#vlpbnwraze .gt_left {
   text-align: left;
 }
 
-#uceyparznm .gt_center {
+#vlpbnwraze .gt_center {
   text-align: center;
 }
 
-#uceyparznm .gt_right {
+#vlpbnwraze .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uceyparznm .gt_font_normal {
+#vlpbnwraze .gt_font_normal {
   font-weight: normal;
 }
 
-#uceyparznm .gt_font_bold {
+#vlpbnwraze .gt_font_bold {
   font-weight: bold;
 }
 
-#uceyparznm .gt_font_italic {
+#vlpbnwraze .gt_font_italic {
   font-style: italic;
 }
 
-#uceyparznm .gt_super {
+#vlpbnwraze .gt_super {
   font-size: 65%;
 }
 
-#uceyparznm .gt_footnote_marks {
+#vlpbnwraze .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uceyparznm .gt_asterisk {
+#vlpbnwraze .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uceyparznm .gt_indent_1 {
+#vlpbnwraze .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uceyparznm .gt_indent_2 {
+#vlpbnwraze .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uceyparznm .gt_indent_3 {
+#vlpbnwraze .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uceyparznm .gt_indent_4 {
+#vlpbnwraze .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uceyparznm .gt_indent_5 {
+#vlpbnwraze .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uceyparznm .katex-display {
+#vlpbnwraze .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uceyparznm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vlpbnwraze div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2784,35 +2780,37 @@ Table&nbsp;5.4: logit(pred1) - ols
 </section>
 <section id="hierarchical-structure-and-spatial-implications" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="hierarchical-structure-and-spatial-implications"><span class="header-section-number">5.4</span> Hierarchical Structure and Spatial Implications</h2>
-<p><a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a> <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a> employs random effects models that account for regions nested within countries, a specification that matches the hierarchical structure of the data and is appropriate given that the GEI variables are measured at the national level. The high intra-class correlation, <span class="math inline">\(ICC = 0.60\)</span>, implies that <span class="math inline">\(60%\)</span> of variance in potential is between units rather than within-region over time. The variance components show that country-level heterogeneity (standard deviation approximately <span class="math inline">\(1.12\)</span>–<span class="math inline">\(1.17\)</span>) exceeds region-within-country heterogeneity (approximately <span class="math inline">\(1.02\)</span>–<span class="math inline">\(1.04\)</span>). These magnitudes do not contradict the fixed effects results; rather, they clarify that while the fixed effects estimates document robust within-region mechanisms, a substantial portion of the feasibility landscape is structured by relatively persistent differences across countries and regions.</p>
-<p>Crucially, the core coefficients remain stable in the hierarchical models. In the random effects specification comparable to the fixed effects benchmark, coherence remains positive (around <span class="math inline">\(0.709\)</span>), betweenness remains positive (around <span class="math inline">\(0.398\)</span>), and the coherence <span class="math inline">\(\times\)</span> betweenness interaction remains negative (around <span class="math inline">\(-0.292\)</span>). Eigenvector centrality remains negative (around <span class="math inline">\(-0.222\)</span>) without coherence moderation. Distance is more salient in this setting: rawdist becomes significant and negative as a main effect (about <span class="math inline">\(-0.027\)</span>), consistent with the idea that topological accessibility matters for cross-regional comparisons even if it is less informative for within-region shifts once fixed effects absorb time-invariant accessibility differences. At the same time, the interaction results reinforce the earlier asymmetry. The rawdist <span class="math inline">\(\times\)</span> eigenvector term remains strongly negative (around <span class="math inline">\(-0.082\)</span>), indicating that remoteness compounds difficulty specifically for authority targets. The betweenness <span class="math inline">\(\times\)</span> rawdist interaction becomes positive and significant in the random effects model (e.g., <span class="math inline">\(0.050\)</span>–<span class="math inline">\(0.061\)</span>), suggesting that bridging positions may be more relevant for overcoming remoteness in between-place comparisons than in within-region variation. Because these patterns appear most clearly in the cross-sectional component captured by random effects, they should be interpreted as differences in accessibility across places rather than as short-run within-place responses.</p>
-<p>These hierarchical results also help justify the spatial models that follow. First, the large <span class="math inline">\(ICC\)</span> indicates that potential is strongly structured across places, not only through time-varying within-region dynamics. Second, <span class="citation" data-cites="toth2022technology">Tóth et al. (<a href="references.html#ref-toth2022technology" role="doc-biblioref">2022</a>)</span> emphasizes that regional economies are “webs” of interdependent activities and argues that “networks are of great assistance,” a framing that makes it plausible that feasibility is not independent across space but may be shaped by neighboring structures. Third, the distinction between within-region fixed effects patterns and between-place random effects patterns suggests that part of the remaining heterogeneity may be geographically patterned, motivating an explicit test for spatial dependence.</p>
+<p>Similar to model 2 portrayed in <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.3</span></a>, model 3 accounts for the same covariates but considers the nested structure if the data. In <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.4</span></a> employs random effects models where the regions random intercepts are drawn from the same distribution for each country. This matches the hierarchical structure of the data and is appropriate given that the GEI variables are measured at the national level.</p>
+<p>Crucially, the core coefficients remain stable in the hierarchical models. In the random effects specification comparable to the fixed effects benchmark, coherence remains positive (around <span class="math inline">\(0.709\)</span>), betweenness remains positive (around <span class="math inline">\(0.398\)</span>), and the coherence <span class="math inline">\(\times\)</span> betweenness interaction remains negative (<span class="math inline">\(-0.292\)</span>). Eigenvector centrality remains negative (around <span class="math inline">\(-0.222\)</span>) and its interaction with coherence also remains insignificant. In contrast, distance is more salient in this setting and shows a significant and negative coefficient as a main effect (<span class="math inline">\(-0.027\)</span>). This could indicate that topological accessibility matters more for cross-regional comparison than for within-region setups. At the same time, its interaction results reinforce the asymmetry we observed earlier in <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.3</span></a> and <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.2</span></a>. The interaction term rawdist <span class="math inline">\(\times\)</span> eigenvector term conserve its sign, significance and effect size (<span class="math inline">\(-0.082\)</span>). This is also the case for the betweenness <span class="math inline">\(\times\)</span> rawdist interaction which becomes significant with a similar sign and effect size compared to the previous models.</p>
+<p>However and more importantly, in this model the national ecosystem covariates are uniformally stable and consistent in sign, significance and effect size. In this model we can see that variation in human capital, competition, product innovation, and high growth pillars are associated at 4%, 9%, 1.6% and 0.8% respectively with the outcome. This is in contrast to process innovation, internationalisation, and risk capital pillars whose variations are negatively associated with the outcome at 2%, 8%, and 3.5% respectively.</p>
+<p>These results directly address H3, and relatively confirm the intuition we formalised in this work and the results in the previous model. National entrepreneurial ecosystem characteristics matters for regional potential and explain a significant proportion of the variation (our full specification in column 5 shows the highest marginal and conditional <span class="math inline">\(R^2\)</span>, 0.201 and 0.668 respectively). In fact, this can also be observed in the high intra-class correlation (<span class="math inline">\(ICC = 0.60\)</span>). This shows that <span class="math inline">\(60%\)</span> of variance in regional potential is between-group rather than within-group. The variance components show that country-level heterogeneity (standard deviation around <span class="math inline">\(1.12\)</span>-<span class="math inline">\(1.13\)</span>) exceeds region-within-country heterogeneity (approximately <span class="math inline">\(1.02\)</span>–<span class="math inline">\(1.03\)</span>). These decompositions inform us that, while the fixed effects estimates document robust within-region mechanisms, a substantial portion of the feasibility landscape is structured by relatively persistent differences across countries and regions.</p>
+<p>The results of this model also help justify the spatial models that follow. The large <span class="math inline">\(ICC\)</span> and the variance decompositions indicates that regional potential is strongly structured across places. This confirms our intuition in the previous section as we introduced the rational behind model 2. The nested structure of the dyadic context matters almost as much as the dyadic components themselves. This is to say that the geography of the region (where it is, in which country) is extremely informative of its technological potential. This could justify the idea that feasibility is not independent across space but may be shaped by neighbouring structures. Consequently, the distinction between within-region fixed effects patterns and between-place random effects patterns suggests that part of the remaining heterogeneity may be geographically patterned. This is our main motivation for an explicit test for spatial dependence which is the objective of model 3 that we present its results in the next section.</p>
 <div class="landscape">
 <div class="cell">
 <div id="tbl-potential-re" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-re-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.5: logit(pred1) - ols
+Table&nbsp;5.4: logit(pred1) - ols
 </figcaption>
 <div aria-describedby="tbl-potential-re-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wxvsltnzlb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wxvsltnzlb table {
+<div id="dalvntlrgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dalvntlrgw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wxvsltnzlb thead, #wxvsltnzlb tbody, #wxvsltnzlb tfoot, #wxvsltnzlb tr, #wxvsltnzlb td, #wxvsltnzlb th {
+#dalvntlrgw thead, #dalvntlrgw tbody, #dalvntlrgw tfoot, #dalvntlrgw tr, #dalvntlrgw td, #dalvntlrgw th {
   border-style: none;
 }
 
-#wxvsltnzlb p {
+#dalvntlrgw p {
   margin: 0;
   padding: 0;
 }
 
-#wxvsltnzlb .gt_table {
+#dalvntlrgw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2838,12 +2836,12 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-left-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_caption {
+#dalvntlrgw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wxvsltnzlb .gt_title {
+#dalvntlrgw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2855,7 +2853,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-bottom-width: 0;
 }
 
-#wxvsltnzlb .gt_subtitle {
+#dalvntlrgw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2867,7 +2865,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-top-width: 0;
 }
 
-#wxvsltnzlb .gt_heading {
+#dalvntlrgw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2879,13 +2877,13 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_bottom_border {
+#dalvntlrgw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_col_headings {
+#dalvntlrgw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2900,7 +2898,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_col_heading {
+#dalvntlrgw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2920,7 +2918,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   overflow-x: hidden;
 }
 
-#wxvsltnzlb .gt_column_spanner_outer {
+#dalvntlrgw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2932,15 +2930,15 @@ Table&nbsp;5.5: logit(pred1) - ols
   padding-right: 4px;
 }
 
-#wxvsltnzlb .gt_column_spanner_outer:first-child {
+#dalvntlrgw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wxvsltnzlb .gt_column_spanner_outer:last-child {
+#dalvntlrgw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wxvsltnzlb .gt_column_spanner {
+#dalvntlrgw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2952,11 +2950,11 @@ Table&nbsp;5.5: logit(pred1) - ols
   width: 100%;
 }
 
-#wxvsltnzlb .gt_spanner_row {
+#dalvntlrgw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wxvsltnzlb .gt_group_heading {
+#dalvntlrgw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2982,7 +2980,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   text-align: left;
 }
 
-#wxvsltnzlb .gt_empty_group_heading {
+#dalvntlrgw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2997,15 +2995,15 @@ Table&nbsp;5.5: logit(pred1) - ols
   vertical-align: middle;
 }
 
-#wxvsltnzlb .gt_from_md > :first-child {
+#dalvntlrgw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wxvsltnzlb .gt_from_md > :last-child {
+#dalvntlrgw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wxvsltnzlb .gt_row {
+#dalvntlrgw .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -3024,7 +3022,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   overflow-x: hidden;
 }
 
-#wxvsltnzlb .gt_stub {
+#dalvntlrgw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3037,7 +3035,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#wxvsltnzlb .gt_stub_row_group {
+#dalvntlrgw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3051,15 +3049,15 @@ Table&nbsp;5.5: logit(pred1) - ols
   vertical-align: top;
 }
 
-#wxvsltnzlb .gt_row_group_first td {
+#dalvntlrgw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wxvsltnzlb .gt_row_group_first th {
+#dalvntlrgw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wxvsltnzlb .gt_summary_row {
+#dalvntlrgw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3069,16 +3067,16 @@ Table&nbsp;5.5: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#wxvsltnzlb .gt_first_summary_row {
+#dalvntlrgw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_first_summary_row.thick {
+#dalvntlrgw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wxvsltnzlb .gt_last_summary_row {
+#dalvntlrgw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3088,7 +3086,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_grand_summary_row {
+#dalvntlrgw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3098,7 +3096,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#wxvsltnzlb .gt_first_grand_summary_row {
+#dalvntlrgw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3108,7 +3106,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-top-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_last_grand_summary_row_top {
+#dalvntlrgw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3118,11 +3116,11 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_striped {
+#dalvntlrgw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wxvsltnzlb .gt_table_body {
+#dalvntlrgw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3131,7 +3129,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-bottom-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_footnotes {
+#dalvntlrgw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3145,7 +3143,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_footnote {
+#dalvntlrgw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3154,7 +3152,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#wxvsltnzlb .gt_sourcenotes {
+#dalvntlrgw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3168,7 +3166,7 @@ Table&nbsp;5.5: logit(pred1) - ols
   border-right-color: #D3D3D3;
 }
 
-#wxvsltnzlb .gt_sourcenote {
+#dalvntlrgw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3176,72 +3174,72 @@ Table&nbsp;5.5: logit(pred1) - ols
   padding-right: 5px;
 }
 
-#wxvsltnzlb .gt_left {
+#dalvntlrgw .gt_left {
   text-align: left;
 }
 
-#wxvsltnzlb .gt_center {
+#dalvntlrgw .gt_center {
   text-align: center;
 }
 
-#wxvsltnzlb .gt_right {
+#dalvntlrgw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wxvsltnzlb .gt_font_normal {
+#dalvntlrgw .gt_font_normal {
   font-weight: normal;
 }
 
-#wxvsltnzlb .gt_font_bold {
+#dalvntlrgw .gt_font_bold {
   font-weight: bold;
 }
 
-#wxvsltnzlb .gt_font_italic {
+#dalvntlrgw .gt_font_italic {
   font-style: italic;
 }
 
-#wxvsltnzlb .gt_super {
+#dalvntlrgw .gt_super {
   font-size: 65%;
 }
 
-#wxvsltnzlb .gt_footnote_marks {
+#dalvntlrgw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wxvsltnzlb .gt_asterisk {
+#dalvntlrgw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wxvsltnzlb .gt_indent_1 {
+#dalvntlrgw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wxvsltnzlb .gt_indent_2 {
+#dalvntlrgw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wxvsltnzlb .gt_indent_3 {
+#dalvntlrgw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wxvsltnzlb .gt_indent_4 {
+#dalvntlrgw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wxvsltnzlb .gt_indent_5 {
+#dalvntlrgw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wxvsltnzlb .katex-display {
+#dalvntlrgw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wxvsltnzlb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dalvntlrgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3809,32 +3807,32 @@ Table&nbsp;5.5: logit(pred1) - ols
 </section>
 <section id="role-of-space" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="role-of-space"><span class="header-section-number">5.5</span> Role of space</h2>
-<p>Having established stable dyadic mechanisms at the technology–region level (Tables <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.3</span></a> and <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.4</span></a>) and substantial between-place heterogeneity in the hierarchical models (Table <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.5</span></a>), we test whether regional potential exhibits spatial dependence. We aggregate potential to region-year means and estimate spatial panel models with <span class="math inline">\(5\)</span>-nearest-neighbor weights matrices. Tables <a href="#tbl-spatial-sar" class="quarto-xref">Table&nbsp;<span>5.6</span></a> and <a href="#tbl-spatial-sem" class="quarto-xref">Table&nbsp;<span>5.7</span></a> reveal substantial spatial dependence. In the SAR model, the spatial autoregressive parameter is around <span class="math inline">\(0.376\)</span> in the interaction specification, indicating that regional potential is positively associated with neighboring regions’ outcomes. In the SEM model, the spatial error parameter is around <span class="math inline">\(0.420\)</span> in the interaction specification, indicating spatial correlation in unobserved components. These estimates are consistent with the interpretation that spatial context matters for regional feasibility landscapes, whether through spillovers or through correlated shocks and unobservables.</p>
+<p>Having established stable dyadic mechanisms at the technology–region level (Tables <a href="#tbl-potential-fe-ols" class="quarto-xref">Table&nbsp;<span>5.2</span></a> and <a href="#tbl-potential-fe-ols-h" class="quarto-xref">Table&nbsp;<span>5.3</span></a>) and substantial between-place heterogeneity in the hierarchical models (Table <a href="#tbl-potential-re" class="quarto-xref">Table&nbsp;<span>5.4</span></a>), we test whether regional potential exhibits spatial dependence. We aggregate potential to region-year means and estimate spatial panel models with <span class="math inline">\(5\)</span>-nearest-neighbor weights matrices. Tables <a href="#tbl-spatial-sar" class="quarto-xref">Table&nbsp;<span>5.5</span></a> and <a href="#tbl-spatial-sem" class="quarto-xref">Table&nbsp;<span>5.6</span></a> reveal substantial spatial dependence. In the SAR model, the spatial autoregressive parameter is around <span class="math inline">\(0.376\)</span> in the interaction specification, indicating that regional potential is positively associated with neighboring regions’ outcomes. In the SEM model, the spatial error parameter is around <span class="math inline">\(0.420\)</span> in the interaction specification, indicating spatial correlation in unobserved components. These estimates are consistent with the interpretation that spatial context matters for regional feasibility landscapes, whether through spillovers or through correlated shocks and unobservables.</p>
 <div class="cell">
 <div id="tbl-spatial-sar" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spatial-sar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
+Table&nbsp;5.5: Regional Potential (t): Spatial SAR Panel
 </figcaption>
 <div aria-describedby="tbl-spatial-sar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ppqntlgsfp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ppqntlgsfp table {
+<div id="dpzyblowtl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dpzyblowtl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ppqntlgsfp thead, #ppqntlgsfp tbody, #ppqntlgsfp tfoot, #ppqntlgsfp tr, #ppqntlgsfp td, #ppqntlgsfp th {
+#dpzyblowtl thead, #dpzyblowtl tbody, #dpzyblowtl tfoot, #dpzyblowtl tr, #dpzyblowtl td, #dpzyblowtl th {
   border-style: none;
 }
 
-#ppqntlgsfp p {
+#dpzyblowtl p {
   margin: 0;
   padding: 0;
 }
 
-#ppqntlgsfp .gt_table {
+#dpzyblowtl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3860,12 +3858,12 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-left-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_caption {
+#dpzyblowtl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ppqntlgsfp .gt_title {
+#dpzyblowtl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3877,7 +3875,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-bottom-width: 0;
 }
 
-#ppqntlgsfp .gt_subtitle {
+#dpzyblowtl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3889,7 +3887,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-top-width: 0;
 }
 
-#ppqntlgsfp .gt_heading {
+#dpzyblowtl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3901,13 +3899,13 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-right-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_bottom_border {
+#dpzyblowtl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_col_headings {
+#dpzyblowtl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3922,7 +3920,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-right-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_col_heading {
+#dpzyblowtl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3942,7 +3940,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   overflow-x: hidden;
 }
 
-#ppqntlgsfp .gt_column_spanner_outer {
+#dpzyblowtl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3954,15 +3952,15 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   padding-right: 4px;
 }
 
-#ppqntlgsfp .gt_column_spanner_outer:first-child {
+#dpzyblowtl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ppqntlgsfp .gt_column_spanner_outer:last-child {
+#dpzyblowtl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ppqntlgsfp .gt_column_spanner {
+#dpzyblowtl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3974,11 +3972,11 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   width: 100%;
 }
 
-#ppqntlgsfp .gt_spanner_row {
+#dpzyblowtl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ppqntlgsfp .gt_group_heading {
+#dpzyblowtl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4004,7 +4002,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   text-align: left;
 }
 
-#ppqntlgsfp .gt_empty_group_heading {
+#dpzyblowtl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4019,15 +4017,15 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   vertical-align: middle;
 }
 
-#ppqntlgsfp .gt_from_md > :first-child {
+#dpzyblowtl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ppqntlgsfp .gt_from_md > :last-child {
+#dpzyblowtl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ppqntlgsfp .gt_row {
+#dpzyblowtl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4046,7 +4044,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   overflow-x: hidden;
 }
 
-#ppqntlgsfp .gt_stub {
+#dpzyblowtl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4059,7 +4057,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   padding-right: 5px;
 }
 
-#ppqntlgsfp .gt_stub_row_group {
+#dpzyblowtl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4073,15 +4071,15 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   vertical-align: top;
 }
 
-#ppqntlgsfp .gt_row_group_first td {
+#dpzyblowtl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ppqntlgsfp .gt_row_group_first th {
+#dpzyblowtl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ppqntlgsfp .gt_summary_row {
+#dpzyblowtl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4091,16 +4089,16 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   padding-right: 5px;
 }
 
-#ppqntlgsfp .gt_first_summary_row {
+#dpzyblowtl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_first_summary_row.thick {
+#dpzyblowtl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ppqntlgsfp .gt_last_summary_row {
+#dpzyblowtl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4110,7 +4108,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-bottom-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_grand_summary_row {
+#dpzyblowtl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4120,7 +4118,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   padding-right: 5px;
 }
 
-#ppqntlgsfp .gt_first_grand_summary_row {
+#dpzyblowtl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4130,7 +4128,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-top-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_last_grand_summary_row_top {
+#dpzyblowtl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4140,11 +4138,11 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-bottom-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_striped {
+#dpzyblowtl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ppqntlgsfp .gt_table_body {
+#dpzyblowtl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4153,7 +4151,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-bottom-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_footnotes {
+#dpzyblowtl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4167,7 +4165,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-right-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_footnote {
+#dpzyblowtl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4176,7 +4174,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   padding-right: 5px;
 }
 
-#ppqntlgsfp .gt_sourcenotes {
+#dpzyblowtl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4190,7 +4188,7 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   border-right-color: #D3D3D3;
 }
 
-#ppqntlgsfp .gt_sourcenote {
+#dpzyblowtl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4198,72 +4196,72 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
   padding-right: 5px;
 }
 
-#ppqntlgsfp .gt_left {
+#dpzyblowtl .gt_left {
   text-align: left;
 }
 
-#ppqntlgsfp .gt_center {
+#dpzyblowtl .gt_center {
   text-align: center;
 }
 
-#ppqntlgsfp .gt_right {
+#dpzyblowtl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ppqntlgsfp .gt_font_normal {
+#dpzyblowtl .gt_font_normal {
   font-weight: normal;
 }
 
-#ppqntlgsfp .gt_font_bold {
+#dpzyblowtl .gt_font_bold {
   font-weight: bold;
 }
 
-#ppqntlgsfp .gt_font_italic {
+#dpzyblowtl .gt_font_italic {
   font-style: italic;
 }
 
-#ppqntlgsfp .gt_super {
+#dpzyblowtl .gt_super {
   font-size: 65%;
 }
 
-#ppqntlgsfp .gt_footnote_marks {
+#dpzyblowtl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ppqntlgsfp .gt_asterisk {
+#dpzyblowtl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ppqntlgsfp .gt_indent_1 {
+#dpzyblowtl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ppqntlgsfp .gt_indent_2 {
+#dpzyblowtl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ppqntlgsfp .gt_indent_3 {
+#dpzyblowtl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ppqntlgsfp .gt_indent_4 {
+#dpzyblowtl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ppqntlgsfp .gt_indent_5 {
+#dpzyblowtl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ppqntlgsfp .katex-display {
+#dpzyblowtl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ppqntlgsfp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dpzyblowtl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4443,13 +4441,13 @@ Table&nbsp;5.6: Regional Potential (t): Spatial SAR Panel
 </figure>
 </div>
 </div>
-<p>The regional aggregate covariates also help interpret the relationship between dyadic feasibility and portfolio-level advantage. Average coherence is positive (about <span class="math inline">\(0.065\)</span> in the SAR interaction model and <span class="math inline">\(0.073\)</span> in the SEM interaction model), consistent with the dyadic evidence that alignment is a central feasibility correlate. Average eigenvector centrality of existing portfolios is also positive (about <span class="math inline">\(0.022\)</span> in SAR and <span class="math inline">\(0.021\)</span> in SEM), and it interacts positively with average coherence (about <span class="math inline">\(0.006\)</span> in SAR and <span class="math inline">\(0.005\)</span> in SEM). This differs in sign from the dyadic eigenvector penalty for candidate technologies (around <span class="math inline">\(-0.22\)</span>). A conservative reconciliation is that these statistics capture different objects: dyadic eigenvector describes the difficulty of entering an authority-like target technology, whereas average eigenvector of a region’s existing specializations reflects accumulated capabilities embedded in those technologies that may raise overall potential across the opportunity set. This distinction is compatible with the enabling-technology argument in <span class="citation" data-cites="GoingBeyondRelatednessKETs">(<a href="references.html#ref-GoingBeyondRelatednessKETs" role="doc-biblioref"><strong>GoingBeyondRelatednessKETs?</strong></a>)</span>, which emphasizes that enabling capacities matter when they are embedded and used within the local system, rather than as isolated targets.</p>
+<p>The regional aggregate covariates also help interpret the relationship between dyadic feasibility and portfolio-level advantage. Average coherence is positive (about <span class="math inline">\(0.065\)</span> in the SAR interaction model and <span class="math inline">\(0.073\)</span> in the SEM interaction model), consistent with the dyadic evidence that alignment is a central feasibility correlate. Average eigenvector centrality of existing portfolios is also positive (about <span class="math inline">\(0.022\)</span> in SAR and <span class="math inline">\(0.021\)</span> in SEM), and it interacts positively with average coherence (about <span class="math inline">\(0.006\)</span> in SAR and <span class="math inline">\(0.005\)</span> in SEM). This differs in sign from the dyadic eigenvector penalty for candidate technologies (around <span class="math inline">\(-0.22\)</span>). A conservative reconciliation is that these statistics capture different objects: dyadic eigenvector describes the difficulty of entering an authority-like target technology, whereas average eigenvector of a region’s existing specializations reflects accumulated capabilities embedded in those technologies that may raise overall potential across the opportunity set. This distinction is compatible with the enabling-technology argument in <span class="citation" data-cites="antonietti2021going">Antonietti and Montresor (<a href="references.html#ref-antonietti2021going" role="doc-biblioref">2021</a>)</span>, which emphasizes that enabling capacities matter when they are embedded and used within the local system, rather than as isolated targets.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-lisa" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<div id="fig-lisa" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lisa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="results_files/figure-html/fig-lisa-1.png" id="fig-lisa" class="img-fluid figure-img" width="672">
+<img src="results_files/figure-html/fig-lisa-1.png" id="fig-lisa" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-lisa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.1
@@ -4463,27 +4461,27 @@ Figure&nbsp;5.1
 <div id="tbl-spatial-sem" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spatial-sem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
+Table&nbsp;5.6: Regional Potential (t): Spatial SEM Panel
 </figcaption>
 <div aria-describedby="tbl-spatial-sem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="mrmwkrkkpf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mrmwkrkkpf table {
+<div id="amibtlmifk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#amibtlmifk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mrmwkrkkpf thead, #mrmwkrkkpf tbody, #mrmwkrkkpf tfoot, #mrmwkrkkpf tr, #mrmwkrkkpf td, #mrmwkrkkpf th {
+#amibtlmifk thead, #amibtlmifk tbody, #amibtlmifk tfoot, #amibtlmifk tr, #amibtlmifk td, #amibtlmifk th {
   border-style: none;
 }
 
-#mrmwkrkkpf p {
+#amibtlmifk p {
   margin: 0;
   padding: 0;
 }
 
-#mrmwkrkkpf .gt_table {
+#amibtlmifk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4509,12 +4507,12 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-left-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_caption {
+#amibtlmifk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mrmwkrkkpf .gt_title {
+#amibtlmifk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4526,7 +4524,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-bottom-width: 0;
 }
 
-#mrmwkrkkpf .gt_subtitle {
+#amibtlmifk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4538,7 +4536,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-top-width: 0;
 }
 
-#mrmwkrkkpf .gt_heading {
+#amibtlmifk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4550,13 +4548,13 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-right-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_bottom_border {
+#amibtlmifk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_col_headings {
+#amibtlmifk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4571,7 +4569,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-right-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_col_heading {
+#amibtlmifk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4591,7 +4589,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   overflow-x: hidden;
 }
 
-#mrmwkrkkpf .gt_column_spanner_outer {
+#amibtlmifk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4603,15 +4601,15 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   padding-right: 4px;
 }
 
-#mrmwkrkkpf .gt_column_spanner_outer:first-child {
+#amibtlmifk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mrmwkrkkpf .gt_column_spanner_outer:last-child {
+#amibtlmifk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mrmwkrkkpf .gt_column_spanner {
+#amibtlmifk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4623,11 +4621,11 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   width: 100%;
 }
 
-#mrmwkrkkpf .gt_spanner_row {
+#amibtlmifk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mrmwkrkkpf .gt_group_heading {
+#amibtlmifk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4653,7 +4651,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   text-align: left;
 }
 
-#mrmwkrkkpf .gt_empty_group_heading {
+#amibtlmifk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4668,15 +4666,15 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   vertical-align: middle;
 }
 
-#mrmwkrkkpf .gt_from_md > :first-child {
+#amibtlmifk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mrmwkrkkpf .gt_from_md > :last-child {
+#amibtlmifk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mrmwkrkkpf .gt_row {
+#amibtlmifk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4695,7 +4693,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   overflow-x: hidden;
 }
 
-#mrmwkrkkpf .gt_stub {
+#amibtlmifk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4708,7 +4706,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   padding-right: 5px;
 }
 
-#mrmwkrkkpf .gt_stub_row_group {
+#amibtlmifk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4722,15 +4720,15 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   vertical-align: top;
 }
 
-#mrmwkrkkpf .gt_row_group_first td {
+#amibtlmifk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mrmwkrkkpf .gt_row_group_first th {
+#amibtlmifk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mrmwkrkkpf .gt_summary_row {
+#amibtlmifk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4740,16 +4738,16 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   padding-right: 5px;
 }
 
-#mrmwkrkkpf .gt_first_summary_row {
+#amibtlmifk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_first_summary_row.thick {
+#amibtlmifk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mrmwkrkkpf .gt_last_summary_row {
+#amibtlmifk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4759,7 +4757,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-bottom-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_grand_summary_row {
+#amibtlmifk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4769,7 +4767,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   padding-right: 5px;
 }
 
-#mrmwkrkkpf .gt_first_grand_summary_row {
+#amibtlmifk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4779,7 +4777,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-top-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_last_grand_summary_row_top {
+#amibtlmifk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4789,11 +4787,11 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-bottom-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_striped {
+#amibtlmifk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mrmwkrkkpf .gt_table_body {
+#amibtlmifk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4802,7 +4800,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-bottom-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_footnotes {
+#amibtlmifk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4816,7 +4814,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-right-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_footnote {
+#amibtlmifk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4825,7 +4823,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   padding-right: 5px;
 }
 
-#mrmwkrkkpf .gt_sourcenotes {
+#amibtlmifk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4839,7 +4837,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   border-right-color: #D3D3D3;
 }
 
-#mrmwkrkkpf .gt_sourcenote {
+#amibtlmifk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4847,72 +4845,72 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
   padding-right: 5px;
 }
 
-#mrmwkrkkpf .gt_left {
+#amibtlmifk .gt_left {
   text-align: left;
 }
 
-#mrmwkrkkpf .gt_center {
+#amibtlmifk .gt_center {
   text-align: center;
 }
 
-#mrmwkrkkpf .gt_right {
+#amibtlmifk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mrmwkrkkpf .gt_font_normal {
+#amibtlmifk .gt_font_normal {
   font-weight: normal;
 }
 
-#mrmwkrkkpf .gt_font_bold {
+#amibtlmifk .gt_font_bold {
   font-weight: bold;
 }
 
-#mrmwkrkkpf .gt_font_italic {
+#amibtlmifk .gt_font_italic {
   font-style: italic;
 }
 
-#mrmwkrkkpf .gt_super {
+#amibtlmifk .gt_super {
   font-size: 65%;
 }
 
-#mrmwkrkkpf .gt_footnote_marks {
+#amibtlmifk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mrmwkrkkpf .gt_asterisk {
+#amibtlmifk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mrmwkrkkpf .gt_indent_1 {
+#amibtlmifk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mrmwkrkkpf .gt_indent_2 {
+#amibtlmifk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mrmwkrkkpf .gt_indent_3 {
+#amibtlmifk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mrmwkrkkpf .gt_indent_4 {
+#amibtlmifk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mrmwkrkkpf .gt_indent_5 {
+#amibtlmifk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mrmwkrkkpf .katex-display {
+#amibtlmifk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mrmwkrkkpf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#amibtlmifk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5097,7 +5095,7 @@ Table&nbsp;5.7: Regional Potential (t): Spatial SEM Panel
 <div id="tbl-potential-fe-logit" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.8: logit(pred1) - logistic
+Table&nbsp;5.7: logit(pred1) - logistic
 </figcaption>
 <div aria-describedby="tbl-potential-fe-logit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -5109,7 +5107,7 @@ Table&nbsp;5.8: logit(pred1) - logistic
 <div id="tbl-potential-fe-logit-h" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-fe-logit-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.9: logit(pred1) - logitic
+Table&nbsp;5.8: logit(pred1) - logitic
 </figcaption>
 <div aria-describedby="tbl-potential-fe-logit-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -5121,7 +5119,7 @@ Table&nbsp;5.9: logit(pred1) - logitic
 <div id="tbl-potential-re1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potential-re1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.10: pred1 - ols
+Table&nbsp;5.9: pred1 - ols
 </figcaption>
 <div aria-describedby="tbl-potential-re1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -5133,14 +5131,32 @@ Table&nbsp;5.10: pred1 - ols
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-antonietti2021going" class="csl-entry" role="listitem">
+Antonietti, Roberto, and Sandro Montresor. 2021. <span>“Going Beyond Relatedness: Regional Diversification Trajectories and Key Enabling Technologies (KETs) in Italian Regions.”</span> <em>Economic Geography</em> 97 (2): 187–207.
+</div>
+<div id="ref-boschma2015towards" class="csl-entry" role="listitem">
+Boschma, Ron. 2015. <span>“Towards an Evolutionary Perspective on Regional Resilience.”</span> <em>Regional Studies</em> 49 (5): 733–51.
+</div>
+<div id="ref-pinheiro2025" class="csl-entry" role="listitem">
+Pinheiro, Cristina. 2025. <span>“Relatedness and Economic Complexity as Tools for Industrial Policy: Insights and Limitations.”</span> <em>Structural Change and Economic Dynamics</em> 72: 1–10.
+</div>
 <div id="ref-tacchella2023relatedness" class="csl-entry" role="listitem">
 Tacchella, Andrea, Andrea Zaccaria, Marco Miccheli, and Luciano Pietronero. 2023. <span>“Relatedness in the Era of Machine Learning.”</span> <em>Chaos, Solitons &amp; Fractals</em> 176: 114071.
 </div>
 <div id="ref-toth2022technology" class="csl-entry" role="listitem">
 Tóth, Gergő, Zoltán Elekes, Adam Whittle, Changjun Lee, and Dieter F Kogler. 2022. <span>“Technology Network Structure Conditions the Economic Resilience of Regions.”</span> <em>Economic Geography</em> 98 (4): 355–78.
 </div>
+<div id="ref-zhu2021strong" class="csl-entry" role="listitem">
+Zhu, Shengjun, Qi Guo, and Canfei He. 2021. <span>“Strong Links and Weak Links: How Do Unrelated Industries Survive in an Unfriendly Environment?”</span> <em>Economic Geography</em> 97 (1): 66–88.
+</div>
 </div>
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This can also be supported by the coherence <span class="math inline">\(\times\)</span> eigenvector interaction coefficient which remains insignificant. In this sense, technologies with enabling role are not a predictor of regional potential regardless of the level of industrial coherence to those technologies the region has. We will discuss this further as we progress in this chapter<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
