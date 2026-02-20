@@ -172,9 +172,23 @@ map_avg_pred1
 **Coherence** ($\text{coherence}_{r,t,y}$) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embededdness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embededdness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base [@teece1994; @nesta2005; @quatraro2010; @pugliese2019coherent; @straccamore2025fitnesscoherence]. 
 
 ```{r fig-map-coherence, echo=FALSE}
+
 map_coherence <- targets::tar_read(map_coherence, store = here::here("../../_targets_DES"))
 
-map_coherence #+ ggplot2::scale_fill_viridis_c(trans = "log10")
+map_coherence + 
+  ggplot2::scale_fill_viridis_c(trans = "log10") +
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.box = "horizontal",
+    legend.title = element_text(hjust = 0.5),
+    legend.title.position = "top",
+    legend.key.width = unit(0.1, "null"),
+    legend.key.height = unit(0.5, "cm"),
+    legend.box.just = "center",
+    legend.title.align = 0.5,
+    legend.margin = margin(t = 0, b = 0, r = 0.6, l = 0.6)
+  )
 
 ```
 
@@ -220,11 +234,22 @@ To test H3, which assumes that national entrepreneurial ecosystem characteristic
 
 For the purposes of this work, we retain pillars x8–x14. The reason here is two folds, first  pillars x1-x6 capture individual-level entrepreneurial attitudes^[opportunity perception, startup skills, risk acceptance, networking, cultural support, opportunity startup] and mostly reflect social preferences of the entrepreneurial ecosystem and not the institutional landscape.
 
+::: {.landscape}
+
 ```{r tbl-corr-ecosystem, echo=FALSE}
 corr_matrix_disag_c <- targets::tar_read(corr_matrix_disag_c, store = here::here("../../_targets_DES"))
 
-corr_matrix_disag_c
+corr_matrix_disag_c %>% 
+  tab_options(
+    table.font.size = px(9),       # font size
+    # data_row.padding = px(1),      # tighter body rows
+    # heading.padding = px(1),       # tighter title/subtitle
+    column_labels.padding = px(1), # tighter header row
+    table.width = pct(90)         # fill available width
+  )
 ```
+
+:::
 
 Second, pillars x1–x6 are heavily correlated (r = .57–.88 across all pairwise combinations, as shown in @tbl-corr-ecosystem). This is problematic in our case since it will create multicollinearity issues in the models and would compromise numerical stability, fit, and most likely bias the results.  
 
@@ -262,7 +287,7 @@ gei_pillars |>
   ) |>
   cols_width(
     Pillar ~ px(130),
-    Variable ~ px(180),
+    Variable ~ px(190),
     Role ~ px(360)
   ) 
   # tab_style(
@@ -307,10 +332,50 @@ summary_panel
 
 ```
 
+::: {.landscape}
+
 ```{r tbl-corr-regional, echo=FALSE}
 corr_matrix_agg <- targets::tar_read(corr_matrix_agg, store = here::here("../../_targets_DES"))
 
 corr_matrix_agg
+```
+
+::: 
+
+
+## Model 0: Entry Benchmark
+
+Before decomposing regional technological potential into its structural determinants, we establish that potential carries meaningful information about diversification feasibility beyond what traditional relatedness measures capture. This benchmark analysis validates the methodological investment in the machine learning framework by testing whether the added complexity—non-linear capability interactions, region-specific predictions—translates into improved empirical performance.
+
+The outcome in this specification is *observed entry*: whether region $r$ develops specialisation (RTA ≥ 1) in technology $t$ at year $y+1$, conditional on not being specialised at year $y$. This is a binary outcome taking the value 1 if the region crosses the specialisation threshold in the subsequent period, and 0 otherwise. We estimate linear probability models (LPM) that include both standardised potential and standardised relatedness density as competing predictors, along with controls for regional and technology complexity.
+
+The general specification is:
+
+$$\text{Entry}_{r,t,y+1} = \beta_1 \text{Density}_{r,t,y} + \beta_2 \text{Potential}_{r,t,y} + \mathbf{Z}_{r,t,y}\boldsymbol{\gamma} + \alpha_y + \varepsilon_{r,t,y}$$
+
+where $\text{Density}_{r,t,y}$ is the standardised relatedness density (z-scored), $\text{Potential}_{r,t,y}$ is the standardised technological potential (z-scored), $\mathbf{Z}_{r,t,y}$ contains controls (regional complexity, technology complexity, patent count), and $\alpha_y$ are year fixed effects. Standard errors are clustered by region and technology to account for the dyadic structure of the data.
+
+The motivation for this specification is straightforward. Relatedness density has been established as a robust predictor of diversification outcomes across numerous empirical contexts [@hidalgo2007product; @neffke2011how; @boschma2017relatedness]. If our ML-derived potential measure provides no improvement over this standard benchmark—or worse, if density remains the dominant predictor when both are included—then the added machinery of Random Forests, feature importance networks, and coherence calculations would be empirically unjustified. The test is therefore conservative by design: we assess whether potential *subsumes*, *supplements*, or is *subsumed by* the conventional measure.
+
+
+```{r fig-map-avg-rd, echo=FALSE}
+
+map_avg_rd <- targets::tar_read(map_avg_rd, store = here::here("../../_targets_DES"))
+
+map_avg_rd +
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.box = "horizontal",
+    legend.title = element_text(hjust = 0.5),
+    legend.title.position = "top",
+    legend.key.width = unit(0.1, "null"),
+    legend.key.height = unit(0.5, "cm"),
+    legend.box.just = "center",
+    legend.title.align = 0.5,
+    legend.margin = margin(t = 0, b = 0, r = 0.6, l = 0.6)
+  )
+
 ```
 
 

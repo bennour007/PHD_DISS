@@ -6,15 +6,20 @@
 pacman::p_load(modelsummary, gt, tidyverse)
 ```
 
+In the previous chapter we discussed thoroughly the different areas of interest to this work. We relied on a clear framing that justifies assessing the regional diversification potential in a more contextualised and granular approach. To do that we started from the conceptual constructs of relatedness and the subsequent technology space and introduced our machine learning approach as context-rich alternative. We also introduced our coherence metric that capitalises on our approach. With that we've drawn a clear conceptual framework on how all these ideas should interact and inform on our main outcome. Essentially we propose two levels of analysis each with a clear objective but with complementary interpretation. These two analysis are opertaionalised via three models which we described their rational, specifications, and how they meet our hypothesis in the previous chapter. In this chapter we present the results of these models and contrast their interpretation to the hypothesis and the questions this work aims to address. 
 
-Our empirical analysis proceeds in five stages. First, we benchmark how much standard relatedness density and our RF-based Potential explain next-period entry under progressively stricter comparisons (Table @tbl-entry-ols). Second, we examine how technology network positions, regional knowledge infrastructure, and accessibility shape diversification potential using region and year fixed effects (Table @tbl-potential-fe-ols). Third, we incorporate national entrepreneurial ecosystem characteristics to test whether these dyadic mechanisms persist once national institutions are accounted for (Table @tbl-potential-fe-ols-h). Fourth, we estimate hierarchical random effects models to reflect the nesting of regions within countries and to assess how much variation lies between versus within regional units (Table @tbl-potential-re). Fifth, we aggregate potential to the regional level and estimate spatial panel models to test whether regional potential exhibits spatial dependence consistent with spillovers or correlated unobservables (Tables @tbl-spatial-sar and @tbl-spatial-sem). Together, these analyses test our hypotheses while checking whether conclusions depend on model structure or level of aggregation.
+In here we will decompose our finding for each of the models we specified. We will first explore the results of model 0 (@tbl-entry-ols), which treats the benchmark hypothesis and compare the empirical contribution of regional potential and relatedness to regional entry, following a large body of literature we already discussed in the literature review. Then we will present the results of model 1 (@tbl-potential-fe-ols) which explores the hypothesis on the empirical contribution of technologies' roles in the network structure from the FITS network. This model also explores the interaction between these roles and coherence to investigate whether the relationship is universal or contingent on the alignment in industrial embededdess between the region and the technology. Model 1 also extends this exploration by including the national ecosystem covariates (@tbl-potential-fe-ols-h), this to test the stability of the network metric and  their interaction as predictive factors, and also as a robustness check for their contribution compared to model 2. Essentially model 1 fits our variables to regional technological potential and assess the within-group variation. But because the national ecosystem covariates are not at a regional level, we also want to assess their contribution when we account for both within-group and between-group variation since regions are administrative artefacts that share the same national ecosystem characteristics. This nested structure motivate our model 2 presented in @tbl-potential-re. As we mentioned in the previous chapter, if the nested structure of model 2 drives most of the variation of the outcome, it could be an indication that this variation is mainly driven by spatial dependence. This is the case as we will explain later in this chapter, thus motivates our model 3. The idea here is to understand the spatial dynamics that drives regional outcomes, the test results presented in the previous chapter indicate a strong dependence on neighbouring region outcome. This justified the inclusion of the SAR model (@tbl-spatial-sar), albeit we also present the SEM model as a robustness check (@tbl-spatial-sem)
+
+
 
 ## Entry 
 
-In @tbl-entry-ols we benchmark how much standard relatedness density and our RF-based Potential (pred11) explain next-period entry when we progressively tighten comparisons. In the pooled specifications, both measures strongly predict entry: relatedness density is positive and precisely estimated ($0.055$), while Potential is larger ($0.081$). This is consistent with the interpretation that both capture opportunity, while Potential is closer to feasibility as learned from portfolio configurations. Once we move to the fixed-effects designs and absorb region and year fixed effects, interpretation shifts to within-region changes over time, net of common year shocks. In this setting, relatedness density remains strongly positive (e.g., $0.089$ in the density-only fixed effects model), and Potential also remains strongly positive ($0.089$ in the Potential-only fixed effects model), indicating that both track time-varying entry propensity beyond stable regional differences.
+In @tbl-entry-ols we benchmark how much conventional relatedness density and potential (pred11) explain regional entry to a new technology. In the pooled specifications, both measures strongly predict entry: relatedness density is positive and precisely estimated ($0.055$), while Potential is larger ($0.081$). This is consistent with the interpretation that both capture diversification opportunities, however, Potential here is closer to a feasibility metric that's learned from portfolio configurations than relatedness. Once we move to the fixed-effects designs and absorb region and year fixed effects, interpretation shifts to within-region changes over time, net of common year shocks. In this setting, relatedness density remains strongly positive (e.g., $0.089$ in the density-only fixed effects model), and Potential also remains strongly positive ($0.089$ in the Potential-only fixed effects model). The coefficient of relatedness increase significantly more than potential (which remains relatively at a stable value) when we account for within-group variation in which case both relatedness and potential contribute similarly to the probability of entry. Albeit, potential seems to improve the overall and within-group fit more than potential (within-$R^2$ rises from $0.014$ in the density-only fixed effects model to $0.062$ in the Potential-only fixed effects model). Moreover, when we include both metrics together, the dominance of potential influence becomes clear, the coefficient of relatedness decrease from 8.9% to 2.8%, whereas the coefficient of relatedness remains stable at 8.6%. In other words, Potential appears to be relatively the dominant predictor in this horse race, while density retains residual explanatory content that may reflect a simpler proximity component that survives beyond the non-linear feasibility signal embedded in Potential. 
 
-The most informative column is the joint fixed effects model, where both predictors enter together. Here, relatedness density drops from $0.089$ to $0.028$, while Potential remains large at $0.086$. This pattern implies that Potential subsumes a substantial share of what density captures, but not all of it: density retains an independent association with entry even after controlling for Potential. In other words, Potential appears to be the dominant predictor in this horse race, while density retains residual explanatory content that may reflect a simpler proximity component that survives beyond the non-linear feasibility signal embedded in Potential. This dominance is also reflected in fit: within-$R^2$ rises from $0.014$ in the density-only fixed effects model to $0.062$ in the Potential-only fixed effects model and remains $0.062$ in the joint model. This benchmark motivates the subsequent mechanism analysis: rather than treating relatedness as a sufficient summary statistic, we examine how portfolio alignment, network position, and accessibility structure feasibility. This move is consistent with the broader methodological critique that pairwise relatedness can miss higher-order portfolio information; for example, @RelatednessMachineLearning argues that shifting from “two-product correlations” to information that captures richer configurations can improve predictive performance. This benchmark motivates our subsequent mechanism analysis: having established that Potential dominates relatedness density in predicting entry, we now decompose Potential itself to examine how portfolio alignment (coherence), network position (betweenness, eigenvector), and accessibility structure feasibility at the dyadic technology-region level
+This benchmark motivates the subsequent mechanism analysis: rather than treating relatedness as a sufficient summary statistic, we examine how portfolio alignment, network position, and accessibility structure feasibility. This move is consistent with the broader methodological critique that pairwise relatedness can miss higher-order portfolio information; for example, @tacchella2023relatedness argues that shifting from “two-product correlations” to information that captures richer configurations can improve predictive performance. This benchmark motivates our subsequent mechanism analysis: having established that Potential is relatively more informative than relatedness density in predicting entry, we now decompose Potential itself to examine how portfolio alignment (coherence), network position (betweenness, eigenvector), and national ecosystem structure feasibility.
 
+
+::: {.landscape}
 
 ```{r tbl-entry-ols, echo=FALSE}
 table_entry_ols <- targets::tar_read(
@@ -26,6 +31,7 @@ table_entry_ols
 
 ```
 
+:::
 
 ```{r tbl-entry-logit, eval=FALSE}
 table_entry_logistic <- targets::tar_read(
@@ -39,9 +45,11 @@ table_entry_logistic
 
 ## Network Effects and Coherence Moderation
 
-@tbl-potential-fe-ols presents our core test of how technology network positions and regional knowledge infrastructure shape diversification potential. Column 4, our preferred specification with region and year fixed effects, shows that coherence—the alignment between a technology’s FITS embeddedness and the region’s portfolio—strongly predicts potential ($0.706$). This aligns with the capabilities-based interpretation of relatedness in evolutionary economic geography. @TechNetworkResilience states that “economic activities are related through sharing various capabilities,” and it links diversification to learning enabled by “cognitive proximity and interactive learning” following Boschma’s proximity framework. In our setting, coherence operationalizes this shared-capability, portfolio-fit mechanism and remains stable across specifications, consistent with its interpretation as a structural feasibility correlate rather than a modeling artifact.
+@tbl-potential-fe-ols presents our core test of how technology network positions and regional knowledge infrastructure shape diversification potential. Column 4, our preferred specification with region and year fixed effects, shows that coherence—the alignment between a technology’s FITS embeddedness and the region’s portfolio—strongly predicts potential ($0.706$). This aligns with the capabilities-based interpretation of relatedness in evolutionary economic geography. @toth2022technology states that “economic activities are related through sharing various capabilities,” and it links diversification to learning enabled by “cognitive proximity and interactive learning” following Boschma’s proximity framework. In our setting, coherence operationalizes this shared-capability, portfolio-fit mechanism and remains stable across specifications, consistent with its interpretation as a structural feasibility correlate rather than a modeling artifact.
 
 
+
+::: {.landscape}
 
 ```{r tbl-potential-fe-ols, echo=FALSE}
 #| tbl-cap: "logit(pred1) - ols"
@@ -50,13 +58,20 @@ table_pred_fe_ols_noh <- targets::tar_read(
   store = here::here("../../_targets_EMP")
 )
 
-table_pred_fe_ols_noh
+table_pred_fe_ols_noh %>% 
+   tab_options(
+    table.font.size = px(8),       # font size
+    data_row.padding = px(1),      # tighter body rows
+    heading.padding = px(1),       # tighter title/subtitle
+    column_labels.padding = px(1), # tighter header row
+    table.width = pct(100)         # fill available width
+  )
 
 ```
 
+:::
 
-
-Betweenness centrality, capturing bridge positions that connect domains, exhibits substantial positive effects ($0.388$). However, the coherence $\times$ betweenness interaction is significantly negative ($-0.284$), revealing contextual contingency: bridging positions disproportionately benefit regions with lower coherence, offering catch-up opportunities when portfolios are misaligned with these bridge technologies. Conversely, high-coherence regions gain less from bridging positions, suggesting that their feasible opportunities are less dependent on bridge roles and more concentrated in already-aligned portions of the technology space. This contingency is conceptually consistent with a tension highlighted in @TechNetworkResilience. After reviewing the standard logic that related variety supports diversification, it notes that interdependencies can also transmit shocks and that evidence on how internal relatedness structures shape outcomes is mixed; it concludes that it is “still unclear” how relatedness shapes resilience and that “networks are of great assistance” because economies are “webs” of interdependent knowledge and activities. Our interaction result is consistent with that network-conditional view: the value of a network position depends on portfolio context rather than being uniform.
+Betweenness centrality, capturing bridge positions that connect domains, exhibits substantial positive effects ($0.388$). However, the coherence $\times$ betweenness interaction is significantly negative ($-0.284$), revealing contextual contingency: bridging positions disproportionately benefit regions with lower coherence, offering catch-up opportunities when portfolios are misaligned with these bridge technologies. Conversely, high-coherence regions gain less from bridging positions, suggesting that their feasible opportunities are less dependent on bridge roles and more concentrated in already-aligned portions of the technology space. This contingency is conceptually consistent with a tension highlighted in @toth2022technology. After reviewing the standard logic that related variety supports diversification, it notes that interdependencies can also transmit shocks and that evidence on how internal relatedness structures shape outcomes is mixed; it concludes that it is “still unclear” how relatedness shapes resilience and that “networks are of great assistance” because economies are “webs” of interdependent knowledge and activities. Our interaction result is consistent with that network-conditional view: the value of a network position depends on portfolio context rather than being uniform.
 
 The eigenvector centrality pattern presents a contrasting story. Technologies occupying authority positions consistently inhibit entry (e.g., $-0.221$ in Column 4), yet the coherence $\times$ eigenvector interaction remains non-significant. A conservative interpretation is that authority-like targets are systematically difficult to enter regardless of alignment as captured by coherence. This pattern is compatible with arguments that diversification requires more than proximity. @GoingBeyondRelatednessKETs argues that diversification is “going beyond relatedness” and reports that enabling technologies support more exploratory trajectories “only when” they are used by other local technologies, implying a complementarity and integration condition beyond portfolio fit alone. Our null moderation for eigenvector is consistent with the idea that barriers for authority targets reflect complements or coordination not captured by alignment measures.
 
@@ -67,6 +82,7 @@ Distance becomes most informative once interactions are introduced. In Table @tb
 @tbl-potential-fe-ols-h extends our framework by incorporating national entrepreneurial ecosystem characteristics from the Global Entrepreneurship Index. Column 4 shows that the core dyadic mechanisms persist: coherence remains positive ($0.709$), betweenness remains positive ($0.398$), and the coherence $\times$ betweenness interaction remains negative ($-0.292$). The eigenvector penalty likewise persists (around $-0.222$) without coherence moderation, and the distance–authority interaction remains negative (rawdist $\times$ eigenvector around $-0.082$). This stability supports a cautious conclusion that the coherence and network-position mechanisms are not simply proxies for national institutional variation. At the same time, national ecosystem variables contribute additional explanatory structure. Competition is consistently positive (about $0.088$ in Column 4), while internationalization is consistently negative (about $-0.082$). Other GEI components show heterogeneous patterns across specifications, suggesting they may operate differently in cross-sectional comparisons than in within-country temporal change. This combination of stable dyadic mechanisms and non-negligible national effects is consistent with @RelatednessAndEconComplexityPolicy, which cautions against treating relatedness metrics as sufficient guides to diversification because institutional and policy context can shape which opportunities are realized. This heterogeneity notwithstanding, the consistency of competition and internationalization effects, alongside the stable core mechanisms, provides sufficient evidence for H3 that national entrepreneurial ecosystems shape regional potential beyond dyadic technology-region characteristics.
 
 
+::: {.landscape}
 
 ```{r tbl-potential-fe-ols-h, echo=FALSE}
 #| tbl-cap: "logit(pred1) - ols"
@@ -75,11 +91,18 @@ table_pred_fe_ols_h <- targets::tar_read(
   store = here::here("../../_targets_EMP")
 )
 
-table_pred_fe_ols_h
+table_pred_fe_ols_h %>% 
+  tab_options(
+    table.font.size = px(8),       # font size
+    data_row.padding = px(1),      # tighter body rows
+    heading.padding = px(1),       # tighter title/subtitle
+    column_labels.padding = px(1), # tighter header row
+    table.width = pct(100)         # fill available width
+  )
 
 ```
 
-
+:::
 
 ## Hierarchical Structure and Spatial Implications
 
@@ -87,10 +110,10 @@ table_pred_fe_ols_h
 
 Crucially, the core coefficients remain stable in the hierarchical models. In the random effects specification comparable to the fixed effects benchmark, coherence remains positive (around $0.709$), betweenness remains positive (around $0.398$), and the coherence $\times$ betweenness interaction remains negative (around $-0.292$). Eigenvector centrality remains negative (around $-0.222$) without coherence moderation. Distance is more salient in this setting: rawdist becomes significant and negative as a main effect (about $-0.027$), consistent with the idea that topological accessibility matters for cross-regional comparisons even if it is less informative for within-region shifts once fixed effects absorb time-invariant accessibility differences. At the same time, the interaction results reinforce the earlier asymmetry. The rawdist $\times$ eigenvector term remains strongly negative (around $-0.082$), indicating that remoteness compounds difficulty specifically for authority targets. The betweenness $\times$ rawdist interaction becomes positive and significant in the random effects model (e.g., $0.050$–$0.061$), suggesting that bridging positions may be more relevant for overcoming remoteness in between-place comparisons than in within-region variation. Because these patterns appear most clearly in the cross-sectional component captured by random effects, they should be interpreted as differences in accessibility across places rather than as short-run within-place responses.
 
-These hierarchical results also help justify the spatial models that follow. First, the large $ICC$ indicates that potential is strongly structured across places, not only through time-varying within-region dynamics. Second, @TechNetworkResilience emphasizes that regional economies are “webs” of interdependent activities and argues that “networks are of great assistance,” a framing that makes it plausible that feasibility is not independent across space but may be shaped by neighboring structures. Third, the distinction between within-region fixed effects patterns and between-place random effects patterns suggests that part of the remaining heterogeneity may be geographically patterned, motivating an explicit test for spatial dependence.
+These hierarchical results also help justify the spatial models that follow. First, the large $ICC$ indicates that potential is strongly structured across places, not only through time-varying within-region dynamics. Second, @toth2022technology emphasizes that regional economies are “webs” of interdependent activities and argues that “networks are of great assistance,” a framing that makes it plausible that feasibility is not independent across space but may be shaped by neighboring structures. Third, the distinction between within-region fixed effects patterns and between-place random effects patterns suggests that part of the remaining heterogeneity may be geographically patterned, motivating an explicit test for spatial dependence.
 
 
-
+::: {.landscape}
 
 ```{r tbl-potential-re, echo=FALSE}
 #| tbl-cap: "logit(pred1) - ols"
@@ -99,11 +122,18 @@ table_pred_re_logit <- targets::tar_read(
   store = here::here("../../_targets_EMP")
 )
 
-table_pred_re_logit
+table_pred_re_logit %>% 
+   tab_options(
+    table.font.size = px(8),       # font size
+    data_row.padding = px(1),      # tighter body rows
+    heading.padding = px(1),       # tighter title/subtitle
+    column_labels.padding = px(1), # tighter header row
+    table.width = pct(100)         # fill available width
+  )
 
 ```
 
-
+::: 
 
 ## Role of space
 
@@ -131,7 +161,19 @@ lisa_map <- targets::tar_read(
   store = here::here("../../_targets_DES")
 )
 
-lisa_map
+lisa_map +
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.box = "horizontal",
+    legend.title = element_text(hjust = 0.5),
+    legend.title.position = "top",
+    legend.key.width = unit(0.1, "null"),
+    legend.key.height = unit(0.5, "cm"),
+    legend.box.just = "center",
+    legend.title.align = 0.5,
+    legend.margin = margin(t = 0, b = 0, r = 0.6, l = 0.6)
+  )
 
 ```
 

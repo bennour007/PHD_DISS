@@ -30,7 +30,7 @@ format:
   pdf:
     documentclass: scrreprt
     fontsize: 12pt
-    linestretch: 2
+    linestretch: 1.5
     geometry:
       - top=2.5cm
       - bottom=2.5cm
