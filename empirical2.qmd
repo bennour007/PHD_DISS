@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Empirical Design
 
 
@@ -277,7 +282,19 @@ map_avg_pred1
 ```{r fig-map-avg-rd, echo=FALSE}
 map_avg_rd <- targets::tar_read(map_avg_rd, store = here::here("../../_targets_DES"))
 
-map_avg_rd
+map_avg_rd +
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.box = "horizontal",
+    legend.title = element_text(hjust = 0.5),
+    legend.title.position = "top",
+    legend.key.width = unit(0.1, "null"),
+    legend.key.height = unit(0.5, "cm"),
+    legend.box.just = "center",
+    legend.title.align = 0.5,
+    legend.margin = margin(t = 0, b = 0, r = 0.6, l = 0.6)
+  )
 
 ```
 

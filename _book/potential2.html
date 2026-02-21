@@ -389,10 +389,24 @@ z_{r,t,y}
 <p><strong>Interpretable feature importance.</strong> Unlike black-box models, Random Forests produce feature importance scores that aggregate each predictor’s contribution across all trees. These scores become the basis for FITS construction, translating prediction performance into an interpretable technology network. This maintains the explanatory value of relatedness measures while grounding them in predictive validity.</p>
 <p><strong>Ensemble variance reduction.</strong> Bootstrap aggregation across many trees reduces the variance that would plague individual decision trees, particularly given the moderate sample sizes (regions × years) available in patent data. The ensemble structure provides stability without sacrificing the flexibility needed to capture complex capability interactions.</p>
 <p>The choice of Random Forest over alternatives thus reflects both practical constraints (sample size, interpretability requirements) and the specific structure of relatedness estimation (sparse, high-dimensional, interaction-rich). We now present the algorithm formally before describing our application.</p>
-<p><img src="resources/ML_relatedness_tachella.jpg" class="img-fluid"></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tachella" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tachella-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="resources/ML_relatedness_tachella2.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tachella-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Node correlation: Density vs ML approach
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="random-forest-algorithm" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="random-forest-algorithm"><span class="header-section-number">3.3.3</span> Random Forest Algorithm</h3>
+<p><a href="#fig-tachella" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> from <span class="citation" data-cites="tacchella2023relatedness">Tacchella et al. (<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">2023</a>)</span> contrasts the fundamental difference between traditional relatedness density approaches (Panel A) and machine learning-based prediction methods (Panel B) in modeling diversification feasibility. Panel A illustrates how density-based predictions aggregate pairwise co-occurrence relationships linearly: the feasibility of entering the focal technology (white node with ‘?’) is computed as the sum of independent two-body correlations with each technology in the regional portfolio (green and orange nodes), yielding a simple additive score (0.02 + 0.06 + 0.12 + 0.01 = 0.21). Panel B demonstrates how decision tree algorithms capture many-body correlations by evaluating the full configuration of the portfolio through recursive partitioning: at each node, the algorithm tests combinations of technologies (e.g., presence of both green and orange technologies) and assigns predictions based on complete paths through the tree (21%, 76%, 11%, etc.), making the effect of any single technology dependent on the entire portfolio context. This structural difference explains why machine learning approaches can recover non-linear capability interactions that linear aggregation of symmetric relatedness measures cannot represent, as the value of possessing one technology changes depending on which other technologies are present, a form of complementarity that density treat as independent contributions. This is leads to explore further how and why random forest—our adopted tree algorithm—works, especially for our case which is the prediction of regional technological specialisation.</p>
 <p>Random Forest constructs an ensemble of <span class="math inline">\(B\)</span> decision trees through bootstrap aggregating (bagging) with random feature subsampling. Each tree <span class="math inline">\(T_b\)</span> is built on a bootstrap sample <span class="math inline">\(\mathcal{D}_b^*\)</span> drawn with replacement from the original dataset.</p>
 <p>Each tree recursively partitions the feature space through binary splits. At node <span class="math inline">\(t\)</span>, we randomly select <span class="math inline">\(m\)</span> features (typically <span class="math inline">\(m = \sqrt{p}\)</span>) and evaluate all possible splits within this subset. For feature <span class="math inline">\(j\)</span> and threshold <span class="math inline">\(\tau\)</span>, the split creates two child nodes: <span class="math inline">\(t_L = \{i : x_{ij} \leq \tau\}\)</span> and <span class="math inline">\(t_R = \{i : x_{ij} &gt; \tau\}\)</span>.</p>
 <p>Split quality is assessed via Gini impurity:</p>
@@ -415,7 +429,7 @@ z_{r,t,y}
 </section>
 <section id="training-procedure" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="training-procedure"><span class="header-section-number">3.3.4</span> Training Procedure</h3>
-<p>We follow the methodology of Fessina et al.&nbsp;(2024) and Albora et al.&nbsp;(2023), originally developed for trade data. The key innovation lies in training separate models for each technology rather than constructing a single global model. For every technology <span class="math inline">\(i \in \mathcal{T}\)</span>, we train a binary classification model where:</p>
+<p>We follow the methodology of <span class="citation" data-cites="fessina2024identifying">Fessina et al. (<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="albora2023product">Albora et al. (<a href="references.html#ref-albora2023product" role="doc-biblioref">2023</a>)</span> (and <span class="citation" data-cites="tacchella2023relatedness">Tacchella et al. (<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">2023</a>)</span>), originally developed for trade data. The key innovation lies in training separate models for each technology rather than constructing a single global model. For every technology <span class="math inline">\(i \in \mathcal{T}\)</span>, we train a binary classification model where:</p>
 <ul>
 <li><strong>Outcome</strong>: <span class="math inline">\(z_{r,i,y}\)</span> indicates whether region <span class="math inline">\(r\)</span> specialises in technology <span class="math inline">\(i\)</span> at year <span class="math inline">\(y\)</span> (RTA <span class="math inline">\(\geq 1\)</span>)</li>
 <li><strong>Features</strong>: <span class="math inline">\(\{\text{RTA}_{r,t,y-\delta} : t \in \mathcal{T}, t \neq i\}\)</span> comprises RTA values for all other technologies <span class="math inline">\(\delta\)</span> years prior</li>
@@ -449,17 +463,21 @@ z_{r,t,y}
 <p>We normalise weights within each target technology:</p>
 <p><span class="math display">\[W_{t \to i} = \frac{I_i(t)}{\sum_{t' \neq i} I_i(t')}\]</span></p>
 <p>ensuring incoming edge weights sum to 1 for each technology. This normalisation facilitates comparison across technologies with different overall predictability.</p>
+<div class="cell">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="resources/technology_network.png" class="img-fluid figure-img"></p>
-<figcaption>Technology Network (based on 2018 patent data)</figcaption>
+<p><img src="resources/technology_network.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FITS Technology Network (based on 2018 patent data)</figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>The defining property of FITS is asymmetry: <span class="math inline">\(W_{t \to i} \neq W_{i \to t}\)</span> in general. This asymmetry captures hierarchical technological dependencies invisible to symmetric measures:</p>
 <ul>
-<li><p><strong><span class="math inline">\(W_{t \to i} \gg W_{i \to t}\)</span></strong>: Technology <span class="math inline">\(t\)</span> is a prerequisite or enabler for <span class="math inline">\(i\)</span>. Expertise in <span class="math inline">\(t\)</span> predicts future development of <span class="math inline">\(i\)</span>, but not vice versa. This pattern identifies foundational technologies and developmental sequences.</p></li>
-<li><p><strong><span class="math inline">\(W_{t \to i} \approx W_{i \to t}\)</span></strong>: Technologies are complementary peers with mutual predictive relationships, suggesting shared capability requirements or co-evolution.</p></li>
-<li><p><strong><span class="math inline">\(W_{t \to i} \ll W_{i \to t}\)</span></strong>: Technology <span class="math inline">\(i\)</span> enables <span class="math inline">\(t\)</span>, reversing the hierarchical relationship.</p></li>
+<li><p><span class="math inline">\(W_{t \to i} \gg W_{i \to t}\)</span>: Technology <span class="math inline">\(t\)</span> is a prerequisite or enabler for <span class="math inline">\(i\)</span>. Expertise in <span class="math inline">\(t\)</span> predicts future development of <span class="math inline">\(i\)</span>, but not vice versa. This pattern identifies foundational technologies and developmental sequences.</p></li>
+<li><p><span class="math inline">\(W_{t \to i} \approx W_{i \to t}\)</span>: Technologies are complementary peers with mutual predictive relationships, suggesting shared capability requirements or co-evolution.</p></li>
+<li><p><span class="math inline">\(W_{t \to i} \ll W_{i \to t}\)</span>: Technology <span class="math inline">\(i\)</span> enables <span class="math inline">\(t\)</span>, reversing the hierarchical relationship.</p></li>
 </ul>
 <p>This directional structure reveals technological trajectories: regions can identify which current capabilities open paths toward desired future technologies, and which apparent similarities mask asymmetric dependencies.</p>
 <p>The contrast between co-occurrence relatedness and FITS is sharpest when examining specific technologies. Consider H01L (semiconductors) and D06Q (textile decoration).</p>

@@ -22,12 +22,22 @@ This benchmark motivates the subsequent mechanism analysis: rather than treating
 ::: {.landscape}
 
 ```{r tbl-entry-ols, echo=FALSE}
+#| tbl-cap: "Regional Potential vs Relatedness density -- Entry(year + 1, LPM with fixed effects)"
+
+
 table_entry_ols <- targets::tar_read(
   table_entry_ols,
   store = here::here("../../_targets_EMP")
 )
 
-table_entry_ols 
+table_entry_ols %>% 
+  tab_options(
+    table.font.size = px(8),       # font size
+    data_row.padding = px(1),      # tighter body rows
+    heading.padding = px(1),       # tighter title/subtitle
+    column_labels.padding = px(0), # tighter header row
+    table.width = pct(100)         # fill available width
+  )
 
 ```
 
@@ -51,7 +61,7 @@ This aligns with the capabilities-based interpretation of relatedness in evoluti
 ::: {.landscape}
 
 ```{r tbl-potential-fe-ols, echo=FALSE}
-#| tbl-cap: "logit(pred1) - ols"
+#| tbl-cap: "Network Interactions -- Regional Potential (with fixed effects)"
 table_pred_fe_ols_noh <- targets::tar_read(
   table_pred_fe_ols_noh,
   store = here::here("../../_targets_EMP")
@@ -62,7 +72,7 @@ table_pred_fe_ols_noh %>%
     table.font.size = px(8),       # font size
     data_row.padding = px(1),      # tighter body rows
     heading.padding = px(1),       # tighter title/subtitle
-    column_labels.padding = px(1), # tighter header row
+    column_labels.padding = px(0), # tighter header row
     table.width = pct(100)         # fill available width
   )
 
@@ -95,7 +105,7 @@ This combination of stable dyadic mechanisms and non-negligible national effects
 ::: {.landscape}
 
 ```{r tbl-potential-fe-ols-h, echo=FALSE}
-#| tbl-cap: "logit(pred1) - ols"
+#| tbl-cap: "Network Interactions and National Ecosystem -- Regional Potential (with fixed effects)"
 table_pred_fe_ols_h <- targets::tar_read(
   table_pred_fe_ols_h,
   store = here::here("../../_targets_EMP")
@@ -103,10 +113,11 @@ table_pred_fe_ols_h <- targets::tar_read(
 
 table_pred_fe_ols_h %>% 
   tab_options(
-    table.font.size = px(8),       # font size
+    row_group.padding.horizontal = px(0),
+    table.font.size = px(9),       # font size
     data_row.padding = px(1),      # tighter body rows
     heading.padding = px(1),       # tighter title/subtitle
-    column_labels.padding = px(1), # tighter header row
+    column_labels.padding = px(0), # tighter header row
     table.width = pct(100)         # fill available width
   )
 
@@ -133,7 +144,9 @@ The results of this model also help justify the spatial models that follow. The 
 ::: {.landscape}
 
 ```{r tbl-potential-re, echo=FALSE}
-#| tbl-cap: "logit(pred1) - ols"
+#| tbl-cap: "Hierarchical Random Effects Model -- Regional Potential"
+
+
 table_pred_re_logit <- targets::tar_read(
   table_pred_re_logit,
   store = here::here("../../_targets_EMP")
@@ -141,10 +154,11 @@ table_pred_re_logit <- targets::tar_read(
 
 table_pred_re_logit %>% 
    tab_options(
-    table.font.size = px(8),       # font size
-    data_row.padding = px(1),      # tighter body rows
+    row_group.padding.horizontal = px(0),
+    table.font.size = px(9),       # font size
+    data_row.padding = px(0),      # tighter body rows
     heading.padding = px(1),       # tighter title/subtitle
-    column_labels.padding = px(1), # tighter header row
+    column_labels.padding = px(0), # tighter header row
     table.width = pct(100)         # fill available width
   )
 
@@ -162,12 +176,17 @@ Having established stable dyadic mechanisms at the technology–region level (Ta
 
 
 ```{r tbl-spatial-sar, echo=FALSE}
+#| tbl-cap: "Spatial Autoregressive Model (SAR) - Regional Potential"
+
 table_sp_sar <- targets::tar_read(
   table_sp_sar,
   store = here::here("../../_targets_EMP")
 )
 
-table_sp_sar
+table_sp_sar %>% 
+  tab_source_note(
+    "This table tests whether regional potential exhibits spatial dependence by aggregating to region-year observations and estimating spatial autoregressive (SAR) models where neighbors' potential directly affects own potential through the spatial lag parameter rho. The large and highly significant spatial lag coefficient rho = 0.38 in the interaction specification) indicates substantial positive spatial autocorrelation: regions tend to exhibit higher potential when neighboring regions also display high potential, even after controlling for regional portfolio characteristics (average coherence, betweenness, eigenvector) and complexity. This spatial interdependence persists in models with region and year fixed effects, ruling out the interpretation that clustering merely reflects stable regional endowments or common temporal shocks-the pattern instead suggests genuine interregional influences such as knowledge spillovers, labor mobility, or demonstration effects that cross administrative borders. The positive signs on average coherence (0.07) and the average eigenvector x coherence interaction (0.006) at the regional aggregate level contrast with some dyadic findings, reflecting a compositional difference: dyadic measures describe the difficulty of entering specific technologies, while regional aggregates describe the overall advantage of portfolios already rich in aligned or well-connected technologies."
+  )
 
 ```
 
@@ -180,7 +199,8 @@ The regional aggregate covariates also help interpret the relationship between d
 #| fig-height: 9
 #| out-width: "100%"
 #| fig-dpi: 150
-
+#| fig-cap: "Local Indicators of Spatial Association (LISA)"
+#| fig-subcap: "Spatial clustering of regional potential through a LISA map based on the 2018 observations, which identifies regions where high (or low) potential clusters geographically. Regions are classified into four quadrants: High-High (HH, high potential surrounded by high-potential neighbors, typically innovation cores in Western Europe), Low-Low (LL, low potential surrounded by low-potential neighbors, typically peripheral regions in Eastern Europe or rural areas), High-Low (HL, isolated high-potential regions in low-potential neighborhoods), and Low-High (LH, lagging regions surrounded by high-potential neighbors). The map reveals that most variation concentrates in the HH and LL quadrants, consistent with the positive spatial autocorrelation documented in @tbl-spatial-sar and @tbl-spatial-sem."
 
 lisa_map <- targets::tar_read(
   lisa_map,
@@ -189,6 +209,7 @@ lisa_map <- targets::tar_read(
 
 lisa_map +
   theme(
+    plot.title = element_blank(),
     legend.position = "bottom",
     legend.direction = "horizontal",
     legend.box = "horizontal",
@@ -199,7 +220,7 @@ lisa_map +
     legend.box.just = "center",
     legend.title.align = 0.5
     # legend.margin = margin(t = 0, b = 0, r = 0.6, l = 0.6)
-  )
+  ) 
 
 ```
 
@@ -208,14 +229,20 @@ A similar distinction applies to betweenness. At the dyadic level, bridge positi
 
 
 
-
 ```{r tbl-spatial-sem, echo=FALSE}
+#| tbl-cap: "Spatial Error Model (SEM) - Regional Potential"
+
+
 table_sp_sem <- targets::tar_read(
   table_sp_sem,
   store = here::here("../../_targets_EMP")
 )
 
-table_sp_sem
+table_sp_sem %>% 
+  tab_source_note(
+    source_note = "This table estimates a spatial error model (SEM) as a robustness check to distinguish between substantive spatial interdependence (neighbors' outcomes affecting own outcome, as in SAR) and spatially correlated unobservables (common shocks or omitted factors that cluster geographically). The spatial error parameter lambda is positive and significant (0.42 in the interaction specification), indicating that after controlling for observable regional characteristics, residuals remain spatially autocorrelated errors in neighboring regions are correlated rather than independent. However, comparing with the SAR results (@tbl-spatial-sar), the robust Lagrange Multiplier diagnostics reported in the empirical design section favor the SAR specification, suggesting that the primary mechanism is neighbors' potential directly influencing own potential (spillovers) rather than merely shared unobservables. The regional covariate patterns in SEM (average coherence positive, average betweenness positive when interacted with coherence, average eigenvector positive when interacted with coherence) closely mirror those in SAR, confirming that these portfolio-level associations are robust to the choice of spatial specification and that the key substantive finding,spatial clustering of high and low potential regions, does not depend on modeling spatial dependence as a lag versus an error process."
+    )
+  
 
 ```
 
