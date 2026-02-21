@@ -169,6 +169,34 @@
         {
             "author": [
                 {
+                    "family": "Sebestyén",
+                    "given": "Tamás"
+                },
+                {
+                    "family": "Braun",
+                    "given": "Erik"
+                },
+                {
+                    "family": "Elekes",
+                    "given": "Zoltán"
+                }
+            ],
+            "id": "sebestyen2024resolving",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "publisher": "Utrecht University, Human Geography; Planning",
+            "title": "Resolving the complexity puzzle: Economic complexity and positions in global value chains jointly explain economic development",
+            "title-short": "Resolving the complexity puzzle",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
                     "family": "Szerb",
                     "given": "Laszlo"
                 },

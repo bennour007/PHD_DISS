@@ -229,7 +229,7 @@ map_coherence +
 
 **Distance** ($\text{rawdist}_{r,t,y}$) is the shortest path weighted length in the FITS network from the closest technology in the regional portfolio to a given technology regardless of the direction of the links. This distance measures topological accessibility in the network or how many steps separate the region's current frontier from a given opportunity. This variable operationalises the product-space logic of @hidalgo2007product who show that the probability of entry decays with distance in the product space. 
 
-**Patent count** ($\text{patents}_{r,t,y}$) is the number of patent applications attributed to region $r$ in technology $t$ at year $y$. We use it to controls for pre-existing knowledge stock on a given technology in the region. This is to ensure that coherence and network position effects are do not turn into proxies for size as argued in @batheltstorper2023.
+**Patent count** ($\text{patents}_{r,t,y}$) is the number of patent applications attributed to region $r$ in technology $t$ at year $y$. We use it to controls for pre-existing knowledge stock on a given technology in the region. This is to ensure that coherence and network position effects are do not turn into proxies for size as argued in @bathelt2023related.
 
 ### Technology Level Variables
 
