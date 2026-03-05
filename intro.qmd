@@ -2,7 +2,9 @@
 
 ## General background
 
-The Covid 19 pandemic showed structural challenges of national economies all over the world, specifically the fragility of neoliberal policies in times of crisis and the lack of industrial and economic resilience. Six years after the fact, our societies are now confronted with inevitable novel challenges and looming shocks. We are already witnessing the consequences of AI development as it paves the way for a new technological revolution that would render most local economies obsolete and cause massive unemployment in white collar sectors. Sadly, that doesn't seem to be the end of the shocks the world has seen recently as the war in Ukraine, Gaza, Iran, and most importantly the current, chaotic trade wars, seem to foster ever increasing uncertainties. Facing all this, policy makers are confronted with a simple choice; strategise and plan for more resilient local economies. In different streams of literature, resilience is directly related to diversification/variety, whether in portfolio management in finance, trade partnerships/linkages, industrial activities, or in terms of knowledge as well. Thus we can equivalently say that resilience is the capacity to resist and/or adapt to external shocks by relying on exiting internal capabilities that evolve in the face of such shocks. This means that for an economy to survive uncertainties, it needs to evolve, change, and innovate its way to the other end of the bleak challenges it's confronted with. However, to evolve, change and innovate, a baseline of knowledge should be leveraged since the consensus is that variety is a buffer against external shocks and shields uncertainties. This chain of thoughts, takes us back to the conceptual basics of sustainable economic development and growth; the knowledge fabric is what facilitate any long term strategy, and has been shown in the literature as clear catalyst for societal prosperity and economic resilience. For this reason the study of knowledge is detrimental for policy making, and understanding how to increase its diversity is more relevant than ever before. 
+The Covid 19 pandemic showed structural challenges of national economies all over the world, specifically the fragility of neoliberal policies in times of crisis and the lack of industrial and economic resilience. Six years after the fact, our societies are now confronted with inevitable novel challenges and looming shocks. We are already witnessing the consequences of AI development as it paves the way for a new technological revolution that would render most local economies obsolete and cause massive unemployment in white collar sectors. Sadly, that doesn't seem to be the end of the shocks the world has seen recently as the war in Ukraine, Gaza, Iran, and most importantly the current, chaotic trade wars, seem to foster ever increasing uncertainties. Facing all this, policy makers are confronted with a simple choice; strategise and plan for more resilient local economies. 
+
+In different streams of literature, resilience is directly related to diversification/variety, whether in portfolio management in finance, trade partnerships/linkages, industrial activities, or in terms of knowledge as well. Thus we can equivalently say that resilience is the capacity to resist and/or adapt to external shocks by relying on exiting internal capabilities that evolve in the face of such shocks. This means that for an economy to survive uncertainties, it needs to evolve, change, and innovate its way to the other end of the bleak challenges it's confronted with. However, to evolve, change and innovate, a baseline of knowledge should be leveraged since the consensus is that variety is a buffer against external shocks and shields uncertainties. This chain of thoughts, takes us back to the conceptual basics of sustainable economic development and growth; the knowledge fabric is what facilitate any long term strategy, and has been shown in the literature as clear catalyst for societal prosperity and economic resilience. For this reason the study of knowledge is detrimental for policy making, and understanding how to increase its diversity is more relevant than ever before. 
 
 Knowledge is a set of information that covers one or many topics, and its characteristics are contingent on the different forms it can take or how it was created, generally speaking, academia and businesses are the main knowledge creators in any economy through research and patents. Essentially, knowledge can be codified (accessible by anyone through any medium), or tacit (personal information based on social connections, intuition, experience, etc, that's hard to share with others). The consensus in the literature is that the main driver of competitive advantage for firms is the tacit form of knowledge, which is also widely acknowledged that it's space dependent. However, the knowledge produced by firms can be reliably seen in patents, although they capture codified information, they also reveal tacit knowledge and its geographic footprint in space. This means that its detrimental to assess the knowledge in patenting activities (we refer to this knowledge as technologies), and more so to focus on the local aspect of these activities i.e: sub-national regions. 
 
@@ -53,77 +55,6 @@ Exogenous factors (beyond-region influences):
 - Geographic proximity to coherent knowledge clusters
 
 The interaction between these layers is critical: endogenous capacity determines what a region can develop, while exogenous context shapes realisation possibilities. For instance, a technology may align with regional knowledge infrastructure (endogenous coherence), but without supportive national institutions or proximity to innovative neighbours (exogenous support), entry probability remains low.
-
-
-
-
-
-```{mermaid}
-%%| fig-width: 3
-%%| fig-height: 8
-%%{init: {'theme':'base', 'themeVariables': {'fontSize':'10px'}}}%%
-graph TB
-    world[the world<br/>uncertainty shocks]
-    relevance[The need for resilience]
-    capacity[local capacity<br/>shock absorption]
-    change[change &<br/>adaptation]
-    innovation[Innovation]
-    combine[Combine existing<br/>knowledge in new<br/>configurations to<br/>create new knowledge]
-    
-    diversification[Diversification / variety]
-    relatedness[Geography<br/>of innovation:<br/>Relatedness]
-    whyrel[Why?<br/>• reliable framework to model tech relations<br/>• relations between regions & technologies]
-    
-    footprint[Footprint of<br/>tacit knowledge]
-    local[Local<br/>space-dependent]
-    products[patents & technologies]
-    focusregions[That's why we focus on<br/>patents-technologies in regions]
-    regionexist[regions exist in<br/>national + broader geographic contexts]
-    
-    cooccur[co-occurrence<br/>linear aggregates]
-    oneocc[naive<br/>assumptions]
-    twoocc[lose<br/>granular information]
-    suffer[Suffers from<br/>structural<br/>methodological issues]
-    loss[loss of context<br/>when measuring relationships]
-    
-    thesis[That's why the thesis focuses on studying how regions can diversify<br/>their technological profiles by leveraging granular data that relaxes<br/>relatedness assumptions and accounts for broader exogenous contexts]
-    contrib[methodological contribution: relatedness<br/>empirical contribution: exogenous contexts]
-    
-    world --> relevance
-    relevance --> capacity
-    relevance --> change
-    change --> innovation
-    capacity --> innovation
-    innovation -->|how?| combine
-    relevance --> diversification
-    diversification --> relatedness
-    whyrel --> relatedness
-    
-    combine --> footprint
-    footprint --> local
-    local --> products
-    products --> focusregions
-    focusregions --> regionexist
-    
-    relatedness --> suffer
-    suffer --> cooccur
-    cooccur --> oneocc
-    cooccur --> twoocc
-    twoocc --> loss
-    oneocc --> loss
-    
-    loss --> thesis
-    suffer --> thesis
-    regionexist --> thesis
-    regionexist -.->|exogenous factors:<br/>• neighbouring regions characteristics & outcomes<br/>• national entrepreneurial ecosystem characteristics| thesis
-    thesis --> contrib
-    
-    classDef boxStyle fill:#e1f5ff,stroke:#333,stroke-width:2px
-    classDef ovalStyle fill:#fff4e6,stroke:#333,stroke-width:2px
-    class combine,whyrel,focusregions,loss,thesis,contrib boxStyle
-    class world,relevance,capacity,change,innovation,diversification,relatedness,footprint,local,products,regionexist,cooccur,oneocc,twoocc,suffer ovalStyle
-
-```
 
 
 

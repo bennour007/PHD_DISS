@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Summary – THESIS</title>
+<title>7&nbsp; Summary – THESIS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,17 +51,18 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./results.html" rel="prev">
+<link href="./results2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0454205e7807805702eca4f1f89a20d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a96968c245c051a3f8748913fa4bb1aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +105,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -131,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,7 +145,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">THESIS</a> 
     </div>
@@ -164,38 +167,44 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lit_rev.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Literature review</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Literature review</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./potential2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The interconnectedness between regions and technologies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The interconnectedness between regions and technologies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./empirical3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Empirical Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Empirical Design</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></span></a>
+  <a href="./results2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -214,14 +223,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link active" data-scroll-target="#discussion"><span class="header-section-number">6.1</span> Discussion</a>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link active" data-scroll-target="#discussion"><span class="header-section-number">7.1</span> Discussion</a>
   <ul class="collapse">
-  <li><a href="#on-the-methodology" id="toc-on-the-methodology" class="nav-link" data-scroll-target="#on-the-methodology"><span class="header-section-number">6.1.1</span> On the methodology</a></li>
-  <li><a href="#on-the-results" id="toc-on-the-results" class="nav-link" data-scroll-target="#on-the-results"><span class="header-section-number">6.1.2</span> On the results</a></li>
-  <li><a href="#policy-implication" id="toc-policy-implication" class="nav-link" data-scroll-target="#policy-implication"><span class="header-section-number">6.1.3</span> Policy implication</a></li>
+  <li><a href="#on-the-methodology" id="toc-on-the-methodology" class="nav-link" data-scroll-target="#on-the-methodology"><span class="header-section-number">7.1.1</span> On the methodology</a></li>
+  <li><a href="#on-the-results" id="toc-on-the-results" class="nav-link" data-scroll-target="#on-the-results"><span class="header-section-number">7.1.2</span> On the results</a></li>
+  <li><a href="#policy-implication" id="toc-policy-implication" class="nav-link" data-scroll-target="#policy-implication"><span class="header-section-number">7.1.3</span> Policy implication</a></li>
   </ul></li>
-  <li><a href="#future-research-agenda" id="toc-future-research-agenda" class="nav-link" data-scroll-target="#future-research-agenda"><span class="header-section-number">6.2</span> Future research agenda</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6.3</span> Conclusion</a></li>
+  <li><a href="#future-research-agenda" id="toc-future-research-agenda" class="nav-link" data-scroll-target="#future-research-agenda"><span class="header-section-number">7.2</span> Future research agenda</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.3</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +239,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></h1>
 </div>
 
 
@@ -247,11 +256,11 @@ window.Quarto = {
 </header>
 
 
-<section id="discussion" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="discussion"><span class="header-section-number">6.1</span> Discussion</h2>
+<section id="discussion" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="discussion"><span class="header-section-number">7.1</span> Discussion</h2>
 <p>This work was initiated with a simple subjective reality check from geopolitical perspective. Since the financial crisis of 2008 the conventional rule-based world order started to corrode and linguish. The covid 19 pandemic further exacerbated this corrosion and forced policy makers to reassess their decisions. This new world order is still in its infancy and its nature is yet to be clear, meanwhile uncertainties in global security and trade is only getting worse and vulnerable economies are the first victims. From here we posited that in the face of such shocks, understanding what makes an economy resilient is a sensible exercise. This was a clear research agenda in the literature which we presented and discussed in the review chapter. We framed adaptation as a theoretically observable consequence of resilience and that this adaptation, i.e.&nbsp;the capacity to adapt to constraints by recombining existing local capabilities in new configuration can be observed itself in the diversification patterns of these local economies. From there we justified the current study and framed it as a response to the need to a more contextualised assessment of regional technological diversification. Our methodological and empirical contribution target essentially context dimension following the research agenda proposed in many studies in different steams of literature. In this chapter we will conclude this dissertation and discuss different aspect of novelty, limitations and implication to our contributions.</p>
-<section id="on-the-methodology" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="on-the-methodology"><span class="header-section-number">6.1.1</span> On the methodology</h3>
+<section id="on-the-methodology" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="on-the-methodology"><span class="header-section-number">7.1.1</span> On the methodology</h3>
 <p>Our contribution in this work spans both methodology and empirical application. The call in the literature for a more contextualised studies of regional capabilities were our main theoretical motivation in this context. <span class="citation" data-cites="ballandboschma2015">Balland, Rigby, and Boschma (<a href="references.html#ref-ballandboschma2015" role="doc-biblioref">2015</a>)</span> call for a more focused consideration of the evolutionary accounts of regional change; technological relatedness, network structures, and institutions. However, <span class="citation" data-cites="pinheiro2025">Pinheiro (<a href="references.html#ref-pinheiro2025" role="doc-biblioref">2025</a>)</span>; <span class="citation" data-cites="andreoni2019political">Andreoni and Chang (<a href="references.html#ref-andreoni2019political" role="doc-biblioref">2019</a>)</span> and <span class="citation" data-cites="bathelt2023related">Bathelt and Storper (<a href="references.html#ref-bathelt2023related" role="doc-biblioref">2023</a>)</span> provided another optic regarding this agenda specifically on the limitation of the current conventional instruments of measuring proximity (relatedness) and thus the technology space (network) and their conceptual flaws that obscure granular context. This means that even if this research agenda is opertionalised through relatedness measurements, the loss in information compound regardless. To address this specific issue, <span class="citation" data-cites="fessina2024identifying">Fessina et al. (<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="albora2023product">Albora et al. (<a href="references.html#ref-albora2023product" role="doc-biblioref">2023</a>)</span>, and most notably <span class="citation" data-cites="tacchella2023relatedness">Tacchella et al. (<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">2023</a>)</span> propose a machine learning conceptualisation to the relatedness measurements.</p>
 <p>Their work propose a shift from co-occurrence and frequency based measurements to a predictive framework that serves three objectives. First, a falsifiable and testable measure of feasibility, second, leveraging already granular data for a richer context, and third accommodate the non-linearity of knowledge structure and their interactions. We adopted this framework as a direct response to the gaps in the literature which constitutes our main methodological contribution. However, this methodology is not without limitation itself.</p>
 <p>In fact, <span class="citation" data-cites="pinheiro2025">Pinheiro (<a href="references.html#ref-pinheiro2025" role="doc-biblioref">2025</a>)</span> acknowledged the merits of this framework with a clear factual scepticism regarding the performance of these machine learning models. The problem she mentions is related mainly to false negative predictions, which are the result of the unbalanced data itself (few regions with observed specialisation, the majority of the outcome is 0). Although this is a well merited criticism, it still can be addressed in future iterations with different training strategies (using synthetic minority oversampling technique or SMOTE) or with innovative machine learning modeling algorithms (causal random forest as an potential candidate). Moreover as we’ve shown in the comparative example in chapter 3, FITS produce a much more stable prediction than conventional technology space, the merits of that is our main motivation for this adoption.</p>
@@ -261,12 +270,14 @@ window.Quarto = {
 <p>On another note, in previous related work, <span class="citation" data-cites="hsin2026regional">Bennour (<a href="references.html#ref-hsin2026regional" role="doc-biblioref">2026</a>)</span> discuss other areas of limitation to the FITS network approach. One of the issues here is that the time horizon <span class="math inline">\(\delta\)</span> is relatively arbitrary. Although <span class="citation" data-cites="fessina2024identifying">Fessina et al. (<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="albora2023product">Albora et al. (<a href="references.html#ref-albora2023product" role="doc-biblioref">2023</a>)</span>, and <span class="citation" data-cites="tacchella2023relatedness">Tacchella et al. (<a href="references.html#ref-tacchella2023relatedness" role="doc-biblioref">2023</a>)</span>, choose it empirically by testing the most adequate value, it remains a limitation. The reason for this is that with this training strategy, every technology is modeled independently, which means that the choice of <span class="math inline">\(\delta\)</span> should change with each model. This is to say, even when <span class="citation" data-cites="albora2023product">Albora et al. (<a href="references.html#ref-albora2023product" role="doc-biblioref">2023</a>)</span> showed that <span class="math inline">\(\delta = 5\)</span> is optimal when they assess the aggregate performance of their models, they, and consequently this work, still leave much more dynamic information on the table.</p>
 <p>The idea here is that as we opertionalise the argument in the literature that past capacities should predict future ones <span class="citation" data-cites="napolitano2018technology andreoni2019political martin2007complexity">(<a href="references.html#ref-napolitano2018technology" role="doc-biblioref">Napolitano et al. 2018</a>; <a href="references.html#ref-andreoni2019political" role="doc-biblioref">Andreoni and Chang 2019</a>; <a href="references.html#ref-martin2007complexity" role="doc-biblioref">Martin and Sunley 2007</a>)</span>, we do not know how much it takes for the past capabilities to transform into new ones. This prediction window should not logically be constant across technologies or activities that are heterogeneous in their complexity. For instance, the past capacities of a region that predict textile related technology, should not have the same time horizon as semiconductor technology or other highly complex technologies.</p>
 <p>This is one of the areas that where discussed in <span class="citation" data-cites="hidalgo2023policy">Hidalgo (<a href="references.html#ref-hidalgo2023policy" role="doc-biblioref">2023</a>)</span>: the 4Ws that drives policy implication of the REC literature (where, what, and When). The question of When diversification occur was not properly addressed in the literature with the exception of <span class="citation" data-cites="alshamsi2018optimal">Alshamsi, Pinheiro, and Hidalgo (<a href="references.html#ref-alshamsi2018optimal" role="doc-biblioref">2018</a>)</span>. In their work, the authors formalise a dynamic graph model that essentially predict that on average, diversification is feasible when 10% to 15% of related capabilities exist in a location. Although this aligns relatively with known graph theory ideas, their assessment depends heavily on the symmetric activity space and its structure and orientation. Regardless, <span class="citation" data-cites="alshamsi2018optimal">Alshamsi, Pinheiro, and Hidalgo (<a href="references.html#ref-alshamsi2018optimal" role="doc-biblioref">2018</a>)</span>’s approach could be beneficial to address the time horizon limitation, and could result is a richer more granular contextualisation of the FITS network and regional technological potential.</p>
-<p>The empirical design in our work also has its own share of limitations. Our assessment posits that the regional technological potential is a proxy for diversification feasibility. However, there’s no clear indication in the literature that such framing is adequate since we are the first to adopt it. This is to say that potential might need to be assessed with a different interpretation than the one we adopted. Moreover, using network metrics of the technologies could have been better addressed with random graph models or other alternatives designed for this topic, but in our assessment, this was beyond the scope of the dissertation and thus we settled on a simpler approach. Another issue here is that including the national ecosystem variables as predictors could have been more informative have we included and interaction term, but then the complexity of the interpretation forced us to not go in that direction for now, although with a country level analysis this can be addressed properly but we decided to leave that out for the purposes of this work.</p>
+<p>The empirical design in our work also has its own share of limitations. Our assessment posits that the regional technological potential is a proxy for diversification feasibility. However, there’s no clear indication in the literature that such framing is adequate since we are the first to adopt it. This is to say that potential might need to be assessed with a different interpretation than the one we adopted. Moreover, using network metrics of the technologies could have been better addressed with random graph models or other alternatives designed for this topic, but in our assessment, this was beyond the scope of the dissertation and thus we settled on a simpler approach.</p>
+<p>This work’s main concern is the endogeneity problem. Specifically mechanical circularity: coherence is built from the same lagged portfolio information that the Random Forest uses to generate potential. Within a given region–year, a technology with higher coherence will tend to resemble the portfolio patterns the RF associates with entry, which can inflate the coherence–potential link. This is not reverse causality in the usual sense, but shared data construction. The Two-way fixed effects mitigate this by absorbing time-invariant regional alignment, so identification relies on within-region changes over time. In addition. Furthermore, the results are similar in fixed- and random-effects models, and the key network-position variables are technology-specific rather than portfolio-derived. We therefore interpret coefficients as conditional associations describing the feasibility of diversification opportunities, not causal effects. Regardless, in future work plans, further attention should be given to this point.</p>
+<p>Another issue here is that including the national ecosystem variables as predictors could have been more informative have we included and interaction term, but then the complexity of the interpretation forced us to not go in that direction for now, although with a country level analysis this can be addressed properly but we decided to leave that out for the purposes of this work.</p>
 <p>Building on that, there’s another area that’s extremely important to address here. This is the question of the data itself that we used for the network metrics and their interaction with coherence. Our main network structure identifiers are eigenvector and betweenness centrality. We assume that the first captures prestigious position and we consider the metric a proxy to the Key enabling technology role while for the latter we assume it to proxy General purpose technology roles. This is in accordance with the framing and classification in <span class="citation" data-cites="antonietti2021going">Antonietti and Montresor (<a href="references.html#ref-antonietti2021going" role="doc-biblioref">2021</a>)</span>.</p>
 <p>In our context, betweenness centrality is theoretically a justifiable proxy, technologies with high betweenness centrality in our FITS network are nodes where many of the shortest paths between other nodes pass through in both directions. These technologies links different technological areas and thus can be considered as general purpose. However, we can’t confidently say the same for our interpretation of eigenvector centrality. Because technologies with high eigenvector centrality, are those that are well connected to other technologies that are also well connected. A more appropriate interpretation here would have been foundational role. The distinction and interpretation of these roles is not as clear as we intended it to be, and it’s a major flaw of our framing which we acknowledge and will address in future work. This however doesn’t systematically affect the core agenda we subscribe to nor the general ideas we’ve portrayed evidence for, network structures—regardless of the interpretation—have a sizeable contribution to region diversification.</p>
 </section>
-<section id="on-the-results" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="on-the-results"><span class="header-section-number">6.1.2</span> On the results</h3>
+<section id="on-the-results" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="on-the-results"><span class="header-section-number">7.1.2</span> On the results</h3>
 <p>Our results presented in the previous chapter, showcase an interesting story derived from a research agenda framed almost a decade ago. The entire idea from this work is to operationalise the idea that “context matters”. Our design focuses on including three contextual layers to assess diversification potential of regions in Europe, relatedness, network structures, and institutions.</p>
 <p>We started by arguing that in order to obtain granular context, we first need to address the conceptual issues in relatedness and the derived networks via our regional potential and its derived FITS network. We extended that with defining another measure of industrial embeddedness which we use as a device that measures the industrial alignment between a region’s network, and a technology. And finally we adopted a set of pillars from the GEI data to proxy institutional structure. With that we addressed the concerns in the literature on contextualisation.</p>
 <p>The three models we specified each target a specific idea, combined they are each other robustness checks. The benchmark model 0 shows that regional potential and entry are both associated with a positive change in the probability of that a region will enter a new technology. But because both retain significant explanatory power when introduced together, we cannot confidently say that our measure of potential is a better predictor, despite the fact that across all specification the contribution of potential to the models is higher than that of relatedness density. This is a perplexing result for us, as we expected to see a much more significant difference. Regardless, the overall picture when we take the results of all specifications together tell us one thing, there’s no evidence that relatedness density predict more variation than regional potential.</p>
@@ -277,22 +288,26 @@ window.Quarto = {
 <p>These results tell us an interesting story that’s bounded to the reality of European regions. First, the internationalisation pillar as defined in <span class="citation" data-cites="szerb2013regional">Szerb et al. (<a href="references.html#ref-szerb2013regional" role="doc-biblioref">2013</a>)</span> and subsequent updates are informative of export intensity, and export complexity of the country. This means that ecosystems that are heavily export oriented inhibit their regional technological potential. This was relatively mirrored in the literature of trade and global value chains, and more specifically in <span class="citation" data-cites="sebestyen2024resolving">Sebestyén, Braun, and Elekes (<a href="references.html#ref-sebestyen2024resolving" role="doc-biblioref">2024</a>)</span>. The idea here is that some export intensive countries might tend to lock themselves out into activities that have low added value in complexity and innovation intensity, or into activities where the value added is entirely exported. However we acknowledge here that further research is needed given the heterogeneity between European regions. Second, our results on the role of competition confirms the intuition in <span class="citation" data-cites="komlosi2025balanced">Komlósi et al. (<a href="references.html#ref-komlosi2025balanced" role="doc-biblioref">2025</a>)</span> who employs a necessary condition analysis to assess the structure of the ecosystem that shape regional economic performance. In their study they found that in the context of their sample of EU regions, competition was almost always necessary for their outcome.</p>
 <p>Model 3 completes our final layer of contextualisation and confirms our initial intuition and relatively supported by the variance decomposition in model 2. Space matters, which country a region belongs to and who are their neighbours are a structural baseline predictors that close the logical chain we started in this work.</p>
 <p>When we average our main variables of interest to a regional panel (eliminate the individual technology signal) we have a different level of analysis. Unlike model 1 and 2 who ask what are the (joint) characteristics of regions and technologies that predict regional potential in every technology, model 3 asks on aggregate, does the characteristics of the technologies endowed in the region predict it potential? I.e. now we can see if the stock of bridging and enabling technologies predict its average feasible opportunities, and if the spatial component confirmed. To this end, the results are clear, the average potential of a region is spatially dependent on the average potential of it neighbouring regions. Additionally, regions endowed with high level of bridging roles technologies are associated with a decrease in their potential, whereas for enabling roles technologies, they are positively associated. This mirrors our results in model 1 and 2, bridging technologies are a facilitator of diversification for regions with low coherence, and the opposite for regions with high coherence (presumably reverse U shape). This means that bridging technologies matter only for catch-up, at some inflection point its effect reverses. Similarly, regions highly endowed with enabling technologies are associated with larger diversification possibilities. This reflects the merit of the naming itself, because enabling technologies enable (positively associated with) higher regional potential on average.</p>
-<p>The main endogeneity concern in this analysis is that coherence is constructed from the same portfolio data that feeds the RF model generating potential. Within a given year and region, a technology with higher coherence will mechanically share portfolio features with the region in ways that likely raise the RF’s predicted probability. This is analogous to — though more subtle than — the reverse causality concern that Antonietti and Montresor (2021, p.&nbsp;199, “Econometric Strategy”) address by controlling for firm birth rates: regions endowed with more KETs may also be those where firm creation is normally higher, introducing spurious correlation between KETs and diversification outcomes. In our case, the circularity is internal to the variable construction rather than external to the model.</p>
-<p>The two-way fixed effects address part of this: the identifying variation is within-region change over time, so stable portfolio-technology alignment is absorbed. The consistency of coefficients across fixed effects and random effects specifications, and the stability of the network centrality patterns — which are technology-specific rather than portfolio-derived — provide some reassurance that the results are not purely mechanical. We treat the estimates throughout as conditional associations that characterise the structure of the feasibility landscape rather than as causal parameters, and we return to the broader implications of this distinction in the discussion.</p>
 </section>
-<section id="policy-implication" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="policy-implication"><span class="header-section-number">6.1.3</span> Policy implication</h3>
+<section id="policy-implication" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="policy-implication"><span class="header-section-number">7.1.3</span> Policy implication</h3>
 <p>Our work here is not merely an empirical application and contains many area of important policy implications. We will divide these implication into two parts, the first addresses the the asymmetric FITS network and regional interdependence, while the second is regarding the characteristics of the technologies.</p>
-<p>First, as we’ve mentioned in earlier section the FITS network reveals that technologies are not related by homogeneous/undirected links. There’s a clear, consistent and logical unbalance on how much a technology is related to another. For regions this means that with their endowment of any technological portfolio, they also inherit this asymmetric dependence as well. This dependence is then spatially dependent also because a region’s technological portfolio doesn’t exist in a vacuum or only in the limited context of that region but in other regions as well. A region who specialises in precision machinery, would use technologies from regions who specialise in robotic systems as an example, but the reverse may not be true or at least weaker. Leveraging this asymmetry aligns with the literature on regional linkages and could be useful is in the framework of European cohesion.</p>
-<p>The granular and context-rich information FITS provide can therefore enable an assessment of technological linkages at a regional level, with that for each technology we can know which regions are innovate together, which regions compete together, and which regions complement the activities of other regions. Such mapping would be extremely helpful to increase European technological integration, strengthen existing regional capacities, manage competition, and increase the efficiency of the innovation landscape in general.</p>
+<p>First, as we’ve mentioned in earlier section the FITS network reveals that technologies are not related by homogeneous/undirected links. There’s a clear, consistent and logical unbalance on how much a technology is related to another. For regions this means that with their endowment of any technological portfolio, they also inherit this asymmetric dependence as well <span class="citation" data-cites="wanzenbock2025emergence">(<a href="references.html#ref-wanzenbock2025emergence" role="doc-biblioref">Wanzenböck et al. 2025</a>)</span>. This dependence is then spatially dependent also because a region’s technological portfolio doesn’t exist in a vacuum or only in the limited context of that region but in other regions as well<span class="citation" data-cites="stuck2016network">(<a href="references.html#ref-stuck2016network" role="doc-biblioref">Stuck, Broekel, and Revilla Diez 2016</a>)</span>. A region who specialises in precision machinery, would use technologies from regions who specialise in robotic systems as an example, but the reverse may not be true or at least weaker. Leveraging this asymmetry aligns with the literature on regional linkages and could be useful is in the framework of European cohesion.</p>
+<p>The granular and context-rich information FITS provide can therefore enable an assessment of technological linkages at a regional level, with that for each technology we can know which regions are innovate together, which regions compete together, and which regions complement the activities of other regions. Such mapping would be extremely helpful to increase European technological integration, strengthen existing regional capacities, manage competition, and increase the efficiency of the innovation landscape in general<span class="citation" data-cites="miguelez2018relatedness">(<a href="references.html#ref-miguelez2018relatedness" role="doc-biblioref">Miguelez and Moreno 2018</a>)</span>.</p>
 <p>Second, the characteristics of the technologies in the FITS network as we studied them inform us that they condition the feasible diversification options of a region. Our findings, can enable policy makers to strategise depending on the initial situation in the region: their portfolio size, diversity, and stock characteristics in term of bridging or enabling technologies. There’s no one size fit all solution, and our results explicitly show that. Given the heterogeneity in the technological characteristics of European regions, policy makers can prioritise incentives and investment in specific the specific technologies, for regions on the technological periphery this means a focus on technologies with bridging roles, those that are general purpose and can be used in different other technologies or domains. Other regions with higher level of coherence, could incentivise investments in the ecosystem in general to support the establishment and survival of high growth firms, product innovation, harbour competition and human capital. This however is not a single layer, combining these policy directions with other policy directives derived from the inter-regional technological linkages we discussed in the first point would directly support European cohesion directives and branch out other policy paradigms.</p>
 </section>
 </section>
-<section id="future-research-agenda" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="future-research-agenda"><span class="header-section-number">6.2</span> Future research agenda</h2>
+<section id="future-research-agenda" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="future-research-agenda"><span class="header-section-number">7.2</span> Future research agenda</h2>
+<p>This dissertation started with a specific framing issued from clear and relevant policy and research gap in the literature. The need to further contextualise the study of regional capabilities through more detailed context. We responded to this agenda with a methodological and empirical framing. Albeit, we are convinced of the general usefulness of our approach much more work remains to fully conceptualise an ontological framework. As we discussed earlier, the machine learning approaches are a shift from a descriptive scope of relatedness and the technology space to a predictive one. The result of such a shift is a context-rich asymmetric network that contains much more information on the dependencies between technologies than the conventional relatedness approaches. Similarly, the Entrepreneurial Ecosystem indicators are an appropriate summary of the national institutional context, that are reliable and used extensively in the literature. These three elements constitute a baseline for future work.</p>
+<p>First, the asymmetric FITS network is great start in this direction to accommodate different ideas in the literature mainly regional linkage. To that end, a more robust approach is needed. This means instead of casually filtering the links of the initial RF estimation, we can adopt a sampling based falsifiable approach as was the case in <span class="citation" data-cites="fessina2024identifying">Fessina et al. (<a href="references.html#ref-fessina2024identifying" role="doc-biblioref">2024</a>)</span>, with that we can keep only statistically significant links. Other approaches here like causal RF could be an interesting direction also, such an approach would allow us not only to see relevant important links in the network, but also the causal links as well. This will allow us, in future iteration to assess the causal implications of adding a technology or removing from the region and could prove a powerful tool for policy makers. Adding to that, we can also flip the dimensions of the estimation process in our training strategy, instead of predicting the outcome based on the information of the technology portfolio in a region, we can predict the outcome based on the portfolio of other regions. I.e. we can predict a region’s own outcome from the contribution of all the others regions, which would allow us to create an inter-regional dependence matrix (Feature Importance Regional Space) that enable us to investigate regional linkages in a more depth and certitude.</p>
+<p>Second, the patents data that we use contains an important dimension that we ignored in this work, which is the collaboration patterns. Many studies in the literature investigate the role of collaboration in regional technological adoption, albeit the results in general are not conclusive the general consensus is that collaboration is a catalyst for technological adoption because it mirrors knowledge import which can be used to recombine existing knowledge stock into new knowledge. Our instinct here, is that these patterns are extremely informative and accounting for them would further strengthen the ideas we argued for in this dissertation and provide a clearer path for policy. The challenge in this context is how to accommodate collaboration patterns in a machine learning-based estimations, and whether this accommodation is even necessary. What is clear however, is that collaboration patterns—which are considered as a catalyst for innovation—could have a circular feedback effect on the entrepreneurial ecosystems characteristics, whether these characteristics influence more collaboration, or collaboration influence these characteristics is question that deserve attention.</p>
 </section>
-<section id="conclusion" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">6.3</span> Conclusion</h2>
+<section id="conclusion" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.3</span> Conclusion</h2>
+<p>In conclusion, this dissertation is an methodological and empirical answer to explicit gaps and research agenda in the literature of Evolutionary Economic Geography. The frequent calls for a contextualised assessment of regional diversification opportunities led us to integrate different streams of literature in one body of work which was an extremely challenging task.</p>
+<p>We first, addressed a methodological issue in the literature of relatedness and economic complexity specifically targeting the conventional measures of relatedness/proximity that obscure much of the granular information in the patenting data. To this end, we adopted a machine learning training strategy that address this issue, then we used the results of our approach to investigate how the characteristics of different technologies, the regions’ own network structures, their national entrepreneurial ecosystem characteristics, and their spatial position associate with their technological potential (or the feasible opportunities). This methodological contribution and empirical investigation respond to the research agenda and the gaps in the literature.</p>
+<p>Our results, validate many of the ideas in the literature and highlight the importance of the national context and the heterogeneity of the influence of different technological characteristics on regions’ technological potential.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -329,6 +344,9 @@ Komlósi, Éva, Marcus Dejardin, László Szerb, and Balázs Páger. 2025. <span
 <div id="ref-martin2007complexity" class="csl-entry" role="listitem">
 Martin, Ron, and Peter Sunley. 2007. <span>“Complexity Thinking and Evolutionary Economic Geography.”</span> <em>Journal of Economic Geography</em> 7 (5): 573–601.
 </div>
+<div id="ref-miguelez2018relatedness" class="csl-entry" role="listitem">
+Miguelez, Ernest, and Rosina Moreno. 2018. <span>“Relatedness, External Linkages and Regional Innovation in Europe.”</span> <em>Regional Studies</em> 52 (5): 688–701.
+</div>
 <div id="ref-napolitano2018technology" class="csl-entry" role="listitem">
 Napolitano, Lorenzo, Evangelos Evangelou, Emanuele Pugliese, Paolo Zeppini, and Graham Room. 2018. <span>“Technology Networks: The Autocatalytic Origins of Innovation.”</span> <em>Royal Society Open Science</em> 5 (6): 172445.
 </div>
@@ -338,11 +356,17 @@ Pinheiro, Cristina. 2025. <span>“Relatedness and Economic Complexity as Tools 
 <div id="ref-sebestyen2024resolving" class="csl-entry" role="listitem">
 Sebestyén, Tamás, Erik Braun, and Zoltán Elekes. 2024. <em>Resolving the Complexity Puzzle: Economic Complexity and Positions in Global Value Chains Jointly Explain Economic Development</em>. Utrecht University, Human Geography; Planning.
 </div>
+<div id="ref-stuck2016network" class="csl-entry" role="listitem">
+Stuck, Jérôme, Tom Broekel, and Javier Revilla Diez. 2016. <span>“Network Structures in Regional Innovation Systems.”</span> <em>European Planning Studies</em> 24 (3): 423–42.
+</div>
 <div id="ref-szerb2013regional" class="csl-entry" role="listitem">
 Szerb, Laszlo, Zoltán Ács, Erkko Autio, Raquel Ortega-Argiles, and Eva Komlosi. 2013. <span>“The Regional Entrepreneurship and Development Index–Measuring Regional Entrepreneurship.”</span>
 </div>
 <div id="ref-tacchella2023relatedness" class="csl-entry" role="listitem">
 Tacchella, Andrea, Andrea Zaccaria, Marco Miccheli, and Luciano Pietronero. 2023. <span>“Relatedness in the Era of Machine Learning.”</span> <em>Chaos, Solitons &amp; Fractals</em> 176: 114071.
+</div>
+<div id="ref-wanzenbock2025emergence" class="csl-entry" role="listitem">
+Wanzenböck, Iris, Silvia Rocchetta, Keungoui Kim, and Dieter F Kogler. 2025. <span>“The Emergence of New Regional Technological Specialisations: Exploring the Role of Organisations and Their Technological Network Structure.”</span> <em>Industry and Innovation</em> 32 (5): 513–39.
 </div>
 </div>
 </section>
@@ -399,13 +423,14 @@ Tacchella, Andrea, Andrea Zaccaria, Marco Miccheli, and Luciano Pietronero. 2023
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -749,8 +774,8 @@ Tacchella, Andrea, Andrea Zaccaria, Marco Miccheli, and Luciano Pietronero. 2023
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./results.html" class="pagination-link" aria-label="Results">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></span>
+      <a href="./results2.html" class="pagination-link" aria-label="Results">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Results</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

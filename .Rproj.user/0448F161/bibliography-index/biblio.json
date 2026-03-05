@@ -66,6 +66,61 @@
         {
             "author": [
                 {
+                    "family": "LeSage",
+                    "given": "James"
+                },
+                {
+                    "family": "Pace",
+                    "given": "Robert Kelley"
+                }
+            ],
+            "id": "lesage2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Introduction to spatial econometrics",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Varga",
+                    "given": "Attila"
+                },
+                {
+                    "family": "Sebestyén",
+                    "given": "Tamás"
+                },
+                {
+                    "family": "Szabó",
+                    "given": "Norbert"
+                },
+                {
+                    "family": "Szerb",
+                    "given": "László"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "varga2020estimating",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Taylor & Francis",
+            "title": "Estimating the economic impacts of knowledge network and entrepreneurship development in smart specialization policy",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
                     "family": "Komlósi",
                     "given": "Éva"
                 },
@@ -528,6 +583,37 @@
         {
             "author": [
                 {
+                    "family": "Straccamore",
+                    "given": "Matteo"
+                },
+                {
+                    "family": "Bruno",
+                    "given": "Matteo"
+                },
+                {
+                    "family": "Tacchella",
+                    "given": "Andrea"
+                }
+            ],
+            "container-title": "PLoS One",
+            "id": "straccamore2025comparative",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "page": "e0329746",
+            "publisher": "Public Library of Science San Francisco, CA USA",
+            "title": "Comparative analysis of technological fitness and coherence at different geographical scales",
+            "type": "article-journal",
+            "volume": "20"
+        },
+        {
+            "author": [
+                {
                     "family": "Hidalgo",
                     "given": "César A"
                 },
@@ -657,6 +743,136 @@
         {
             "author": [
                 {
+                    "family": "Miguelez",
+                    "given": "Ernest"
+                },
+                {
+                    "family": "Moreno",
+                    "given": "Rosina"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "miguelez2018relatedness",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "688-701",
+            "publisher": "Taylor & Francis",
+            "title": "Relatedness, external linkages and regional innovation in europe",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Teece",
+                    "given": "David J"
+                },
+                {
+                    "family": "Rumelt",
+                    "given": "Richard"
+                },
+                {
+                    "family": "Dosi",
+                    "given": "Giovanni"
+                },
+                {
+                    "family": "Winter",
+                    "given": "Sidney"
+                }
+            ],
+            "container-title": "Journal of economic behavior & organization",
+            "id": "teece1994understanding",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "page": "1-30",
+            "publisher": "Elsevier",
+            "title": "Understanding corporate coherence: Theory and evidence",
+            "title-short": "Understanding corporate coherence",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "author": [
+                {
+                    "family": "Stuck",
+                    "given": "Jérôme"
+                },
+                {
+                    "family": "Broekel",
+                    "given": "Tom"
+                },
+                {
+                    "family": "Revilla Diez",
+                    "given": "Javier"
+                }
+            ],
+            "container-title": "European Planning Studies",
+            "id": "stuck2016network",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "423-442",
+            "publisher": "Taylor & Francis",
+            "title": "Network structures in regional innovation systems",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wanzenböck",
+                    "given": "Iris"
+                },
+                {
+                    "family": "Rocchetta",
+                    "given": "Silvia"
+                },
+                {
+                    "family": "Kim",
+                    "given": "Keungoui"
+                },
+                {
+                    "family": "Kogler",
+                    "given": "Dieter F"
+                }
+            ],
+            "container-title": "Industry and Innovation",
+            "id": "wanzenbock2025emergence",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "page": "513-539",
+            "publisher": "Taylor & Francis",
+            "title": "The emergence of new regional technological specialisations: Exploring the role of organisations and their technological network structure",
+            "title-short": "The emergence of new regional technological specialisations",
+            "type": "article-journal",
+            "volume": "32"
+        },
+        {
+            "author": [
+                {
                     "family": "Boschma",
                     "given": "Ron"
                 },
@@ -688,6 +904,53 @@
             "title": "The role of relatedness and unrelatedness for the geography of technological breakthroughs in europe",
             "type": "article-journal",
             "volume": "99"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "boschma2004competitiveness",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "page": "1001-1014",
+            "publisher": "Taylor & Francis",
+            "title": "Competitiveness of regions from an evolutionary perspective",
+            "type": "article-journal",
+            "volume": "38"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "Regional studies",
+            "id": "boschma2005proximity",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "61-74",
+            "publisher": "Taylor & Francis",
+            "title": "Proximity and innovation: A critical assessment",
+            "title-short": "Proximity and innovation",
+            "type": "article-journal",
+            "volume": "39"
         },
         {
             "author": [
@@ -881,6 +1144,33 @@
         {
             "author": [
                 {
+                    "family": "Audretsch",
+                    "given": "David B"
+                },
+                {
+                    "family": "Feldman",
+                    "given": "Maryann P"
+                }
+            ],
+            "container-title": "The American economic review",
+            "id": "audretsch1996r",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "page": "630-640",
+            "publisher": "JSTOR",
+            "title": "R&d spillovers and the geography of innovation and production",
+            "type": "article-journal",
+            "volume": "86"
+        },
+        {
+            "author": [
+                {
                     "family": "Hidalgo",
                     "given": "César A"
                 },
@@ -937,6 +1227,37 @@
             "publisher": "Springer",
             "title": "The principle of relatedness",
             "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cohen",
+                    "given": "Wesley M"
+                },
+                {
+                    "family": "Levinthal",
+                    "given": "Daniel A"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Administrative science quarterly",
+            "id": "cohen1990absorptive",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1990
+                    ]
+                ]
+            },
+            "page": "128-152",
+            "publisher": "Ithaca",
+            "title": "Absorptive capacity: A new perspective on learning and innovation",
+            "title-short": "Absorptive capacity",
+            "type": "article-journal",
+            "volume": "35"
         },
         {
             "author": [
@@ -1702,6 +2023,86 @@
             "title-short": "Functions of innovation systems",
             "type": "article-journal",
             "volume": "74"
+        },
+        {
+            "author": [
+                {
+                    "family": "Carayannis",
+                    "given": "Elias"
+                },
+                {
+                    "family": "Grigoroudis",
+                    "given": "Evangelos"
+                }
+            ],
+            "container-title": "Форсайт",
+            "id": "carayannis2016",
+            "issue": "1 (eng)",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "31-42",
+            "publisher": "Федеральное государственное автономное образовательное учреждение высшего …",
+            "title": "Quadruple innovation helix and smart specialization: Knowledge production and national competitiveness",
+            "title-short": "Quadruple innovation helix and smart specialization",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "author": [
+                {
+                    "family": "Quatraro",
+                    "given": "Francesco"
+                }
+            ],
+            "container-title": "Research Policy",
+            "id": "quatraro2010",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "1289-1302",
+            "publisher": "Elsevier",
+            "title": "Knowledge coherence, variety and economic growth: Manufacturing evidence from italian regions",
+            "title-short": "Knowledge coherence, variety and economic growth",
+            "type": "article-journal",
+            "volume": "39"
+        },
+        {
+            "author": [
+                {
+                    "family": "Visser",
+                    "given": "Evert-Jan"
+                },
+                {
+                    "family": "Boschma",
+                    "given": "Ron"
+                }
+            ],
+            "container-title": "European Planning Studies",
+            "id": "visserboschma2004",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "page": "793-808",
+            "publisher": "Taylor & Francis",
+            "title": "Learning in districts: Novelty and lock-in in a regional context",
+            "title-short": "Learning in districts",
+            "type": "article-journal",
+            "volume": "12"
         },
         {
             "author": [

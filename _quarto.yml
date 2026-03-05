@@ -7,11 +7,12 @@ book:
   date: "12/3/2025"
   chapters:
     - index.qmd
+    - abstract.qmd
     - intro.qmd
     - lit_rev.qmd
     - potential2.qmd
     - empirical3.qmd
-    - results.qmd
+    - results2.qmd
     - summary.qmd
     - references.qmd
 

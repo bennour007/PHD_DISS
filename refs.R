@@ -330,13 +330,13 @@
 @article{balland2022reprint,
   title={Reprint of the new paradigm of economic complexity},
   author={Balland, Pierre-Alexandre and Broekel, Tom and Diodato, Dario and Giuliani, Elisa and Hausmann, Ricardo and o'Clery, Neave and Rigby, David},
-  journal={Research Policy},
-  volume={51},
-  number={8},
-  pages={104568},
-  year={2022},
-  publisher={Elsevier}
-}
+journal={Research Policy},
+volume={51},
+number={8},
+pages={104568},
+year={2022},
+publisher={Elsevier}
+  }
 
 @article{morrison2013global,
   title={When do global pipelines enhance the diffusion of knowledge in clusters?},
@@ -1287,10 +1287,10 @@
 
 @book{amsden1989asia,
   title={Asia's next giant: South Korea and late industrialization},
-  author={Amsden, Alice Hoffenberg},
-  year={1989},
-  publisher={Oxford University Press}
-}
+author={Amsden, Alice Hoffenberg},
+year={1989},
+publisher={Oxford University Press}
+  }
 
 
 @article{lee2017rise,
