@@ -1,4 +1,3 @@
-
 @article{balland2019smart,
   title={Smart specialization policy in the European Union: relatedness, knowledge complexity and regional diversification},
   author={Balland, Pierre-Alexandre and Boschma, Ron and Crespo, Joan and Rigby, David L},
@@ -12,7 +11,7 @@
 
 @article{hidalgo2009building,
   title={The building blocks of economic complexity},
-  author={Hidalgo, C{\'e}sar A and Hausmann, Ricardo},
+  author={Hidalgo, Cesar A and Hausmann, Ricardo},
   journal={Proceedings of the national academy of sciences},
   volume={106},
   number={26},

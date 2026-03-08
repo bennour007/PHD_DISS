@@ -39,6 +39,34 @@
         {
             "author": [
                 {
+                    "family": "Nesta",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Saviotti",
+                    "given": "Pier Paolo"
+                }
+            ],
+            "container-title": "The Journal of Industrial Economics",
+            "id": "nesta2005coherence",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "123-142",
+            "publisher": "Wiley Online Library",
+            "title": "Coherence of the knowledge base and the firm’s innovative performance: Evidence from the US pharmaceutical industry",
+            "title-short": "Coherence of the knowledge base and the firm’s innovative performance",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
                     "family": "Hidalgo",
                     "given": "César A"
                 },

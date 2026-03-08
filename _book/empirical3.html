@@ -279,26 +279,30 @@ window.Quarto = {
 </section>
 <section id="research-desgin" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="research-desgin"><span class="header-section-number">5.2</span> Research Desgin</h2>
-<p>The guiding research question is whether and how regional portfolio structure mediates the relationship between a technology’s position in the knowledge network and the feasibility of diversification. This decomposes into four testable claims.</p>
+<p>The guiding research question is what conditions determine the feasibility of regional technological diversification, and how do technology-specific characteristics, portfolio alignment, national ecosystem structure, and spatial interdependence jointly shape that feasibility. This decomposes into five testable claims, detailed below and summarised in <a href="#tbl-hypo" class="quarto-xref">Table&nbsp;<span>5.1</span></a>.</p>
+<p><strong>H1 (Benchmark):</strong> Regional technological potential is at least as informative as relatedness density in predicting technology entry. The literature has established relatedness density as a robust predictor of entry <span class="citation" data-cites="hidalgo2009building neffke2011how">(<a href="references.html#ref-hidalgo2009building" role="doc-biblioref">Hidalgo and Hausmann 2009</a>; <a href="references.html#ref-neffke2011how" role="doc-biblioref">Neffke, Henning, and Boschma 2011</a>)</span>. We test whether our capability-based potential measure subsumes, supplements, or displaces this predictive power. This is not a causal claim; it is a precision benchmark that validates the methodological contribution and motivates the subsequent decomposition.</p>
+<p><strong>H2 (Technology characteristics):</strong> Technologies occupy structurally distinct positions in the directed capability network, and these positions predict how feasible it is for regions to diversify into them. We distinguish two archetypal roles following <span class="citation" data-cites="antonietti2021going">Antonietti and Montresor (<a href="references.html#ref-antonietti2021going" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="montresor2017regional">Montresor and Quatraro (<a href="references.html#ref-montresor2017regional" role="doc-biblioref">2017</a>)</span>. First, technologies with high betweenness centrality act as bridges between otherwise distant capability domains, connecting clusters and enabling recombination across areas of the network. Second, technologies with high eigenvector centrality occupy authority-like positions, being well connected to other well-connected technologies, and represent capability-dense domains whose entry tends to require broader complementary competence. We therefore test two sub-claims:</p>
 <ul>
-<li><p>H1 (Benchmark): Regional Technological Potential predicts technology entry better than relatedness density. The literature has established relatedness density as a robust predictor of entry <span class="citation" data-cites="hidalgo2009building neffke2011how">(<a href="references.html#ref-hidalgo2009building" role="doc-biblioref">Hidalgo and Hausmann 2009</a>; <a href="references.html#ref-neffke2011how" role="doc-biblioref">Neffke, Henning, and Boschma 2011</a>)</span>. We test whether our capability-based potential measure subsumes, supplements, or displaces this predictive power. This hypothesis is not causal; it is a precision benchmark that motivates the subsequent decomposition.</p></li>
-<li><p>H2 (Portfolio–network interaction): The effect of a technology’s position in the FITS network on its feasibility is moderated by the alignment between that technology and the regional portfolio. This is the core theoretical claim of the chapter. It draws on two complementary mechanisms: (a) the recombination logic common to evolutionary economic geography, which holds that regions enter new activities by recombining existing capabilities <span class="citation" data-cites="frenken2007theoretical antonietti2021going">(<a href="references.html#ref-frenken2007theoretical" role="doc-biblioref">Frenken and Boschma 2007</a>; <a href="references.html#ref-antonietti2021going" role="doc-biblioref">Antonietti and Montresor 2021</a>)</span>. And (b) the differential value of network links depending on whether the focal activity is related or unrelated to the regional base. On this second point, <span class="citation" data-cites="zhu2021strong">Zhu, Guo, and He (<a href="references.html#ref-zhu2021strong" role="doc-biblioref">2021</a>)</span> show that unrelated industries – those peripheral to the regional portfolio – perform better when they can access a small number of strong links rather than a diffuse network of weak connections, because strong links provide efficient, predictable knowledge transfer under conditions of high uncertainty. We apply an analogous logic at the technology level: a bridging technology (high betweenness) provides a strong, concentrated link between the region’s existing portfolio and a new domain, and we expect this link to be most valuable precisely for regions whose portfolios are <em>not</em> yet well-aligned with the target – the asymmetric moderation that constitutes H2b.</p></li>
-<li><p>H2 (Portfolio–network interaction): The effect of a technology’s position in the FITS network on feasibility is moderated by portfolio alignment (coherence). This is the core structural claim. It draws on the recombination logic in evolutionary economic geography: regions diversify by recombining existing capabilities, and feasibility depends on whether the regional portfolio provides the relevant interfaces and complementarities needed to support entry <span class="citation" data-cites="frenken2007theoretical boschma2017relatedness">(<a href="references.html#ref-frenken2007theoretical" role="doc-biblioref">Frenken and Boschma 2007</a>; <a href="references.html#ref-boschma2017relatedness" role="doc-biblioref">Boschma 2017</a>)</span>. Relatedness therefore captures an important but incomplete place-dependent dimension of diversification <span class="citation" data-cites="antonietti2021going">(<a href="references.html#ref-antonietti2021going" role="doc-biblioref">Antonietti and Montresor 2021</a>)</span>. FITS extends this logic by distinguishing where a technology sits in the directed capability space–i.e., what kinds of capability pathways it opens or requires–while coherence captures the alignment/consistency of the regional portfolio as a capability system.</p></li>
+<li><p><strong>H2a (Bridging role):</strong> Technologies with a bridging role are positively associated with regional technological potential, meaning that bridge technologies represent more accessible diversification pathways for regions.</p></li>
+<li><p><strong>H2b (Enabling role):</strong> Technologies with an enabling role are negatively associated with regional technological potential, meaning that foundational technologies represent structurally more difficult diversification targets.</p></li>
 </ul>
-<p>We structure H2 around two archetypal network roles that imply different alignment requirements following <span class="citation" data-cites="antonietti2021going">Antonietti and Montresor (<a href="references.html#ref-antonietti2021going" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="montresor2017regional">Montresor and Quatraro (<a href="references.html#ref-montresor2017regional" role="doc-biblioref">2017</a>)</span>:</p>
+<p><strong>H3 (Portfolio alignment):</strong> The value of a technology’s structural position may depend on whether the region’s portfolio is aligned with the capability demands that position implies. This draws on the recombination logic in evolutionary economic geography, which holds that regions diversify by recombining existing capabilities, and that feasibility depends on whether the regional portfolio provides the relevant interfaces needed to support entry <span class="citation" data-cites="frenken2007theoretical boschma2017relatedness">(<a href="references.html#ref-frenken2007theoretical" role="doc-biblioref">Frenken and Boschma 2007</a>; <a href="references.html#ref-boschma2017relatedness" role="doc-biblioref">Boschma 2017</a>)</span>. Relatedness captures an important but incomplete dimension of this <span class="citation" data-cites="antonietti2021going">(<a href="references.html#ref-antonietti2021going" role="doc-biblioref">Antonietti and Montresor 2021</a>)</span>. Our coherence measure extends this logic by capturing the alignment between a technology’s position in the directed capability space and the region’s industrial structure. We test whether this alignment moderates the relationship between network position and potential, and whether this moderation operates differently for bridging and enabling technologies, through three sub-claims:</p>
 <ul>
-<li><p>Key Enabling Technologies-KET (eigenvector centrality): Technologies that occupy authority-like positions–highly connected to other well-connected technologies–represent capability-dense domains that tend to require broad, complementary competence. In our interpretation, eigenvector centrality captures this KET-like “deep capability” character: these technologies sit in the structural core and are entangled in many interdependencies. Entry should therefore be more feasible when the regional portfolio is coherent and aligned with the relevant capability bundle.</p></li>
-<li><p>General Purpose Technologies-GPT (betweenness centrality): Technologies with high betweenness sit on many shortest directed paths and act as stepping stones between otherwise distant domains. In our interpretation, betweenness captures GPT-like “bridging capability” roles: cross-cutting technologies that connect clusters and enable recombination across domains. Their value as entry points should be less dependent on prior alignment, because their function is precisely to provide a pathway into adjacent capability space.</p></li>
+<li><p><strong>H3a (Alignment main effect):</strong> Regions with more coherent portfolios have higher regional technological potential, meaning that portfolio alignment reduces feasibility barriers across the technology space.</p></li>
+<li><p><strong>H3b (Bridging moderation):</strong> Technologies with a bridging role are more beneficial for regions with low coherence than for regions with high coherence, meaning that bridge technologies matter most as diversification pathways when direct alignment is limited <span class="citation" data-cites="zhu2021strong">(<a href="references.html#ref-zhu2021strong" role="doc-biblioref">Zhu, Guo, and He 2021</a>)</span>.</p></li>
+<li><p><strong>H3c (Enabling moderation):</strong> Technologies with an enabling role are more beneficial for regions with high coherence than for regions with low coherence, meaning that enabling technologies matter most as upgrading pathways when direct alignment is high.</p></li>
 </ul>
-<p>We therefore test the following sub-claims:</p>
+<p><strong>H4 (National ecosystem):</strong> National entrepreneurial ecosystem characteristics shape regional technological potential beyond what dyadic portfolio and network mechanisms account for. Portfolio configuration describes the endogenous opportunity structure of a region, but whether those opportunities are realised depends partly on enabling conditions that operate at the national level, including finance, competition, innovation capacity, and institutional characteristics <span class="citation" data-cites="acs2014national pinheiro2025">(<a href="references.html#ref-acs2014national" role="doc-biblioref">Acs, Autio, and Szerb 2014</a>; <a href="references.html#ref-pinheiro2025" role="doc-biblioref">Pinheiro 2025</a>)</span>. We test whether national ecosystem measures explain variation in regional potential after accounting for portfolio structure and technology network mechanisms. Effects are expected to be heterogeneous across ecosystem dimensions.</p>
+<p><strong>H5 (Spatial structure):</strong> Moving from the technology-region dyad to the regional portfolio as a whole, we ask whether the aggregate composition of a region’s portfolio predicts average regional potential, and whether this relationship is spatially interdependent. If high-potential regions systematically neighbour other high-potential regions after conditioning on observed portfolio characteristics, this indicates genuine interregional interdependence rather than merely correlated endowments <span class="citation" data-cites="boschma2009related">(<a href="references.html#ref-boschma2009related" role="doc-biblioref">Boschma and Iammarino 2009</a>)</span>. We test this through three sub-claims:</p>
 <ul>
-<li><p>H2a (Alignment): Coherence positively predicts potential. More coherent portfolios provide complementary infrastructures that reduce feasibility barriers for entry.</p></li>
-<li><p>H2b (GPT-like moderation): The positive association between betweenness centrality and potential is weaker under high coherence (or equivalently, stronger when coherence is lower). Bridge/GPT-like technologies should matter most when direct alignment is limited, because they provide targeted pathways into new capability domains.</p></li>
-<li><p>H2c (KET-like moderation): The association between eigenvector centrality and potential is more sensitive to coherence than the betweenness effect. If eigenvector-central technologies reflect KET-like capability cores, then feasibility should increase disproportionately with portfolio alignment, because entry requires a coherent and complementary base.</p></li>
-<li><p>H2d (Distance): Topological distance from the regional frontier compounds feasibility barriers. Where a region must traverse more directed capability steps in FITS to reach a target technology, feasibility should decline, and this effect may be especially pronounced for core/KET-like targets.</p></li>
-<li><p>H3 (National ecosystem): National entrepreneurial ecosystem characteristics shape regional technological potential beyond dyadic portfolio mechanisms. Relatedness and portfolio configuration describe endogenous opportunity structure, but capability mobilisation depends on enabling conditions–finance, competition, innovation capacity, and institutional bottlenecks–that operate at least partly at the national level <span class="citation" data-cites="acs2014national pinheiro2025">(<a href="references.html#ref-acs2014national" role="doc-biblioref">Acs, Autio, and Szerb 2014</a>; <a href="references.html#ref-pinheiro2025" role="doc-biblioref">Pinheiro 2025</a>)</span>. We therefore test whether national ecosystem measures explain variation in regional potential after accounting for portfolio structure and technology-network mechanisms.</p></li>
-<li><p>H4 (Spatial dependence): Regional potential exhibits positive spatial dependence beyond what regional characteristics explain. If high-potential regions systematically neighbour other high-potential regions after conditioning on observed portfolio and institutional characteristics, this indicates genuine interregional interdependence–knowledge spillovers, demonstration effects, or co-development of capabilities across borders–rather than merely correlated endowments <span class="citation" data-cites="boschma2009related">(<a href="references.html#ref-boschma2009related" role="doc-biblioref">Boschma and Iammarino 2009</a>)</span>. We test this by moving from dyadic modelling to region-level panels that can accommodate spatial dependence in feasibility.</p></li>
+<li><p><strong>H5a (Spatial dependence):</strong> Regions with higher average potential tend to neighbour other high-potential regions, meaning that regional feasibility landscapes are spatially interdependent rather than locally contained.</p></li>
+<li><p><strong>H5b (Bridging portfolio):</strong> Regions with portfolios concentrated in bridging technologies have higher average potential when their aggregate portfolio coherence is sufficient, meaning that the portfolio-level value of bridging technologies depends on whether the aggregate industrial alignment supports them.</p></li>
+<li><p><strong>H5c (Enabling portfolio):</strong> Regions with portfolios concentrated in enabling technologies have higher average potential, meaning that foundational technology endowments are a structural portfolio-level advantage, amplified further by coherence.</p></li>
 </ul>
+</section>
+<section id="data" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="data"><span class="header-section-number">5.3</span> Data</h2>
+<p>We use data very similar to many studies discussed in the literature review, namely the European patent applications from the EPO/PATSTAT database, covering 641 technologies (4-digit IPC classes) across 345 NUTS2 regions in 30 European countries over 11 years (2008–2018). The dyadic models (H1–H4) use approximately 1.9 million technology–region–year observations. The spatial models (H5) aggregate to approximately 3,200 observations. Patent data serve as a standard proxy for regional knowledge production and technological specialisation. We briefly described in the previous chapter how we use this data to construct our training strategy and build our empirical constructs (Regional Technological Potential, and the Feature Importance Technology Space (FITS)). In here we take this a step further and describe in more details the other variables we use in our design.</p>
 <div class="cell">
 <div id="tbl-hypo" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -307,23 +311,23 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
 </figcaption>
 <div aria-describedby="tbl-hypo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ihynjhpitm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ihynjhpitm table {
+<div id="hilfeytrfk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hilfeytrfk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ihynjhpitm thead, #ihynjhpitm tbody, #ihynjhpitm tfoot, #ihynjhpitm tr, #ihynjhpitm td, #ihynjhpitm th {
+#hilfeytrfk thead, #hilfeytrfk tbody, #hilfeytrfk tfoot, #hilfeytrfk tr, #hilfeytrfk td, #hilfeytrfk th {
   border-style: none;
 }
 
-#ihynjhpitm p {
+#hilfeytrfk p {
   margin: 0;
   padding: 0;
 }
 
-#ihynjhpitm .gt_table {
+#hilfeytrfk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -349,12 +353,12 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-left-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_caption {
+#hilfeytrfk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ihynjhpitm .gt_title {
+#hilfeytrfk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -366,7 +370,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-bottom-width: 0;
 }
 
-#ihynjhpitm .gt_subtitle {
+#hilfeytrfk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -378,7 +382,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-top-width: 0;
 }
 
-#ihynjhpitm .gt_heading {
+#hilfeytrfk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -390,13 +394,13 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-right-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_bottom_border {
+#hilfeytrfk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_col_headings {
+#hilfeytrfk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -411,7 +415,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-right-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_col_heading {
+#hilfeytrfk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -431,7 +435,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   overflow-x: hidden;
 }
 
-#ihynjhpitm .gt_column_spanner_outer {
+#hilfeytrfk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -443,15 +447,15 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   padding-right: 4px;
 }
 
-#ihynjhpitm .gt_column_spanner_outer:first-child {
+#hilfeytrfk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ihynjhpitm .gt_column_spanner_outer:last-child {
+#hilfeytrfk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ihynjhpitm .gt_column_spanner {
+#hilfeytrfk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -463,11 +467,11 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   width: 100%;
 }
 
-#ihynjhpitm .gt_spanner_row {
+#hilfeytrfk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ihynjhpitm .gt_group_heading {
+#hilfeytrfk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -493,7 +497,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   text-align: left;
 }
 
-#ihynjhpitm .gt_empty_group_heading {
+#hilfeytrfk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -508,15 +512,15 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   vertical-align: middle;
 }
 
-#ihynjhpitm .gt_from_md > :first-child {
+#hilfeytrfk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ihynjhpitm .gt_from_md > :last-child {
+#hilfeytrfk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ihynjhpitm .gt_row {
+#hilfeytrfk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -535,7 +539,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   overflow-x: hidden;
 }
 
-#ihynjhpitm .gt_stub {
+#hilfeytrfk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -548,7 +552,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   padding-right: 5px;
 }
 
-#ihynjhpitm .gt_stub_row_group {
+#hilfeytrfk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -562,15 +566,15 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   vertical-align: top;
 }
 
-#ihynjhpitm .gt_row_group_first td {
+#hilfeytrfk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ihynjhpitm .gt_row_group_first th {
+#hilfeytrfk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ihynjhpitm .gt_summary_row {
+#hilfeytrfk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -580,16 +584,16 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   padding-right: 5px;
 }
 
-#ihynjhpitm .gt_first_summary_row {
+#hilfeytrfk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_first_summary_row.thick {
+#hilfeytrfk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ihynjhpitm .gt_last_summary_row {
+#hilfeytrfk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -599,7 +603,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-bottom-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_grand_summary_row {
+#hilfeytrfk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -609,7 +613,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   padding-right: 5px;
 }
 
-#ihynjhpitm .gt_first_grand_summary_row {
+#hilfeytrfk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -619,7 +623,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-top-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_last_grand_summary_row_top {
+#hilfeytrfk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -629,11 +633,11 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-bottom-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_striped {
+#hilfeytrfk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ihynjhpitm .gt_table_body {
+#hilfeytrfk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -642,7 +646,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-bottom-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_footnotes {
+#hilfeytrfk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -656,7 +660,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-right-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_footnote {
+#hilfeytrfk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -665,7 +669,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   padding-right: 5px;
 }
 
-#ihynjhpitm .gt_sourcenotes {
+#hilfeytrfk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -679,7 +683,7 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   border-right-color: #D3D3D3;
 }
 
-#ihynjhpitm .gt_sourcenote {
+#hilfeytrfk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -687,72 +691,72 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
   padding-right: 5px;
 }
 
-#ihynjhpitm .gt_left {
+#hilfeytrfk .gt_left {
   text-align: left;
 }
 
-#ihynjhpitm .gt_center {
+#hilfeytrfk .gt_center {
   text-align: center;
 }
 
-#ihynjhpitm .gt_right {
+#hilfeytrfk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ihynjhpitm .gt_font_normal {
+#hilfeytrfk .gt_font_normal {
   font-weight: normal;
 }
 
-#ihynjhpitm .gt_font_bold {
+#hilfeytrfk .gt_font_bold {
   font-weight: bold;
 }
 
-#ihynjhpitm .gt_font_italic {
+#hilfeytrfk .gt_font_italic {
   font-style: italic;
 }
 
-#ihynjhpitm .gt_super {
+#hilfeytrfk .gt_super {
   font-size: 65%;
 }
 
-#ihynjhpitm .gt_footnote_marks {
+#hilfeytrfk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ihynjhpitm .gt_asterisk {
+#hilfeytrfk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ihynjhpitm .gt_indent_1 {
+#hilfeytrfk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ihynjhpitm .gt_indent_2 {
+#hilfeytrfk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ihynjhpitm .gt_indent_3 {
+#hilfeytrfk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ihynjhpitm .gt_indent_4 {
+#hilfeytrfk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ihynjhpitm .gt_indent_5 {
+#hilfeytrfk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ihynjhpitm .katex-display {
+#hilfeytrfk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ihynjhpitm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hilfeytrfk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -763,47 +767,73 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
 <th id="Hypothesis" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Hypothesis</th>
 <th id="Claim" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Claim</th>
 <th id="Key_variables" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Key variables</th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Model</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Hypothesis">H1</td>
-<td class="gt_row gt_left" headers="Claim">Potential outperforms relatedness density in predicting entry</td>
+<td class="gt_row gt_left" headers="Claim">Potential is at least as informative as relatedness density in predicting entry</td>
 <td class="gt_row gt_left" headers="Key_variables">pred11 vs relatedness_density</td>
+<td class="gt_row gt_left" headers="Model">Model 0</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Hypothesis">H2a</td>
-<td class="gt_row gt_left" headers="Claim">Coherence positively predicts potential</td>
-<td class="gt_row gt_left" headers="Key_variables">coherence</td>
+<td class="gt_row gt_left" headers="Claim">Technologies with a bridging role are positively associated with potential</td>
+<td class="gt_row gt_left" headers="Key_variables">betweenness</td>
+<td class="gt_row gt_left" headers="Model">Model 1</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Hypothesis">H2b</td>
-<td class="gt_row gt_left" headers="Claim">Betweenness benefit stronger for low-coherence regions</td>
-<td class="gt_row gt_left" headers="Key_variables">betweenness x coherence</td>
+<td class="gt_row gt_left" headers="Claim">Technologies with an enabling role are negatively associated with potential</td>
+<td class="gt_row gt_left" headers="Key_variables">eigenvector</td>
+<td class="gt_row gt_left" headers="Model">Model 1</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Hypothesis">H2c</td>
-<td class="gt_row gt_left" headers="Claim">Eigenvector penalty independent of coherence</td>
-<td class="gt_row gt_left" headers="Key_variables">eigenvector x coherence</td>
+<td class="gt_row gt_left" headers="Hypothesis">H3a</td>
+<td class="gt_row gt_left" headers="Claim">Coherence positively predicts potential</td>
+<td class="gt_row gt_left" headers="Key_variables">coherence</td>
+<td class="gt_row gt_left" headers="Model">Model 1</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Hypothesis">H2d</td>
-<td class="gt_row gt_left" headers="Claim">Distance compounds eigenvector difficulty</td>
-<td class="gt_row gt_left" headers="Key_variables">rawdist x eigenvector</td>
+<td class="gt_row gt_left" headers="Hypothesis">H3b</td>
+<td class="gt_row gt_left" headers="Claim">Bridging technologies are more beneficial for low-coherence regions</td>
+<td class="gt_row gt_left" headers="Key_variables">betweenness x coherence</td>
+<td class="gt_row gt_left" headers="Model">Model 1</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Hypothesis">H3</td>
-<td class="gt_row gt_left" headers="Claim">National ecosystem shapes potential beyond dyadic mechanisms</td>
-<td class="gt_row gt_left" headers="Key_variables">GEI pillars x8-x14</td>
+<td class="gt_row gt_left" headers="Hypothesis">H3c</td>
+<td class="gt_row gt_left" headers="Claim">The enabling technology penalty is smaller for high-coherence regions</td>
+<td class="gt_row gt_left" headers="Key_variables">eigenvector x coherence</td>
+<td class="gt_row gt_left" headers="Model">Model 1</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Hypothesis">H4</td>
-<td class="gt_row gt_left" headers="Claim">Positive spatial dependence in regional potential</td>
+<td class="gt_row gt_left" headers="Claim">National ecosystem characteristics shape potential beyond portfolio mechanisms</td>
+<td class="gt_row gt_left" headers="Key_variables">GEI pillars x8-x14</td>
+<td class="gt_row gt_left" headers="Model">Model 2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Hypothesis">H5a</td>
+<td class="gt_row gt_left" headers="Claim">Regional potential is spatially interdependent across neighbouring regions</td>
 <td class="gt_row gt_left" headers="Key_variables">Spatial lag (SAR)</td>
+<td class="gt_row gt_left" headers="Model">Model 3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Hypothesis">H5b</td>
+<td class="gt_row gt_left" headers="Claim">Bridging portfolio concentration predicts higher potential under sufficient coherence</td>
+<td class="gt_row gt_left" headers="Key_variables">avg_betweenness x avg_coherence</td>
+<td class="gt_row gt_left" headers="Model">Model 3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Hypothesis">H5c</td>
+<td class="gt_row gt_left" headers="Claim">Enabling portfolio concentration is positively associated with potential</td>
+<td class="gt_row gt_left" headers="Key_variables">avg_eigenvector x avg_coherence</td>
+<td class="gt_row gt_left" headers="Model">Model 3</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_sourcenotes odd">
-<td colspan="3" class="gt_sourcenote">Note: H2a-H2d are all estimated in the dyadic fixed effects framework (Models 1-3). FE = two-way fixed effects (region + year); RE = hierarchical random effects (regions nested within countries); SAR = spatial autoregressive panel model.</td>
+<td colspan="4" class="gt_sourcenote">Note: Model 0 is the entry benchmark (LPM). Models 1 and 2 are dyadic fixed effects and hierarchical random effects respectively. Model 3 is the spatial autoregressive (SAR) panel estimated on region-year aggregates.</td>
 </tr>
 </tfoot>
 
@@ -815,10 +845,6 @@ Table&nbsp;5.1: Hypotheses, Variables, and Empirical Tests
 </figure>
 </div>
 </div>
-</section>
-<section id="data" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="data"><span class="header-section-number">5.3</span> Data</h2>
-<p>We use data very similar to many studies discussed in the literature review, namely the European patent applications from the EPO/PATSTAT database, covering 641 technologies (4-digit IPC classes) across 345 NUTS2 regions in 30 European countries over 11 years (2008–2018). The dyadic models (H1–H3) use approximately 1.9 million technology–region–year observations. The spatial models (H4) aggregate to approximately 3,200 observations. Patent data serve as a standard proxy for regional knowledge production and technological specialisation. We briefly described in the previous chapter how we use this data to construct our training strategy and build our empirical constructs (Regional Technological Potential, and the Feature Importance Technology Space (FITS)). In here we take this a step further and describe in more details the other variables we use in our design.</p>
 <section id="outcome-regional-technological-potential" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="outcome-regional-technological-potential"><span class="header-section-number">5.3.1</span> Outcome: Regional Technological Potential</h3>
 <p>The primary outcome in this work is Regional Technological Potential <span class="math inline">\(p_{r,t,y}\)</span>: the Random Forest-predicted probability that region <span class="math inline">\(r\)</span> develops revealed technological advantage (RTA ≥ 1) in technology <span class="math inline">\(t\)</span> at year <span class="math inline">\(y\)</span>, estimated from portfolio characteristics four years prior. Values are bounded between 0 and 1.</p>
@@ -845,7 +871,7 @@ Figure&nbsp;5.1: Average Regional Technological Potential (2008 vs 2018)
 </section>
 <section id="technologyregion-level-dyadic-variables" class="level3" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="technologyregion-level-dyadic-variables"><span class="header-section-number">5.3.2</span> Technology–Region Level (Dyadic) Variables</h3>
-<p><strong>Coherence</strong> (<span class="math inline">\(\text{coherence}_{r,t,y}\)</span>) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embededdness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embededdness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base <span class="citation" data-cites="teece1994understanding nesta2005 quatraro2010 pugliese2019coherent straccamore2025fitnesscoherence">(<a href="references.html#ref-teece1994understanding" role="doc-biblioref">Teece et al. 1994</a>; <a href="references.html#ref-nesta2005" role="doc-biblioref"><strong>nesta2005?</strong></a>; <a href="references.html#ref-quatraro2010" role="doc-biblioref">Quatraro 2010</a>; <a href="references.html#ref-pugliese2019coherent" role="doc-biblioref"><strong>pugliese2019coherent?</strong></a>; <a href="references.html#ref-straccamore2025fitnesscoherence" role="doc-biblioref"><strong>straccamore2025fitnesscoherence?</strong></a>)</span>.</p>
+<p><strong>Coherence</strong> (<span class="math inline">\(\text{coherence}_{r,t,y}\)</span>) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embededdness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embededdness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base <span class="citation" data-cites="teece1994understanding nesta2005 quatraro2010 pugliese2019coherent straccamore2025comparative">(<a href="references.html#ref-teece1994understanding" role="doc-biblioref">Teece et al. 1994</a>; <a href="references.html#ref-nesta2005" role="doc-biblioref"><strong>nesta2005?</strong></a>; <a href="references.html#ref-quatraro2010" role="doc-biblioref">Quatraro 2010</a>; <a href="references.html#ref-pugliese2019coherent" role="doc-biblioref"><strong>pugliese2019coherent?</strong></a>; <a href="references.html#ref-straccamore2025comparative" role="doc-biblioref">Straccamore, Bruno, and Tacchella 2025</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-map-coherence" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -865,35 +891,34 @@ Figure&nbsp;5.2: Average Coherence Across Regions (2008 vs 2018)
 </section>
 <section id="technology-level-variables" class="level3" data-number="5.3.3">
 <h3 data-number="5.3.3" class="anchored" data-anchor-id="technology-level-variables"><span class="header-section-number">5.3.3</span> Technology Level Variables</h3>
-<p>Betweenness centrality^1 (<span class="math inline">\(\text{betweenness}_t\)</span>) measures how frequently a technology lies on shortest directed paths between other technologies. High-betweenness technologies act as bridges between otherwise separated domains of knowledge. In our interpretation, this is the structural analogue of GPT-like enabling roles where technologies that facilitate transitions across domains serve as an intermediary <span class="citation" data-cites="antonietti2021going">(<a href="references.html#ref-antonietti2021going" role="doc-biblioref">Antonietti and Montresor 2021</a>)</span>.</p>
+<p>Betweenness centrality<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (<span class="math inline">\(\text{betweenness}_t\)</span>) measures how frequently a technology lies on shortest directed paths between other technologies. High-betweenness technologies act as bridges between otherwise separated domains of knowledge. In our interpretation, this is the structural analogue of GPT-like enabling roles where technologies that facilitate transitions across domains serve as an intermediary <span class="citation" data-cites="antonietti2021going">(<a href="references.html#ref-antonietti2021going" role="doc-biblioref">Antonietti and Montresor 2021</a>)</span>.</p>
 <p>Eigenvector centrality (<span class="math inline">\(\text{eigenvector}_t\)</span>) measures how strongly connected a technology is to other highly connected technologies. The idea is to capture authoritative positions in the capability system. In our interpretation, this corresponds to KET-like roles capability-dense, strongly interdependent domains whose entry tends to require broader complementary competence rather than a single bridge.</p>
-<p>1<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p><strong>Regional complexity</strong> (<span class="math inline">\(\text{reg\_comp}_{r,y}\)</span>) and <strong>technology complexity</strong> (<span class="math inline">\(\text{tech\_comp}_t\)</span>) are included as controls following the economic complexity tradition in which diversity–ubiquity patterns proxy underlying capability endowments <span class="citation" data-cites="hidalgohausmann2009">(<a href="references.html#ref-hidalgohausmann2009" role="doc-biblioref"><strong>hidalgohausmann2009?</strong></a>)</span>. This mirrors the rationale for including regional complexity controls in related European diversification work <span class="citation" data-cites="antonietti2021going">(<a href="references.html#ref-antonietti2021going" role="doc-biblioref">Antonietti and Montresor 2021</a>)</span>.</p>
 <div class="cell">
 <div id="tbl-desc-lr" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-desc-lr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.2
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-desc-lr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.2: Summary statistics of the Dyad level data
 </figcaption>
 <div aria-describedby="tbl-desc-lr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qpsczqrfxh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qpsczqrfxh table {
+<div id="narezttqgc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#narezttqgc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qpsczqrfxh thead, #qpsczqrfxh tbody, #qpsczqrfxh tfoot, #qpsczqrfxh tr, #qpsczqrfxh td, #qpsczqrfxh th {
+#narezttqgc thead, #narezttqgc tbody, #narezttqgc tfoot, #narezttqgc tr, #narezttqgc td, #narezttqgc th {
   border-style: none;
 }
 
-#qpsczqrfxh p {
+#narezttqgc p {
   margin: 0;
   padding: 0;
 }
 
-#qpsczqrfxh .gt_table {
+#narezttqgc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -919,12 +944,12 @@ Table&nbsp;5.2
   border-left-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_caption {
+#narezttqgc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qpsczqrfxh .gt_title {
+#narezttqgc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -936,7 +961,7 @@ Table&nbsp;5.2
   border-bottom-width: 0;
 }
 
-#qpsczqrfxh .gt_subtitle {
+#narezttqgc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -948,7 +973,7 @@ Table&nbsp;5.2
   border-top-width: 0;
 }
 
-#qpsczqrfxh .gt_heading {
+#narezttqgc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -960,13 +985,13 @@ Table&nbsp;5.2
   border-right-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_bottom_border {
+#narezttqgc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_col_headings {
+#narezttqgc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -981,7 +1006,7 @@ Table&nbsp;5.2
   border-right-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_col_heading {
+#narezttqgc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1001,7 +1026,7 @@ Table&nbsp;5.2
   overflow-x: hidden;
 }
 
-#qpsczqrfxh .gt_column_spanner_outer {
+#narezttqgc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1013,15 +1038,15 @@ Table&nbsp;5.2
   padding-right: 4px;
 }
 
-#qpsczqrfxh .gt_column_spanner_outer:first-child {
+#narezttqgc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qpsczqrfxh .gt_column_spanner_outer:last-child {
+#narezttqgc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qpsczqrfxh .gt_column_spanner {
+#narezttqgc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1033,11 +1058,11 @@ Table&nbsp;5.2
   width: 100%;
 }
 
-#qpsczqrfxh .gt_spanner_row {
+#narezttqgc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qpsczqrfxh .gt_group_heading {
+#narezttqgc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1063,7 +1088,7 @@ Table&nbsp;5.2
   text-align: left;
 }
 
-#qpsczqrfxh .gt_empty_group_heading {
+#narezttqgc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1078,15 +1103,15 @@ Table&nbsp;5.2
   vertical-align: middle;
 }
 
-#qpsczqrfxh .gt_from_md > :first-child {
+#narezttqgc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qpsczqrfxh .gt_from_md > :last-child {
+#narezttqgc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qpsczqrfxh .gt_row {
+#narezttqgc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1105,7 +1130,7 @@ Table&nbsp;5.2
   overflow-x: hidden;
 }
 
-#qpsczqrfxh .gt_stub {
+#narezttqgc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1118,7 +1143,7 @@ Table&nbsp;5.2
   padding-right: 5px;
 }
 
-#qpsczqrfxh .gt_stub_row_group {
+#narezttqgc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1132,15 +1157,15 @@ Table&nbsp;5.2
   vertical-align: top;
 }
 
-#qpsczqrfxh .gt_row_group_first td {
+#narezttqgc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qpsczqrfxh .gt_row_group_first th {
+#narezttqgc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qpsczqrfxh .gt_summary_row {
+#narezttqgc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1150,16 +1175,16 @@ Table&nbsp;5.2
   padding-right: 5px;
 }
 
-#qpsczqrfxh .gt_first_summary_row {
+#narezttqgc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_first_summary_row.thick {
+#narezttqgc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qpsczqrfxh .gt_last_summary_row {
+#narezttqgc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1169,7 +1194,7 @@ Table&nbsp;5.2
   border-bottom-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_grand_summary_row {
+#narezttqgc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1179,7 +1204,7 @@ Table&nbsp;5.2
   padding-right: 5px;
 }
 
-#qpsczqrfxh .gt_first_grand_summary_row {
+#narezttqgc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1189,7 +1214,7 @@ Table&nbsp;5.2
   border-top-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_last_grand_summary_row_top {
+#narezttqgc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1199,11 +1224,11 @@ Table&nbsp;5.2
   border-bottom-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_striped {
+#narezttqgc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qpsczqrfxh .gt_table_body {
+#narezttqgc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1212,7 +1237,7 @@ Table&nbsp;5.2
   border-bottom-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_footnotes {
+#narezttqgc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1226,7 +1251,7 @@ Table&nbsp;5.2
   border-right-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_footnote {
+#narezttqgc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1235,7 +1260,7 @@ Table&nbsp;5.2
   padding-right: 5px;
 }
 
-#qpsczqrfxh .gt_sourcenotes {
+#narezttqgc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1249,7 +1274,7 @@ Table&nbsp;5.2
   border-right-color: #D3D3D3;
 }
 
-#qpsczqrfxh .gt_sourcenote {
+#narezttqgc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1257,82 +1282,82 @@ Table&nbsp;5.2
   padding-right: 5px;
 }
 
-#qpsczqrfxh .gt_left {
+#narezttqgc .gt_left {
   text-align: left;
 }
 
-#qpsczqrfxh .gt_center {
+#narezttqgc .gt_center {
   text-align: center;
 }
 
-#qpsczqrfxh .gt_right {
+#narezttqgc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qpsczqrfxh .gt_font_normal {
+#narezttqgc .gt_font_normal {
   font-weight: normal;
 }
 
-#qpsczqrfxh .gt_font_bold {
+#narezttqgc .gt_font_bold {
   font-weight: bold;
 }
 
-#qpsczqrfxh .gt_font_italic {
+#narezttqgc .gt_font_italic {
   font-style: italic;
 }
 
-#qpsczqrfxh .gt_super {
+#narezttqgc .gt_super {
   font-size: 65%;
 }
 
-#qpsczqrfxh .gt_footnote_marks {
+#narezttqgc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qpsczqrfxh .gt_asterisk {
+#narezttqgc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qpsczqrfxh .gt_indent_1 {
+#narezttqgc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qpsczqrfxh .gt_indent_2 {
+#narezttqgc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qpsczqrfxh .gt_indent_3 {
+#narezttqgc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qpsczqrfxh .gt_indent_4 {
+#narezttqgc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qpsczqrfxh .gt_indent_5 {
+#narezttqgc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qpsczqrfxh .katex-display {
+#narezttqgc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qpsczqrfxh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#narezttqgc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="Unique" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Unique</th>
-<th id="Missing-Pct." class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Missing Pct.</th>
+<th id="Missing-Pct." class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">NA</th>
 <th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Mean</th>
 <th id="SD" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SD</th>
 <th id="Min" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Min</th>
@@ -1342,134 +1367,74 @@ Table&nbsp;5.2
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">year</td>
-<td class="gt_row gt_left" headers="Unique">11</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">2013.00</td>
-<td class="gt_row gt_left" headers="SD">3.16</td>
-<td class="gt_row gt_left" headers="Min">2008.00</td>
-<td class="gt_row gt_left" headers="Median">2013.00</td>
-<td class="gt_row gt_left" headers="Max">2018.00</td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_left" headers=" ">pred1</td>
-<td class="gt_row gt_left" headers="Unique">1619198</td>
+<td class="gt_row gt_left" headers="Unique">1672549</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.18</td>
-<td class="gt_row gt_left" headers="SD">0.21</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.09</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">patent_n</td>
-<td class="gt_row gt_left" headers="Unique">593</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">1.20</td>
-<td class="gt_row gt_left" headers="SD">12.59</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.00</td>
-<td class="gt_row gt_left" headers="Max">2377.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-0.88</td>
+<td class="gt_row gt_left" headers="Median">-0.43</td>
+<td class="gt_row gt_left" headers="Max">3.95</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers=" ">coherence</td>
-<td class="gt_row gt_left" headers="Unique">1985135</td>
+<td class="gt_row gt_left" headers=" ">patent_n</td>
+<td class="gt_row gt_left" headers="Unique">2810</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.55</td>
-<td class="gt_row gt_left" headers="SD">0.22</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.57</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-0.10</td>
+<td class="gt_row gt_left" headers="Median">-0.09</td>
+<td class="gt_row gt_left" headers="Max">183.30</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">betweenness</td>
-<td class="gt_row gt_left" headers="Unique">3156</td>
+<td class="gt_row gt_left" headers=" ">coherence</td>
+<td class="gt_row gt_left" headers="Unique">1985141</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
 <td class="gt_row gt_left" headers="Mean">0.00</td>
-<td class="gt_row gt_left" headers="SD">0.00</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.00</td>
-<td class="gt_row gt_left" headers="Max">0.05</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-2.54</td>
+<td class="gt_row gt_left" headers="Median">0.08</td>
+<td class="gt_row gt_left" headers="Max">2.01</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers=" ">authority</td>
-<td class="gt_row gt_left" headers="Unique">7039</td>
+<td class="gt_row gt_left" headers=" ">betweenness</td>
+<td class="gt_row gt_left" headers="Unique">4132</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.34</td>
-<td class="gt_row gt_left" headers="SD">0.19</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.29</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">hub</td>
-<td class="gt_row gt_left" headers="Unique">5529</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.06</td>
-<td class="gt_row gt_left" headers="SD">0.12</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.01</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">degree_in</td>
-<td class="gt_row gt_left" headers="Unique">7046</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.65</td>
-<td class="gt_row gt_left" headers="SD">0.16</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.64</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">degree_out</td>
-<td class="gt_row gt_left" headers="Unique">5534</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.11</td>
-<td class="gt_row gt_left" headers="SD">0.18</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.02</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">degree_total</td>
-<td class="gt_row gt_left" headers="Unique">7047</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.20</td>
-<td class="gt_row gt_left" headers="SD">0.15</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.13</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-0.54</td>
+<td class="gt_row gt_left" headers="Median">-0.46</td>
+<td class="gt_row gt_left" headers="Max">10.79</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers=" ">eigenvector</td>
-<td class="gt_row gt_left" headers="Unique">7051</td>
+<td class="gt_row gt_left" headers="Unique">7053</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.10</td>
-<td class="gt_row gt_left" headers="SD">0.16</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.04</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-0.70</td>
+<td class="gt_row gt_left" headers="Median">-0.41</td>
+<td class="gt_row gt_left" headers="Max">6.63</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">rawdist</td>
-<td class="gt_row gt_left" headers="Unique">5637</td>
+<td class="gt_row gt_left" headers="Unique">5624</td>
 <td class="gt_row gt_left" headers="Missing Pct.">4</td>
-<td class="gt_row gt_left" headers="Mean">132.61</td>
-<td class="gt_row gt_left" headers="SD">242.27</td>
-<td class="gt_row gt_left" headers="Min">26.46</td>
-<td class="gt_row gt_left" headers="Median">90.94</td>
-<td class="gt_row gt_left" headers="Max">2883.96</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-0.53</td>
+<td class="gt_row gt_left" headers="Median">-0.18</td>
+<td class="gt_row gt_left" headers="Max">12.22</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers=" ">relatedness_density</td>
-<td class="gt_row gt_left" headers="Unique">5537</td>
+<td class="gt_row gt_left" headers="Unique">45315</td>
 <td class="gt_row gt_left" headers="Missing Pct.">4</td>
-<td class="gt_row gt_left" headers="Mean">9.42</td>
-<td class="gt_row gt_left" headers="SD">8.04</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">7.81</td>
-<td class="gt_row gt_left" headers="Max">100.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-1.23</td>
+<td class="gt_row gt_left" headers="Median">-0.20</td>
+<td class="gt_row gt_left" headers="Max">11.44</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">reg_comp</td>
@@ -1477,19 +1442,19 @@ Table&nbsp;5.2
 <td class="gt_row gt_left" headers="Missing Pct.">4</td>
 <td class="gt_row gt_left" headers="Mean">-0.00</td>
 <td class="gt_row gt_left" headers="SD">1.00</td>
-<td class="gt_row gt_left" headers="Min">-12.98</td>
+<td class="gt_row gt_left" headers="Min">-13.00</td>
 <td class="gt_row gt_left" headers="Median">0.08</td>
-<td class="gt_row gt_left" headers="Max">5.44</td>
+<td class="gt_row gt_left" headers="Max">5.45</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers=" ">tech_comp</td>
 <td class="gt_row gt_left" headers="Unique">6833</td>
 <td class="gt_row gt_left" headers="Missing Pct.">4</td>
-<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
 <td class="gt_row gt_left" headers="SD">1.00</td>
-<td class="gt_row gt_left" headers="Min">-23.15</td>
+<td class="gt_row gt_left" headers="Min">-23.17</td>
 <td class="gt_row gt_left" headers="Median">0.01</td>
-<td class="gt_row gt_left" headers="Max">4.63</td>
+<td class="gt_row gt_left" headers="Max">4.64</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">entry</td>
@@ -1515,27 +1480,27 @@ Table&nbsp;5.2
 <div id="tbl-corr-dyadic" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-corr-dyadic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.3: Correlation Matrix - disggregated
+Table&nbsp;5.3: Correlation matrix of the Dyad level data
 </figcaption>
 <div aria-describedby="tbl-corr-dyadic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="szbbjqruci" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#szbbjqruci table {
+<div id="ckyytshxsp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ckyytshxsp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#szbbjqruci thead, #szbbjqruci tbody, #szbbjqruci tfoot, #szbbjqruci tr, #szbbjqruci td, #szbbjqruci th {
+#ckyytshxsp thead, #ckyytshxsp tbody, #ckyytshxsp tfoot, #ckyytshxsp tr, #ckyytshxsp td, #ckyytshxsp th {
   border-style: none;
 }
 
-#szbbjqruci p {
+#ckyytshxsp p {
   margin: 0;
   padding: 0;
 }
 
-#szbbjqruci .gt_table {
+#ckyytshxsp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1561,12 +1526,12 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-left-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_caption {
+#ckyytshxsp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#szbbjqruci .gt_title {
+#ckyytshxsp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1578,7 +1543,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-bottom-width: 0;
 }
 
-#szbbjqruci .gt_subtitle {
+#ckyytshxsp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1590,7 +1555,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-top-width: 0;
 }
 
-#szbbjqruci .gt_heading {
+#ckyytshxsp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1602,13 +1567,13 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-right-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_bottom_border {
+#ckyytshxsp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_col_headings {
+#ckyytshxsp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1623,7 +1588,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-right-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_col_heading {
+#ckyytshxsp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1643,7 +1608,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   overflow-x: hidden;
 }
 
-#szbbjqruci .gt_column_spanner_outer {
+#ckyytshxsp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1655,15 +1620,15 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   padding-right: 4px;
 }
 
-#szbbjqruci .gt_column_spanner_outer:first-child {
+#ckyytshxsp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#szbbjqruci .gt_column_spanner_outer:last-child {
+#ckyytshxsp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#szbbjqruci .gt_column_spanner {
+#ckyytshxsp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1675,11 +1640,11 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   width: 100%;
 }
 
-#szbbjqruci .gt_spanner_row {
+#ckyytshxsp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#szbbjqruci .gt_group_heading {
+#ckyytshxsp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1705,7 +1670,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   text-align: left;
 }
 
-#szbbjqruci .gt_empty_group_heading {
+#ckyytshxsp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1720,15 +1685,15 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   vertical-align: middle;
 }
 
-#szbbjqruci .gt_from_md > :first-child {
+#ckyytshxsp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#szbbjqruci .gt_from_md > :last-child {
+#ckyytshxsp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#szbbjqruci .gt_row {
+#ckyytshxsp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1747,7 +1712,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   overflow-x: hidden;
 }
 
-#szbbjqruci .gt_stub {
+#ckyytshxsp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1760,7 +1725,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   padding-right: 5px;
 }
 
-#szbbjqruci .gt_stub_row_group {
+#ckyytshxsp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1774,15 +1739,15 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   vertical-align: top;
 }
 
-#szbbjqruci .gt_row_group_first td {
+#ckyytshxsp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#szbbjqruci .gt_row_group_first th {
+#ckyytshxsp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#szbbjqruci .gt_summary_row {
+#ckyytshxsp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1792,16 +1757,16 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   padding-right: 5px;
 }
 
-#szbbjqruci .gt_first_summary_row {
+#ckyytshxsp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_first_summary_row.thick {
+#ckyytshxsp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#szbbjqruci .gt_last_summary_row {
+#ckyytshxsp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1811,7 +1776,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-bottom-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_grand_summary_row {
+#ckyytshxsp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1821,7 +1786,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   padding-right: 5px;
 }
 
-#szbbjqruci .gt_first_grand_summary_row {
+#ckyytshxsp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1831,7 +1796,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-top-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_last_grand_summary_row_top {
+#ckyytshxsp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1841,11 +1806,11 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-bottom-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_striped {
+#ckyytshxsp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#szbbjqruci .gt_table_body {
+#ckyytshxsp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1854,7 +1819,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-bottom-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_footnotes {
+#ckyytshxsp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1868,7 +1833,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-right-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_footnote {
+#ckyytshxsp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1877,7 +1842,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   padding-right: 5px;
 }
 
-#szbbjqruci .gt_sourcenotes {
+#ckyytshxsp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1891,7 +1856,7 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   border-right-color: #D3D3D3;
 }
 
-#szbbjqruci .gt_sourcenote {
+#ckyytshxsp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1899,77 +1864,78 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
   padding-right: 5px;
 }
 
-#szbbjqruci .gt_left {
+#ckyytshxsp .gt_left {
   text-align: left;
 }
 
-#szbbjqruci .gt_center {
+#ckyytshxsp .gt_center {
   text-align: center;
 }
 
-#szbbjqruci .gt_right {
+#ckyytshxsp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#szbbjqruci .gt_font_normal {
+#ckyytshxsp .gt_font_normal {
   font-weight: normal;
 }
 
-#szbbjqruci .gt_font_bold {
+#ckyytshxsp .gt_font_bold {
   font-weight: bold;
 }
 
-#szbbjqruci .gt_font_italic {
+#ckyytshxsp .gt_font_italic {
   font-style: italic;
 }
 
-#szbbjqruci .gt_super {
+#ckyytshxsp .gt_super {
   font-size: 65%;
 }
 
-#szbbjqruci .gt_footnote_marks {
+#ckyytshxsp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#szbbjqruci .gt_asterisk {
+#ckyytshxsp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#szbbjqruci .gt_indent_1 {
+#ckyytshxsp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#szbbjqruci .gt_indent_2 {
+#ckyytshxsp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#szbbjqruci .gt_indent_3 {
+#ckyytshxsp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#szbbjqruci .gt_indent_4 {
+#ckyytshxsp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#szbbjqruci .gt_indent_5 {
+#ckyytshxsp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#szbbjqruci .katex-display {
+#ckyytshxsp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#szbbjqruci div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ckyytshxsp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<caption>Correlation Matrix - disggregated</caption>
 <thead>
 <tr class="gt_col_headings header">
 <th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
@@ -1979,8 +1945,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <th id="coherence" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="betweenness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="eigenvector" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="authority" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="hub" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="relatedness_density" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="reg_comp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="tech_comp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
@@ -1996,8 +1960,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.</td>
 <td class="gt_row gt_right" headers="betweenness">.</td>
 <td class="gt_row gt_right" headers="eigenvector">.</td>
-<td class="gt_row gt_right" headers="authority">.</td>
-<td class="gt_row gt_right" headers="hub">.</td>
 <td class="gt_row gt_right" headers="relatedness_density">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2011,8 +1973,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.</td>
 <td class="gt_row gt_right" headers="betweenness">.</td>
 <td class="gt_row gt_right" headers="eigenvector">.</td>
-<td class="gt_row gt_right" headers="authority">.</td>
-<td class="gt_row gt_right" headers="hub">.</td>
 <td class="gt_row gt_right" headers="relatedness_density">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2026,8 +1986,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.</td>
 <td class="gt_row gt_right" headers="betweenness">.</td>
 <td class="gt_row gt_right" headers="eigenvector">.</td>
-<td class="gt_row gt_right" headers="authority">.</td>
-<td class="gt_row gt_right" headers="hub">.</td>
 <td class="gt_row gt_right" headers="relatedness_density">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2041,8 +1999,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">1</td>
 <td class="gt_row gt_right" headers="betweenness">.</td>
 <td class="gt_row gt_right" headers="eigenvector">.</td>
-<td class="gt_row gt_right" headers="authority">.</td>
-<td class="gt_row gt_right" headers="hub">.</td>
 <td class="gt_row gt_right" headers="relatedness_density">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2056,8 +2012,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.40</td>
 <td class="gt_row gt_right" headers="betweenness">1</td>
 <td class="gt_row gt_right" headers="eigenvector">.</td>
-<td class="gt_row gt_right" headers="authority">.</td>
-<td class="gt_row gt_right" headers="hub">.</td>
 <td class="gt_row gt_right" headers="relatedness_density">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2071,38 +2025,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">-.21</td>
 <td class="gt_row gt_right" headers="betweenness">-.17</td>
 <td class="gt_row gt_right" headers="eigenvector">1</td>
-<td class="gt_row gt_right" headers="authority">.</td>
-<td class="gt_row gt_right" headers="hub">.</td>
-<td class="gt_row gt_right" headers="relatedness_density">.</td>
-<td class="gt_row gt_right" headers="reg_comp">.</td>
-<td class="gt_row gt_right" headers="tech_comp">.</td>
-<td class="gt_row gt_right" headers="entry">.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">authority</td>
-<td class="gt_row gt_right" headers="pred1">-.13</td>
-<td class="gt_row gt_right" headers="rawdist">-.03</td>
-<td class="gt_row gt_right" headers="patent_n">-.06</td>
-<td class="gt_row gt_right" headers="coherence">-.18</td>
-<td class="gt_row gt_right" headers="betweenness">-.25</td>
-<td class="gt_row gt_right" headers="eigenvector">-.06</td>
-<td class="gt_row gt_right" headers="authority">1</td>
-<td class="gt_row gt_right" headers="hub">.</td>
-<td class="gt_row gt_right" headers="relatedness_density">.</td>
-<td class="gt_row gt_right" headers="reg_comp">.</td>
-<td class="gt_row gt_right" headers="tech_comp">.</td>
-<td class="gt_row gt_right" headers="entry">.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">hub</td>
-<td class="gt_row gt_right" headers="pred1">.20</td>
-<td class="gt_row gt_right" headers="rawdist">-.06</td>
-<td class="gt_row gt_right" headers="patent_n">.12</td>
-<td class="gt_row gt_right" headers="coherence">.33</td>
-<td class="gt_row gt_right" headers="betweenness">.15</td>
-<td class="gt_row gt_right" headers="eigenvector">-.06</td>
-<td class="gt_row gt_right" headers="authority">.10</td>
-<td class="gt_row gt_right" headers="hub">1</td>
 <td class="gt_row gt_right" headers="relatedness_density">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2116,8 +2038,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.12</td>
 <td class="gt_row gt_right" headers="betweenness">.02</td>
 <td class="gt_row gt_right" headers="eigenvector">-.02</td>
-<td class="gt_row gt_right" headers="authority">-.01</td>
-<td class="gt_row gt_right" headers="hub">.01</td>
 <td class="gt_row gt_right" headers="relatedness_density">1</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2131,8 +2051,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.03</td>
 <td class="gt_row gt_right" headers="betweenness">-.01</td>
 <td class="gt_row gt_right" headers="eigenvector">.01</td>
-<td class="gt_row gt_right" headers="authority">.01</td>
-<td class="gt_row gt_right" headers="hub">-.00</td>
 <td class="gt_row gt_right" headers="relatedness_density">.48</td>
 <td class="gt_row gt_right" headers="reg_comp">1</td>
 <td class="gt_row gt_right" headers="tech_comp">.</td>
@@ -2146,8 +2064,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">-.28</td>
 <td class="gt_row gt_right" headers="betweenness">-.24</td>
 <td class="gt_row gt_right" headers="eigenvector">-.01</td>
-<td class="gt_row gt_right" headers="authority">-.02</td>
-<td class="gt_row gt_right" headers="hub">-.30</td>
 <td class="gt_row gt_right" headers="relatedness_density">-.05</td>
 <td class="gt_row gt_right" headers="reg_comp">-.00</td>
 <td class="gt_row gt_right" headers="tech_comp">1</td>
@@ -2161,8 +2077,6 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 <td class="gt_row gt_right" headers="coherence">.13</td>
 <td class="gt_row gt_right" headers="betweenness">.07</td>
 <td class="gt_row gt_right" headers="eigenvector">-.05</td>
-<td class="gt_row gt_right" headers="authority">-.05</td>
-<td class="gt_row gt_right" headers="hub">.07</td>
 <td class="gt_row gt_right" headers="relatedness_density">.28</td>
 <td class="gt_row gt_right" headers="reg_comp">.09</td>
 <td class="gt_row gt_right" headers="tech_comp">-.08</td>
@@ -2181,34 +2095,34 @@ Table&nbsp;5.3: Correlation Matrix - disggregated
 </section>
 <section id="national-level-variables-gei-pillars" class="level3" data-number="5.3.4">
 <h3 data-number="5.3.4" class="anchored" data-anchor-id="national-level-variables-gei-pillars"><span class="header-section-number">5.3.4</span> National Level Variables: GEI Pillars</h3>
-<p>To test H3, which assumes that national entrepreneurial ecosystem characteristics contribute to regional potential, we incorporate seven pillars from the Global Entrepreneurship Index (GEI). The GEI decomposes national ecosystem characteristics into fourteen that account for individual attitudes, systemic capabilities, and aspirational orientations <span class="citation" data-cites="acs2014national">(<a href="references.html#ref-acs2014national" role="doc-biblioref">Acs, Autio, and Szerb 2014</a>)</span>.</p>
+<p>To test H4, which assumes that national entrepreneurial ecosystem characteristics contribute to regional potential, we incorporate seven pillars from the Global Entrepreneurship Index (GEI). The GEI decomposes national ecosystem characteristics into fourteen that account for individual attitudes, systemic capabilities, and aspirational orientations <span class="citation" data-cites="acs2014national">(<a href="references.html#ref-acs2014national" role="doc-biblioref">Acs, Autio, and Szerb 2014</a>)</span>.</p>
 <p>For the purposes of this work, we retain pillars x8–x14. The reason here is two folds, first pillars x1-x6 capture individual-level entrepreneurial attitudes<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and mostly reflect social preferences of the entrepreneurial ecosystem and not the institutional landscape.</p>
 <div class="landscape">
 <div class="cell">
 <div id="tbl-corr-ecosystem" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-corr-ecosystem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.4: Correlation Matrix - country Level
+Table&nbsp;5.4: Correlation matrix of the GEI pillars
 </figcaption>
 <div aria-describedby="tbl-corr-ecosystem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jzhhgqtvkc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jzhhgqtvkc table {
+<div id="wgpexfuiuz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wgpexfuiuz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jzhhgqtvkc thead, #jzhhgqtvkc tbody, #jzhhgqtvkc tfoot, #jzhhgqtvkc tr, #jzhhgqtvkc td, #jzhhgqtvkc th {
+#wgpexfuiuz thead, #wgpexfuiuz tbody, #wgpexfuiuz tfoot, #wgpexfuiuz tr, #wgpexfuiuz td, #wgpexfuiuz th {
   border-style: none;
 }
 
-#jzhhgqtvkc p {
+#wgpexfuiuz p {
   margin: 0;
   padding: 0;
 }
 
-#jzhhgqtvkc .gt_table {
+#wgpexfuiuz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2234,12 +2148,12 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-left-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_caption {
+#wgpexfuiuz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jzhhgqtvkc .gt_title {
+#wgpexfuiuz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2251,7 +2165,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-bottom-width: 0;
 }
 
-#jzhhgqtvkc .gt_subtitle {
+#wgpexfuiuz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2263,7 +2177,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-top-width: 0;
 }
 
-#jzhhgqtvkc .gt_heading {
+#wgpexfuiuz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2275,13 +2189,13 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-right-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_bottom_border {
+#wgpexfuiuz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_col_headings {
+#wgpexfuiuz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2296,7 +2210,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-right-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_col_heading {
+#wgpexfuiuz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2316,7 +2230,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   overflow-x: hidden;
 }
 
-#jzhhgqtvkc .gt_column_spanner_outer {
+#wgpexfuiuz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2328,15 +2242,15 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   padding-right: 4px;
 }
 
-#jzhhgqtvkc .gt_column_spanner_outer:first-child {
+#wgpexfuiuz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jzhhgqtvkc .gt_column_spanner_outer:last-child {
+#wgpexfuiuz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jzhhgqtvkc .gt_column_spanner {
+#wgpexfuiuz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2348,11 +2262,11 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   width: 100%;
 }
 
-#jzhhgqtvkc .gt_spanner_row {
+#wgpexfuiuz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jzhhgqtvkc .gt_group_heading {
+#wgpexfuiuz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2378,7 +2292,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   text-align: left;
 }
 
-#jzhhgqtvkc .gt_empty_group_heading {
+#wgpexfuiuz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2393,15 +2307,15 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   vertical-align: middle;
 }
 
-#jzhhgqtvkc .gt_from_md > :first-child {
+#wgpexfuiuz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jzhhgqtvkc .gt_from_md > :last-child {
+#wgpexfuiuz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jzhhgqtvkc .gt_row {
+#wgpexfuiuz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2420,7 +2334,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   overflow-x: hidden;
 }
 
-#jzhhgqtvkc .gt_stub {
+#wgpexfuiuz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2433,7 +2347,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   padding-right: 5px;
 }
 
-#jzhhgqtvkc .gt_stub_row_group {
+#wgpexfuiuz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2447,15 +2361,15 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   vertical-align: top;
 }
 
-#jzhhgqtvkc .gt_row_group_first td {
+#wgpexfuiuz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jzhhgqtvkc .gt_row_group_first th {
+#wgpexfuiuz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jzhhgqtvkc .gt_summary_row {
+#wgpexfuiuz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2465,16 +2379,16 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   padding-right: 5px;
 }
 
-#jzhhgqtvkc .gt_first_summary_row {
+#wgpexfuiuz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_first_summary_row.thick {
+#wgpexfuiuz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jzhhgqtvkc .gt_last_summary_row {
+#wgpexfuiuz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2484,7 +2398,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-bottom-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_grand_summary_row {
+#wgpexfuiuz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2494,7 +2408,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   padding-right: 5px;
 }
 
-#jzhhgqtvkc .gt_first_grand_summary_row {
+#wgpexfuiuz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2504,7 +2418,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-top-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_last_grand_summary_row_top {
+#wgpexfuiuz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2514,11 +2428,11 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-bottom-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_striped {
+#wgpexfuiuz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jzhhgqtvkc .gt_table_body {
+#wgpexfuiuz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2527,7 +2441,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-bottom-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_footnotes {
+#wgpexfuiuz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2541,7 +2455,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-right-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_footnote {
+#wgpexfuiuz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2550,7 +2464,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   padding-right: 5px;
 }
 
-#jzhhgqtvkc .gt_sourcenotes {
+#wgpexfuiuz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2564,7 +2478,7 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   border-right-color: #D3D3D3;
 }
 
-#jzhhgqtvkc .gt_sourcenote {
+#wgpexfuiuz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2572,77 +2486,78 @@ Table&nbsp;5.4: Correlation Matrix - country Level
   padding-right: 5px;
 }
 
-#jzhhgqtvkc .gt_left {
+#wgpexfuiuz .gt_left {
   text-align: left;
 }
 
-#jzhhgqtvkc .gt_center {
+#wgpexfuiuz .gt_center {
   text-align: center;
 }
 
-#jzhhgqtvkc .gt_right {
+#wgpexfuiuz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jzhhgqtvkc .gt_font_normal {
+#wgpexfuiuz .gt_font_normal {
   font-weight: normal;
 }
 
-#jzhhgqtvkc .gt_font_bold {
+#wgpexfuiuz .gt_font_bold {
   font-weight: bold;
 }
 
-#jzhhgqtvkc .gt_font_italic {
+#wgpexfuiuz .gt_font_italic {
   font-style: italic;
 }
 
-#jzhhgqtvkc .gt_super {
+#wgpexfuiuz .gt_super {
   font-size: 65%;
 }
 
-#jzhhgqtvkc .gt_footnote_marks {
+#wgpexfuiuz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jzhhgqtvkc .gt_asterisk {
+#wgpexfuiuz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jzhhgqtvkc .gt_indent_1 {
+#wgpexfuiuz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jzhhgqtvkc .gt_indent_2 {
+#wgpexfuiuz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jzhhgqtvkc .gt_indent_3 {
+#wgpexfuiuz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jzhhgqtvkc .gt_indent_4 {
+#wgpexfuiuz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jzhhgqtvkc .gt_indent_5 {
+#wgpexfuiuz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jzhhgqtvkc .katex-display {
+#wgpexfuiuz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jzhhgqtvkc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wgpexfuiuz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<caption>Correlation Matrix - country Level</caption>
 <thead>
 <tr class="gt_col_headings header">
 <th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
@@ -2921,23 +2836,23 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
 </figcaption>
 <div aria-describedby="tbl-gei-pillars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rpntbxqlvv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rpntbxqlvv table {
+<div id="cyrglfiaql" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cyrglfiaql table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rpntbxqlvv thead, #rpntbxqlvv tbody, #rpntbxqlvv tfoot, #rpntbxqlvv tr, #rpntbxqlvv td, #rpntbxqlvv th {
+#cyrglfiaql thead, #cyrglfiaql tbody, #cyrglfiaql tfoot, #cyrglfiaql tr, #cyrglfiaql td, #cyrglfiaql th {
   border-style: none;
 }
 
-#rpntbxqlvv p {
+#cyrglfiaql p {
   margin: 0;
   padding: 0;
 }
 
-#rpntbxqlvv .gt_table {
+#cyrglfiaql .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2963,12 +2878,12 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-left-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_caption {
+#cyrglfiaql .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rpntbxqlvv .gt_title {
+#cyrglfiaql .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2980,7 +2895,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-bottom-width: 0;
 }
 
-#rpntbxqlvv .gt_subtitle {
+#cyrglfiaql .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2992,7 +2907,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-top-width: 0;
 }
 
-#rpntbxqlvv .gt_heading {
+#cyrglfiaql .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3004,13 +2919,13 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-right-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_bottom_border {
+#cyrglfiaql .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_col_headings {
+#cyrglfiaql .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3025,7 +2940,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-right-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_col_heading {
+#cyrglfiaql .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3045,7 +2960,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   overflow-x: hidden;
 }
 
-#rpntbxqlvv .gt_column_spanner_outer {
+#cyrglfiaql .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3057,15 +2972,15 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   padding-right: 4px;
 }
 
-#rpntbxqlvv .gt_column_spanner_outer:first-child {
+#cyrglfiaql .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rpntbxqlvv .gt_column_spanner_outer:last-child {
+#cyrglfiaql .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rpntbxqlvv .gt_column_spanner {
+#cyrglfiaql .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3077,11 +2992,11 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   width: 100%;
 }
 
-#rpntbxqlvv .gt_spanner_row {
+#cyrglfiaql .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rpntbxqlvv .gt_group_heading {
+#cyrglfiaql .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3107,7 +3022,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   text-align: left;
 }
 
-#rpntbxqlvv .gt_empty_group_heading {
+#cyrglfiaql .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3122,15 +3037,15 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   vertical-align: middle;
 }
 
-#rpntbxqlvv .gt_from_md > :first-child {
+#cyrglfiaql .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rpntbxqlvv .gt_from_md > :last-child {
+#cyrglfiaql .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rpntbxqlvv .gt_row {
+#cyrglfiaql .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3149,7 +3064,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   overflow-x: hidden;
 }
 
-#rpntbxqlvv .gt_stub {
+#cyrglfiaql .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3162,7 +3077,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   padding-right: 5px;
 }
 
-#rpntbxqlvv .gt_stub_row_group {
+#cyrglfiaql .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3176,15 +3091,15 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   vertical-align: top;
 }
 
-#rpntbxqlvv .gt_row_group_first td {
+#cyrglfiaql .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rpntbxqlvv .gt_row_group_first th {
+#cyrglfiaql .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rpntbxqlvv .gt_summary_row {
+#cyrglfiaql .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3194,16 +3109,16 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   padding-right: 5px;
 }
 
-#rpntbxqlvv .gt_first_summary_row {
+#cyrglfiaql .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_first_summary_row.thick {
+#cyrglfiaql .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rpntbxqlvv .gt_last_summary_row {
+#cyrglfiaql .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3213,7 +3128,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_grand_summary_row {
+#cyrglfiaql .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3223,7 +3138,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   padding-right: 5px;
 }
 
-#rpntbxqlvv .gt_first_grand_summary_row {
+#cyrglfiaql .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3233,7 +3148,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-top-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_last_grand_summary_row_top {
+#cyrglfiaql .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3243,11 +3158,11 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_striped {
+#cyrglfiaql .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rpntbxqlvv .gt_table_body {
+#cyrglfiaql .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3256,7 +3171,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_footnotes {
+#cyrglfiaql .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3270,7 +3185,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-right-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_footnote {
+#cyrglfiaql .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3279,7 +3194,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   padding-right: 5px;
 }
 
-#rpntbxqlvv .gt_sourcenotes {
+#cyrglfiaql .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3293,7 +3208,7 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   border-right-color: #D3D3D3;
 }
 
-#rpntbxqlvv .gt_sourcenote {
+#cyrglfiaql .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3301,72 +3216,72 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
   padding-right: 5px;
 }
 
-#rpntbxqlvv .gt_left {
+#cyrglfiaql .gt_left {
   text-align: left;
 }
 
-#rpntbxqlvv .gt_center {
+#cyrglfiaql .gt_center {
   text-align: center;
 }
 
-#rpntbxqlvv .gt_right {
+#cyrglfiaql .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rpntbxqlvv .gt_font_normal {
+#cyrglfiaql .gt_font_normal {
   font-weight: normal;
 }
 
-#rpntbxqlvv .gt_font_bold {
+#cyrglfiaql .gt_font_bold {
   font-weight: bold;
 }
 
-#rpntbxqlvv .gt_font_italic {
+#cyrglfiaql .gt_font_italic {
   font-style: italic;
 }
 
-#rpntbxqlvv .gt_super {
+#cyrglfiaql .gt_super {
   font-size: 65%;
 }
 
-#rpntbxqlvv .gt_footnote_marks {
+#cyrglfiaql .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rpntbxqlvv .gt_asterisk {
+#cyrglfiaql .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rpntbxqlvv .gt_indent_1 {
+#cyrglfiaql .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rpntbxqlvv .gt_indent_2 {
+#cyrglfiaql .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rpntbxqlvv .gt_indent_3 {
+#cyrglfiaql .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rpntbxqlvv .gt_indent_4 {
+#cyrglfiaql .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rpntbxqlvv .gt_indent_5 {
+#cyrglfiaql .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rpntbxqlvv .katex-display {
+#cyrglfiaql .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rpntbxqlvv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cyrglfiaql div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3428,28 +3343,28 @@ Table&nbsp;5.5: GEI Pillars Retained in Analysis
 <div class="cell">
 <div id="tbl-desc-lrc" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-desc-lrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.6
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-desc-lrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.6: Descriptive statistics of the GEI pillars
 </figcaption>
 <div aria-describedby="tbl-desc-lrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jqzsyinfhx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jqzsyinfhx table {
+<div id="wkcrzadmxs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wkcrzadmxs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jqzsyinfhx thead, #jqzsyinfhx tbody, #jqzsyinfhx tfoot, #jqzsyinfhx tr, #jqzsyinfhx td, #jqzsyinfhx th {
+#wkcrzadmxs thead, #wkcrzadmxs tbody, #wkcrzadmxs tfoot, #wkcrzadmxs tr, #wkcrzadmxs td, #wkcrzadmxs th {
   border-style: none;
 }
 
-#jqzsyinfhx p {
+#wkcrzadmxs p {
   margin: 0;
   padding: 0;
 }
 
-#jqzsyinfhx .gt_table {
+#wkcrzadmxs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3475,12 +3390,12 @@ Table&nbsp;5.6
   border-left-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_caption {
+#wkcrzadmxs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jqzsyinfhx .gt_title {
+#wkcrzadmxs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3492,7 +3407,7 @@ Table&nbsp;5.6
   border-bottom-width: 0;
 }
 
-#jqzsyinfhx .gt_subtitle {
+#wkcrzadmxs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3504,7 +3419,7 @@ Table&nbsp;5.6
   border-top-width: 0;
 }
 
-#jqzsyinfhx .gt_heading {
+#wkcrzadmxs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3516,13 +3431,13 @@ Table&nbsp;5.6
   border-right-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_bottom_border {
+#wkcrzadmxs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_col_headings {
+#wkcrzadmxs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3537,7 +3452,7 @@ Table&nbsp;5.6
   border-right-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_col_heading {
+#wkcrzadmxs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3557,7 +3472,7 @@ Table&nbsp;5.6
   overflow-x: hidden;
 }
 
-#jqzsyinfhx .gt_column_spanner_outer {
+#wkcrzadmxs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3569,15 +3484,15 @@ Table&nbsp;5.6
   padding-right: 4px;
 }
 
-#jqzsyinfhx .gt_column_spanner_outer:first-child {
+#wkcrzadmxs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jqzsyinfhx .gt_column_spanner_outer:last-child {
+#wkcrzadmxs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jqzsyinfhx .gt_column_spanner {
+#wkcrzadmxs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3589,11 +3504,11 @@ Table&nbsp;5.6
   width: 100%;
 }
 
-#jqzsyinfhx .gt_spanner_row {
+#wkcrzadmxs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jqzsyinfhx .gt_group_heading {
+#wkcrzadmxs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3619,7 +3534,7 @@ Table&nbsp;5.6
   text-align: left;
 }
 
-#jqzsyinfhx .gt_empty_group_heading {
+#wkcrzadmxs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3634,15 +3549,15 @@ Table&nbsp;5.6
   vertical-align: middle;
 }
 
-#jqzsyinfhx .gt_from_md > :first-child {
+#wkcrzadmxs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jqzsyinfhx .gt_from_md > :last-child {
+#wkcrzadmxs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jqzsyinfhx .gt_row {
+#wkcrzadmxs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3661,7 +3576,7 @@ Table&nbsp;5.6
   overflow-x: hidden;
 }
 
-#jqzsyinfhx .gt_stub {
+#wkcrzadmxs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3674,7 +3589,7 @@ Table&nbsp;5.6
   padding-right: 5px;
 }
 
-#jqzsyinfhx .gt_stub_row_group {
+#wkcrzadmxs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3688,15 +3603,15 @@ Table&nbsp;5.6
   vertical-align: top;
 }
 
-#jqzsyinfhx .gt_row_group_first td {
+#wkcrzadmxs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jqzsyinfhx .gt_row_group_first th {
+#wkcrzadmxs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jqzsyinfhx .gt_summary_row {
+#wkcrzadmxs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3706,16 +3621,16 @@ Table&nbsp;5.6
   padding-right: 5px;
 }
 
-#jqzsyinfhx .gt_first_summary_row {
+#wkcrzadmxs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_first_summary_row.thick {
+#wkcrzadmxs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jqzsyinfhx .gt_last_summary_row {
+#wkcrzadmxs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3725,7 +3640,7 @@ Table&nbsp;5.6
   border-bottom-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_grand_summary_row {
+#wkcrzadmxs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3735,7 +3650,7 @@ Table&nbsp;5.6
   padding-right: 5px;
 }
 
-#jqzsyinfhx .gt_first_grand_summary_row {
+#wkcrzadmxs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3745,7 +3660,7 @@ Table&nbsp;5.6
   border-top-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_last_grand_summary_row_top {
+#wkcrzadmxs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3755,11 +3670,11 @@ Table&nbsp;5.6
   border-bottom-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_striped {
+#wkcrzadmxs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jqzsyinfhx .gt_table_body {
+#wkcrzadmxs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3768,7 +3683,7 @@ Table&nbsp;5.6
   border-bottom-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_footnotes {
+#wkcrzadmxs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3782,7 +3697,7 @@ Table&nbsp;5.6
   border-right-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_footnote {
+#wkcrzadmxs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3791,7 +3706,7 @@ Table&nbsp;5.6
   padding-right: 5px;
 }
 
-#jqzsyinfhx .gt_sourcenotes {
+#wkcrzadmxs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3805,7 +3720,7 @@ Table&nbsp;5.6
   border-right-color: #D3D3D3;
 }
 
-#jqzsyinfhx .gt_sourcenote {
+#wkcrzadmxs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3813,82 +3728,82 @@ Table&nbsp;5.6
   padding-right: 5px;
 }
 
-#jqzsyinfhx .gt_left {
+#wkcrzadmxs .gt_left {
   text-align: left;
 }
 
-#jqzsyinfhx .gt_center {
+#wkcrzadmxs .gt_center {
   text-align: center;
 }
 
-#jqzsyinfhx .gt_right {
+#wkcrzadmxs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jqzsyinfhx .gt_font_normal {
+#wkcrzadmxs .gt_font_normal {
   font-weight: normal;
 }
 
-#jqzsyinfhx .gt_font_bold {
+#wkcrzadmxs .gt_font_bold {
   font-weight: bold;
 }
 
-#jqzsyinfhx .gt_font_italic {
+#wkcrzadmxs .gt_font_italic {
   font-style: italic;
 }
 
-#jqzsyinfhx .gt_super {
+#wkcrzadmxs .gt_super {
   font-size: 65%;
 }
 
-#jqzsyinfhx .gt_footnote_marks {
+#wkcrzadmxs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jqzsyinfhx .gt_asterisk {
+#wkcrzadmxs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jqzsyinfhx .gt_indent_1 {
+#wkcrzadmxs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jqzsyinfhx .gt_indent_2 {
+#wkcrzadmxs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jqzsyinfhx .gt_indent_3 {
+#wkcrzadmxs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jqzsyinfhx .gt_indent_4 {
+#wkcrzadmxs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jqzsyinfhx .gt_indent_5 {
+#wkcrzadmxs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jqzsyinfhx .katex-display {
+#wkcrzadmxs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jqzsyinfhx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wkcrzadmxs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="Unique" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Unique</th>
-<th id="Missing-Pct." class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Missing Pct.</th>
+<th id="Missing-Pct." class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">NA</th>
 <th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Mean</th>
 <th id="SD" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SD</th>
 <th id="Min" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Min</th>
@@ -3898,154 +3813,144 @@ Table&nbsp;5.6
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">year</td>
-<td class="gt_row gt_left" headers="Unique">10</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">2013.00</td>
-<td class="gt_row gt_left" headers="SD">3.01</td>
-<td class="gt_row gt_left" headers="Min">2008.00</td>
-<td class="gt_row gt_left" headers="Median">2013.00</td>
-<td class="gt_row gt_left" headers="Max">2018.00</td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_left" headers=" ">x1_opportunity_perception</td>
-<td class="gt_row gt_left" headers="Unique">185</td>
+<td class="gt_row gt_left" headers="Unique">216</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.55</td>
-<td class="gt_row gt_left" headers="SD">0.27</td>
-<td class="gt_row gt_left" headers="Min">0.13</td>
-<td class="gt_row gt_left" headers="Median">0.50</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-1.52</td>
+<td class="gt_row gt_left" headers="Median">-0.22</td>
+<td class="gt_row gt_left" headers="Max">1.86</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers=" ">x2_startup_skills</td>
-<td class="gt_row gt_left" headers="Unique">200</td>
+<td class="gt_row gt_left" headers="Unique">225</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.62</td>
-<td class="gt_row gt_left" headers="SD">0.20</td>
-<td class="gt_row gt_left" headers="Min">0.15</td>
-<td class="gt_row gt_left" headers="Median">0.62</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.43</td>
+<td class="gt_row gt_left" headers="Median">0.01</td>
+<td class="gt_row gt_left" headers="Max">2.08</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers=" ">x3_risk_acceptance</td>
-<td class="gt_row gt_left" headers="Unique">187</td>
+<td class="gt_row gt_left" headers="Unique">218</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.61</td>
-<td class="gt_row gt_left" headers="SD">0.26</td>
-<td class="gt_row gt_left" headers="Min">0.10</td>
-<td class="gt_row gt_left" headers="Median">0.66</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.25</td>
+<td class="gt_row gt_left" headers="Median">0.28</td>
+<td class="gt_row gt_left" headers="Max">1.65</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers=" ">x4_networking</td>
-<td class="gt_row gt_left" headers="Unique">193</td>
+<td class="gt_row gt_left" headers="Unique">222</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.50</td>
-<td class="gt_row gt_left" headers="SD">0.21</td>
-<td class="gt_row gt_left" headers="Min">0.13</td>
-<td class="gt_row gt_left" headers="Median">0.45</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-1.85</td>
+<td class="gt_row gt_left" headers="Median">-0.25</td>
+<td class="gt_row gt_left" headers="Max">2.70</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers=" ">x5_cultural_support</td>
-<td class="gt_row gt_left" headers="Unique">180</td>
+<td class="gt_row gt_left" headers="Unique">213</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.60</td>
-<td class="gt_row gt_left" headers="SD">0.26</td>
-<td class="gt_row gt_left" headers="Min">0.09</td>
-<td class="gt_row gt_left" headers="Median">0.58</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-1.94</td>
+<td class="gt_row gt_left" headers="Median">-0.05</td>
+<td class="gt_row gt_left" headers="Max">1.83</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers=" ">x6_opportunity_startup</td>
-<td class="gt_row gt_left" headers="Unique">181</td>
+<td class="gt_row gt_left" headers="Unique">210</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.66</td>
-<td class="gt_row gt_left" headers="SD">0.24</td>
-<td class="gt_row gt_left" headers="Min">0.15</td>
-<td class="gt_row gt_left" headers="Median">0.62</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.06</td>
+<td class="gt_row gt_left" headers="Median">-0.18</td>
+<td class="gt_row gt_left" headers="Max">1.50</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers=" ">x7_technology_absorption</td>
-<td class="gt_row gt_left" headers="Unique">187</td>
+<td class="gt_row gt_left" headers="Unique">215</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.66</td>
-<td class="gt_row gt_left" headers="SD">0.22</td>
-<td class="gt_row gt_left" headers="Min">0.14</td>
-<td class="gt_row gt_left" headers="Median">0.66</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.07</td>
+<td class="gt_row gt_left" headers="Median">0.01</td>
+<td class="gt_row gt_left" headers="Max">1.71</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers=" ">x8_human_capital</td>
-<td class="gt_row gt_left" headers="Unique">199</td>
+<td class="gt_row gt_left" headers="Unique">227</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.51</td>
-<td class="gt_row gt_left" headers="SD">0.20</td>
-<td class="gt_row gt_left" headers="Min">0.14</td>
-<td class="gt_row gt_left" headers="Median">0.48</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-1.89</td>
+<td class="gt_row gt_left" headers="Median">-0.19</td>
+<td class="gt_row gt_left" headers="Max">2.49</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers=" ">x9_competition</td>
-<td class="gt_row gt_left" headers="Unique">191</td>
+<td class="gt_row gt_left" headers="Unique">218</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.59</td>
-<td class="gt_row gt_left" headers="SD">0.26</td>
-<td class="gt_row gt_left" headers="Min">0.17</td>
-<td class="gt_row gt_left" headers="Median">0.56</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-1.53</td>
+<td class="gt_row gt_left" headers="Median">-0.21</td>
+<td class="gt_row gt_left" headers="Max">1.70</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers=" ">x10_product_innovation</td>
-<td class="gt_row gt_left" headers="Unique">195</td>
+<td class="gt_row gt_left" headers="Unique">222</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.55</td>
-<td class="gt_row gt_left" headers="SD">0.24</td>
-<td class="gt_row gt_left" headers="Min">0.06</td>
-<td class="gt_row gt_left" headers="Median">0.56</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-1.90</td>
+<td class="gt_row gt_left" headers="Median">0.08</td>
+<td class="gt_row gt_left" headers="Max">2.12</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers=" ">x11_process_innovation</td>
-<td class="gt_row gt_left" headers="Unique">198</td>
+<td class="gt_row gt_left" headers="Unique">226</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.63</td>
-<td class="gt_row gt_left" headers="SD">0.20</td>
-<td class="gt_row gt_left" headers="Min">0.22</td>
-<td class="gt_row gt_left" headers="Median">0.64</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">x12_high_growth</td>
-<td class="gt_row gt_left" headers="Unique">204</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.51</td>
-<td class="gt_row gt_left" headers="SD">0.17</td>
-<td class="gt_row gt_left" headers="Min">0.12</td>
-<td class="gt_row gt_left" headers="Median">0.52</td>
-<td class="gt_row gt_left" headers="Max">0.95</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.31</td>
+<td class="gt_row gt_left" headers="Median">0.04</td>
+<td class="gt_row gt_left" headers="Max">1.98</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers=" ">x13_internationalization</td>
-<td class="gt_row gt_left" headers="Unique">185</td>
+<td class="gt_row gt_left" headers=" ">x12_high_growth</td>
+<td class="gt_row gt_left" headers="Unique">227</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.69</td>
-<td class="gt_row gt_left" headers="SD">0.20</td>
-<td class="gt_row gt_left" headers="Min">0.23</td>
-<td class="gt_row gt_left" headers="Median">0.72</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.57</td>
+<td class="gt_row gt_left" headers="Median">0.08</td>
+<td class="gt_row gt_left" headers="Max">2.04</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">x14_risk_capital</td>
-<td class="gt_row gt_left" headers="Unique">192</td>
+<td class="gt_row gt_left" headers=" ">x13_internationalization</td>
+<td class="gt_row gt_left" headers="Unique">215</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.63</td>
-<td class="gt_row gt_left" headers="SD">0.20</td>
-<td class="gt_row gt_left" headers="Min">0.19</td>
-<td class="gt_row gt_left" headers="Median">0.62</td>
-<td class="gt_row gt_left" headers="Max">1.00</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.52</td>
+<td class="gt_row gt_left" headers="Median">0.11</td>
+<td class="gt_row gt_left" headers="Max">1.86</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">x14_risk_capital</td>
+<td class="gt_row gt_left" headers="Unique">222</td>
+<td class="gt_row gt_left" headers="Missing Pct.">0</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">0.98</td>
+<td class="gt_row gt_left" headers="Min">-2.10</td>
+<td class="gt_row gt_left" headers="Median">-0.00</td>
+<td class="gt_row gt_left" headers="Max">2.75</td>
 </tr>
 </tbody>
 </table>
@@ -4063,28 +3968,28 @@ Table&nbsp;5.6
 <div class="cell">
 <div id="tbl-desc-panel" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-desc-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.7
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-desc-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.7: Descriptive statistics of the aggregated varaibles
 </figcaption>
 <div aria-describedby="tbl-desc-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="eevgxxxgel" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eevgxxxgel table {
+<div id="rpempcutvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rpempcutvn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eevgxxxgel thead, #eevgxxxgel tbody, #eevgxxxgel tfoot, #eevgxxxgel tr, #eevgxxxgel td, #eevgxxxgel th {
+#rpempcutvn thead, #rpempcutvn tbody, #rpempcutvn tfoot, #rpempcutvn tr, #rpempcutvn td, #rpempcutvn th {
   border-style: none;
 }
 
-#eevgxxxgel p {
+#rpempcutvn p {
   margin: 0;
   padding: 0;
 }
 
-#eevgxxxgel .gt_table {
+#rpempcutvn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4110,12 +4015,12 @@ Table&nbsp;5.7
   border-left-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_caption {
+#rpempcutvn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eevgxxxgel .gt_title {
+#rpempcutvn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4127,7 +4032,7 @@ Table&nbsp;5.7
   border-bottom-width: 0;
 }
 
-#eevgxxxgel .gt_subtitle {
+#rpempcutvn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4139,7 +4044,7 @@ Table&nbsp;5.7
   border-top-width: 0;
 }
 
-#eevgxxxgel .gt_heading {
+#rpempcutvn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4151,13 +4056,13 @@ Table&nbsp;5.7
   border-right-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_bottom_border {
+#rpempcutvn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_col_headings {
+#rpempcutvn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4172,7 +4077,7 @@ Table&nbsp;5.7
   border-right-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_col_heading {
+#rpempcutvn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4192,7 +4097,7 @@ Table&nbsp;5.7
   overflow-x: hidden;
 }
 
-#eevgxxxgel .gt_column_spanner_outer {
+#rpempcutvn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4204,15 +4109,15 @@ Table&nbsp;5.7
   padding-right: 4px;
 }
 
-#eevgxxxgel .gt_column_spanner_outer:first-child {
+#rpempcutvn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eevgxxxgel .gt_column_spanner_outer:last-child {
+#rpempcutvn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eevgxxxgel .gt_column_spanner {
+#rpempcutvn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4224,11 +4129,11 @@ Table&nbsp;5.7
   width: 100%;
 }
 
-#eevgxxxgel .gt_spanner_row {
+#rpempcutvn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eevgxxxgel .gt_group_heading {
+#rpempcutvn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4254,7 +4159,7 @@ Table&nbsp;5.7
   text-align: left;
 }
 
-#eevgxxxgel .gt_empty_group_heading {
+#rpempcutvn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4269,15 +4174,15 @@ Table&nbsp;5.7
   vertical-align: middle;
 }
 
-#eevgxxxgel .gt_from_md > :first-child {
+#rpempcutvn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eevgxxxgel .gt_from_md > :last-child {
+#rpempcutvn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eevgxxxgel .gt_row {
+#rpempcutvn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4296,7 +4201,7 @@ Table&nbsp;5.7
   overflow-x: hidden;
 }
 
-#eevgxxxgel .gt_stub {
+#rpempcutvn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4309,7 +4214,7 @@ Table&nbsp;5.7
   padding-right: 5px;
 }
 
-#eevgxxxgel .gt_stub_row_group {
+#rpempcutvn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4323,15 +4228,15 @@ Table&nbsp;5.7
   vertical-align: top;
 }
 
-#eevgxxxgel .gt_row_group_first td {
+#rpempcutvn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eevgxxxgel .gt_row_group_first th {
+#rpempcutvn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eevgxxxgel .gt_summary_row {
+#rpempcutvn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4341,16 +4246,16 @@ Table&nbsp;5.7
   padding-right: 5px;
 }
 
-#eevgxxxgel .gt_first_summary_row {
+#rpempcutvn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_first_summary_row.thick {
+#rpempcutvn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eevgxxxgel .gt_last_summary_row {
+#rpempcutvn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4360,7 +4265,7 @@ Table&nbsp;5.7
   border-bottom-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_grand_summary_row {
+#rpempcutvn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4370,7 +4275,7 @@ Table&nbsp;5.7
   padding-right: 5px;
 }
 
-#eevgxxxgel .gt_first_grand_summary_row {
+#rpempcutvn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4380,7 +4285,7 @@ Table&nbsp;5.7
   border-top-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_last_grand_summary_row_top {
+#rpempcutvn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4390,11 +4295,11 @@ Table&nbsp;5.7
   border-bottom-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_striped {
+#rpempcutvn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eevgxxxgel .gt_table_body {
+#rpempcutvn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4403,7 +4308,7 @@ Table&nbsp;5.7
   border-bottom-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_footnotes {
+#rpempcutvn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4417,7 +4322,7 @@ Table&nbsp;5.7
   border-right-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_footnote {
+#rpempcutvn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4426,7 +4331,7 @@ Table&nbsp;5.7
   padding-right: 5px;
 }
 
-#eevgxxxgel .gt_sourcenotes {
+#rpempcutvn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4440,7 +4345,7 @@ Table&nbsp;5.7
   border-right-color: #D3D3D3;
 }
 
-#eevgxxxgel .gt_sourcenote {
+#rpempcutvn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4448,82 +4353,82 @@ Table&nbsp;5.7
   padding-right: 5px;
 }
 
-#eevgxxxgel .gt_left {
+#rpempcutvn .gt_left {
   text-align: left;
 }
 
-#eevgxxxgel .gt_center {
+#rpempcutvn .gt_center {
   text-align: center;
 }
 
-#eevgxxxgel .gt_right {
+#rpempcutvn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eevgxxxgel .gt_font_normal {
+#rpempcutvn .gt_font_normal {
   font-weight: normal;
 }
 
-#eevgxxxgel .gt_font_bold {
+#rpempcutvn .gt_font_bold {
   font-weight: bold;
 }
 
-#eevgxxxgel .gt_font_italic {
+#rpempcutvn .gt_font_italic {
   font-style: italic;
 }
 
-#eevgxxxgel .gt_super {
+#rpempcutvn .gt_super {
   font-size: 65%;
 }
 
-#eevgxxxgel .gt_footnote_marks {
+#rpempcutvn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eevgxxxgel .gt_asterisk {
+#rpempcutvn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eevgxxxgel .gt_indent_1 {
+#rpempcutvn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eevgxxxgel .gt_indent_2 {
+#rpempcutvn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eevgxxxgel .gt_indent_3 {
+#rpempcutvn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eevgxxxgel .gt_indent_4 {
+#rpempcutvn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eevgxxxgel .gt_indent_5 {
+#rpempcutvn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eevgxxxgel .katex-display {
+#rpempcutvn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eevgxxxgel div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rpempcutvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="Unique" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Unique</th>
-<th id="Missing-Pct." class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Missing Pct.</th>
+<th id="Missing-Pct." class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">NA</th>
 <th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Mean</th>
 <th id="SD" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SD</th>
 <th id="Min" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Min</th>
@@ -4533,26 +4438,16 @@ Table&nbsp;5.7
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">year</td>
-<td class="gt_row gt_left" headers="Unique">11</td>
+<td class="gt_row gt_left" headers=" ">reg_potential</td>
+<td class="gt_row gt_left" headers="Unique">1941</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">2013.00</td>
-<td class="gt_row gt_left" headers="SD">3.16</td>
-<td class="gt_row gt_left" headers="Min">2008.00</td>
-<td class="gt_row gt_left" headers="Median">2013.00</td>
-<td class="gt_row gt_left" headers="Max">2018.00</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-0.99</td>
+<td class="gt_row gt_left" headers="Median">-0.46</td>
+<td class="gt_row gt_left" headers="Max">2.34</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers=" ">reg_potential</td>
-<td class="gt_row gt_left" headers="Unique">1565</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.22</td>
-<td class="gt_row gt_left" headers="SD">0.23</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.12</td>
-<td class="gt_row gt_left" headers="Max">0.76</td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_left" headers=" ">patent_count</td>
 <td class="gt_row gt_left" headers="Unique">1249</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
@@ -4562,195 +4457,45 @@ Table&nbsp;5.7
 <td class="gt_row gt_left" headers="Median">186.00</td>
 <td class="gt_row gt_left" headers="Max">27222.00</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">n_techs</td>
-<td class="gt_row gt_left" headers="Unique">368</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">90.03</td>
-<td class="gt_row gt_left" headers="SD">92.69</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">59.00</td>
-<td class="gt_row gt_left" headers="Max">496.00</td>
-</tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">n_specialized</td>
-<td class="gt_row gt_left" headers="Unique">210</td>
+<td class="gt_row gt_left" headers=" ">reg_comp</td>
+<td class="gt_row gt_left" headers="Unique">3097</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">59.81</td>
-<td class="gt_row gt_left" headers="SD">49.01</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">50.00</td>
-<td class="gt_row gt_left" headers="Max">241.00</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">diversity0</td>
-<td class="gt_row gt_left" headers="Unique">367</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">3.70</td>
-<td class="gt_row gt_left" headers="SD">1.58</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">4.08</td>
-<td class="gt_row gt_left" headers="Max">6.21</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">diversity</td>
-<td class="gt_row gt_left" headers="Unique">2851</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">3.21</td>
-<td class="gt_row gt_left" headers="SD">1.33</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">3.58</td>
-<td class="gt_row gt_left" headers="Max">5.28</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-13.23</td>
+<td class="gt_row gt_left" headers="Median">0.03</td>
+<td class="gt_row gt_left" headers="Max">5.61</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">avg_coherence</td>
 <td class="gt_row gt_left" headers="Unique">3097</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.55</td>
-<td class="gt_row gt_left" headers="SD">0.04</td>
-<td class="gt_row gt_left" headers="Min">0.11</td>
-<td class="gt_row gt_left" headers="Median">0.56</td>
-<td class="gt_row gt_left" headers="Max">0.64</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">avg_tech_comp</td>
-<td class="gt_row gt_left" headers="Unique">11</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">-0.00</td>
-<td class="gt_row gt_left" headers="SD">0.00</td>
-<td class="gt_row gt_left" headers="Min">-0.00</td>
-<td class="gt_row gt_left" headers="Median">0.00</td>
-<td class="gt_row gt_left" headers="Max">0.00</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">entry_rate</td>
-<td class="gt_row gt_left" headers="Unique">1946</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.06</td>
-<td class="gt_row gt_left" headers="SD">0.05</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.05</td>
-<td class="gt_row gt_left" headers="Max">0.26</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">avg_rd</td>
-<td class="gt_row gt_left" headers="Unique">3083</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">9.42</td>
-<td class="gt_row gt_left" headers="SD">7.74</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">7.97</td>
-<td class="gt_row gt_left" headers="Max">38.71</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">avg_dist</td>
-<td class="gt_row gt_left" headers="Unique">11</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">132.61</td>
-<td class="gt_row gt_left" headers="SD">13.50</td>
-<td class="gt_row gt_left" headers="Min">107.08</td>
-<td class="gt_row gt_left" headers="Median">137.50</td>
-<td class="gt_row gt_left" headers="Max">151.91</td>
+<td class="gt_row gt_left" headers="Mean">0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-10.13</td>
+<td class="gt_row gt_left" headers="Median">0.26</td>
+<td class="gt_row gt_left" headers="Max">2.10</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers=" ">avg_betweenness</td>
-<td class="gt_row gt_left" headers="Unique">3080</td>
+<td class="gt_row gt_left" headers="Unique">3090</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.00</td>
-<td class="gt_row gt_left" headers="SD">0.00</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.00</td>
-<td class="gt_row gt_left" headers="Max">0.04</td>
+<td class="gt_row gt_left" headers="Mean">-0.00</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-2.59</td>
+<td class="gt_row gt_left" headers="Median">-0.03</td>
+<td class="gt_row gt_left" headers="Max">10.63</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">avg_eigenvector</td>
-<td class="gt_row gt_left" headers="Unique">3087</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.07</td>
-<td class="gt_row gt_left" headers="SD">0.04</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.06</td>
-<td class="gt_row gt_left" headers="Max">0.52</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">med_betweenness_spec</td>
-<td class="gt_row gt_left" headers="Unique">2106</td>
+<td class="gt_row gt_left" headers="Unique">3097</td>
 <td class="gt_row gt_left" headers="Missing Pct.">0</td>
 <td class="gt_row gt_left" headers="Mean">0.00</td>
-<td class="gt_row gt_left" headers="SD">0.00</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.00</td>
-<td class="gt_row gt_left" headers="Max">0.04</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">med_eigenvector_spec</td>
-<td class="gt_row gt_left" headers="Unique">2554</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.03</td>
-<td class="gt_row gt_left" headers="SD">0.03</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.02</td>
-<td class="gt_row gt_left" headers="Max">0.52</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">med_betweenness_exist</td>
-<td class="gt_row gt_left" headers="Unique">1925</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.00</td>
-<td class="gt_row gt_left" headers="SD">0.00</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.00</td>
-<td class="gt_row gt_left" headers="Max">0.04</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">med_eigenvector_exist</td>
-<td class="gt_row gt_left" headers="Unique">2455</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.03</td>
-<td class="gt_row gt_left" headers="SD">0.03</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.02</td>
-<td class="gt_row gt_left" headers="Max">0.52</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">pct_high_between_spec</td>
-<td class="gt_row gt_left" headers="Unique">124</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.46</td>
-<td class="gt_row gt_left" headers="SD">0.12</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.50</td>
-<td class="gt_row gt_left" headers="Max">0.50</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">pct_high_eigen_spec</td>
-<td class="gt_row gt_left" headers="Unique">109</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.46</td>
-<td class="gt_row gt_left" headers="SD">0.12</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.50</td>
-<td class="gt_row gt_left" headers="Max">0.50</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">pct_high_between_exist</td>
-<td class="gt_row gt_left" headers="Unique">197</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.46</td>
-<td class="gt_row gt_left" headers="SD">0.12</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.50</td>
-<td class="gt_row gt_left" headers="Max">0.50</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">pct_high_eigen_exist</td>
-<td class="gt_row gt_left" headers="Unique">183</td>
-<td class="gt_row gt_left" headers="Missing Pct.">0</td>
-<td class="gt_row gt_left" headers="Mean">0.46</td>
-<td class="gt_row gt_left" headers="SD">0.12</td>
-<td class="gt_row gt_left" headers="Min">0.00</td>
-<td class="gt_row gt_left" headers="Median">0.50</td>
-<td class="gt_row gt_left" headers="Max">0.50</td>
+<td class="gt_row gt_left" headers="SD">1.00</td>
+<td class="gt_row gt_left" headers="Min">-1.82</td>
+<td class="gt_row gt_left" headers="Median">-0.06</td>
+<td class="gt_row gt_left" headers="Max">10.61</td>
 </tr>
 </tbody>
 </table>
@@ -4761,32 +4506,31 @@ Table&nbsp;5.7
 </figure>
 </div>
 </div>
-<div class="landscape">
 <div class="cell">
 <div id="tbl-corr-regional" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-corr-regional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.8: Correlation Matrix - Regional Level
+Table&nbsp;5.8: Correlation matrix of the aggregated varaibles
 </figcaption>
 <div aria-describedby="tbl-corr-regional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bugocohupr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bugocohupr table {
+<div id="vltfpkwwep" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vltfpkwwep table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bugocohupr thead, #bugocohupr tbody, #bugocohupr tfoot, #bugocohupr tr, #bugocohupr td, #bugocohupr th {
+#vltfpkwwep thead, #vltfpkwwep tbody, #vltfpkwwep tfoot, #vltfpkwwep tr, #vltfpkwwep td, #vltfpkwwep th {
   border-style: none;
 }
 
-#bugocohupr p {
+#vltfpkwwep p {
   margin: 0;
   padding: 0;
 }
 
-#bugocohupr .gt_table {
+#vltfpkwwep .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4812,12 +4556,12 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-left-color: #D3D3D3;
 }
 
-#bugocohupr .gt_caption {
+#vltfpkwwep .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bugocohupr .gt_title {
+#vltfpkwwep .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4829,7 +4573,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-bottom-width: 0;
 }
 
-#bugocohupr .gt_subtitle {
+#vltfpkwwep .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4841,7 +4585,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-top-width: 0;
 }
 
-#bugocohupr .gt_heading {
+#vltfpkwwep .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4853,13 +4597,13 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-right-color: #D3D3D3;
 }
 
-#bugocohupr .gt_bottom_border {
+#vltfpkwwep .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bugocohupr .gt_col_headings {
+#vltfpkwwep .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4874,7 +4618,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-right-color: #D3D3D3;
 }
 
-#bugocohupr .gt_col_heading {
+#vltfpkwwep .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4894,7 +4638,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   overflow-x: hidden;
 }
 
-#bugocohupr .gt_column_spanner_outer {
+#vltfpkwwep .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4906,15 +4650,15 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   padding-right: 4px;
 }
 
-#bugocohupr .gt_column_spanner_outer:first-child {
+#vltfpkwwep .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bugocohupr .gt_column_spanner_outer:last-child {
+#vltfpkwwep .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bugocohupr .gt_column_spanner {
+#vltfpkwwep .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4926,11 +4670,11 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   width: 100%;
 }
 
-#bugocohupr .gt_spanner_row {
+#vltfpkwwep .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bugocohupr .gt_group_heading {
+#vltfpkwwep .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4956,7 +4700,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   text-align: left;
 }
 
-#bugocohupr .gt_empty_group_heading {
+#vltfpkwwep .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4971,15 +4715,15 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   vertical-align: middle;
 }
 
-#bugocohupr .gt_from_md > :first-child {
+#vltfpkwwep .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bugocohupr .gt_from_md > :last-child {
+#vltfpkwwep .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bugocohupr .gt_row {
+#vltfpkwwep .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4998,7 +4742,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   overflow-x: hidden;
 }
 
-#bugocohupr .gt_stub {
+#vltfpkwwep .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5011,7 +4755,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   padding-right: 5px;
 }
 
-#bugocohupr .gt_stub_row_group {
+#vltfpkwwep .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5025,15 +4769,15 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   vertical-align: top;
 }
 
-#bugocohupr .gt_row_group_first td {
+#vltfpkwwep .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bugocohupr .gt_row_group_first th {
+#vltfpkwwep .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bugocohupr .gt_summary_row {
+#vltfpkwwep .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5043,16 +4787,16 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   padding-right: 5px;
 }
 
-#bugocohupr .gt_first_summary_row {
+#vltfpkwwep .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bugocohupr .gt_first_summary_row.thick {
+#vltfpkwwep .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bugocohupr .gt_last_summary_row {
+#vltfpkwwep .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5062,7 +4806,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-bottom-color: #D3D3D3;
 }
 
-#bugocohupr .gt_grand_summary_row {
+#vltfpkwwep .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5072,7 +4816,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   padding-right: 5px;
 }
 
-#bugocohupr .gt_first_grand_summary_row {
+#vltfpkwwep .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5082,7 +4826,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-top-color: #D3D3D3;
 }
 
-#bugocohupr .gt_last_grand_summary_row_top {
+#vltfpkwwep .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5092,11 +4836,11 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-bottom-color: #D3D3D3;
 }
 
-#bugocohupr .gt_striped {
+#vltfpkwwep .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bugocohupr .gt_table_body {
+#vltfpkwwep .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5105,7 +4849,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-bottom-color: #D3D3D3;
 }
 
-#bugocohupr .gt_footnotes {
+#vltfpkwwep .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5119,7 +4863,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-right-color: #D3D3D3;
 }
 
-#bugocohupr .gt_footnote {
+#vltfpkwwep .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5128,7 +4872,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   padding-right: 5px;
 }
 
-#bugocohupr .gt_sourcenotes {
+#vltfpkwwep .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5142,7 +4886,7 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   border-right-color: #D3D3D3;
 }
 
-#bugocohupr .gt_sourcenote {
+#vltfpkwwep .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5150,89 +4894,87 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
   padding-right: 5px;
 }
 
-#bugocohupr .gt_left {
+#vltfpkwwep .gt_left {
   text-align: left;
 }
 
-#bugocohupr .gt_center {
+#vltfpkwwep .gt_center {
   text-align: center;
 }
 
-#bugocohupr .gt_right {
+#vltfpkwwep .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bugocohupr .gt_font_normal {
+#vltfpkwwep .gt_font_normal {
   font-weight: normal;
 }
 
-#bugocohupr .gt_font_bold {
+#vltfpkwwep .gt_font_bold {
   font-weight: bold;
 }
 
-#bugocohupr .gt_font_italic {
+#vltfpkwwep .gt_font_italic {
   font-style: italic;
 }
 
-#bugocohupr .gt_super {
+#vltfpkwwep .gt_super {
   font-size: 65%;
 }
 
-#bugocohupr .gt_footnote_marks {
+#vltfpkwwep .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bugocohupr .gt_asterisk {
+#vltfpkwwep .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bugocohupr .gt_indent_1 {
+#vltfpkwwep .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bugocohupr .gt_indent_2 {
+#vltfpkwwep .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bugocohupr .gt_indent_3 {
+#vltfpkwwep .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bugocohupr .gt_indent_4 {
+#vltfpkwwep .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bugocohupr .gt_indent_5 {
+#vltfpkwwep .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bugocohupr .katex-display {
+#vltfpkwwep .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bugocohupr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vltfpkwwep div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<caption>Correlation Matrix - Regional Level</caption>
 <thead>
 <tr class="gt_col_headings header">
 <th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="reg_potential" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="patent_count" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="n_techs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="diversity" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="avg_coherence" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="avg_betweenness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="avg_eigenvector" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="entry_rate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="avg_rd" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="reg_comp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
 </tr>
 </thead>
@@ -5241,130 +4983,70 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
 <td class="gt_row gt_left" headers=" ">reg_potential</td>
 <td class="gt_row gt_right" headers="reg_potential">1</td>
 <td class="gt_row gt_right" headers="patent_count">.</td>
-<td class="gt_row gt_right" headers="n_techs">.</td>
-<td class="gt_row gt_right" headers="diversity">.</td>
 <td class="gt_row gt_right" headers="avg_coherence">.</td>
 <td class="gt_row gt_right" headers="avg_betweenness">.</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">.</td>
 <td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">patent_count</td>
 <td class="gt_row gt_right" headers="reg_potential">.51</td>
 <td class="gt_row gt_right" headers="patent_count">1</td>
-<td class="gt_row gt_right" headers="n_techs">.</td>
-<td class="gt_row gt_right" headers="diversity">.</td>
 <td class="gt_row gt_right" headers="avg_coherence">.</td>
 <td class="gt_row gt_right" headers="avg_betweenness">.</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">.</td>
 <td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
-<td class="gt_row gt_right" headers="reg_comp">.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers=" ">n_techs</td>
-<td class="gt_row gt_right" headers="reg_potential">.91</td>
-<td class="gt_row gt_right" headers="patent_count">.75</td>
-<td class="gt_row gt_right" headers="n_techs">1</td>
-<td class="gt_row gt_right" headers="diversity">.</td>
-<td class="gt_row gt_right" headers="avg_coherence">.</td>
-<td class="gt_row gt_right" headers="avg_betweenness">.</td>
-<td class="gt_row gt_right" headers="avg_eigenvector">.</td>
-<td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
-<td class="gt_row gt_right" headers="reg_comp">.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers=" ">diversity</td>
-<td class="gt_row gt_right" headers="reg_potential">.74</td>
-<td class="gt_row gt_right" headers="patent_count">.37</td>
-<td class="gt_row gt_right" headers="n_techs">.74</td>
-<td class="gt_row gt_right" headers="diversity">1</td>
-<td class="gt_row gt_right" headers="avg_coherence">.</td>
-<td class="gt_row gt_right" headers="avg_betweenness">.</td>
-<td class="gt_row gt_right" headers="avg_eigenvector">.</td>
-<td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers=" ">avg_coherence</td>
 <td class="gt_row gt_right" headers="reg_potential">.52</td>
 <td class="gt_row gt_right" headers="patent_count">.30</td>
-<td class="gt_row gt_right" headers="n_techs">.54</td>
-<td class="gt_row gt_right" headers="diversity">.77</td>
 <td class="gt_row gt_right" headers="avg_coherence">1</td>
 <td class="gt_row gt_right" headers="avg_betweenness">.</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">.</td>
 <td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">avg_betweenness</td>
 <td class="gt_row gt_right" headers="reg_potential">-.05</td>
 <td class="gt_row gt_right" headers="patent_count">-.09</td>
-<td class="gt_row gt_right" headers="n_techs">-.06</td>
-<td class="gt_row gt_right" headers="diversity">.13</td>
 <td class="gt_row gt_right" headers="avg_coherence">.20</td>
 <td class="gt_row gt_right" headers="avg_betweenness">1</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">.</td>
 <td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers=" ">avg_eigenvector</td>
 <td class="gt_row gt_right" headers="reg_potential">.20</td>
 <td class="gt_row gt_right" headers="patent_count">.17</td>
-<td class="gt_row gt_right" headers="n_techs">.23</td>
-<td class="gt_row gt_right" headers="diversity">.27</td>
 <td class="gt_row gt_right" headers="avg_coherence">.28</td>
 <td class="gt_row gt_right" headers="avg_betweenness">.08</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">1</td>
 <td class="gt_row gt_right" headers="entry_rate">.</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers=" ">entry_rate</td>
 <td class="gt_row gt_right" headers="reg_potential">.76</td>
 <td class="gt_row gt_right" headers="patent_count">.39</td>
-<td class="gt_row gt_right" headers="n_techs">.78</td>
-<td class="gt_row gt_right" headers="diversity">.78</td>
 <td class="gt_row gt_right" headers="avg_coherence">.52</td>
 <td class="gt_row gt_right" headers="avg_betweenness">-.00</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">.21</td>
 <td class="gt_row gt_right" headers="entry_rate">1</td>
-<td class="gt_row gt_right" headers="avg_rd">.</td>
 <td class="gt_row gt_right" headers="reg_comp">.</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers=" ">avg_rd</td>
-<td class="gt_row gt_right" headers="reg_potential">.91</td>
-<td class="gt_row gt_right" headers="patent_count">.58</td>
-<td class="gt_row gt_right" headers="n_techs">.95</td>
-<td class="gt_row gt_right" headers="diversity">.85</td>
-<td class="gt_row gt_right" headers="avg_coherence">.59</td>
-<td class="gt_row gt_right" headers="avg_betweenness">-.03</td>
-<td class="gt_row gt_right" headers="avg_eigenvector">.22</td>
-<td class="gt_row gt_right" headers="entry_rate">.86</td>
-<td class="gt_row gt_right" headers="avg_rd">1</td>
-<td class="gt_row gt_right" headers="reg_comp">.</td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_left" headers=" ">reg_comp</td>
 <td class="gt_row gt_right" headers="reg_potential">.50</td>
 <td class="gt_row gt_right" headers="patent_count">.27</td>
-<td class="gt_row gt_right" headers="n_techs">.49</td>
-<td class="gt_row gt_right" headers="diversity">.38</td>
 <td class="gt_row gt_right" headers="avg_coherence">.24</td>
 <td class="gt_row gt_right" headers="avg_betweenness">-.19</td>
 <td class="gt_row gt_right" headers="avg_eigenvector">.01</td>
 <td class="gt_row gt_right" headers="entry_rate">.42</td>
-<td class="gt_row gt_right" headers="avg_rd">.51</td>
 <td class="gt_row gt_right" headers="reg_comp">1</td>
 </tr>
 </tbody>
@@ -5374,7 +5056,6 @@ Table&nbsp;5.8: Correlation Matrix - Regional Level
 </div>
 </div>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -5500,7 +5181,7 @@ Figure&nbsp;5.6: Total Patent Count by Region (2008–2018 Averages)
 <div id="fig-map-avg-comp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-map-avg-comp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="empirical3_files/figure-html/fig-map-avg-comp-1.png" class="img-fluid figure-img" style="width:90.0%" data-ref-parent="fig-map-avg-comp">
+<img src="empirical3_files/figure-html/fig-map-avg-comp-1.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-map-avg-comp">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-map-avg-comp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) This map displays the geographic distribution of regional complexity. This is a measure of the sophistication and diversity of regional technological portfolios-across 345 European NUTS2 regions. Values are standardized and capped at 2 standard deviations to highlight variation within the core distribution. The pattern reveals a clear core-periphery divide between European regions
@@ -5538,23 +5219,23 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
 </figcaption>
 <div aria-describedby="tbl-spatial-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rwwcyhmnna" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rwwcyhmnna table {
+<div id="lbrxjvwvpz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lbrxjvwvpz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rwwcyhmnna thead, #rwwcyhmnna tbody, #rwwcyhmnna tfoot, #rwwcyhmnna tr, #rwwcyhmnna td, #rwwcyhmnna th {
+#lbrxjvwvpz thead, #lbrxjvwvpz tbody, #lbrxjvwvpz tfoot, #lbrxjvwvpz tr, #lbrxjvwvpz td, #lbrxjvwvpz th {
   border-style: none;
 }
 
-#rwwcyhmnna p {
+#lbrxjvwvpz p {
   margin: 0;
   padding: 0;
 }
 
-#rwwcyhmnna .gt_table {
+#lbrxjvwvpz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5580,12 +5261,12 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-left-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_caption {
+#lbrxjvwvpz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rwwcyhmnna .gt_title {
+#lbrxjvwvpz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5597,7 +5278,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-bottom-width: 0;
 }
 
-#rwwcyhmnna .gt_subtitle {
+#lbrxjvwvpz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5609,7 +5290,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-top-width: 0;
 }
 
-#rwwcyhmnna .gt_heading {
+#lbrxjvwvpz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5621,13 +5302,13 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-right-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_bottom_border {
+#lbrxjvwvpz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_col_headings {
+#lbrxjvwvpz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5642,7 +5323,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-right-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_col_heading {
+#lbrxjvwvpz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5662,7 +5343,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   overflow-x: hidden;
 }
 
-#rwwcyhmnna .gt_column_spanner_outer {
+#lbrxjvwvpz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5674,15 +5355,15 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   padding-right: 4px;
 }
 
-#rwwcyhmnna .gt_column_spanner_outer:first-child {
+#lbrxjvwvpz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rwwcyhmnna .gt_column_spanner_outer:last-child {
+#lbrxjvwvpz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rwwcyhmnna .gt_column_spanner {
+#lbrxjvwvpz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5694,11 +5375,11 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   width: 100%;
 }
 
-#rwwcyhmnna .gt_spanner_row {
+#lbrxjvwvpz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rwwcyhmnna .gt_group_heading {
+#lbrxjvwvpz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5724,7 +5405,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   text-align: left;
 }
 
-#rwwcyhmnna .gt_empty_group_heading {
+#lbrxjvwvpz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5739,15 +5420,15 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   vertical-align: middle;
 }
 
-#rwwcyhmnna .gt_from_md > :first-child {
+#lbrxjvwvpz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rwwcyhmnna .gt_from_md > :last-child {
+#lbrxjvwvpz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rwwcyhmnna .gt_row {
+#lbrxjvwvpz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5766,7 +5447,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   overflow-x: hidden;
 }
 
-#rwwcyhmnna .gt_stub {
+#lbrxjvwvpz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5779,7 +5460,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   padding-right: 5px;
 }
 
-#rwwcyhmnna .gt_stub_row_group {
+#lbrxjvwvpz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5793,15 +5474,15 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   vertical-align: top;
 }
 
-#rwwcyhmnna .gt_row_group_first td {
+#lbrxjvwvpz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rwwcyhmnna .gt_row_group_first th {
+#lbrxjvwvpz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rwwcyhmnna .gt_summary_row {
+#lbrxjvwvpz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5811,16 +5492,16 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   padding-right: 5px;
 }
 
-#rwwcyhmnna .gt_first_summary_row {
+#lbrxjvwvpz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_first_summary_row.thick {
+#lbrxjvwvpz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rwwcyhmnna .gt_last_summary_row {
+#lbrxjvwvpz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5830,7 +5511,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-bottom-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_grand_summary_row {
+#lbrxjvwvpz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5840,7 +5521,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   padding-right: 5px;
 }
 
-#rwwcyhmnna .gt_first_grand_summary_row {
+#lbrxjvwvpz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5850,7 +5531,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-top-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_last_grand_summary_row_top {
+#lbrxjvwvpz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5860,11 +5541,11 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-bottom-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_striped {
+#lbrxjvwvpz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rwwcyhmnna .gt_table_body {
+#lbrxjvwvpz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5873,7 +5554,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-bottom-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_footnotes {
+#lbrxjvwvpz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5887,7 +5568,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-right-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_footnote {
+#lbrxjvwvpz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5896,7 +5577,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   padding-right: 5px;
 }
 
-#rwwcyhmnna .gt_sourcenotes {
+#lbrxjvwvpz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5910,7 +5591,7 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   border-right-color: #D3D3D3;
 }
 
-#rwwcyhmnna .gt_sourcenote {
+#lbrxjvwvpz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5918,72 +5599,72 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
   padding-right: 5px;
 }
 
-#rwwcyhmnna .gt_left {
+#lbrxjvwvpz .gt_left {
   text-align: left;
 }
 
-#rwwcyhmnna .gt_center {
+#lbrxjvwvpz .gt_center {
   text-align: center;
 }
 
-#rwwcyhmnna .gt_right {
+#lbrxjvwvpz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rwwcyhmnna .gt_font_normal {
+#lbrxjvwvpz .gt_font_normal {
   font-weight: normal;
 }
 
-#rwwcyhmnna .gt_font_bold {
+#lbrxjvwvpz .gt_font_bold {
   font-weight: bold;
 }
 
-#rwwcyhmnna .gt_font_italic {
+#lbrxjvwvpz .gt_font_italic {
   font-style: italic;
 }
 
-#rwwcyhmnna .gt_super {
+#lbrxjvwvpz .gt_super {
   font-size: 65%;
 }
 
-#rwwcyhmnna .gt_footnote_marks {
+#lbrxjvwvpz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rwwcyhmnna .gt_asterisk {
+#lbrxjvwvpz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rwwcyhmnna .gt_indent_1 {
+#lbrxjvwvpz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rwwcyhmnna .gt_indent_2 {
+#lbrxjvwvpz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rwwcyhmnna .gt_indent_3 {
+#lbrxjvwvpz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rwwcyhmnna .gt_indent_4 {
+#lbrxjvwvpz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rwwcyhmnna .gt_indent_5 {
+#lbrxjvwvpz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rwwcyhmnna .katex-display {
+#lbrxjvwvpz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rwwcyhmnna div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lbrxjvwvpz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6006,13 +5687,13 @@ Table&nbsp;5.9: Spatial Autocorrelation Diagnostics
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Test">LM-lag (standard)</td>
-<td class="gt_row gt_right" headers="Statistic">-</td>
+<td class="gt_row gt_right" headers="Statistic">616.2</td>
 <td class="gt_row gt_left" headers="p_value">&lt; 0.001</td>
 <td class="gt_row gt_left" headers="Interpretation">Spatial lag process significant before conditioning</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Test">LM-error (standard)</td>
-<td class="gt_row gt_right" headers="Statistic">-</td>
+<td class="gt_row gt_right" headers="Statistic">271.6</td>
 <td class="gt_row gt_left" headers="p_value">&lt; 0.001</td>
 <td class="gt_row gt_left" headers="Interpretation">Spatial error process significant before conditioning</td>
 </tr>
@@ -6111,6 +5792,9 @@ Pinheiro, Cristina. 2025. <span>“Relatedness and Economic Complexity as Tools 
 </div>
 <div id="ref-quatraro2010" class="csl-entry" role="listitem">
 Quatraro, Francesco. 2010. <span>“Knowledge Coherence, Variety and Economic Growth: Manufacturing Evidence from Italian Regions.”</span> <em>Research Policy</em> 39 (10): 1289–1302.
+</div>
+<div id="ref-straccamore2025comparative" class="csl-entry" role="listitem">
+Straccamore, Matteo, Matteo Bruno, and Andrea Tacchella. 2025. <span>“Comparative Analysis of Technological Fitness and Coherence at Different Geographical Scales.”</span> <em>PLoS One</em> 20 (8): e0329746.
 </div>
 <div id="ref-szerb2013regional" class="csl-entry" role="listitem">
 Szerb, Laszlo, Zoltán Ács, Erkko Autio, Raquel Ortega-Argiles, and Eva Komlosi. 2013. <span>“The Regional Entrepreneurship and Development Index–Measuring Regional Entrepreneurship.”</span>

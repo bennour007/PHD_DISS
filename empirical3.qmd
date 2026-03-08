@@ -27,113 +27,105 @@ To explore this question within the framework of this work, we provide two compl
 
 ## Research Desgin
 
-The guiding research question is whether and how regional portfolio structure
-mediates the relationship between a technology's position in the knowledge network
-and the feasibility of diversification. This decomposes into four testable claims.
 
-- H1 (Benchmark): Regional Technological Potential predicts technology entry better than
-relatedness density. The literature has established relatedness density as a robust
-predictor of entry [@hidalgo2009building; @neffke2011how]. We test whether our capability-based potential measure subsumes, supplements, or displaces this predictive power. This hypothesis is not causal; it is a precision benchmark that motivates the subsequent decomposition.
 
-- H2 (Portfolio–network interaction): The effect of a technology's position in the
-FITS network on its feasibility is moderated by the alignment between that
-technology and the regional portfolio. This is the core theoretical claim of the
-chapter. It draws on two complementary mechanisms: (a) the recombination
-logic common to evolutionary economic geography, which holds that regions
-enter new activities by recombining existing capabilities [@frenken2007theoretical; @antonietti2021going]. And (b) the differential value of network links depending on
-whether the focal activity is related or unrelated to the regional base. On this
-second point, @zhu2021strong show that unrelated industries -- those
-peripheral to the regional portfolio -- perform better when they can access a small
-number of strong links rather than a diffuse network of weak connections, because
-strong links provide efficient, predictable knowledge transfer under conditions of
-high uncertainty. We apply an analogous logic at the technology level: a bridging
-technology (high betweenness) provides a strong, concentrated link between the
-region's existing portfolio and a new domain, and we expect this link to be most
-valuable precisely for regions whose portfolios are *not* yet well-aligned with the
-target -- the asymmetric moderation that constitutes H2b.
+The guiding research question is what conditions determine the feasibility of regional technological diversification, and how do technology-specific characteristics, portfolio alignment, national ecosystem structure, and spatial interdependence jointly shape that feasibility. This decomposes into five testable claims, detailed below and summarised in @tbl-hypo.
 
-- H2 (Portfolio–network interaction): The effect of a technology’s position in the FITS network on feasibility is moderated by portfolio alignment (coherence).
-This is the core structural claim. It draws on the recombination logic in evolutionary economic geography: regions diversify by recombining existing capabilities, and feasibility depends on whether the regional portfolio provides the relevant interfaces and complementarities needed to support entry [@frenken2007theoretical; @boschma2017relatedness]. Relatedness therefore captures an important but incomplete place-dependent dimension of diversification [@antonietti2021going]. FITS extends this logic by distinguishing where a technology sits in the directed capability space--i.e., what kinds of capability pathways it opens or requires--while coherence captures the alignment/consistency of the regional portfolio as a capability system.
+**H1 (Benchmark):** Regional technological potential is at least as informative as relatedness density in predicting technology entry. The literature has established relatedness density as a robust predictor of entry [@hidalgo2009building; @neffke2011how]. We test whether our capability-based potential measure subsumes, supplements, or displaces this predictive power. This is not a causal claim; it is a precision benchmark that validates the methodological contribution and motivates the subsequent decomposition.
 
-We structure H2 around two archetypal network roles that imply different alignment requirements following @antonietti2021going and @montresor2017regional:
+**H2 (Technology characteristics):** Technologies occupy structurally distinct positions in the directed capability network, and these positions predict how feasible it is for regions to diversify into them. We distinguish two archetypal roles following @antonietti2021going and @montresor2017regional. First, technologies with high betweenness centrality act as bridges between otherwise distant capability domains, connecting clusters and enabling recombination across areas of the network. Second, technologies with high eigenvector centrality occupy authority-like positions, being well connected to other well-connected technologies, and represent capability-dense domains whose entry tends to require broader complementary competence. We therefore test two sub-claims:
 
-  - Key Enabling Technologies-KET (eigenvector centrality): Technologies that occupy authority-like positions--highly connected to other well-connected technologies--represent capability-dense domains that tend to require broad, complementary competence. In our interpretation, eigenvector centrality captures this KET-like “deep capability” character: these technologies sit in the structural core and are entangled in many interdependencies. Entry should therefore be more feasible when the regional portfolio is coherent and aligned with the relevant capability bundle.
+- **H2a (Bridging role):** Technologies with a bridging role are positively associated with regional technological potential, meaning that bridge technologies represent more accessible diversification pathways for regions.
 
-  - General Purpose Technologies-GPT (betweenness centrality): Technologies with high betweenness sit on many shortest directed paths and act as stepping stones between otherwise distant domains. In our interpretation, betweenness captures GPT-like “bridging capability” roles: cross-cutting technologies that connect clusters and enable recombination across domains. Their value as entry points should be less dependent on prior alignment, because their function is precisely to provide a pathway into adjacent capability space.
-  
-We therefore test the following sub-claims:
+- **H2b (Enabling role):** Technologies with an enabling role are negatively associated with regional technological potential, meaning that foundational technologies represent structurally more difficult diversification targets.
 
-  - H2a (Alignment): Coherence positively predicts potential. More coherent portfolios provide complementary infrastructures that reduce feasibility barriers for entry.
-  
-  - H2b (GPT-like moderation): The positive association between betweenness centrality and potential is weaker under high coherence (or equivalently, stronger when coherence is lower). Bridge/GPT-like technologies should matter most when direct alignment is limited, because they provide targeted pathways into new capability domains.
-  
-  - H2c (KET-like moderation): The association between eigenvector centrality and potential is more sensitive to coherence than the betweenness effect. If eigenvector-central technologies reflect KET-like capability cores, then feasibility should increase disproportionately with portfolio alignment, because entry requires a coherent and complementary base.
-  
-  - H2d (Distance): Topological distance from the regional frontier compounds feasibility barriers. Where a region must traverse more directed capability steps in FITS to reach a target technology, feasibility should decline, and this effect may be especially pronounced for core/KET-like targets.
-  
-- H3 (National ecosystem): National entrepreneurial ecosystem characteristics shape regional technological potential beyond dyadic portfolio mechanisms.
-Relatedness and portfolio configuration describe endogenous opportunity structure, but capability mobilisation depends on enabling conditions--finance, competition, innovation capacity, and institutional bottlenecks--that operate at least partly at the national level [@acs2014national; @pinheiro2025]. We therefore test whether national ecosystem measures explain variation in regional potential after accounting for portfolio structure and technology-network mechanisms.
+**H3 (Portfolio alignment):** The value of a technology's structural position may depend on whether the region's portfolio is aligned with the capability demands that position implies. This draws on the recombination logic in evolutionary economic geography, which holds that regions diversify by recombining existing capabilities, and that feasibility depends on whether the regional portfolio provides the relevant interfaces needed to support entry [@frenken2007theoretical; @boschma2017relatedness]. Relatedness captures an important but incomplete dimension of this [@antonietti2021going]. Our coherence measure extends this logic by capturing the alignment between a technology's position in the directed capability space and the region's industrial structure. We test whether this alignment moderates the relationship between network position and potential, and whether this moderation operates differently for bridging and enabling technologies, through three sub-claims:
 
-- H4 (Spatial dependence): Regional potential exhibits positive spatial dependence beyond what regional characteristics explain.
-If high-potential regions systematically neighbour other high-potential regions after conditioning on observed portfolio and institutional characteristics, this indicates genuine interregional interdependence--knowledge spillovers, demonstration effects, or co-development of capabilities across borders--rather than merely correlated endowments [@boschma2009related]. We test this by moving from dyadic modelling to region-level panels that can accommodate spatial dependence in feasibility.
+- **H3a (Alignment main effect):** Regions with more coherent portfolios have higher regional technological potential, meaning that portfolio alignment reduces feasibility barriers across the technology space.
 
+- **H3b (Bridging moderation):** Technologies with a bridging role are more beneficial for regions with low coherence than for regions with high coherence, meaning that bridge technologies matter most as diversification pathways when direct alignment is limited [@zhu2021strong].
+
+- **H3c (Enabling moderation):** Technologies with an enabling role are more beneficial for regions with high  coherence than for regions with low coherence, meaning that enabling technologies matter most as upgrading pathways when direct alignment is high.
+
+**H4 (National ecosystem):** National entrepreneurial ecosystem characteristics shape regional technological potential beyond what dyadic portfolio and network mechanisms account for. Portfolio configuration describes the endogenous opportunity structure of a region, but whether those opportunities are realised depends partly on enabling conditions that operate at the national level, including finance, competition, innovation capacity, and institutional characteristics [@acs2014national; @pinheiro2025]. We test whether national ecosystem measures explain variation in regional potential after accounting for portfolio structure and technology network mechanisms. Effects are expected to be heterogeneous across ecosystem dimensions.
+
+**H5 (Spatial structure):** Moving from the technology-region dyad to the regional portfolio as a whole, we ask whether the aggregate composition of a region's portfolio predicts average regional potential, and whether this relationship is spatially interdependent. If high-potential regions systematically neighbour other high-potential regions after conditioning on observed portfolio characteristics, this indicates genuine interregional interdependence rather than merely correlated endowments [@boschma2009related]. We test this through three sub-claims:
+
+- **H5a (Spatial dependence):** Regions with higher average potential tend to neighbour other high-potential regions, meaning that regional feasibility landscapes are spatially interdependent rather than locally contained.
+
+- **H5b (Bridging portfolio):** Regions with portfolios concentrated in bridging technologies have higher average potential when their aggregate portfolio coherence is sufficient, meaning that the portfolio-level value of bridging technologies depends on whether the aggregate industrial alignment supports them.
+
+- **H5c (Enabling portfolio):** Regions with portfolios concentrated in enabling technologies have higher average potential, meaning that foundational technology endowments are a structural portfolio-level advantage, amplified further by coherence.
+
+
+
+## Data
+
+We use data very similar to many studies discussed in the literature review, namely the European patent applications from the EPO/PATSTAT database, covering 641 technologies (4-digit IPC classes) across 345 NUTS2 regions in 30 European countries over 11 years (2008–2018). The dyadic models (H1–H4) use approximately 1.9 million technology–region–year observations. The spatial models
+(H5) aggregate to approximately 3,200  observations. Patent data serve as a standard proxy for regional knowledge production and technological specialisation. We briefly described in the previous chapter how we use this data to construct our training strategy and build our empirical constructs (Regional Technological Potential, and the Feature Importance Technology Space (FITS)). In here we take this a step further and describe in more details the other variables we use in our design.
 
 ```{r tbl-hypo}
 #| tbl-cap: "Hypotheses, Variables, and Empirical Tests"
 
 hypotheses <- tibble(
-  Hypothesis = c("H1", "H2a", "H2b", "H2c", "H2d", "H3", "H4"),
+  Hypothesis = c("H1", "H2a", "H2b", "H3a", "H3b", "H3c", "H4", "H5a", "H5b", "H5c"),
   Claim = c(
-    "Potential outperforms relatedness density in predicting entry",
+    "Potential is at least as informative as relatedness density in predicting entry",
+    "Technologies with a bridging role are positively associated with potential",
+    "Technologies with an enabling role are negatively associated with potential",
     "Coherence positively predicts potential",
-    "Betweenness benefit stronger for low-coherence regions",
-    "Eigenvector penalty independent of coherence",
-    "Distance compounds eigenvector difficulty",
-    "National ecosystem shapes potential beyond dyadic mechanisms",
-    "Positive spatial dependence in regional potential"
+    "Bridging technologies are more beneficial for low-coherence regions",
+    "The enabling technology penalty is smaller for high-coherence regions",
+    "National ecosystem characteristics shape potential beyond portfolio mechanisms",
+    "Regional potential is spatially interdependent across neighbouring regions",
+    "Bridging portfolio concentration predicts higher potential under sufficient coherence",
+    "Enabling portfolio concentration is positively associated with potential"
   ),
   Key_variables = c(
     "pred11 vs relatedness_density",
+    "betweenness",
+    "eigenvector",
     "coherence",
     "betweenness x coherence",
     "eigenvector x coherence",
-    "rawdist x eigenvector",
     "GEI pillars x8-x14",
-    "Spatial lag  (SAR)"
+    "Spatial lag (SAR)",
+    "avg_betweenness x avg_coherence",
+    "avg_eigenvector x avg_coherence"
+  ),
+  Model = c(
+    "Model 0",
+    "Model 1",
+    "Model 1",
+    "Model 1",
+    "Model 1",
+    "Model 1",
+    "Model 2",
+    "Model 3",
+    "Model 3",
+    "Model 3"
   )
 )
 
 hypotheses |>
   gt() |>
-  # tab_header(
-  #   title = ""
-  # ) |>
   cols_label(
-    Hypothesis  = "Hypothesis",
-    Claim       = "Claim",
-    Key_variables = "Key variables"
+    Hypothesis    = "Hypothesis",
+    Claim         = "Claim",
+    Key_variables = "Key variables",
+    Model         = "Model"
   ) |>
   cols_width(
     Hypothesis    ~ px(90),
-    Claim         ~ px(310),
-    Key_variables ~ px(200)
+    Claim         ~ px(280),
+    Key_variables ~ px(180),
+    Model         ~ px(80)
   ) |>
   tab_source_note(
-    "Note: H2a-H2d are all estimated in the dyadic fixed effects framework (Models 1-3). 
-     FE = two-way fixed effects (region + year); RE = hierarchical random effects 
-     (regions nested within countries); SAR = spatial autoregressive panel model."
+    "Note: Model 0 is the entry benchmark (LPM). Models 1 and 2 are dyadic fixed effects and hierarchical random effects respectively. Model 3 is the spatial autoregressive (SAR) panel estimated on region-year aggregates."
   )
 ```
 
-
-## Data
-
-We use data very similar to many studies discussed in the literature review, namely the European patent applications from the EPO/PATSTAT database,
-covering 641 technologies (4-digit IPC classes) across 345 NUTS2 regions in 30
-European countries over 11 years (2008–2018). The dyadic models (H1–H3) use
-approximately 1.9 million technology–region–year observations. The spatial models
-(H4) aggregate to approximately 3,200  observations. Patent data serve
-as a standard proxy for regional knowledge production and technological specialisation. We briefly described in the previous chapter how we use this data to construct our training strategy and build our empirical constructs (Regional Technological Potential, and the Feature Importance Technology Space (FITS)). In here we take this a step further and describe in more details the other variables we use in our design.
 
 
 
@@ -192,7 +184,7 @@ map_avg_pred1 +
 
 ### Technology–Region Level (Dyadic) Variables
 
-**Coherence** ($\text{coherence}_{r,t,y}$) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embededdness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embededdness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base [@teece1994understanding; @nesta2005; @quatraro2010; @pugliese2019coherent; @straccamore2025fitnesscoherence]. 
+**Coherence** ($\text{coherence}_{r,t,y}$) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embededdness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embededdness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base [@teece1994understanding; @nesta2005; @quatraro2010; @pugliese2019coherent; @straccamore2025comparative]. 
 
 ```{r fig-map-coherence, echo=FALSE}
 #| fig-width: 8
@@ -233,22 +225,27 @@ map_coherence +
 
 ### Technology Level Variables
 
-Betweenness centrality^1 ($\text{betweenness}_t$) measures how frequently a technology lies on shortest directed paths between other technologies. High-betweenness technologies act as bridges between otherwise separated domains of knowledge. In our interpretation, this is the structural analogue of GPT-like enabling roles where technologies that facilitate transitions across domains serve as an intermediary [@antonietti2021going].
+Betweenness centrality^[the FITS network is directed, in earlier iterations explored HITS authority and hub scores separately but because HITS scores and betweenness are correlated we decided to use eigenvector centrality in the final specification.] ($\text{betweenness}_t$) measures how frequently a technology lies on shortest directed paths between other technologies. High-betweenness technologies act as bridges between otherwise separated domains of knowledge. In our interpretation, this is the structural analogue of GPT-like enabling roles where technologies that facilitate transitions across domains serve as an intermediary [@antonietti2021going].
 
 Eigenvector centrality ($\text{eigenvector}_t$) measures how strongly connected a technology is to other highly connected technologies. The idea is to capture authoritative positions in the capability system. In our interpretation, this corresponds to KET-like roles capability-dense, strongly interdependent domains whose entry tends to require broader complementary competence rather than a single bridge.
 
-1^[the FITS network is directed, in earlier iterations explored HITS authority and hub scores separately but because HITS scores and betweenness are correlated we decided to use eigenvector centrality in the final specification.]
+
 
 **Regional complexity** ($\text{reg\_comp}_{r,y}$) and **technology complexity**
 ($\text{tech\_comp}_t$) are included as controls following the economic complexity tradition in which diversity–ubiquity patterns proxy underlying capability endowments [@hidalgohausmann2009]. This mirrors the rationale for including regional complexity controls in related European diversification work [@antonietti2021going].
 
 
 ```{r tbl-desc-lr}
+#| tbl-cap: "Summary statistics of the Dyad level data"
 summary_lr <- targets::tar_read(
     summary_lr, store = here::here("../../_targets_DES")
 )
 
-summary_lr
+summary_lr %>%
+  gt::cols_label("Missing Pct." = "NA")
+
+
+  
 
 ```
 
@@ -256,9 +253,10 @@ summary_lr
 ::: {.landscape}
 
 ```{r tbl-corr-dyadic, echo=FALSE}
+#| tbl-cap: "Correlation matrix of the Dyad level data"
 corr_matrix_disagg <- targets::tar_read(corr_matrix_disagg, store = here::here("../../_targets_DES"))
 
-corr_matrix_disagg %>% 
+corr_matrix_disagg %>%
   cols_label_with(columns = everything(), fn = function(x) "")
 ```
 
@@ -267,13 +265,14 @@ corr_matrix_disagg %>%
 
 ### National Level Variables: GEI Pillars
 
-To test H3, which assumes that national entrepreneurial ecosystem characteristics contribute to regional potential, we incorporate seven pillars from the Global Entrepreneurship Index (GEI). The GEI decomposes national ecosystem characteristics into fourteen that account for individual attitudes, systemic capabilities, and aspirational orientations [@acs2014national].
+To test H4, which assumes that national entrepreneurial ecosystem characteristics contribute to regional potential, we incorporate seven pillars from the Global Entrepreneurship Index (GEI). The GEI decomposes national ecosystem characteristics into fourteen that account for individual attitudes, systemic capabilities, and aspirational orientations [@acs2014national].
 
 For the purposes of this work, we retain pillars x8–x14. The reason here is two folds, first  pillars x1-x6 capture individual-level entrepreneurial attitudes^[opportunity perception, startup skills, risk acceptance, networking, cultural support, opportunity startup] and mostly reflect social preferences of the entrepreneurial ecosystem and not the institutional landscape.
 
 ::: {.landscape}
 
 ```{r tbl-corr-ecosystem, echo=FALSE}
+#| tbl-cap: "Correlation matrix of the GEI pillars"
 corr_matrix_disag_c <- targets::tar_read(corr_matrix_disag_c, store = here::here("../../_targets_DES"))
 
 corr_matrix_disag_c %>% 
@@ -338,18 +337,18 @@ gei_pillars |>
   
 ```
 
-Because GEI pillars are measured at the national level and vary primarily across
-countries rather than within countries over time, they cannot be identified in a
-two-way region-and-year fixed effects specification -- national variation would be
-absorbed by region fixed effects. This is why H3 is tested in two complementary
+Because GEI pillars are measured at the national level and vary primarily across countries rather than within countries over time, they cannot be identified in a
+two-way region-and-year fixed effects specification -- national variation would be absorbed by region fixed effects. This is why H3 is tested in two complementary
 ways: (i) in fixed effects models, and (ii) in hierarchical random effects models where are regions nested within countries, where GEI variables operate at the country level as intended.
 
 ```{r tbl-desc-lrc}
+#| tbl-cap: "Descriptive statistics of the GEI pillars"
 summary_lr_country <- targets::tar_read(
     summary_lr_country, store = here::here("../../_targets_DES")
 )
 
-summary_lr_country
+summary_lr_country %>%
+  gt::cols_label("Missing Pct." = "NA")
 
 ```
 
@@ -359,19 +358,21 @@ For the spatial panel (H4),  we aggregate the dyadic variables to region–year 
 
 
 ```{r tbl-desc-panel}
-
+#| tbl-cap: "Descriptive statistics of the aggregated varaibles"
 summary_panel <- targets::tar_read(
     summary_panel, store = here::here("../../_targets_DES")
 )
 
 
-summary_panel
+summary_panel %>%
+  gt::cols_label("Missing Pct." = "NA")
 
 ```
 
-::: {.landscape}
+
 
 ```{r tbl-corr-regional, echo=FALSE}
+#| tbl-cap: "Correlation matrix of the aggregated varaibles"
 corr_matrix_agg <- targets::tar_read(corr_matrix_agg, store = here::here("../../_targets_DES"))
 
 corr_matrix_agg %>% 
@@ -386,7 +387,7 @@ corr_matrix_agg %>%
   # )
 ```
 
-::: 
+
 
 
 ## Model 0: Entry Benchmark
@@ -473,7 +474,7 @@ map_bet <- targets::tar_read(map_bet, store = here::here("../../_targets_DES"))
 
 map_bet +
   scale_fill_viridis_c(
-    limits = c(0.002, 0.0055), 
+    limits = c(-0.5, 0.55),
     oob = scales::squish,  
     # trans = scales::transform_log1p(),
     option = "plasma",
@@ -568,7 +569,7 @@ map_count +
 ```{r fig-map-avg-comp, echo=FALSE}
 #| fig-width: 8
 #| fig-height: 9
-#| out-width: "90%"
+#| out-width: "100%"
 #| fig-dpi: 150
 #| fig-cap: "Geographic Distribution of Regional Complexity Across European NUTS2 Regions (2008 vs 2018)"
 #| fig-subcap: "This map displays the geographic distribution of regional complexity. This is a measure of the sophistication and diversity of regional technological portfolios-across 345 European NUTS2 regions. Values are standardized and capped at 2 standard deviations to highlight variation within the core distribution. The pattern reveals a clear core-periphery divide between European regions"
@@ -641,7 +642,7 @@ spatial_diag <- tibble(
     "Robust LM-lag",
     "Robust LM-error"
   ),
-  Statistic = c("0.44-0.51", "-", "-", "350.4", "4.1"),
+  Statistic = c("0.44-0.51", "616.2", "271.6", "350.4", "4.1"),
   p_value = c("< 0.001", "< 0.001", "< 0.001", "< 0.001", "0.042"),
   Interpretation = c(
     "Strong positive spatial autocorrelation in regional potential",

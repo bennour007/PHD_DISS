@@ -12,13 +12,15 @@ Our approach is a response to the nuances expressed in the literature. But in or
 
 We consider the following sets:
 
--   $\mathcal{T} = \{t_i\}_{i=1}^{N_T}$: set of technologies
--   $\mathcal{R} = \{r_i\}_{i=1}^{N_R}$: set of regions\
--   $\mathcal{Y} = \{y_i\}_{i=1}^{N_Y}$: set of years
--   $\mathcal{C} = \{c_i\}_{i=1}^{N_C}$: set of technology categories
--   $\mathcal{K} = \{\kappa_i\}_{i=1}^{N_K}$: set of countries
+-   $\mathcal{T} = \{\,t : 1 \le t \le N_T\}$: set of technologies
+-   $\mathcal{R} = \{\,r : 1 \le r \le N_R\}$: set of regions
+-   $\mathcal{Y} = \{\,y : 1 \le y \le N_Y\}$: set of years
+-   $\mathcal{C} = \{\,c : 1 \le c \le N_C\}$: set of technology categories^[we refer to categories, domains, industries interchangeably in this work]
+-   $\mathcal{K} = \{\,k : 1 \le k \le N_K\}$: set of countries
 
-These sets are mirrored by the European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter, we also refer to this as categories), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems). We supplement patent data with Eurostat regional socio-economic indicators detailed in subsequent sections.
+where $N_T$, $N_R$, $N_Y$, $N_C$, and $N_K$ denote the total number of technologies, regions, years, technology categories, and countries respectively.
+
+These sets are mirrored by the European Patent Office data (1978-2021) classified at the 4-digit IPC level, yielding 641 distinct technologies across 345 NUTS2 regions in 34 European countries. IPC classifications provide hierarchical structure: section (letter, we also refer to this as categories), class (two digits), subclass (letter). For example, F16H encompasses Section F (Mechanical engineering), Class 16 (engineering elements for mechanical power transmission), and Subclass H (gearing systems).
 
 We quantify regional specialization using the Revealed Comparative Advantage [@balassa1965rca]. Although originally designed for trade data, this metric has been widely adopted in innovation geography literature. Following the nomenclature in @balland2017geography, we refer to it as Revealed Technological Advantage (RTA) in our patent data context. The RTA measures relative specialization, enabling simultaneous capture of expertise depth and portfolio diversity. Despite critiques regarding patent-based applications [@balland2019beyond; @diodato2023economic], RTA aligns with our objective of capturing meaningful technology relationships through machine learning rather than raw co-occurrence. The RTA for region $r$ in technology $t$ during year $y$ is defined as:
 
@@ -188,7 +190,7 @@ The choice of Random Forest over alternatives thus reflects both practical const
 #| out-width: "100%"
 #| fig-dpi: 150
 #| echo: false
-#| fig-cap: "Node correlation: Density vs ML approach"
+#| fig-cap: "Node correlation: Density vs ML approach Tacchella et al. (2023)"
 
 
 knitr::include_graphics("resources/ML_relatedness_tachella2.png")
@@ -271,6 +273,21 @@ Crucially, potential varies across regions for the same technology. Two regions 
 
 Traditional technology networks rely on patent citations or co-occurrence patterns, each with limitations. Citations suffer from examiner additions that may not reflect actual knowledge flows, aggregation from patent-level to technology-level that obscures directionality, and backward-looking orientation that captures historical influence rather than predictive relationships [@fessina2024identifying]. Co-occurrence networks inherit the problems outlined in our critique: symmetry, noise, and linear assumptions.
 
+::: {.landscape}
+
+```{r}
+#| fig-env: "figure"
+#| out-width: "95%"
+#| fig-dpi: 150
+#| echo: false
+#| fig-cap: "FITS Technology Network (based on 2018 patent data)"
+
+
+knitr::include_graphics("resources/technology_network.png")
+
+```
+:::
+
 FITS addresses these by constructing an asymmetric, predictive network from the feature importance scores of our Technological Potential models. Rather than inferring relationships from co-occurrence, FITS extracts directional dependencies revealed by which technologies predict others' future adoption.
 
 Recall that for each technology $i$, we trained a Random Forest model predicting $z_{r,i,y}$ using $\{\text{RTA}_{r,t,y-\delta} : t \neq i\}$ as features. The feature importance $I_i(t)$ quantifies how much technology $t$ contributes to predicting future specialisation in technology $i$ across all regions and time periods.
@@ -290,18 +307,6 @@ ensuring incoming edge weights sum to 1 for each technology. This normalisation 
 
 
 
-```{r}
-#| fig-env: "figure"
-#| out-width: "100%"
-#| fig-dpi: 150
-#| echo: false
-#| fig-cap: "FITS Technology Network (based on 2018 patent data)"
-
-
-knitr::include_graphics("resources/technology_network.png")
-
-```
-
 The defining property of FITS is asymmetry: $W_{t \to i} \neq W_{i \to t}$ in general. This asymmetry captures hierarchical technological dependencies invisible to symmetric measures:
 
 -   $W_{t \to i} \gg W_{i \to t}$: Technology $t$ is a prerequisite or enabler for $i$. Expertise in $t$ predicts future development of $i$, but not vice versa. This pattern identifies foundational technologies and developmental sequences.
@@ -311,6 +316,14 @@ The defining property of FITS is asymmetry: $W_{t \to i} \neq W_{i \to t}$ in ge
 -   $W_{t \to i} \ll W_{i \to t}$: Technology $i$ enables $t$, reversing the hierarchical relationship.
 
 This directional structure reveals technological trajectories: regions can identify which current capabilities open paths toward desired future technologies, and which apparent similarities mask asymmetric dependencies.
+
+
+
+
+
+
+
+
 
 The contrast between co-occurrence relatedness and FITS is sharpest when examining specific technologies. Consider H01L (semiconductors) and D06Q (textile decoration).
 
@@ -330,55 +343,76 @@ Technological Potential provides region-specific feasibility estimates grounded 
 
 ## Coherence: Bridging Technology Networks and Regional Portfolios
 
-Till now we established few points. First, FITS identifies directed technology-to-technology dependencies. And second, Regional Technological Potential quantifies region-specific feasibility of future specialisation. To bridge these two layers of information we introduce here the Coherence measure. Coherence here links these two levels by measuring whether a focal technology’s network profile matches the aggregate network profile of the region’s existing portfolio.
+Till now we established two methodological constructs throughout the previous sections based on our machine learning approach. The first construct is FITS, which is our baseline for identifying directed technology-to-technology dependencies. Analogous to the relatedness approach, we use these dependencies to construct the technology network. The second construct, is Regional Technological Potential, which is our baseline for quantifying region-specific feasibility of future specialisation in a given technology. Similar to FITS, Potential is an analogue to the relatedness density construct. FITS and Potential each target a specific layer of information, the first targets technologies, and the second focuses on region's feasible specialisations. 
 
-This logic follows the core idea in the coherent diversification tradition as established in @teece1994understanding and later in @nesta2005coherence. The argument here is that performance is shaped not only by “how much” an actor does (diversification/variety), but also by how the activities in its portfolio hang together. Regional coherence in this sense is a structured property of the knowledge base, or as we referred to in the introduction as knowledge infrastructure. This logic aligns with recombinant views of innovation in which knowledge advances through combinations among related elements rather than as a homogeneous “stock” input [@quatraro2010]. At the firm level, the same conceptual point is made sharply: two firms with the same number of technological fields can differ substantially depending on whether those fields form a coherent block or scattered knowledge infrastructure, coherence captures that internal structure [@pugliese2019unfoldingunfolding].
+To bridge these two layers of information we introduce here the Coherence measure. Coherence, links these two layers by quantifying the industrial alignment between a specific technology and a region's technological portfolio. In here we consider the first digit of the IPC classification as an industry (eg: semiconductor memories (H10B) belongs to section H, Electricity). To build the coherence measure we first examine industrial embededdness. For a technology in the FITS network this is the (average) strength of it links (incoming and outgoing) with each industry. Essentially, we collapse the hierarchy of each node linked to a specific technology to their respective section numbers and that represents the industrial embeddedness of a given technology to each industry in both directions. For a region, we simply aggregate the industrial embededdness of each technology present in its portfolio, again in both directions. This inform us on how much each technology and each regional portfolio is embedded in each industry for each direction. With that, the challenge becomes how to compare these 4 dimensions? How can we compare the embededdness of a region's portfolio to that of a technology? In this section we formalise the answer to these questions based on our coherence measure.   
 
-### Why we introduce coherence here (and why at IPC-section scale)
 
-A recurring open issue in the literature is that the meaning and effect of coherence depend on scale and context. Recent studies shows that coherence can correlate positively with growth at metropolitan scales but turn negative at larger regional or national scales, consistent with the idea that at broader scales coherence may signal path dependence and lock-in rather than productive focus [@straccamore2025comparative]. This core disagreement with other relevant studies [@quatraro2010; @pugliese2019unfolding] raises another challenge as it creates a practical problem for regional diversification analysis: if coherence behaves differently across scales, we need a measure that keeps coherence informative at the regional level without letting it collapse into a purely macro “lock-in” indicator.
+The logic we just portrayed is not novel as it follows core ideas in the literature first established in @teece1994understanding and later in @nesta2005coherence. This idea of coherent diversification, argues that the performance of a diversification strategy is shaped not only by "how much" or "what" an actor does, but also by how the activities in its portfolio hang together. Regional coherence in this sense is a structured property of the knowledge base, or as we referred to in the introduction as knowledge infrastructure. This logic aligns with recombinant views of innovation, the idea that knowledge advances through combinations among related elements rather than as a homogeneous "stock" input [@quatraro2010]. This was also established at the firm level, two firms with the same number of technological fields can differ substantially depending on whether those fields form a coherent block or scattered knowledge infrastructure, coherence captures that internal structure [@pugliese2019unfolding].
 
-Our solution is to bridge the scale disagreement by measuring coherence for regions at a smaller internal scale: instead of computing coherence as a single region-wide property, we compute coherence within broad technology domains (IPC sections, i.e. 1st digit code). The intuition is simple: regional portfolios can be coherent in some domains and not others, and those within-domain alignments are precisely what should matter for whether a region can realistically leverage a technology’s prerequisites and downstream connections in FITS. This is also consistent with innovation geography’s emphasis on “cognitive proximity” and the idea that relatedness works through structured overlaps in knowledge bases rather than mere activity counts [@neffke2011how; @boschma2015towards].
 
-To illustrate this further, let's consider two regions, both lacking specialization in technology $t$, both having similar potential $p_{r,t,y}$. However, Region A specializes in technologies that are strong predictors of $t$ (strong weighted links), while Region B specializes in technologies unrelated to $t$ in the network (weak weighted links). Coherence captures this difference: if region A has high coherence with $t$ then its portfolio aligns with $t$'s network prerequisites. Similarly region B's portfolio is misaligned with $t$ thus it would have low coherence.
+However, in this context there's recurring open issue in the literature regarding the meaning and effect of coherence. Recent studies shows that coherence can correlate positively with growth at metropolitan scales but turn negative at larger regional or national scales [@straccamore2025comparative]. This means that at broader scales coherence may signal path-dependency and lock-in rather than productive focus. This disagreement with other relevant studies [@quatraro2010; @pugliese2019unfolding] raises another challenge as it creates a practical problem for regional diversification analysis: if coherence behaves differently across scales, we need a measure that keeps coherence informative at the regional level without letting it collapse into a purely macro "lock-in" indicator.
 
-This is directly aligned with the coherent diversification logic: what matters is not only how many technologies a region have, but whether its technology portfolio forms a coherent capability block at industry level around the target technology [@pugliese2019unfolding; @quatraro2010]. The coherence metric also operationalizes the "knowledge coherence" and "cognitive proximity" concepts from innovation literature [@neffke2011how; @boschma2015towards] using our directional network structure. It enables testing whether regional technological potential (predicted feasibility) depends on the alignment in knowledge infrastructure between regional portfolios and technology network positions.
+Our solution is to bridge the scale disagreement by measuring coherence for regions at a smaller internal scale: instead of computing coherence as a single region-wide property, we compute coherence within broad industries (IPC sections, i.e. 1st digit code). The intuition is simple: regional portfolios can be coherent in some industries and not others, and those within-industry alignments are precisely what should matter for whether a region can realistically leverage a technology’s prerequisites and downstream connections in FITS.
 
-For each region $r$, technology $i$, and IPC category $c$, we construct two embededdness vectors capturing $i$'s directional network position and compare them to $r$'s average embededdness for technologies in category $c$.
+To illustrate this further, let's consider two regions, both lacking specialization in technology $t$, both having similar potential $p_{r,t,y}$. However, region A's portfolio is well connected to industries which the target technology $t$ is well connected to. While Region B's portfolio, is well connected to industries that the target technology $t$ is not. Coherence captures this difference, region A should have high coherence with technology $t$ because of the structural knowledge infrastructure in A and $t$ align. Whereas region B would have low coherence with $t$ because of the mismatch in their respective knowledge infrastructure. 
 
-**Technology embededness** (individual technology $i$):
 
--   Incoming: $\text{embcat\_to}_{i,c} = \frac{\sum_{t \in c} W_{t \to i}}{|\{t \in c : W_{t \to i} > 0\}|}$ (average FITS weight from category $c$ to technology $i$)
--   Outgoing: $\text{embcat\_from}_{i,c} = \frac{\sum_{t' \in c} W_{i \to t'}}{|\{t' \in c : W_{i \to t'} > 0\}|}$ (average FITS weight from technology $i$ to category $c$)
+In this sense, the coherence metric we propose here operationalizes the "knowledge coherence" and "cognitive proximity" concepts from innovation literature [@neffke2011how; @boschma2015towards], and adds an extra layer of context in the information it captures by leveraging our directional network structure. With this in mind, we use this metric to test whether regional technological potential (predicted feasibility) depends on the alignment in knowledge infrastructure between regional portfolios and technologies.
 
-**Regional average embededness** (region $r$, category $c$):
 
--   Incoming: $\overline{\text{embcat\_to}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_to}_{t,c}$ where $S_{r,c} = \{t \in c : \text{RTA}_{r,t,y} \geq 1\}$
--   Outgoing: $\overline{\text{embcat\_from}}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t \in S_{r,c}} \text{embcat\_from}_{t,c}$
+To formalise our proposed metric, let $t \in \mathcal{T}$ denote the target technology, $r \in \mathcal{R}$ the region, and $c \in \mathcal{C}$ an IPC section (first digit). FITS weights $W_{t \to t'}$ are as defined in the FITS section. We use $t'$ to index technologies distinct from $t$ throughout. For each region $r$, technology $t$, and IPC category/industry $c$, we construct two embededdness vectors.
 
-**Coherence** is the cosine similarity between technology $i$'s directional embededness and region $r$'s average directional embededness for all categories.
+For target technology $t$ and IPC section $c$, the **incoming** and **outgoing** industrial embeddedness measure the average FITS edge weight between $t$ and the technologies belonging to section $c$:
 
-$$
-\text{Coherence}_{r,i} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}
-$$
+$$E^{\leftarrow}_{t,c} = \frac{\displaystyle\sum_{t' \in c,\, t' \neq t} W_{t' \to t}}{\displaystyle|\{t' \in c : W_{t' \to t} > 0\}|}$$
+
+$$E^{\rightarrow}_{t,c} = \frac{\displaystyle\sum_{t' \in c,\, t' \neq t} W_{t \to t'}}{\displaystyle|\{t' \in c : W_{t \to t'} > 0\}|}$$
+
+where $E^{\leftarrow}_{t,c}$ captures how strongly technologies in section $c$ predict future specialisation in $t$, and $E^{\rightarrow}_{t,c}$ captures how strongly $t$ predicts future specialisation in technologies belonging to section $c$. If no technology in section $c$ connects to $t$ in either direction, the corresponding scalar is set to zero. Since FITS weights are non-negative by construction, all embeddedness scalars satisfy $E^{\leftarrow}_{t,c}, E^{\rightarrow}_{t,c} \geq 0$.
+
+
+
+Further, we define the set of technologies in section $c$ in which region $r$ is specialised:
+
+$$S_{r,c} = \{t' \in c : \text{RTA}_{r,t'} \geq 1\}$$
+
+The **regional average embeddedness** in section $c$ averages the embeddedness scores of those specialised technologies:
+
+$$E^{*\leftarrow}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t' \in S_{r,c}} E^{\leftarrow}_{t',c}$$
+
+$$E^{*\rightarrow}_{r,c} = \frac{1}{|S_{r,c}|}\sum_{t' \in S_{r,c}} E^{\rightarrow}_{t',c}$$
+
+If $S_{r,c} = \emptyset$, then set $E^{*\leftarrow}_{r,c} = E^{*\rightarrow}_{r,c} = 0$.Meaning that the region has no foothold in section $c$ and therefore no alignment signal in that domain.
+
+The original formula computes cosine similarity between two vectors, each of which **pairs the technology's embeddedness with the region's embeddedness** -- one vector for the incoming direction, one for the outgoing:
+
+$$\text{Coherence}_{r,t} = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\|\mathbf{v}_1\| \cdot \|\mathbf{v}_2\|}$$
 
 where:
 
--   $\mathbf{v}_1 = [\text{embcat\_to}_{i,c}, \overline{\text{embcat\_to}}_{r,c}]$
--   $\mathbf{v}_2 = [\text{embcat\_from}_{i,c}, \overline{\text{embcat\_from}}_{r,c}]$
+$$\mathbf{v}_1 = \left[E^{\leftarrow}_{t,c},\; E^{*\leftarrow}_{r,c}\right]_{c \in \mathcal{C}} \in \mathbb{R}^{2|\mathcal{C}|}_{\geq 0}$$
 
-Conceptually, this is close to how coherent diversification measures compute “how surrounded a technology is” by related portfolio elements, but with two key differences. First, we ground proximity in predictive, directed dependencies (FITS) rather than symmetric co-occurrence similarity. Second, we compute coherence at an internal domain scale (IPC section) to keep the measure meaningful for regional analysis under known scale heterogeneity.
+$$\mathbf{v}_2 = \left[E^{\rightarrow}_{t,c},\; E^{*\rightarrow}_{r,c}\right]_{c \in \mathcal{C}} \in \mathbb{R}^{2|\mathcal{C}|}_{\geq 0}$$
 
-In here, our coherence measure ranges from 0 to 1. In our context, high coherence ($\approx 1$) means that for technology $i$'s embededdness signal in different categories/industries closely matches the average industrial embeddedness of region $r$'s portfolio of technologies. The region's existing capabilities align with the structural prerequisites and consequences of technology $i$. Alternatively, a neutral coherence ($\approx 0$) reflects a misalignment in industrial embededdness between technology $i$'s and the region.
+So $\mathbf{v}_1$ concatenates the incoming embeddedness of technology $t$ and region $r$ for each industry, and $\mathbf{v}_2$ does the same for the outgoing direction. The cosine similarity between them captures how consistently the incoming and outgoing industrial signals align across $t$ and $r$ jointly. Since all entries are non-negative, $\text{Coherence}_{r,t} \in [0,1]$.
 
-Coherence serves two roles in this work. First, as dyadic fit measure: it is a direct indicator of portfolio–technology alignment in a given domain or industry, capturing whether predicted feasibility is supported by an internally coherent knowledge infrastructure. Second, as moderation channel: it allows us to test whether the effect of technology network position (e.g., bridging technologies, enabling technologies) depends on whether regions have the industry-level knowledge infrastructure to exploit those positions. This is an explicitly contextual mechanism that simple diversification counts cannot reveal [@quatraro2010; @boschma2015towards] and aligns with core idea of this work.
+
+
+Conceptually, this is close to how coherent diversification measures compute "how surrounded a technology is" by related portfolio elements, but with two key differences. First, we ground proximity in predictive, directed dependencies (FITS) rather than symmetric co-occurrence similarity. Second, we compute coherence at an internal domain scale (IPC section) to keep the measure meaningful for regional analysis under known scale heterogeneity.
+
+In here, our coherence measure ranges from 0 to 1. In our context, high coherence ($\approx 1$) means that for technology $t$'s embededdness signal in different categories/industries closely matches the average industrial embeddedness of region $r$'s portfolio of technologies. The region's existing industrial capabilities align with the structural industrial prerequisites and consequences of technology $t$. Alternatively, a neutral coherence ($\approx 0$) reflects a misalignment in industrial embededdness between technology $i$'s and the region.
+
+To our aim, coherence serves two roles in this work. First, as dyadic fit measure: it is a direct indicator of portfolio–technology alignment in a given domain or industry. It captures whether predicted feasibility is supported by an internally coherent knowledge infrastructure. Second, as moderation channel: it allows us to test whether the effect of technology network position (e.g., bridging technologies, enabling technologies) depends on whether regions have the industry-level knowledge infrastructure to exploit those positions. This is an explicitly contextual mechanism that simple diversification counts cannot reveal [@quatraro2010; @boschma2015towards] and aligns with the core idea of this work.
 
 ## Summary
 
-Our approach replaces traditional relatedness constructs with machine learning-derived measures that enable contextualized diversification analysis:
+This chapter develops the methodological foundation for contextualised analysis of regional technological diversification. We reconstruct two core constructs from the REC literature and introduce a novel bridging measure.
 
--   **Technological Potential** ($p_{r,t,y}$): Region-specific, non-linear, time-varying probabilities replace linear relatedness density
--   **FITS Network** ($W_{t \to t'}$): Asymmetric, predictive dependencies replace symmetric co-occurrence-based relatedness\
--   **Coherence** ($\text{Coherence}_{r,t,c,y}$): Structural alignment between regional portfolios and technology network positions captures knowledge infrastructure quality
+We open by identifying three compounding structural limitations in the mainstream approach: co-occurrence measures produce noisy estimates when technologies outnumber regions, symmetric normalisation obscures the directional nature of technological dependencies, and linear aggregation of relatedness density discards the combinatorial interactions among capabilities that matter most for distinguishing feasible from infeasible diversification paths.
 
-Together, these measures allow testing how diversification is contingent on regional knowledge infrastructure (RQ2), national ecosystem characteristics (RQ3), and spatial factors (RQ4) in ways that traditional relatedness frameworks cannot—addressing the core problem of contextualizing diversification strategies beyond path dependency identification.
+We respond to these limitations by shifting from descriptive correlation to supervised prediction using Random Forest. By training a separate classifier for each target technology, we derive two novel constructs. We propose **Regional Technological Potential** ($p_{r,t,y}$) as a replacement for relatedness density — a region-specific probability of future specialisation grounded in out-of-sample predictive performance rather than co-occurrence frequencies. We further propose **FITS** to replace symmetric technology networks with a directed, weighted graph that exposes hierarchical relationships, enabling technologies, and developmental sequences invisible to symmetric measures. Through the semiconductor versus textile decoration example, we show concretely how FITS filters noise and reveals asymmetric dependencies that co-occurrence conflates.
+
+We conclude by introducing **Coherence**, a measure we propose to bridge the technology-level information in FITS and the region-level information in Technological Potential. Drawing on the coherent diversification literature, and motivated by evidence that region-wide coherence measures behave inconsistently across spatial scales, we compute Coherence within IPC sections rather than across the full portfolio. We design it to capture whether a region's industrial embeddedness profile -- as revealed by the directional FITS structure -- aligns with the industrial embeddedness profile of a target technology. This makes Coherence both a dyadic fit indicator and a moderation channel: we use it to test whether the effect of a technology's network position on diversification feasibility depends on the quality and structure of the regional knowledge infrastructure.
+
+Together, the three measures we develop operationalise a conceptual shift: from asking *what* a region might diversify into, toward asking *under what structural context* diversification is feasible. This is the core analytical problem we address in the subsequent chapters.

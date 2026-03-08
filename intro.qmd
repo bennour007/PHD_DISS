@@ -31,68 +31,103 @@ These two constructs are used together to predict the probability that a region 
 
 The idea of resilience is not a main focus for the REC literature nor it is ours. However, falling back to this concept allows us to further assess the empirical consequences of the mainstream interpretation of relatedness and relatedness density. The idea is that in order to be resilient to external shocks and subsequent uncertainties diversification is key. But what kind of diversification is required and feasible and how to achieve it is the focus here. The REC literature tells us that the most likely successful diversification strategy is the one that targets related capacity in the regions, often referred to as related variety. However, generalising this recommendation is not that straight forward. Aggregate regional capacities and their national and broader geographic contexts differ significantly. The initial landscape of the regional technological portfolio is detrimental here because this strategy could favour regions with already diverse portfolio but it's questionable that regions with limited portfolios would equally benefit. This is aligned with the concept of path dependency, related variety without context enforces that dependency and locks regions within their limited capacities. This brings us back to the core focus of in this work; context is key. However, context on its own here might not be enough since path dependency of related variety is a direct result of how relatedness and relatedness density is calculated and interpreted. The constructs that enable these measures (co-occurrence and linear aggregation) are the core problem that we're highlighting here. The reason behind this specific focus relied on the implicit assumptions embedded in these methodological constructs. 
 
-Co-occurrence assumes that technologies frequently observed together are likely related. Although this is within the boundaries of common sense, it's highly unlikely that's actually the case. A frequency measure is only informative when we have more observations than items—that is, more geographies than technologies. Almost always, we will have more technologies than geographies, this means that relatedness is at best noisy. Additionally, relatedness as interpreted in the literature quantifies the relationship between pairs of technologies. However, as it stands, there's no differentiation in the direction of that relationship thus, assuming that the relationship between two technologies is symmetrical. Albeit this assumption in itself is not problematic, it exacerbates the linearity issue when we measure relatedness density as we loose information in co-occurrence, symmetry, and linear aggregations. This takes us to the final issue we would like to highlight; relatedness density. Simply put, relatedness density measures the sum of technologies related to a reference technology present in a given region. The implicit assumption in here is that technologies are linked through linear combinations, and those combinations predict the likelihood of successful diversification. However, relatedness density is often interpreted as a value that quantifies the existing requirements a region has relative to a technology, whereas the sum of existing related technologies do not inform us on the actual requirements.
+Co-occurrence assumes that technologies frequently observed together are likely related. Although this is within the boundaries of common sense, it's highly unlikely that's actually the case. A frequency measure is only informative when we have more observations than items--that is, more geographies than technologies. Almost always, we will have more technologies than geographies, this means that relatedness is at best noisy. Additionally, relatedness as interpreted in the literature quantifies the relationship between pairs of technologies. However, as it stands, there's no differentiation in the direction of that relationship thus, assuming that the relationship between two technologies is symmetrical. Albeit this assumption in itself is not problematic, it exacerbates the linearity issue when we measure relatedness density as we loose information in co-occurrence, symmetry, and linear aggregations. This takes us to the final issue we would like to highlight; relatedness density. Simply put, relatedness density measures the sum of technologies related to a reference technology present in a given region. The implicit assumption in here is that technologies are linked through linear combinations, and those combinations predict the likelihood of successful diversification. However, relatedness density is often interpreted as a value that quantifies the existing requirements a region has relative to a technology, whereas the sum of existing related technologies do not inform us on the actual requirements.
 
-In summary, relatedness and relatedness density measures suffer from diverse methodological issues embedded in the implicit assumptions in their core constructs. Co-occurrence and linear aggregation of observed frequency are misinterpreted, accrues information loss, and poorly handles the granular data often used. This means that the empirical and methodological work ahead must account for these issues to further contextualise the study of diversification strategies. 
+In summary, relatedness and relatedness density measures suffer from diverse methodological issues embedded in the implicit assumptions in their core constructs. Co-occurrence and linear aggregation of observed frequencies are misinterpreted, accrues information loss, and poorly handles the granular data often used. This means that the empirical and methodological work ahead must account for these issues to further contextualise the study of diversification strategies. Our work here is a step in that direction by reforming these constructs in a first methodological phase then use them within a broader empirical application. 
 
 
 ### Research problem
 
-In the light of all the mentioned in this section, we fall back again on the core idea that we started this text with; How can we contextualise diversification strategies? The answer to this question is multi-layered and complex. In this section we started by outlining the importance of diversification strategies for regions into new technologies via patenting activities. We explained that the REC literature provides interesting methodological and conceptual framework of analysis and showed that despite their usefulness they suffer from structural issues that limit the advantages of the used granular data, thus limit the incorporation of a broader context empirically. Essentially, the research problem we focus on here, is both methodological and empirical in nature. We highlighted the structural methodological issues as the research gap which will be the focus of our methodological and empirical contribution. 
+In the light of all the mentioned in this section, we fall back again on the core idea that we started this text with; How can we contextualise diversification strategies? The answer to this question is multi-layered and complex. In this section we started by outlining the importance of diversification strategies for regions into new technologies via patenting activities. We explained that the REC literature provides interesting methodological and conceptual framework of analysis and showed that despite their usefulness they suffer from structural issues that limit the advantages of the used granular data, thus limit the incorporation of a broader context empirically. Essentially, the research problem we focus on here, is both methodological and empirical in nature. We highlighted the structural methodological issues as the research gap which will be the focus of our methodological and empirical contribution.
 
-To address the methodological gaps in REC, we propose a multilayered contextual framework that distinguishes between different contextual factors. Relatedness measures alone conflate these dimensions. By decomposing context into endogenous technology-region fit and exogenous environmental conditions, we can identify which combinations enable successful diversification across different regional contexts, following this design:
 
-Endogenous factors (within-region characteristics):
+To address these methodological gaps, we first reform the measurement foundation itself. Rather than relying on co-occurrence and linear aggregation, we adopt a machine learning framework that treats relatedness as a predictive exercise — producing asymmetric, capability-based measures that preserve the directional dependencies and combinatorial structure that conventional relatedness discards. This reformed foundation yields two core constructs: a regional technological potential measure that replaces relatedness density, and a directed capability network that replaces the conventional technology space. These constructs are richer by construction because they capture what the region's portfolio actually predicts about future specialisation, rather than what it co-occurs with. It is on this reformed foundation that the empirical investigation is built. Rather than asking what relatedness density predicts, we ask what conditions determine the feasibility encoded in regional technological potential. 
 
-- Technology-specific attributes (network position, centrality, embeddedness)
-- Regional knowledge infrastructure (coherence between technology relationships and regional specialization patterns)
-- Regional technological volume (number of patents in a specific technology)
+Moreover, reforming the measurement foundations opens a richer set of empirical questions. Once we can characterise where a technology sits in the directed capability space, a natural question follows: does the value of that position depend on the region's portfolio characteristics? The intuition here is that a region's existing portfolio may be more or less organised around the capability dependencies of a given technology at the industry level. The empirical implication of this industrial alignment is one of the central questions this work investigates. We refer to this alignment as coherence (or knowledge infrastructure), and return to it in detail in the next chapters.
 
-Exogenous factors (beyond-region influences):
+Another point parallel to the above mentioned concerns context beyond technologies and regions. National institutional and market characteristics, mirrored by the entrepreneurial ecosystem are one such context. Whether this context contribute independently to regional diversification feasibility, beyond what portfolio mechanisms already explain, is another question this work investigates.
 
-- National entrepreneurial ecosystem characteristics (institutions, financing, R&D culture)
-- Spatial spillovers from neighbouring regions (outcome diffusion, knowledge flows)
-- Geographic proximity to coherent knowledge clusters
+A final question concerns the geographic context of regions. Even after accounting for technology characteristics, portfolio alignment, and national ecosystem conditions, regions do not operate in isolation. Especially in the context of European regions, (open) borders are merely an administrative construct. Thus the regional spatial dependencies and whether and how they structure regional diversification potential at the portfolio level is the last contextual layer this work investigates.
 
-The interaction between these layers is critical: endogenous capacity determines what a region can develop, while exogenous context shapes realisation possibilities. For instance, a technology may align with regional knowledge infrastructure (endogenous coherence), but without supportive national institutions or proximity to innovative neighbours (exogenous support), entry probability remains low.
+With this in mind, we propose a multilayered contextual framework in which we distinguish between the endogenous (technology-region fit) and exogenous (national, spatial factors) conditions. With that, we can identify which combinations enable feasible diversification across different regional contexts opertionalised through this structured desgin:  
+
+Endogenous factors (within-region):
+
+- Technology-specific network position; whether a technology plays a bridging or enabling role in the directed capability space.
+- Portfolio alignment (coherence); the degree to which a region's industrial structure is organised around that of a given of a given technology.
+
+Exogenous factors (beyond-region):
+
+- National entrepreneurial ecosystem; the institutional and market characteristics that influence diversification feasibility.
+- Spatial portfolio structure; the aggregate technological endowment of a region and its interdependence with neighbouring regions' technological potential. 
 
 
 
 
 ## Objective
 
-The objective from this work is to extend the methodological framework of relatedness starting from the structural issues it suffers from. In order to show how our methodological contribution benefit the study of regional technological diversification we rely on an empirical study that shows how broader context can be included and how such context inform granular policy insights. The broader context we aim to include empirically relied on relaxing the implicit relatedness assumptions, explicitly include the endogenous characteristics of the technologies and regions contingent on the regional knowledge infrastructure while simultaneously account for the characteristics of the national ecosystems. With such an approach we end up accounting for more contextual layers than the mainstream approach. 
-
-## Research questions and hypothesis
+The objective from this work is to extend the methodological framework of relatedness starting from the structural issues it suffers from. In order to show how our methodological contribution benefit the study of regional technological diversification we rely on an empirical study that shows how broader context can be included and how such context inform granular policy insights. The broader context we aim to include empirically relied on relaxing the implicit relatedness assumptions, explicitly include the endogenous characteristics of the technologies and regions contingent on the regional knowledge infrastructure while simultaneously account for the characteristics of the national ecosystems. 
 
 
-**RQ1: How to further contextualise diversification strategy based on the relatedness framework?**
-
-- H1a: Asymmetric relatedness measures better predict technology entry than symmetric measures.
+We organise the empirical investigation around four contextual layers. The first concerns the **technology's structural position** in the capability network, whether a technology plays a bridging or enabling role shapes how feasible it is for a region to diversify into it. The second concerns **portfolio alignment**, whether the region's existing industrial structure is coherent with the target technology's conditions how much value those network positions deliver. The third concerns the **national ecosystem**, institutional and market conditions at the national level may amplify or constrain the feasibility landscape independently of portfolio mechanisms. The fourth concerns **space**, regional potential may not be locally contained, and the aggregate characteristics of a region's portfolio, together with the potential of its neighbours, could structure feasibility at the portfolio level.
 
 
-**RQ2: Is successful diversification contingent on regional knowledge infrastructure?**
 
-- H2a: Technology-specific characteristics impact on diversification is contingent on the regional knowledge coherence.
+## Research Questions and Hypotheses
 
-- H2b: Technology-specific characteristics impact on diversification is contingent on the regional knowledge stock.
+### RQ1: Is regional technological potential a better predictor of technology entry than relatedness density?
 
+Relatedness density is the standard benchmark for assessing diversification feasibility. We test whether our ML-derived potential carries at least as much, and potentially more, predictive information about observed entry, which would justify the subsequent mechanism decomposition.
 
-**RQ3: Does the national ecosystem influence diversification?**
-
-- H3a: National Entrepreneurial Ecosystem characteristics positively affects regional entry into new technologies.
+**H1:** Regional technological potential is at least as informative as relatedness density in predicting technology entry. Potential dominating relatedness density when both are included would indicate that it captures a richer representation of diversification feasibility than the conventional measure.
 
 
-**RQ4: What role does space have? Do neighbouring regions influence diversification?**
 
-- H4a: Spatial spillovers of outcome from neighbouring regions positively affect technology entry.
-- H4b: Neighbouring regions' technological characteristics influence focal region diversification outcomes.
-- H4c: Geographic proximity to regions with coherent knowledge infrastructure increases entry probability.
+### RQ2: How do technology-specific characteristics shape regional technological potential?
+
+Technologies occupy structurally distinct positions in the capability network, bridging and enabling roles imply different relationships to diversification feasibility. We ask whether these structural roles predict how feasible it is for regions to diversify into them.
+
+**H2a:** Technologies with a bridging role are positively associated with regional technological potential, meaning that bridge technologies represent more accessible diversification pathways for regions.
+
+**H2b:** Technologies with an enabling role are negatively associated with regional technological potential, meaning that foundational technologies represent structurally more difficult diversification targets.
+
+
+
+### RQ3: Does industrial alignment condition the influence of technology characteristics on potential?
+
+The value of a technology's structural position may depend on whether the region's portfolio is aligned with the industrial level capabilities that position implies. We ask whether coherence moderates the relationship between network position and potential, and whether this moderation operates differently for bridging and enabling technologies.
+
+**H3a:** Industrial alignment (coherence) between a region and a technology is associated with higher regional technological potential.
+
+**H3b:** Technologies with a bridging role are more beneficial for regions with low  coherence than for regions with high coherence, meaning that bridge technologies matter most as diversification pathways when direct alignment is limited.
+
+**H3c:** Technologies with an enabling role are more beneficial for regions with high  coherence than for regions with low coherence, meaning that enabling technologies matter most as upgrading pathways when direct alignment is high.
+
+
+### RQ4: Do national ecosystem characteristics explain variation in regional technological potential beyond dyadic portfolio mechanisms?
+
+Portfolio configuration describes the endogenous opportunity structure of a region, but whether those opportunities are realised may depend on enabling conditions at the national level. We ask whether national entrepreneurial ecosystem characteristics contribute explanatory power beyond portfolio structure and technology network mechanisms.
+
+ **H4:** National entrepreneurial ecosystem characteristics shape regional technological potential beyond what dyadic portfolio and network mechanisms account for. Meaning that the national institutional and market context is an independent layer of the feasibility landscape. Effects are expected to be heterogeneous across ecosystem dimensions.
+
+
+
+### RQ5: How do aggregate portfolio characteristics and spatial interdependence structure regional potential at the portfolio level?
+
+Moving from the technology–region dyad to the regional portfolio as a whole, we ask whether the aggregate composition of a region's portfolio predicts average regional potential, and whether this relationship operates through spatial interdependence with neighbouring regions.
+
+ **H5a:** Regions with higher average potential tend to neighbour other high-potential regions, meaning that regional feasibility landscapes are spatially interdependent rather than locally contained.
+
+ **H5b:** Regions with portfolios concentrated in bridging technologies have higher average potential when their portfolio coherence is sufficient, meaning that the portfolio-level value of bridging technologies depends on whether the aggregate industrial alignment supports them.
+
+ **H5c:** Regions with portfolios concentrated in enabling technologies have higher average potential, meaning that foundational technology endowments are a structural portfolio-level advantage, amplified further by coherence.
+
+
 
 ## Structure
 
 
-We structure this work around our methodological and empirical contributions. Given the complex nature of the problems we aim to solve, we will first start with more literature context that underlines geography of innovation, and more importantly relatedness and economic complexity literatures. We then outline our approach in the methodology chapter where we discuss in more details measures of relatedness and proximity and provide alternative conceptualisation to modeling the relationships between technologies and regions. In the same chapter we also detail other elements that will be relevant to the empirical part specifically knowledge coherence. 
+We structure this work around our methodological and empirical contributions. Given the complex nature of the problems we aim to solve, we will first start with more literature context that underlines economic geography, geography of innovation, and more importantly relatedness and economic complexity literatures. We then outline our approach in the methodology chapter where we discuss in more details measures of relatedness and proximity and provide alternative conceptualisation to modeling the relationships between technologies and regions. 
 In the empirical chapter we outline the research design and the modeling procedures that implements our methodological contribution. The results chapter outline the results of our work and its empirical consequences and interpretation, which we discuss in more detail in the discussion and conclusion of this work in which we also outline different further extensions and future research directions.  
 
 
