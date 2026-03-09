@@ -39,6 +39,30 @@
         {
             "author": [
                 {
+                    "family": "Perez",
+                    "given": "Carlota"
+                },
+                {
+                    "family": "Soete",
+                    "given": "Luc"
+                }
+            ],
+            "id": "perezsoete1988",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "publisher": "Umweltbundesamt Berlin",
+            "title": "2 1 catching up in technology: Entry barriers and windows of opportunity",
+            "title-short": "2 1 catching up in technology",
+            "type": ""
+        },
+        {
+            "author": [
+                {
                     "family": "Nesta",
                     "given": "Lionel"
                 },
@@ -1286,6 +1310,141 @@
             "title-short": "Absorptive capacity",
             "type": "article-journal",
             "volume": "35"
+        },
+        {
+            "author": [
+                {
+                    "family": "Qian",
+                    "given": "Haifeng"
+                },
+                {
+                    "family": "Acs",
+                    "given": "Zoltan J"
+                },
+                {
+                    "family": "Stough",
+                    "given": "Roger R"
+                }
+            ],
+            "container-title": "Journal of economic geography",
+            "id": "qianacsstough2013",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "559-587",
+            "publisher": "Oxford University Press",
+            "title": "Regional systems of entrepreneurship: The nexus of human capital, knowledge and new firm formation",
+            "title-short": "Regional systems of entrepreneurship",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brown",
+                    "given": "Ross"
+                },
+                {
+                    "family": "Mason",
+                    "given": "Colin"
+                }
+            ],
+            "container-title": "Small business economics",
+            "id": "brownmason2017",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "11-30",
+            "publisher": "Springer",
+            "title": "Looking inside the spiky bits: A critical review and conceptualisation of entrepreneurial ecosystems",
+            "title-short": "Looking inside the spiky bits",
+            "type": "article-journal",
+            "volume": "49"
+        },
+        {
+            "author": [
+                {
+                    "family": "Audretsch",
+                    "given": "David B"
+                }
+            ],
+            "container-title": "Business Horizons",
+            "id": "audretsch2009emergence",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "505-511",
+            "publisher": "Elsevier",
+            "title": "Emergence of the entrepreneurial society",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Audretsch",
+                    "given": "David B"
+                },
+                {
+                    "family": "Belitski",
+                    "given": "Maksim"
+                }
+            ],
+            "container-title": "The Journal of Technology Transfer",
+            "id": "audretsch2017entrepreneurial",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1030-1051",
+            "publisher": "Springer",
+            "title": "Entrepreneurial ecosystems in cities: Establishing the framework conditions",
+            "title-short": "Entrepreneurial ecosystems in cities",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sabatier",
+                    "given": "Paul A"
+                }
+            ],
+            "container-title": "Journal of European public policy",
+            "id": "sabatier1988",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "page": "98-130",
+            "publisher": "Taylor & Francis",
+            "title": "The advocacy coalition framework: Revisions and relevance for europe",
+            "title-short": "The advocacy coalition framework",
+            "type": "article-journal",
+            "volume": "5"
         },
         {
             "author": [
@@ -2978,6 +3137,41 @@
             "type": "article-journal"
         },
         {
+            "author": [
+                {
+                    "family": "Pugliese",
+                    "given": "Emanuele"
+                },
+                {
+                    "family": "Napolitano",
+                    "given": "Lorenzo"
+                },
+                {
+                    "family": "Zaccaria",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Pietronero",
+                    "given": "Luciano"
+                }
+            ],
+            "container-title": "PloS one",
+            "id": "pugliese2019coherent",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "e0223403",
+            "publisher": "Public Library of Science San Francisco, CA USA",
+            "title": "Coherent diversification in corporate technological portfolios",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
             "DOI": "10.2760/9201933",
             "author": [
                 {
@@ -3742,6 +3936,320 @@
             "title": "The technological resilience of US cities",
             "type": "article-journal",
             "volume": "8"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wade",
+                    "given": "Robert"
+                }
+            ],
+            "id": "wade2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "Princeton University Press",
+            "title": "Governing the market: Economic theory and the role of government in east asian industrialization",
+            "title-short": "Governing the market",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Storper",
+                    "given": "Michael"
+                }
+            ],
+            "container-title": "European urban and regional studies",
+            "id": "storper1995",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "191-221",
+            "publisher": "Sage Publications Sage CA: Thousand Oaks, CA",
+            "title": "The resurgence of regional economies, ten years later: The region as a nexus of untraded interdependencies",
+            "title-short": "The resurgence of regional economies, ten years later",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "Stam",
+                    "given": "Erik"
+                }
+            ],
+            "container-title": "European planning studies",
+            "id": "stam2015entrepreneurial",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "1759-1769",
+            "publisher": "Taylor & Francis",
+            "title": "Entrepreneurial ecosystems and regional policy: A sympathetic critique",
+            "title-short": "Entrepreneurial ecosystems and regional policy",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "author": [
+                {
+                    "family": "Stam",
+                    "given": "Erik"
+                },
+                {
+                    "family": "Welter",
+                    "given": "Friederike"
+                }
+            ],
+            "container-title": "The psychology of entrepreneurship",
+            "id": "stamwelter2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "263-281",
+            "publisher": "Routledge",
+            "title": "Geographical contexts of entrepreneurship: Spaces, places and entrepreneurial agency",
+            "title-short": "Geographical contexts of entrepreneurship",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nelson",
+                    "given": "Richard R"
+                },
+                {
+                    "family": "Winter",
+                    "given": "Sidney G"
+                }
+            ],
+            "id": "nelsonwinter1982",
+            "issued": {
+                "date-parts": [
+                    [
+                        1985
+                    ]
+                ]
+            },
+            "publisher": "harvard university press",
+            "title": "An evolutionary theory of economic change",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lawson",
+                    "given": "Clive"
+                }
+            ],
+            "container-title": "Cambridge journal of economics",
+            "id": "lawson1999",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "page": "151-166",
+            "publisher": "Oxford University Press",
+            "title": "Towards a competence theory of the region",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "author": [
+                {
+                    "family": "Penrose",
+                    "given": "Edith Tilton"
+                }
+            ],
+            "id": "penrose1959",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "publisher": "Oxford university press",
+            "title": "The theory of the growth of the firm",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Isaksen",
+                    "given": "Arne"
+                },
+                {
+                    "family": "Trippl",
+                    "given": "Michaela"
+                }
+            ],
+            "container-title": "Economic geography",
+            "id": "isaksentrippl2014",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "436-457",
+            "publisher": "Taylor & Francis",
+            "title": "Exogenously led and policy-supported new path development in peripheral regions: Analytical and synthetic routes",
+            "title-short": "Exogenously led and policy-supported new path development in peripheral regions",
+            "type": "article-journal",
+            "volume": "93"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cooke",
+                    "given": "Philip"
+                },
+                {
+                    "family": "Morgan",
+                    "given": "Kevin"
+                }
+            ],
+            "container-title": "Environment and planning D: Society and space",
+            "id": "cookemorgan1998",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        1993
+                    ]
+                ]
+            },
+            "page": "543-564",
+            "publisher": "SAGE Publications Sage UK: London, England",
+            "title": "The network paradigm: New departures in corporate and regional development",
+            "title-short": "The network paradigm",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "author": [
+                {
+                    "family": "Gertler",
+                    "given": "Meric S"
+                },
+                {
+                    "family": "Oinas",
+                    "given": "Päivi"
+                },
+                {
+                    "family": "Storper",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Scranton",
+                    "given": "Philip"
+                }
+            ],
+            "container-title": "Economic Geography",
+            "id": "grabher1993",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "199-207",
+            "publisher": "Taylor & Francis",
+            "title": "Discussion of regional advantage: Culture and competition in silicon valley and route 128 by AnnaLee saxenian",
+            "title-short": "Discussion of regional advantage",
+            "type": "article-journal",
+            "volume": "71"
+        },
+        {
+            "author": [
+                {
+                    "family": "Saxenian",
+                    "given": "AnnaLee"
+                }
+            ],
+            "container-title": "Economic geography",
+            "id": "saxenian1994",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "105-108",
+            "publisher": "Ed. Clark University",
+            "title": "The new argonauts: Regional advantage in a global economy",
+            "title-short": "The new argonauts",
+            "type": "article-journal",
+            "volume": "84"
+        },
+        {
+            "author": [
+                {
+                    "family": "Helpman",
+                    "given": "Elhanan"
+                }
+            ],
+            "id": "helpman1998",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "publisher": "MIT press",
+            "title": "General purpose technologies and economic growth",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bresnahan",
+                    "given": "Timothy F"
+                }
+            ],
+            "container-title": "Institutions, innovation and growth",
+            "id": "bresnahan1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "publisher": "Edward Elgar Publishing",
+            "title": "The mechanisms of information technology’s contribution to economic growth",
+            "type": "chapter"
         },
         {
             "author": [

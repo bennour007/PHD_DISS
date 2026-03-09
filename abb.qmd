@@ -1,0 +1,37 @@
+# List of Abbreviations {.unnumbered}
+
+
+
+
+
+| Abbreviation | Definition |
+|---|---|
+| EEG | Evolutionary Economic Geography |
+| REC | Relatedness and Economic Complexity |
+| FITS | Feature Importance Technology Space |
+| GPT | General Purpose Technology |
+| KET | Key Enabling Technology |
+| GEI | Global Entrepreneurship Index |
+| NSE | National Systems of Entrepreneurship |
+| RTA | Revealed Technological Advantage |
+| RCA | Revealed Comparative Advantage |
+| NUTS | Nomenclature of Territorial Units for Statistics |
+| IPC | International Patent Classification |
+| EPO | European Patent Office |
+| SAR | Spatial Autoregressive Model |
+| SEM | Spatial Error Model |
+| LPM | Linear Probability Model |
+| OLS | Ordinary Least Squares |
+| RF | Random Forest |
+| ML | Machine Learning |
+| ICC | Intraclass Correlation Coefficient |
+| S3 | Smart Specialisation Strategy |
+
+
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables

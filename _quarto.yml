@@ -2,12 +2,10 @@ project:
   type: book
 
 book:
-  title: "THESIS"
-  author: "BENNOUR MOHAMED HSIN"
-  date: "12/3/2025"
   chapters:
     - index.qmd
-    - abstract.qmd
+    - ack.qmd
+    - abb.qmd
     - intro.qmd
     - lit_rev.qmd
     - potential2.qmd
@@ -29,7 +27,10 @@ format:
     mermaid:
       theme: default
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook
+    classoption:
+      - oneside    # no blank pages between chapters
+      - openany    # chapters start on any page, not forced to odd pages
     fontsize: 12pt
     linestretch: 1.5
     geometry:
@@ -37,12 +38,24 @@ format:
       - bottom=2.5cm
       - left=3cm
       - right=2.5cm
-    lot: true
-    lof: true
+    loc: true
+    lot: false
+    lof: false
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{pdfpages}
+    include-before-body:
+      text: |
+        \includepdf[pages=1-2, fitpaper=true]{outside_inside_cover.pdf}
+        \frontmatter
+
     
 execute:
   echo: false
   warning: false
+  
+
 
 
 
