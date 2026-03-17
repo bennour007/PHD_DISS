@@ -1,11 +1,11 @@
 
-# Empirical Design
+# Empirical design
 
 ```{r}
 pacman::p_load(tidyverse, gt)
 ```
 
-In the preceding chapters we discussed in more details the need for contextualised understanding of regional diversifiaction and we argued that such extra context should account both enodgenous and exogenous factors. Analogous to the research agenda in the EEG literature we highlighted that this contextualisation is mainly dependent of three channels: relatedness, network structures, and institutions. 
+In the preceding chapters we discussed in more details the need for contextualised understanding of regional diversification and we argued that such extra context should account both endogenous and exogenous factors. Analogous to the research agenda in the EEG literature we highlighted that this contextualisation is mainly dependent of three channels: relatedness, network structures, and institutions. 
 
 In the previous chapter we went a step further and explained why we actually need to go beyond the classical proximity and relatedness paradigm since relatedness and network structure are almost identical constructs. The idea stems from their conceptual and methodological limitations which we summarised in three points: (1) symmetric co-occurrence measures obscure directional technological dependencies, (2) linear aggregation of relatedness density discards combinatorial information about how capabilities interact, and (3) co-occurrence measures yield noisy proximity metric because what's measured almost always have higher dimensions than what is observed. 
 
@@ -13,7 +13,7 @@ Because of these issues, we proposed a machine learning training strategy that c
 
 In this chapter we provide an empirical application to our methodological contribution following the same ideas we discussed in the literature review. In here we will first re-iterate and further clarify our objectives and how they translate to empirical constructs, then we will explain progressively how we will to address the research questions and the test the hypothesis. 
 
-## Overview and Identification Goals
+## Overview and identification goals
 
 The central question of this chapter is what explains variation in regional technological potential? The analogue to this question in the REC literature is what explains relatedness. The reason this question is asked at all stems from a large body of studies that show that relatedness density, is a major predictor of entry to new technologies. The more related a region is to a technology the higher the probability of future entry. 
 
@@ -21,15 +21,15 @@ Similarly, relatedness density is also a major predictor of economic complexity.
 
 Moreover, because our contribution is analogue to relatedness we find it sensible to ask the same question again and extend our methodological contribution to an empirical one as well. We follow the agenda we discussed in the literature review: A contextualised assessment of diversification possibilities through a more contextualised proximity measure (potential), network structure (FITS), industrial alignment (coherence), institutions (Entrepreneurial Ecosystem), and spatial dependence. 
 
-To explore this question within the framework of this work, we provide two complementary designs through three modeling approaches each target a specific area of the question. The first empirical design is dyadic, which means it addresses the region-technolgy as a dyadic structure. In the dyadic design we assess how the position of technologies in the FITS network influence regional technological potential, and whether this influence is universal or dependent on the regional industrial structure, where this dependence is opertionalised by our coherence measure. We then extend this by assessing how the inclusion of the entrepreneurial ecosystem covariates affect these relationships. The second design addresses spatial dependence, where we aggregate our covariate into a regional panel and assess whether geographical proximity adds an additional dimension to the feasibility question. As a secondary benchmark, we also compare the influence of potential and relatedness as contrasting construct on regional entry into new technologies.  
+To explore this question within the framework of this work, we provide two complementary designs through three modeling approaches each target a specific area of the question. The first empirical design is dyadic, which means it addresses the region-technology as a dyadic structure. In the dyadic design we assess how the position of technologies in the FITS network influence regional technological potential, and whether this influence is universal or dependent on the regional industrial structure, where this dependence is operationalised by our coherence measure. We then extend this by assessing how the inclusion of the entrepreneurial ecosystem covariates affect these relationships. The second design addresses spatial dependence, where we aggregate our covariate into a regional panel and assess whether geographical proximity adds an additional dimension to the feasibility question, however, this layer is different from the dyadic layer and warrants different interpretation because we focus mainly on the aggregate portfolio mechanisms. In here we are mainly interested in understanding how the endowment of enabling or bridging technologies in a given regional portfolio influence the general feasibility of the entire portfolio, i.e.: in all other existing technologies. Finally, as a secondary benchmark, we also compare the influence of potential and relatedness as contrasting construct on regional entry into new technologies.  
 
 
 
-## Research Desgin
+## Research design
 
 
 
-The guiding research question is what conditions determine the feasibility of regional technological diversification, and how do technology-specific characteristics, portfolio alignment, national ecosystem structure, and spatial interdependence jointly shape that feasibility. This decomposes into five testable claims, detailed below and summarised in @tbl-hypo.
+The guiding research question is what conditions determine the feasibility of regional technological diversification, and how do technology-specific characteristics, portfolio alignment, national ecosystem structure, and spatial interdependence jointly shape that feasibility. This decomposes into five testable claims which we re-iterate from the first chapter and summarise in @tbl-hypo. 
 
 **H1 (Benchmark):** Regional technological potential is at least as informative as relatedness density in predicting technology entry. The literature has established relatedness density as a robust predictor of entry [@hidalgo2009building; @neffke2011how]. We test whether our capability-based potential measure subsumes, supplements, or displaces this predictive power. This is not a causal claim; it is a precision benchmark that validates the methodological contribution and motivates the subsequent decomposition.
 
@@ -43,9 +43,9 @@ The guiding research question is what conditions determine the feasibility of re
 
 - **H3a (Alignment main effect):** Regions with more coherent portfolios have higher regional technological potential, meaning that portfolio alignment reduces feasibility barriers across the technology space.
 
-- **H3b (Bridging moderation):** Technologies with a bridging role are more beneficial for regions with low coherence than for regions with high coherence, meaning that bridge technologies matter most as diversification pathways when direct alignment is limited [@zhu2021strong].
+- **H3b (Bridging moderation):** Technologies with a bridging role are positively associated with higher potential for regions with low  coherence than for regions with high coherence, meaning that bridge technologies matter most as diversification pathways when direct alignment is limited.
 
-- **H3c (Enabling moderation):** Technologies with an enabling role are more beneficial for regions with high  coherence than for regions with low coherence, meaning that enabling technologies matter most as upgrading pathways when direct alignment is high.
+- **H3c (Enabling moderation):** Technologies with an enabling role are positively associated with higher potential for regions with high  coherence than for regions with low coherence, meaning that enabling technologies matter most as upgrading pathways when direct alignment is high.
 
 **H4 (National ecosystem):** National entrepreneurial ecosystem characteristics shape regional technological potential beyond what dyadic portfolio and network mechanisms account for. Portfolio configuration describes the endogenous opportunity structure of a region, but whether those opportunities are realised depends partly on enabling conditions that operate at the national level, including finance, competition, innovation capacity, and institutional characteristics [@acs2014national; @pinheiro2025]. We test whether national ecosystem measures explain variation in regional potential after accounting for portfolio structure and technology network mechanisms. Effects are expected to be heterogeneous across ecosystem dimensions.
 
@@ -55,9 +55,9 @@ The guiding research question is what conditions determine the feasibility of re
 
 - **H5b (Bridging portfolio):** Regions with portfolios concentrated in bridging technologies have higher average potential when their aggregate portfolio coherence is sufficient, meaning that the portfolio-level value of bridging technologies depends on whether the aggregate industrial alignment supports them.
 
-- **H5c (Enabling portfolio):** Regions with portfolios concentrated in enabling technologies have higher average potential, meaning that foundational technology endowments are a structural portfolio-level advantage, amplified further by coherence.
+- **H5c (Enabling portfolio):** Regions with portfolios concentrated in enabling technologies have higher average potential which increases as coherence increase, meaning that foundational technology endowments are a structural portfolio-level advantage, amplified further by coherence.
 
-
+Finally, we note here that because H5 is a different level of analysis than the other dyadic level hypothesis, its interpretation is also different. We warrant this note given the contrasting phrasing between H3 and H5, we will get back in details to this in the results chapter. 
 
 ## Data
 
@@ -73,12 +73,12 @@ hypotheses <- tibble(
     "Technologies with a bridging role are positively associated with potential",
     "Technologies with an enabling role are negatively associated with potential",
     "Coherence positively predicts potential",
-    "Bridging technologies are more beneficial for low-coherence regions",
-    "The enabling technology penalty is smaller for high-coherence regions",
+    "Bridging technologies predict higher potential for low-coherence regions",
+    "Enabling technologies predict higher potential for high-coherence regions",
     "National ecosystem characteristics shape potential beyond portfolio mechanisms",
     "Regional potential is spatially interdependent across neighbouring regions",
     "Bridging portfolio concentration predicts higher potential under sufficient coherence",
-    "Enabling portfolio concentration is positively associated with potential"
+    "Enabling portfolio concentration predict higher potential and is amplified by coherence"
   ),
   Key_variables = c(
     "pred11 vs relatedness_density",
@@ -128,9 +128,9 @@ hypotheses |>
 
 
 
-### Outcome: Regional Technological Potential
+### Outcome: Regional technological potential
 
-The primary outcome in this work is Regional Technological Potential $p_{r,t,y}$: the Random Forest-predicted probability that region $r$ develops revealed technological advantage (RTA ≥ 1) in technology $t$ at year $y$, estimated from portfolio characteristics four years prior. Values are bounded between 0 and 1. 
+The primary outcome in this work is Regional Technological Potential $p_{r,t,y}$: the Random Forest-predicted probability that region $r$ develops revealed technological advantage ($RTA \geq 1$) in technology $t$ at year $y$, estimated from portfolio characteristics four years prior. Values are bounded between 0 and 1. 
 
 Because OLS on a bounded outcome is problematic and can generate out-of-range fitted values, we apply a logit transformation before estimation:
 
@@ -181,9 +181,9 @@ map_avg_pred1 +
 
 ```
 
-### Technology–Region Level (Dyadic) Variables
+### Technology–region level variables
 
-**Coherence** ($\text{coherence}_{r,t,y}$) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embededdness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embededdness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base [@teece1994understanding; @nesta2005coherence; @quatraro2010; @pugliese2019coherent; @straccamore2025comparative]. The geographic distribution of average coherence is shown in @fig-map-coherence.
+**Coherence** ($\text{coherence}_{r,t,y}$) measures the alignment between the regional technology portfolio and a specific technology in the directed FITS network in terms of industrial embeddedness (see the previous chapter for more details). It captures whether the regional portfolio is structurally positioned across industries to support a given technology’s embeddedness in those industries. i.e., whether the region and the technology “sit” in compatible parts of the capability system. This aligns with the intuition in the literature that diversification feasibility depends on how well the target technology aligns with internal regional knowledge infrastructure base [@teece1994understanding; @nesta2005coherence; @quatraro2010; @pugliese2019coherent; @straccamore2025comparative]. The geographic distribution of average coherence is shown in @fig-map-coherence.
 
 ```{r fig-map-coherence, echo=FALSE}
 #| fig-width: 8
@@ -222,7 +222,7 @@ map_coherence +
 
 **Patent count** ($\text{patents}_{r,t,y}$) is the number of patent applications attributed to region $r$ in technology $t$ at year $y$. We use it to controls for pre-existing knowledge stock on a given technology in the region. This is to ensure that coherence and network position effects are do not turn into proxies for size as argued in @bathelt2023related. The geographic distribution of total patent activity is shown in @fig-map-avg-count.
 
-### Technology Level Variables
+### Technology level variables
 
 Betweenness centrality^[the FITS network is directed, in earlier iterations explored HITS authority and hub scores separately but because HITS scores and betweenness are correlated we decided to use eigenvector centrality in the final specification.] ($\text{betweenness}_t$) measures how frequently a technology lies on shortest directed paths between other technologies. High-betweenness technologies act as bridges between otherwise separated domains of knowledge. In our interpretation, this is the structural analogue of GPT-like bridging roles where technologies that facilitate transitions across domains serve as an intermediary [@antonietti2021going]. The geographic distribution of average betweenness centrality is shown in @fig-map-avg-bet.
 
@@ -262,7 +262,7 @@ corr_matrix_disagg %>%
 ::: 
 
 
-### National Level Variables: GEI Pillars
+### National level variables: GEI pillars
 
 To test H4, which assumes that national entrepreneurial ecosystem characteristics contribute to regional potential, we incorporate seven pillars from the Global Entrepreneurship Index (GEI). The GEI decomposes national ecosystem characteristics into fourteen that account for individual attitudes, systemic capabilities, and aspirational orientations [@acs2014national].
 
@@ -349,13 +349,13 @@ summary_lr_country %>%
 
 ```
 
-### Region Level Variables (Spatial Models)
+### Region level variables 
 
 For the spatial panel (H5),  we aggregate the dyadic variables to region–year means. Specifically we retain average coherence, average betweenness, and average eigenvector of each region's existing portfolio. Additionally, we also aggregate patent counts to the total regional patenting activity across all technologies and keep regional complexity. Each of these variables reflect an aggregate characteristic of the regional technological portfolio. Further descriptive details on these variables are presented in @tbl-desc-panel and @tbl-corr-regional.
 
 
 ```{r tbl-desc-panel}
-#| tbl-cap: "Descriptive statistics of the aggregated varaibles"
+#| tbl-cap: "Descriptive statistics of the aggregated variables"
 summary_panel <- targets::tar_read(
     summary_panel, store = here::here("../../_targets_DES")
 )
@@ -369,7 +369,7 @@ summary_panel %>%
 
 
 ```{r tbl-corr-regional, echo=FALSE}
-#| tbl-cap: "Correlation matrix of the aggregated varaibles"
+#| tbl-cap: "Correlation matrix of the aggregated variables"
 corr_matrix_agg <- targets::tar_read(corr_matrix_agg, store = here::here("../../_targets_DES"))
 
 corr_matrix_agg %>% 
@@ -434,7 +434,7 @@ map_avg_rd +
 
 
 
-## Model 1: Dyadic Fixed Effects Models 
+## Model 1: Dyadic fixed effects models 
 
 The first model in our work is specified to investigate the explanatory factors that drives regional technological potential. In here, as well as in the other dyadic models we estimate our linear models on the logit-transformed potential $p^*_{r,t,y}$. 
 
@@ -455,7 +455,7 @@ Regardless, we estimate a multitude of regression models and progressively tight
 
 The baseline model includes coherence, distance, patent count, and complexity controls. The network model adds betweenness and eigenvector centrality testing whether network position consistently predicts potential. The interaction model add the coherence x betweenness and coherence x eigenvector terms. We also add a parallel specification for robustness where we replaces the coherence moderation with distance. 
 
-Of course with the inclusion of national ecosystem covariates, this identification looses some of its merits since we cannot account for cross-regional country level differences. This is  because region fixed effect will absorb country level variations and because country fixed effect will leave out common regional variation. This motivates the adoption of a hierarchical model when we include the country level covariates. 
+Of course with the inclusion of national ecosystem covariates, this identification looses some of its merits since we cannot account for cross-regional country level differences. This is  because region fixed effect will absorb country level variations and because country fixed effect will leave out common regional variation. This motivates the adoption of a hierarchical model when we include the country level covariates. However, we also retain this (fixed effects) approach as robustness check for model 2.
 
 
 ```{r fig-map-avg-bet, echo=FALSE}
@@ -601,7 +601,7 @@ map_comp +
 
 ```
 
-## Model 2: Hierarchical Models
+## Model 2: Hierarchical models
 
 As we cross different literature domains in this work we observed that there's a clear and urgent gap that was not properly addressed that's the lack of time varying regional entrepreneurial ecosystem datasets. The Regional Entrepreneurship and Development Index (REDI) [@szerb2013regional; @argiles2014redi] and the work of @leendertse2022measure are a step in that direction but the challenge of time variation still persist. This means that to be consistent with the evolutionary scope with which we framed this work we are forced to accommodate the national covariates. 
 
@@ -617,7 +617,7 @@ With these models we will be able to compare the contribution of the covariates 
 
 
 
-## Model 3: Spatial Panel Models
+## Model 3: Spatial panel models
 
 Till now, we discussed two models that investigate variation in regional technological potential at different levels of grouping specification. The fixed effect models are designed to assess the within-region variation, and the hierarchical model is designed to simultaneously account for the national ecosystem factors while also serving as a robustness check for the network covariates and their interaction with coherence. As we justified earlier, if the nested structure of the data drives much of the explanatory power of the model, it could be an indication that spatial dependence and/or geographical proximity is what matters here. Additionally, the literature gives reason to expect real interdependence especially in the context of European regions where administrative borders are simply a construct and not a barrier for firms and entrepreneurs [@boschma2009related; @komlosi2025balanced]. The spatial models in this analysis test this formally. 
 
@@ -683,7 +683,7 @@ The preliminary diagnostics are summarised in @tbl-spatial-diagnostics show that
 
 
 
-### Spatial Autoregressive (SAR) Panel - Primary Specification
+### Spatial Autoregressive (SAR) panel - primary specification
 
 We estimate the Spatial Autoregressive (SAR) model with two-way (region and year) demeaning. In this model, the spatial autoregressive parameter $\rho$ tests H4 where a positive and significant $\rho$ indicates that regions tend to exhibit higher potential when neighbouring regions also display high potential. 
 
@@ -696,7 +696,7 @@ The covariates matrix $\mathbf{X}_{r,y}$  includes regional patent count, region
 However, we need to note here that at the dyadic level, betweenness and eigenvector measures are technology level metrics. They capture the characteristics of the network position of a given technology whether it's a key enabling technology or general purpose technology. In this analysis however, average eigenvector and average betweenness measure how much a region is endowed with key enabling technology or general purpose technology in their portfolio and not the characteristics of the technologies themselves. That is to say in this level of analysis our focus is on the aggregate characteristics of the regional portfolio. For our work, this interpretation complements the specification of the dyadic models and reveal more context to the dynamics we're studying.  
 
 
-### Spatial Error Model (SEM) - Robustness
+### Spatial Error Model (SEM) - robustness
 
 Alternatively, we estimate the Spatial Error Model (SEM) as a robustness check. In this model we assume that the unobservable determinant of regional potential are spatially autocorrelated. This is to say that the spatial dependence of regional potential is driven by unobserved spatial correlation rather than observed variations. 
 

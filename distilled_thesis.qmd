@@ -1,0 +1,476 @@
+---
+format:
+  pdf:
+    documentclass: article
+   # chapters start on any page, not forced to odd pages
+    fontsize: 12pt
+    linestretch: 1.5
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=3cm
+      - right=2.5cm
+    toc: true
+    lot: false
+    lof: false
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{pdfpages}
+    include-before-body:
+      text: |
+        \includepdf[pages=1, fitpaper=true]{outside_inside_thesis.pdf}
+bibliography: references.bib
+execute:
+  echo: false
+  warning: false
+---
+
+```{r setup, include=FALSE}
+pacman::p_load(modelsummary, gt, tidyverse, pspatreg)
+```
+
+
+\newpage
+
+# Abstract {.unnumbered}
+
+In this dissertation we investigate the patterns of technological diversification in European regions. Specifically we inquire on the factors that contribute to the feasibility of a diversification option. Our focus in this work is to provide a context rich assessment that bridge different gaps in the literature namely relatedness, network positions, institutions, and the role of space. To operationalise this contextualised assessment we first address methodological and conceptual issues in the relatedness constructs. 
+
+Our methodological alternative is a machine learning training strategy that shift relatedness from a descriptive exercise to a predictive exercise. Our alternative approach enables us to construct a bidirectional network that's inherently more granular and informative than conventional technology space approaches. Similarly, our approach also enables us to quantify the feasibility of a specific technology for each region, we call this quantity regional technological potential. 
+
+With these two constructs, we divide technologies into two categories based on their role in the network structure, bridging technologies and enabling technologies. Then we investigate which technologies are more feasible, and whether the industrial alignment between the region's portfolio of technologies and a target technology moderate that relationship. Additionally, we incorporate national ecosystem co-variates that describe institutional and market conditions into our analysis to investigate their contribution in the feasibility of a diversification option. Lastly, we investigate whether or not these dynamics are space dependent and whether this dependency is stable at different effect channels. 
+
+Our results shows four main conclusions. First, we validate that our regional technological potential is an adequate predictor of entry to new technologies. Second we confirm that different network structures are strong predictor or technological potential. Third industrial alignment is our strongest predictor here and moderates the relationship between network structures and potential. Forth, we show that national entrepreneurial ecosystem characteristics are substantial predictors of regional technological potential and that their effect is stable but heterogeneous for different pillars. Fifth, and lastly, we confirm the spatial dependency at the regional portfolio level, and show that the average characteristics of these portfolios in terms of their endowment of bridging and enabling technologies are similarly strong and consistent predictors of aggregate regional potential and that industrial alignment remains a substantial moderation mechanism that's stable across all effect channels.  
+
+\newpage
+
+# Introduction
+
+
+The Covid-19 pandemic made visible what researchers had been studying for years: some regions recover quickly from economic shocks, others do not. The difference comes down, in large part, to how diversified their economies are. A region that relies on a narrow portfolio of technologies is far more exposed than one whose portfolio covers multiple domains and capability combinations.
+
+The capacity to adapt, to resist, recover, and reconfigure existing knowledge stocks is what the literature calls resilience [@xiao2018resilience]. To this end, economies build resilience through diversification by investing in new technologies, new sectors, new capabilities and new applications. However, not all diversification options are equally feasible for all regions. Because of that, regions do not diversify freely or randomly. They tend to move into activities related to what they already do well. This is because tacit knowledge (the know-how embedded in firms, workers, and local institutions) is fundamentally local and path-dependent [@ballandboschma2015].
+
+This insight is formalised and grounded in the Relatedness and Economic Complexity (REC) literature, and has produced an influential set of empirical, methodological, and theoretical contributions. These contributions are operationalised via co-occurrence-based proximity measures, mainly relatedness and relatedness density both widely used in academia and by policy practitioners, including under the European Smart Specialisation Strategy. The core idea is that a region is more likely to develop a new technology when it already has many related technologies in its portfolio. However, @ballandboschma2015 and @pinheiro2025 also criticises the literature in this context for ignoring key explanatory dimensions that are central to evolutionary accounts of regional change; technological relatedness, network structures, and institutions. They argue, that the current understanding of regional dynamics lacks these key contextualisation layers.
+
+In this work we align with this direction, but we argue that adding these contextual layers on a foundation that obscures context would only partly address these gaps. With that in mind, we identify three core issues. First, relatedness is measured through co-occurrence frequencies, but when the number of technologies exceeds the number of regions, those frequencies are noisy
+[@tacchella2023relatedness]. Second, the resulting measures treat the relationship between two technologies as equally strong in both directions, when in reality technological dependencies are often hierarchical. Third, relatedness density aggregates pairwise scores in a simple linear sum that discards the combinatorial interactions among capabilities that actually matter for whether diversification is feasible [@albora2023product].
+
+This work is a direct response to this gap. We reform the measurement foundation shifting from a descriptive paradigm to a predictive one that captures the complex interactions within the data. Then use these richer measures to investigate what conditions shape diversification feasibility across four contextual layers: technology characteristics, portfolio alignment, national ecosystem conditions, and space. With all this in mind we formulate our research questions and hypothesis as follows:
+
+#### RQ1: Is regional technological potential a better predictor of technology entry than relatedness density? {.unnumbered}
+
+Relatedness density is the standard benchmark for assessing diversification feasibility. We test whether our ML-derived potential carries at least as much, and potentially more, predictive information about observed entry, which would justify the subsequent mechanism decomposition.
+
+**H1:** Regional technological potential is at least as informative as relatedness density in predicting technology entry. 
+
+
+
+#### RQ2: How do technology-specific characteristics shape regional technological potential? {.unnumbered}
+
+Technologies occupy structurally distinct positions in the capability network, bridging and enabling roles imply different relationships to diversification feasibility. We ask whether these structural roles predict how feasible it is for regions to diversify into them.
+
+**H2a:** Technologies with a bridging role are positively associated with regional technological potential.
+
+**H2b:** Technologies with an enabling role are negatively associated with regional technological potential.
+
+
+
+#### RQ3: Does industrial alignment condition the influence of technology characteristics on potential? {.unnumbered}
+
+The value of a technology's structural position may depend on whether the region's portfolio is aligned with the industrial level capabilities that position implies. We ask whether coherence moderates the relationship between network position and potential, and whether this moderation operates differently for bridging and enabling technologies.
+
+**H3a:** Industrial alignment (coherence) between a region and a technology is associated with higher regional technological potential.
+
+**H3b:** Technologies with a bridging role are more likely to be feasible for regions with low  coherence than for regions with high coherence, meaning that bridge technologies matter most as diversification pathways when direct alignment is limited.
+
+**H3c:** Technologies with an enabling role are more likely to be feasible for regions with high  coherence than for regions with low coherence, meaning that enabling technologies matter most as upgrading pathways when direct alignment is high.
+
+
+#### RQ4: Do national ecosystem characteristics explain variation in regional technological potential beyond dyadic portfolio mechanisms? {.unnumbered}
+
+We ask whether national entrepreneurial ecosystem characteristics contribute explanatory power beyond portfolio structure and technology network mechanisms.
+
+ **H4:** National entrepreneurial ecosystem characteristics shape regional technological potential beyond what dyadic portfolio and network mechanisms account for. Meaning that the national institutional and market context is an independent layer of the feasibility landscape. Effects are expected to be heterogeneous across ecosystem dimensions.
+
+
+
+#### RQ5: How do aggregate portfolio characteristics and spatial interdependence structure regional potential at the portfolio level? {.unnumbered}
+
+Moving from the technology–region dyad to the regional portfolio as a whole, we ask whether the aggregate composition of a region's portfolio predicts average regional potential, and whether this relationship operates through spatial interdependence with neighbouring regions.
+
+ **H5a:** Regions with higher average potential tend to neighbour other high-potential regions, meaning that regional feasibility landscapes are spatially interdependent rather than locally contained.
+
+ **H5b:** Regions with portfolios concentrated in bridging technologies have higher average potential when their portfolio coherence is sufficient, meaning that the portfolio-level value of bridging technologies depends on whether the aggregate industrial alignment supports them.
+
+ **H5c:** Regions with portfolios concentrated in enabling technologies have higher average potential which increases as coherence increase, meaning that foundational technology endowments are a structural portfolio-level advantage, amplified further by coherence.
+
+
+
+This thesis is organised following around the following structure. We describe our methodological approach in @sec-methodand, how we build the machine learning models, what regional technological potential and the FITS network are, and how coherence is constructed. The empirical design is covered in @sec-design. Results are presented in @sec-results. We close with discussion and conclusion in @sec-summary.
+
+# Methodology {#sec-method}
+
+## A machine learning alternative
+
+We address the limitations we discussed above by treating relatedness as a prediction problem rather
+than a correlation exercise. Following @albora2023product, @fessina2024identifying, and @tacchella2023relatedness, we train a separate Random Forest classifier model for each target technology, using a region's full portfolio as input and the observed entry outcome
+as the target.
+
+This shift offers mainly advantages. First, it captures non-linear interactions among technologies that density-based measures cannot: if technology $t_1$ predicts entry into $t_3$ only when $t_2$ is also present, this emerges naturally from the tree structure. And second, because each technology is modeled separately, it produces directed, asymmetric importance scores that reflect the observed hierarchical structure of technological dependencies.
+
+The key innovation of this approach lies in training separate models for each technology rather than constructing a single global model. For every technology $i \in \mathcal{T}$, we train a binary classification model where:
+
+-   **Outcome**: $z_{r,i,y}$ indicates whether region $r$ specialises in technology $i$ at year $y$ (RTA $\geq 1$)
+-   **Features**: $\{\text{RTA}_{r,t,y-\delta} : t \in \mathcal{T}, t \neq i\}$ comprises RTA values for all other technologies $\delta$ years prior
+
+This technology-specific approach enables each model to learn unique dependency patterns. The lag $\delta = 4$ years balances predictive horizon with data availability, following conventions in the literature on capability accumulation [@andreoni2019political].
+
+We predict specialisation for target years $y_t \in \{2008, \ldots, 2018\}$ using data from 1978 onward. For each target year $y_t$ and technology $i$:
+
+**Training set:** $$X_{\text{train}} = \{ \text{RTA}_{r,t,y} \mid y \in [1978, y_t - 2\delta], t \neq i\}$$ $$Y_{\text{train}} = \{z_{r,i,y} \mid y \in [1978 + \delta,  y_t - \delta]\}$$
+
+**Test set:** $$X_{\text{test}} = \{ \text{RTA}_{r,t,y_t-\delta} \mid t \neq i\}$$ $$Y_{\text{test}} = \{z_{r,i,y_t}\}$$
+
+This temporal structure ensures strict separation: models predict future specialisation using only information available at the prediction date. The expanding training window incorporates historical diversification patterns while the fixed lag prevents information leakage. From these models we extract two core constructs:
+
+**Regional Technological Potential** ($p_{r,t,y}$) is the predicted probability that region $r$ develops a specialisation in technology $t$ at time $y$, given its past portfolio. Rather than asking how many related technologies a region has, it asks: given everything we know about how regions diversify, how likely is this region to develop this technology? High potential means the region's portfolio strongly predicts future specialisation. Low potential means there are capability gaps that make diversification unlikely under current conditions. 
+
+**Feature Importance Technology Space (FITS)** is an asymmetric, directed network
+extracted from the feature importance scores of the Random Forest models. For each target
+technology, the feature importance of every other technology captures how much it
+contributes to predicting the target's adoption across regions. This produces a directed
+graph where an edge from technology $t$ to technology $t'$ has weight proportional to how
+much $t$ predicts $t'$ without requiring any symmetric relationship in the reverse
+direction. FITS replaces the conventional co-occurrence technology space with a
+predictive, hierarchical capability network [@fessina2024identifying].
+
+The directed structure of FITS allows us to classify technologies by their structural
+role. Technologies with high **betweenness centrality** lie on many shortest paths
+between other technologies: they bridge otherwise disconnected domains, analogous to
+General Purpose Technologies. Technologies with high **eigenvector centrality** are
+well-connected to other well-connected technologies: they occupy authoritative,
+capability-dense positions in the network, analogous to Key Enabling Technologies.
+
+## Coherence: measuring industrial alignment
+
+Having a technology space and a feasibility score still leaves a key question open:
+does the value of a technology's network position depend on how well a region's
+industrial structure is organised around it? Two regions can have the same potential
+score for the same technology but differ substantially in whether their existing
+specialisations share the industrial infrastructure that the technology's FITS
+dependencies imply.
+
+We capture this with **coherence**. For each technology-region pair, coherence quantifies how closely the region's industrial embeddedness profile -- which industries its current specialisations connect to in FITS -- matches the industrial embeddedness profile of the target technology. When the region's portfolio is concentrated in industries that the target technology draws from and feeds into, coherence is high. When the portfolios are industrially misaligned, coherence is low.
+
+The measure draws on @teece1994understanding and @nesta2005coherence, who established
+that the performance of a diversification strategy depends not just on how much a firm
+or region does but on how coherently its activities hang together. We adapt this to
+the regional level and consider the IPC industrial sections.
+
+
+# Empirical Design {#sec-design}
+
+## Overview
+
+Our empirical investigation operates at two levels. At the **dyadic level**, each
+observation is a combination of a technology, a region, and a year. We ask how a
+technology's position in the FITS network predicts regional technological potential,
+and whether this relationship changes with coherence and national ecosystem conditions.
+
+At the **spatial level**, we aggregate to region-year and ask whether regions with
+high average potential cluster geographically, and whether aggregate portfolio
+composition predicts average potential conditional on coherence.
+
+We implement this through four models:
+
+- **Model 0** (Entry benchmark): compares the predictive power of potential versus
+  relatedness density for observed technology entry.
+  $$\text{Entry}_{r,t,y+1} = \beta_1 \text{Density}_{r,t,y} + \beta_2 \text{Potential}_{r,t,y} + \mathbf{Z}_{r,t,y}\boldsymbol{\gamma} + \alpha_y + \alpha_r + \varepsilon_{r,t,y}$$
+
+where $\text{Density}_{r,t,y}$ is the standardised relatedness density (z-scored), $\text{Potential}_{r,t,y}$ is the standardised technological potential (z-scored), $\mathbf{Z}_{r,t,y}$ contains controls (regional complexity, technology complexity, patent count), and $\alpha_y, \alpha_r$ are year and region fixed effects. Standard errors are clustered by region and technology to account for the dyadic structure of the data.
+
+- **Model 1** (Fixed effects OLS): tests the network position and coherence moderation
+  hypotheses using within-region variation.
+  we adopt a two-way region and year fixed effects as our preferred specification to assess the within region variations with standard errors clustered by region and technology. This choice accounts for the structural correlation of the observations in the same region or technology. 
+
+The general specification is:
+
+$$p^*_{r,t,y} = \alpha_r + \alpha_y + \mathbf{X}_{r,t,y}\boldsymbol{\beta} + \varepsilon_{r,t,y}$$
+
+where $\alpha_r$ are region fixed effects, $\alpha_y$ are year fixed effects, and
+$\mathbf{X}_{r,t,y}$ is the covariates matrix. 
+
+- **Model 2** (Hierarchical random effects): tests national ecosystem effects,
+  accounting for the nested structure of regions within countries.
+  For that we estimate linear mixed models with the following nesting structure:
+
+$$p^*_{r,t,y} = \mathbf{X}_{r,t,y}\boldsymbol{\beta} + \zeta_t + u_c + u_{r|c} + \varepsilon_{r,t,y}$$
+
+where $u_c \sim \mathcal{N}(0, \sigma^2_c)$ is a country-level random intercept and $u_{r|c} \sim \mathcal{N}(0, \sigma^2_{r|c})$ is a region-within-country random intercept. Year is included as a dummy ($\zeta_t$) to absorb common temporal dynamics.
+
+- **Model 3** (Spatial autoregressive panel): tests spatial interdependence and
+  portfolio composition effects at the aggregate level.
+  We estimate the Spatial Autoregressive (SAR) model with two-way (region and year) demeaning. In this model, the spatial autoregressive parameter $\rho$ tests H5 where a positive and significant $\rho$ indicates that regions tend to exhibit higher potential when neighbouring regions also display high potential. 
+
+$$P_{r,y} = \rho \mathbf{W} P_{r,y} + \mathbf{X}_{r,y}\boldsymbol{\beta} + \alpha_r + \zeta_y + \varepsilon_{r,y}$$
+
+
+
+The covariates matrix $\mathbf{X}_{r,y}$  includes regional patent count, regional complexity,  average coherence, average betweenness, and average eigenvector, along with their interactions. 
+
+## Data
+
+We use European Patent Office (EPO) data covering 641 technologies (4-digit IPC
+classification) across 245 NUTS2 regions in 30 European countries over 2008–2018.
+Regional specialisation is measured via the Revealed Technological Advantage (RTA).
+Technology network positions (betweenness and eigenvector centrality) are derived
+from the FITS network. National entrepreneurial ecosystem conditions are captured
+through the Global Entrepreneurship Index (GEI) pillars [@acs2014national;
+@varga2020estimating], which combine individual and institutional dimensions.
+
+The geographic distributions in @fig-map-potential and @fig-map-coherence reveal
+clear spatial structure: Western European regions tend to have higher potential and
+higher coherence, while peripheral and Eastern European regions cluster at lower
+values.
+
+```{r fig-map-potential, echo=FALSE}
+#| fig-width: 8
+#| fig-height: 9
+#| out-width: "100%"
+#| fig-dpi: 150
+#| fig-cap: "Average Regional Technological Potential (2008 vs 2018)"
+map_avg_pred1 <- targets::tar_read(map_avg_pred1, store = here::here("../../_targets_DES"))
+
+map_avg_pred1 +
+  scale_fill_viridis_c(
+    name = "Avg Potential",
+    option = "plasma"
+  ) +
+  theme(
+    plot.title = element_blank(),
+    legend.position = "right",
+    legend.direction = "vertical",
+    legend.box = "vertical",
+    legend.title = element_text(hjust = 0.5, angle = 90),
+    legend.title.position = "right",
+    legend.key.width = unit(0.2, "cm"),
+    legend.key.height = unit(0.7, "null"),
+    legend.box.just = "center",
+    legend.title.align = 0.5
+  )
+```
+
+```{r fig-map-coherence, echo=FALSE}
+#| fig-width: 8
+#| fig-height: 9
+#| out-width: "100%"
+#| fig-dpi: 150
+#| fig-cap: "Average Coherence Across Regions (2008 vs 2018)"
+map_coherence <- targets::tar_read(map_coherence, store = here::here("../../_targets_DES"))
+
+map_coherence +
+  scale_fill_viridis_c(
+    limits = c(0.0, 1),
+    oob = scales::squish,
+    name = "Avg Coherence"
+  ) +
+  theme(
+    plot.title = element_blank(),
+    legend.position = "right",
+    legend.direction = "vertical",
+    legend.box = "vertical",
+    legend.title = element_text(hjust = 0.5, angle = 90),
+    legend.title.position = "right",
+    legend.key.width = unit(0.2, "cm"),
+    legend.key.height = unit(0.7, "null"),
+    legend.box.just = "center",
+    legend.title.align = 0.5
+  )
+```
+
+# Results {#sec-results}
+
+
+
+## Does potential predict entry better than relatedness density?
+
+We begin with the benchmark question: can regional technological potential predict whether a region
+enters a new technology at least as well as relatedness density? @tbl-entry-ols reports
+these results.
+
+In all specifications, both measures are positive and precisely estimated. When both are
+included together, relatedness density drops substantially (from 0.089 to 0.028), while
+potential remains stable at around 0.086. Model fit  is also higher when potential replaces relatedness density.
+
+This evidence is consistent with **H1**: potential carries at least as much predictive
+content as relatedness density and subsumes much of its signal when both are included.
+
+
+::: {.landscape}
+
+```{r tbl-entry-ols, echo=FALSE}
+#| tbl-cap: "Regional Potential vs Relatedness density -- Entry (year + 1, LPM with fixed effects)"
+table_entry_ols <- targets::tar_read(
+  table_entry_ols,
+  store = here::here("../../_targets_EMP")
+)
+
+table_entry_ols %>%
+  tab_options(
+    table.font.size = px(9),
+    data_row.padding = px(1),
+    heading.padding = px(1),
+    column_labels.padding = px(0),
+    table.width = pct(100)
+  )
+```
+
+:::
+
+## Network position, portfolio alignment, and ecosystems
+
+With the benchmark established, we turn to the main mechanism question. @tbl-potential-fe-ols reports Model 1 (fixed effects OLS). @tbl-potential-re reports Model 2 (hierarchical random effects, with national ecosystem covariates).
+
+Across all specifications, coherence is the strongest predictor of regional technological potential: at mean values of the network variables, a one-standard-deviation increase in coherence is associated with an increase of around 0.706–0.709 in potential. Regions whose industrial portfolio
+aligns well with the structural dependencies of a target technology are substantially
+more likely to have high potential for that technology. This confirms **H3a**.
+
+For bridging technologies (betweenness centrality), the relationship is consistently
+positive but conditional. At mean coherence, bridging technologies are associated with
+higher potential (around $+0.388$). This association is stronger for regions with lower
+coherence (the interaction between betweenness and coherence is negative $-0.284$).
+Bridging technologies matter most as diversification pathways precisely when direct
+industrial alignment is limited. The marginal effect of betweenness remains positive
+across the full empirical distribution of coherence. This confirms **H2a**
+and **H3b**.
+
+For enabling technologies (eigenvector centrality), the pattern is different. These
+technologies are consistently associated with lower potential ($-0.221$), regardless
+of coherence level. The interaction between eigenvector and coherence is non-significant
+in all specifications: portfolio alignment does not make it easier to enter enabling
+technologies. They are structurally difficult, and that difficulty is coherence-invariant.
+This confirms **H2b** but does not support **H3c**.
+
+These patterns are fully stable in Model 2. The national ecosystem covariates in Model 2 are uniformly stable and significant: human capital, competition, product innovation, and high-growth orientation  are positively associated with potential; process innovation, internationalisation, and
+risk capital are negatively associated. This confirms **H4**. The negative coefficient on
+internationalisation is particularly notable. Export-intensive ecosystems appear to
+constrain regional diversification potential, consistent with evidence of lock-in into
+low-complexity activities [@sebestyen2024resolving]. The positive competition effect
+aligns with @komlosi2025balanced, who identify competition as a near-necessary condition
+for regional economic performance across EU regions.
+
+::: {.landscape}
+
+```{r tbl-potential-fe-ols, echo=FALSE}
+#| tbl-cap: "Network Interactions -- Regional Potential (with fixed effects)"
+table_pred_fe_ols_noh <- targets::tar_read(
+  table_pred_fe_ols_noh,
+  store = here::here("../../_targets_EMP")
+)
+
+table_pred_fe_ols_noh %>%
+  tab_options(
+    table.font.size = px(8),
+    data_row.padding = px(1),
+    heading.padding = px(1),
+    column_labels.padding = px(0),
+    table.width = pct(100)
+  )
+```
+
+:::
+
+::: {.landscape}
+
+```{r tbl-potential-re, echo=FALSE}
+#| tbl-cap: "Hierarchical Random Effects Model -- Regional Potential"
+table_pred_re_logit <- targets::tar_read(
+  table_pred_re_logit,
+  store = here::here("../../_targets_EMP")
+)
+
+table_pred_re_logit %>%
+  tab_options(
+    row_group.padding.horizontal = px(0),
+    table.font.size = px(9),
+    data_row.padding = px(0),
+    heading.padding = px(1),
+    column_labels.padding = px(0),
+    table.width = pct(100)
+  )
+```
+
+:::
+
+## Space and portfolio composition
+
+@tbl-spatial-sar reports the SAR estimates. The spatial lag parameter $\rho$ is approximately 0.376, this directly confirms **H5a**: high-potential regions tend to neighbour other high-potential regions. Spatial spillovers account for approximately 36% of the total effect of each portfolio characteristic on average potential.
+
+The portfolio-level results complements the dyadic findings. Average betweenness (bridging portfolio) has a positive effect on average potential only when coherence is high enough. Below a coherence threshold of approximately $-0.67$ standard deviations, the total effect of average betweenness turns negative, and is consistent across other effect channels (direct and indirect) as well. This confirms **H5b** with an important qualification: bridging technologies are a portfolio-level asset only when baseline industrial alignment is sufficient. Without that alignment, accumulating more bridging technologies does not improve, and may reduce, a region's average (potential) feasible opportunities.
+
+For enabling technologies (average eigenvector), the portfolio-level story is the reverse of the dyadic finding. While individual enabling technologies are hard to enter, portfolios concentrated in enabling technologies are associated with higher average potential ($+0.0354$ at mean coherence), and this effect never reverses across the coherence distribution, and confirms **H5c**: enabling technology endowment is a structural portfolio-level advantage. Once enabling technologies exist in a portfolio, they support the feasibility of many other technologies, i.e.: they enable at the aggregate level rather than blocking. The positive indirect effect ($+0.0127$) suggests this advantage also spills over to neighbouring regions.
+
+Coherence remains the central organising condition at the spatial level. Its total effect at mean portfolio compositions ($+0.1044$) is the largest main effect among all portfolio-level covariates, and it propagates spatially with indirect effects accounting for approximately 36% of the total.
+
+```{r tbl-spatial-sar, echo=FALSE}
+#| tbl-cap: "Spatial Autoregressive Model (SAR) -- Regional Potential"
+table_sp_sar <- targets::tar_read(
+  table_sp_sar,
+  store = here::here("../../_targets_EMP")
+)
+
+table_sp_sar %>%
+  tab_source_note(
+    "The spatial lag parameter rho confirms positive spatial interdependence of regional
+    average potential. Direct effects capture own-region responses; indirect effects
+    capture average spillovers to neighbouring regions; total effects are their sum."
+  )
+```
+
+# Discussion and Conclusion {#sec-summary}
+
+## What we found
+
+This dissertation started from a straightforward observation: regions vary enormously
+in their capacity to adopt new technologies, and the standard tools used to study and
+advise on this variation are methodologically limited in ways that constrain how much
+context they can incorporate. We reformed the measurement foundation and investigated
+four contextual layers that the standard approach leaves out.
+
+First, regional technological potential is at least as informative as relatedness density in predicting technology entry, and subsumes much of the relatedness signal when both are included. This validates our approach and shows that potential can be used as a reliable context-rich alternative.
+
+Second, the structural role of a technology in the capability network matters strongly for its feasibility. Bridging technologies connecting otherwise separated knowledge domains, are consistently accessible diversification options. Enabling technologies on the other hand, are consistently difficult to enter, regardless of portfolio characteristics [@antonietti2021going].
+
+Third, industrial alignment (coherence) moderates the value of bridging technologies and governs
+whether portfolio-level bridging concentration is an asset or a liability at the spatial level. Coherence is the central organising condition of the regional feasibility landscape [@teece1994understanding; @nesta2005coherence].
+
+Fourth, national ecosystem conditions contribute independently and significantly beyond portfolio mechanisms. Competition and human capital are the most consistent positive contributors. Internationalisation is consistently negative, which points to a potential lock-in dynamic in heavily export-oriented economies. These results are consistent with the argument that highlights the importance of the institutional and demand-side conditions, as they also shape the fesibility of a diversification option [@pinheiro2025; @acs2014national].
+
+Fifth, space structures the feasibility landscape. High-potential regions cluster geographically. The results reveals another layer of the mechanism. Enabling technologies that are hard to enter individually become portfolio-level assets once they are in place, while bridging technologies require adequate industrial alignment to generate aggregate potential benefits. Bridging technologies should be understood as targeted diversification options that support the build-up of alignment a means to coherence, not a substitute for it.
+
+## Limitations
+
+The most fundamental limitation is the absence of causal identification. Coherence is
+built from the same portfolio information the Random Forest uses to generate potential,
+which creates a shared construction that two-way fixed effects can only partially address. All findings should be read as conditional associations, not causal effects.This is a limitation that we will address in future iterations as it remains the bottleneck for actual informative policy recommendations.
+
+The machine learning training strategy was computationally constrained, using a fixed
+set of hyperparameters rather than a full cross-validation protocol for each model.
+However, @albora2023product show that even without tuning, Random Forest outperforms conventional
+baselines, but the models would improve with more rigorous calibration. The four-year
+prediction window is also fixed across all technologies -- a limitation, since capability
+building takes very different amounts of time for different technological domains
+[@hidalgo2023policy].
+
+## Policy implications and future research
+
+For regions on the technological periphery, bridging technologies offer accessible diversification points but as a means of building industrial alignment, not as an end in themselves. For regions with stronger alignment, investment in ecosystem conditions (competition, human capital, high-growth support) appears to generate the largest returns. For all regions, the spatial evidence underlines that technological diversification policy cannot be designed in isolation: where a region is and who its neighbours are is a structural condition that portfolio engineering alone cannot override. This in alignment with European cohesion policy, deriving policy instruments that takes into consideration the spillover, the technological characteristics, and the linkages is one direction to consider.
+
+The most productive directions for future work involve three extensions: applying significance-based filtering to FITS link construction; building a regional analogue of FITS that generates an inter-regional dependency matrix to formally model regional linkages; and incorporating patent co-invention collaboration patterns to capture knowledge import and inter-regional learning channels currently invisible to single-region portfolio models.
+
+# References {.unnumbered}
+
+::: {#refs}
+:::
